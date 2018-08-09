@@ -27,5 +27,12 @@
 </head>
 <body>
     @yield('content')
+
+    @if (Request::is('/'))
+        @yield('content')
+    @else
+        @include('layouts.nav')
+        @yield('content')
+    @endif
 </body>
 </html>
