@@ -8,6 +8,15 @@ use App\Profile;
 
 class ProfilesController extends Controller
 {
+    public function register ()
+    {
+        if (auth()->user() != null) {
+            return redirect('/');
+        }
+
+        return view();
+    }
+
     public function create (Request $request)
     {
         $profile = new Profile;
