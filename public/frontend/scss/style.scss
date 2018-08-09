@@ -1,0 +1,24 @@
+.img{
+	background: 
+	linear-gradient(
+	rgba(0, 255, 146, 0.3), 
+	rgba(0, 255, 146, 0.3)
+	), 
+	url("../img/1.jpg");
+    background-repeat: no-repeat;
+	background-size: cover;
+	height:70vh;
+	width:100%;
+}
+.navbar-transparent {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    background: transparent;
+}
+
+i {
+	color:red;
+}
