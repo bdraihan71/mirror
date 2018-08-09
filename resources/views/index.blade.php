@@ -18,6 +18,12 @@
                                 <a class="nav-item nav-link mt-1" href="#">EVENTS</a>
                                 <a class="nav-item nav-link mt-1" href="#">MEDIA</a>
                                 <a class="nav-item nav-link mt-1" href="#">MUSIC</a>
+                                @if(auth()->user() != null)
+                                    <a class="nav-item nav-link mt-1" href="/logout">LOGOUT</a>
+                                @else
+                                    <a class="nav-item nav-link mt-1" href="/register">REGISTER</a>
+                                    <a class="nav-item nav-link mt-1" href="/login">LOGIN</a>
+                                @endif
                                 <a class="nav-item nav-link mt-1" href="#">CONTACT US</a>
                                 <a class="nav-item nav-link" href="#"><i class="fas fa-cart-plus fa-2x"></i></a>
                             </div>

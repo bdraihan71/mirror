@@ -6,7 +6,7 @@
             <div class=" black-bg col-md-8">
                 <div class=" black-bg card">
                     <div class=" black-bg card-body">
-                        <form method="POST" action="register" aria-label="{{ __('Register') }}">
+                        <form method="POST" action="/register">
                             @csrf
 
                             <div class=" black-bg form-group row">

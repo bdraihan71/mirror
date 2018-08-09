@@ -36,6 +36,9 @@
             <li class="nav-item active">
                 <a class="nav-link text-white" href="/register">REGISTER</a>
             </li>
+            <li class="nav-item active">
+                <a class="nav-link text-white" href="/login">LOGIN</a>
+            </li>
         @endif
 
         <li class="nav-item">
