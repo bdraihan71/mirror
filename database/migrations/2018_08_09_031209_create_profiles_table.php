@@ -18,12 +18,12 @@ class CreateProfilesTable extends Migration
             $table->string('f_name');
             $table->string('m_name')->nullable();
             $table->string('l_name');
-            $table->string('job_title');
-            $table->string('company');
-            $table->string('c_website');
-            $table->string('country');
-            $table->string('industry');
-            $table->string('blog_url');
+            $table->string('job_title')->nullable();
+            $table->string('company')->nullable();
+            $table->string('c_website')->nullable();
+            $table->string('country')->nullable();
+            $table->string('industry')->nullable();
+            $table->string('blog_url')->nullable();
             $table->integer('user_id');
             $table->timestamps();
         });

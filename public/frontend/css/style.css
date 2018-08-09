@@ -781,8 +781,20 @@ header .download .btn-light:hover {
 	color: #2C6A93;
 }
 
+.black-bg {
+  background: black;
+  color: white;
+}
 
+.input-container {
+  background: white;
+}
 
+.btn-reg {
+  background: #C4250A;
+  width: 800px;
+}
 
-
-
+.btn-reg:hover {
+  background: red;
+}

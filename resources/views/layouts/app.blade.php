@@ -25,12 +25,16 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
-<body>
-    @if (Request::is('/'))
+@if (Request::is('/'))
+    <body>
         @yield('content')
-    @else
-        @include('layouts.nav')
-        @yield('content')
-    @endif
-</body>
+    </body>
+@else
+    <body class="black-bg">
+        <div class="container-fluid">
+            @include('layouts.nav')
+            @yield('content')
+        </div>
+    </body>
+@endif
 </html>
