@@ -13,8 +13,8 @@ class ProfilesController extends Controller
         if (auth()->user() != null) {
             return redirect('/');
         }
-
-        return view();
+        
+        return view('profiles/register');
     }
 
     public function create (Request $request)
