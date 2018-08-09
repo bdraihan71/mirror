@@ -26,8 +26,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 <body>
-    @yield('content')
-
     @if (Request::is('/'))
         @yield('content')
     @else
