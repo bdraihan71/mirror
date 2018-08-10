@@ -63,46 +63,6 @@
                                 </div>
                             </div>
 
-                            <div class=" black-bg form-group row">
-                                <label for="name" class=" black-bg col-md-4 col-form-label text-md-right">Job Title</label>
-                            
-                                <div class=" black-bg col-md-6">
-                                    <input type="text" class="input-container black-bg form-control" name="job_title" autofocus>
-                                </div>
-                            </div>
-
-                            <div class=" black-bg form-group row">
-                                <label for="name" class=" black-bg col-md-4 col-form-label text-md-right">Company</label>
-                            
-                                <div class=" black-bg col-md-6">
-                                    <input type="text" class="input-container black-bg form-control" name="company" autofocus>
-                                </div>
-                            </div>
-
-                            <div class=" black-bg form-group row">
-                                <label for="name" class=" black-bg col-md-4 col-form-label text-md-right">Company Website</label>
-                            
-                                <div class=" black-bg col-md-6">
-                                    <input type="text" class="input-container black-bg form-control" name="company_website" autofocus>
-                                </div>
-                            </div>
-
-                            <div class=" black-bg form-group row">
-                                <label for="name" class=" black-bg col-md-4 col-form-label text-md-right">Industry</label>
-                            
-                                <div class=" black-bg col-md-6">
-                                    <input type="text" class="input-container black-bg form-control" name="industry" autofocus>
-                                </div>
-                            </div>
-
-                            <div class=" black-bg form-group row">
-                                <label for="name" class=" black-bg col-md-4 col-form-label text-md-right">Blog URL</label>
-                            
-                                <div class=" black-bg col-md-6">
-                                    <input type="text" class="input-container black-bg form-control" name="blog_url" autofocus>
-                                </div>
-                            </div>
-
                             <div class="black-bg form-group row mb-0">
                                 <div class="black-bg">
                                     <button type="submit" class="black-bg btn btn-reg">
