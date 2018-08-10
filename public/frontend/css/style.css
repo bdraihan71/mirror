@@ -809,3 +809,13 @@ header .download .btn-light:hover {
   background: #517AD1;
   color: white;
 }
+
+.btn-google {
+  background: #CCCCCC;
+  width: 800px;
+}
+
+.btn-google:hover {
+  background: #FFFFFF;
+  color: black;
+}
