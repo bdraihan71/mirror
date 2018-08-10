@@ -53,7 +53,7 @@
                     <label for="description" class="col-md-2 col-form-label text-md-right">Description</label>
 
                     <div class="col-md-8">
-                        <textarea id="article-ckeditor" name="description" cols="30" rows="12" class="form-control" required autofocus>{{ old('description') }}</textarea>
+                        <textarea id="article-ckeditor" name="description" cols="30" rows="12" class="form-control" required>{{ old('description') }}</textarea>
                     </div>
                 </div>
 
@@ -67,7 +67,7 @@
                     <label for="ticket_number" class="col-md-2 col-form-label text-md-right" >Total Tickets</label>
 
                     <div class="col-md-3">
-                        <input type="number" class="form-control" name="ticket_number" value="{{ old('ticket_number') }}" required autofocus>
+                        <input type="number" class="form-control" name="ticket_number" value="{{ old('ticket_number') }}" placeholder="Total number of tickets" required autofocus>
                     </div>
                 </div>
 
@@ -75,13 +75,13 @@
                     <label for="url_1" class="col-md-2 col-form-label text-md-right" >Ticket image url</label>
 
                     <div class="col-md-3">
-                        <input type="text" class="form-control" name="url_1" value="{{ old('url_1') }}" placeholder="Location of the event" required autofocus>
+                        <input type="text" class="form-control" name="url_1" value="{{ old('url_1') }}" placeholder="Image 2 of the event" required autofocus>
                     </div>
 
                     <label for="url_2" class="col-md-2 col-form-label text-md-right" >Ticket image url</label>
 
                     <div class="col-md-3">
-                        <input type="text" class="form-control" name="url_2" value="{{ old('url_2') }}" placeholder="Location of the event" required autofocus>
+                        <input type="text" class="form-control" name="url_2" value="{{ old('url_2') }}" placeholder="Image 1 of the event" required autofocus>
                     </div>
                 </div>
 

@@ -19,9 +19,11 @@ class CreateEventsTable extends Migration
             $table->string('location');
             $table->string('tagline');
             $table->date('date_start');
-            $table->date('date_ends');
+            $table->date('date_end');
             $table->time('start');
             $table->time('end');
+            $table->text('img_1');
+            $table->text('img_2');
             $table->text('description');
             $table->timestamps();
         });

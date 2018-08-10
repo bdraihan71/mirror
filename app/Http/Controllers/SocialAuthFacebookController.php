@@ -17,7 +17,7 @@ class SocialAuthFacebookController extends Controller
 
     public function callback()
     {
-        $account = Socialite::driver('facebook')->user();
+        $account = Socialite::driver('facebook')->stateless()->user();
         $user = User::where('email', $account->email)->first();
 
         if ($user == null) {
@@ -27,7 +27,7 @@ class SocialAuthFacebookController extends Controller
             $user->save();
 
             $profile = new Profile;
-            $name = split(' ', $account->name);
+            $name = explode(' ', $account->name);
             $profile->f_name = $name[0];
 
             if (sizeof($name) == 1) {
