@@ -28,12 +28,14 @@
 @if (Request::is('/'))
     <body>
         @yield('content')
+        @include('layouts.scripts')
     </body>
 @else
     <body class="black-bg">
         <div class="container-fluid">
             @include('layouts.nav')
             @yield('content')
+            @include('layouts.scripts')
         </div>
     </body>
 @endif

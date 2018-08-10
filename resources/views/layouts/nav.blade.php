@@ -16,7 +16,7 @@
             <a class="nav-link text-white" href="#">PARTNERS</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-white" href="#">EVENTS</a>
+            <a class="nav-link text-white" href="/events/create">EVENTS</a>
         </li>
         <li class="nav-item active">
             <a class="nav-link text-white" href="#">MEDIA</a>

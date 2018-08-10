@@ -31,12 +31,6 @@ class ProfilesController extends Controller
         $profile->f_name = $request->f_name;
         $profile->m_name = $request->m_name;
         $profile->l_name = $request->l_name;
-        $profile->job_title = $request->job_title;
-        $profile->company = $request->company;
-        $profile->c_website = $request->company_website;
-        $profile->country = $request->country;
-        $profile->industry = $request->industry;
-        $profile->blog_url = $profile->blog_url;
         $profile->save();
 
         Auth::login($user);

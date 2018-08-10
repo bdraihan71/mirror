@@ -35,3 +35,7 @@ Route::get('/loggedin', function(){
 //Socialite Routes
 Route::get('/redirect', 'SocialAuthFacebookController@redirect');
 Route::get('/callback', 'SocialAuthFacebookController@callback');
+
+//Events Routes
+Route::get('/events/create', 'EventsController@create')->middleware('auth');
+Route::post('/events/create', 'EventsController@store')->middleware('auth');
