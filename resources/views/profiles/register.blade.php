@@ -103,11 +103,19 @@
                                 </div>
                             </div>
 
-                            <div class=" black-bg form-group row mb-0">
-                                <div class=" black-bg">
-                                    <button type="submit" class=" black-bg btn btn-reg">
+                            <div class="black-bg form-group row mb-0">
+                                <div class="black-bg">
+                                    <button type="submit" class="black-bg btn btn-reg">
                                         {{ __('Register') }}
                                     </button>
+                                </div>
+                            </div>
+
+                            <br>
+
+                            <div class="black-bg form-group row mb-0">
+                                <div class="black-bg">
+                                    <a href="{{url('/redirect')}}" class="black-bg btn-facebook btn">Login with Facebook</a>
                                 </div>
                             </div>
                         </form>

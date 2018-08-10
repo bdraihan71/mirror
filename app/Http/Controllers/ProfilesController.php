@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Profile;
+use Auth;
 
 class ProfilesController extends Controller
 {
@@ -37,6 +38,8 @@ class ProfilesController extends Controller
         $profile->industry = $request->industry;
         $profile->blog_url = $profile->blog_url;
         $profile->save();
+
+        Auth::login($user);
 
         return redirect('/')->with('success', 'Welcome to Ecube!');
     }

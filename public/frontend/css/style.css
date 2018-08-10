@@ -799,3 +799,13 @@ header .download .btn-light:hover {
 .btn-reg:hover {
   background: red;
 }
+
+.btn-facebook {
+  background: #3B5998;
+  width: 800px;
+}
+
+.btn-facebook:hover {
+  background: #517AD1;
+  color: white;
+}
