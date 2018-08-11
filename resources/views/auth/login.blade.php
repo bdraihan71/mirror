@@ -67,7 +67,7 @@
 
                         <div class="black-bg form-group row mb-0">
                             <div class="black-bg">
-                                <a href="{{url('/redirect')}}" class="black-bg btn-facebook btn">Login with Facebook</a>
+                                <a href="{{url('/redirect/facebook')}}" class="black-bg btn-facebook btn">Login with Facebook</a>
                             </div>
                         </div>
 
@@ -75,7 +75,7 @@
 
                         <div class="black-bg form-group row mb-0">
                             <div class="black-bg">
-                                <a href="{{url('/redirect')}}" class="black-bg btn-google btn">Login with Gmail</a>
+                                <a href="/redirect" class="black-bg btn-google btn">Login with Gmail</a>
                             </div>
                         </div>
                     </form>

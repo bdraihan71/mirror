@@ -33,8 +33,10 @@ Route::get('/loggedin', function(){
 });
 
 //Socialite Routes
-Route::get('/redirect', 'SocialAuthFacebookController@redirect');
-Route::get('/callback', 'SocialAuthFacebookController@callback');
+Route::get('/redirect/facebook', 'SocialAuthFacebookController@redirect');
+Route::get('/callback/facebook', 'SocialAuthFacebookController@callback');
+Route::get('/redirect', 'SocialAuthGoogleController@redirect');
+Route::get('/callback', 'SocialAuthGoogleController@callback');
 
 //Events Routes
 Route::get('/events/create', 'EventsController@create')->middleware('auth');
