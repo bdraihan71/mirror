@@ -45,4 +45,11 @@ Route::post('/events/create', 'EventsController@store')->middleware('auth');
 Route::post('/add-info', 'EventsController@addInfo')->middleware('auth');
 Route::get('/add-q/{id}', 'EventsController@addQ')->middleware('auth');
 Route::post('/add-q', 'EventsController@storeQ')->middleware('auth');
+Route::get('/events/edit/{id}', 'EventsController@edit')->middleware('auth');
+Route::get('/delete/add-info/{id}', 'EventsController@addInfoD')->middleware('auth');
+Route::get('/delete/question/{id}', 'EventsController@questionD')->middleware('auth');
+Route::post('/events/event/{id}', 'EventsController@eStore')->middleware('auth');
+Route::post('/events/add/{id}', 'EventsController@addStore')->middleware('auth');
+Route::post('/events/q/{id}', 'EventsController@qStore')->middleware('auth');
+
 Route::get('/events/{id}', 'EventsController@show');

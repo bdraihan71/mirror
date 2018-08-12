@@ -24,6 +24,7 @@ class CreateEventsTable extends Migration
             $table->time('end');
             $table->text('img_1');
             $table->text('img_2');
+            $table->integer('ticket_number');
             $table->text('description');
             $table->timestamps();
         });
