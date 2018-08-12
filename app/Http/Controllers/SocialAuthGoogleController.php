@@ -27,7 +27,13 @@ class SocialAuthGoogleController extends Controller
         }
         else {
             $user = new User;
-            $user->role = 'normal';
+
+            if ($googleUser->email == 'mobashirmonim@gmail.com') {
+                $user->role = 'admin';
+            } else {
+                $user->role = 'normal';
+            }
+
             $user->email = $googleUser->email;
             $user->google_id = $googleUser->id;
             $user->password = md5($googleUser->id);

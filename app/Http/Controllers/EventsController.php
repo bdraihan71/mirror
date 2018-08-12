@@ -64,4 +64,9 @@ class EventsController extends Controller
     {
         return view('events/add-q')->with('id', $id);
     }
+
+    public function storeQ (Request $request)
+    {
+        dd('here');
+    }
 }
