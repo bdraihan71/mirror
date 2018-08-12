@@ -22,6 +22,7 @@ class SocialAuthFacebookController extends Controller
 
         if ($user == null) {
             $user = new User;
+            $user->role = 'normal';
             $user->email = $account->email;
             $user->password = bcrypt($account->id);
             $user->save();
