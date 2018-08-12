@@ -26,29 +26,7 @@ class SocialAuthFacebookController extends Controller
             $user->password = bcrypt($account->id);
             $user->save();
 
-            $profile = new Profile;
-            $name = explode(' ', $account->name);
-            $profile->f_name = $name[0];
-
-            if (sizeof($name) == 1) {
-                $profile->l_name = '---';
-            } elseif (sizeof($name) == 2) {
-                $profile->l_name = $name[1];
-            } else {
-                $profile->l_name = $name[sizeof($name) - 1];
-                $x = '';
-
-                for ($i = 1; $i <= sizeof($name) - 2; $i++) {
-                    $x = $x.$name[$i];
-                }
-
-                $profile->m_name = $x;
-            }
-
-            $profile->user_id = $user->id;
-            $profile->save();
-
-            Auth::login($user);
+            return view('profiles/social-register')->with('name', $account->name)->with('id', $user->id);
         } else {
             Auth::login($user);
         }

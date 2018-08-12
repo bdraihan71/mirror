@@ -14,6 +14,7 @@
 //Profile Routes
 Route::get('register', 'ProfilesController@register')->name('register');
 Route::post('register', 'ProfilesController@create');
+Route::post('social-register', 'ProfilesController@social');
 
 //Auth Routes
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

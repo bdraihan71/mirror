@@ -31,28 +31,10 @@ class SocialAuthGoogleController extends Controller
             $user->google_id = $googleUser->id;
             $user->password = md5($googleUser->id);
             $user->save();
-            Auth::loginUsingId($user->id);
-
-            $profile = new Profile;
-            $name = explode(' ', $account->name);
-            $profile->f_name = $name[0];
-
-            if (sizeof($name) == 1) {
-                $profile->l_name = '---';
-            } elseif (sizeof($name) == 2) {
-                $profile->l_name = $name[1];
-            } else {
-                $profile->l_name = $name[sizeof($name) - 1];
-                $x = '';
-
-                for ($i = 1; $i <= sizeof($name) - 2; $i++) {
-                    $x = $x.$name[$i];
-                }
-
-                $profile->m_name = $x;
-            }
+            
+            return view('profiles/social-register')->with('name', $googleUser->name)->with('id', $user->id);
         }
-        
+
         return redirect()->to('/');
     }
 }

@@ -18,6 +18,8 @@ class CreateProfilesTable extends Migration
             $table->string('f_name');
             $table->string('m_name')->nullable();
             $table->string('l_name');
+            $table->string('address');
+            $table->string('phone');
             $table->integer('user_id');
             $table->timestamps();
         });
