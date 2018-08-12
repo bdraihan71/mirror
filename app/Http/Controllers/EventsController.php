@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Event;
+use App\AdditionalInformation;
 
 class EventsController extends Controller
 {
@@ -39,9 +40,28 @@ class EventsController extends Controller
         $event->save();
 
         //need to implement tickets
-
-        $url = '/events/'.$event->id;
+        //ceate tickets in DB
         
-        return redirect($url)->with('success', 'Event has been created');
+        return view('events/add-info')->with('id', $event->id);
+    }
+
+    public function addInfo (Request $request)
+    {
+        $this->validate($request, [
+            'information' => 'required',
+        ]);
+
+        $info = new AdditionalInformation;
+        $info->name = $request->name;
+        $info->info = $request->information;
+        $info->event_id = $request->id;
+        $info->save();
+
+        return view('events/add-info')->with('id', $request->id);
+    }
+
+    public function addQ (Request $request, $id)
+    {
+        return view('events/add-q')->with('id', $id);
     }
 }

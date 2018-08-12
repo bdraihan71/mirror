@@ -14,7 +14,7 @@
                             <div class="navbar-nav font-weight-bold nav-back">
                                 <a class="nav-item nav-link mt-1" href="/">HOME</a>
                                 <a class="nav-item nav-link mt-1" href="#">ABOUT US</a>
-                                <a class="nav-item nav-link mt-1" href="#">PARTNERS</a>
+                                <a class="nav-item nav-link mt-1" href="/events/create">PARTNERS</a>
                                 <a class="nav-item nav-link mt-1" href="/events/create">EVENTS</a>
                                 <a class="nav-item nav-link mt-1" href="#">MEDIA</a>
                                 <a class="nav-item nav-link mt-1" href="#">MUSIC</a>

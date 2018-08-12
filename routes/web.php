@@ -42,4 +42,7 @@ Route::get('/callback', 'SocialAuthGoogleController@callback');
 //Events Routes
 Route::get('/events/create', 'EventsController@create')->middleware('auth');
 Route::post('/events/create', 'EventsController@store')->middleware('auth');
+Route::post('/add-info', 'EventsController@addInfo')->middleware('auth');
+Route::get('/add-q/{id}', 'EventsController@addQ')->middleware('auth');
+Route::post('/add-q', 'EventsController@storeQ')->middleware('auth');
 Route::get('/events/{id}', 'EventsController@show');

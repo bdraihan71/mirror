@@ -13,7 +13,7 @@
             <a class="nav-link text-white" href="#">ABOUT US</a>
         </li>
         <li class="nav-item active">
-            <a class="nav-link text-white" href="#">PARTNERS</a>
+            <a class="nav-link text-white" href="/events/create">PARTNERS</a>
         </li>
         <li class="nav-item">
             <a class="nav-link text-white" href="/events/create">EVENTS</a>
