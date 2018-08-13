@@ -28,6 +28,7 @@
 @if (Request::is('/'))
     <body>
         @yield('content')
+        @include('layouts.footer')
         @include('layouts.scripts')
     </body>
 @else
@@ -35,6 +36,7 @@
         <div class="container-fluid">
             @include('layouts.nav')
             @yield('content')
+            @include('layouts.footer')
             @include('layouts.scripts')
         </div>
     </body>
