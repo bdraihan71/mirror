@@ -66,7 +66,7 @@ class EventsController extends Controller
 
     public function addQ (Request $request, $id)
     {
-        return view('events/add-q')->with('id', $id);
+        return view('events/add-q')->with('id', $id)->with('questions', null);
     }
 
     public function storeQ (Request $request)

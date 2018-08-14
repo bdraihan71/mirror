@@ -64,10 +64,10 @@
                         <input type="text" class="form-control" name="location" value="{{ old('location') }}" placeholder="Location of the event" required autofocus>
                     </div>
 
-                    <label for="ticket_number" class="col-md-2 col-form-label text-md-right" >Total Tickets</label>
+                    <label for="ticket_number" class="col-md-2 col-form-label text-md-right" >Total Ticket Types</label>
 
                     <div class="col-md-3">
-                        <input type="number" class="form-control" name="ticket_number" value="{{ old('ticket_number') }}" placeholder="Total number of tickets" required autofocus>
+                        <input type="number" class="form-control" name="ticket_number" value="{{ old('ticket_number') }}" placeholder="Total number of ticket types" required autofocus>
                     </div>
                 </div>
 

@@ -53,3 +53,8 @@ Route::post('/events/add/{id}', 'EventsController@addStore')->middleware('auth')
 Route::post('/events/q/{id}', 'EventsController@qStore')->middleware('auth');
 
 Route::get('/events/{id}', 'EventsController@show');
+
+//Ticket Routes
+Route::get('/ticket/type/{id}', 'TicketsController@typeSelect')->middleware('auth');
+Route::get('/ticket/types/{id}', 'TicketsController@show')->middleware('auth');
+Route::post('/tickets/create', 'TicketsController@create')->middleware('auth');
