@@ -7,6 +7,7 @@ use App\Sponsor;
 use App\AdditionalInformation;
 use App\Question;
 use App\Ticket;
+use App\TicketType;
 
 class Event extends Model
 {
@@ -28,5 +29,10 @@ class Event extends Model
     public function tickets ()
     {
         return $this->hasMany('App\Ticket');
+    }
+
+    public function types ()
+    {
+        return $this->hasMany('App\TicketType');
     }
 }

@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\Event;
 use App\User;
+use App\TicketType;
 
 class Ticket extends Model
 {
@@ -16,5 +17,10 @@ class Ticket extends Model
     public function user ()
     {
         return $this->belongsTo('App\User');
+    }
+
+    public function type ()
+    {
+        return $this->belongsTo('App\TicketType');
     }
 }
