@@ -76,7 +76,9 @@ class EventsController extends Controller
         $question->event_id = $request->id;
         $question->save();
 
-        return view('events/add-q')->with('id', $request->id);
+        $questions = Question::where('event_id', $request->id)->get();
+
+        return view('events/add-q')->with('id', $request->id)->with('questions', $questions);
     }
 
     public function edit (Request $request, $id)

@@ -42,11 +42,12 @@
             </form>
 
             @if (count($information) > 0)
+                <br><br>
                 <div class="row">
                     <div class="col-md-1">
 
                     </div>
-                    <h2 class="page-title">Previous Information added</h2>
+                    <h2 class="page-title ml-5">Previous Information added</h2>
                 </div>
 
                 <br>
@@ -57,7 +58,7 @@
                         <div class="col-md-1 text-right">
                             {{$info->name}}
                         </div>
-                        <div class="col-8">
+                        <div class="col-8 ml-2">
                             {!!$info->info!!}
                         </div>
                     </div>
