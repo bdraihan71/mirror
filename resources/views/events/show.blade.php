@@ -6,7 +6,13 @@
         <h1 class="font-weight-bold">{{$event->name}}</h1>
         <i class="fas fa-map-marker-alt fa-1x"> {{strtoupper($event->location)}}</i>
         <br>
-        <button type="button" class="btn btn-danger btn-radius px-5 py-3">BUY TICKET</button>
+        @if ($flow)
+            <a href="/ticket/buy/{{$event->id}}" class="btn btn-danger btn-radius px-5 py-3">BUY TICKET</a>
+        @else
+            <button type="button" class="btn btn-default btn-radius px-5 py-3" disabled>
+                <strong>SOLD OUT</strong>
+            </button>
+        @endif
         <br>
         <i class="far fa-calendar-alt"> 
             @if ($event->date_start == $event->date_end)
@@ -57,7 +63,13 @@
                 </div>
                 
             </div>
-            <button type="button" class="btn btn-danger btn-radius mt-5 px-5 py-3">BUY TICKET</button>
+            @if ($flow)
+                <a href="/ticket/buy/{{$event->id}}" class="btn btn-danger btn-radius px-5 py-3">BUY TICKET</a>
+            @else
+                <button type="button" class="btn btn-default btn-radius px-5 py-3" disabled>
+                    <strong>SOLD OUT</strong>
+                </button>
+            @endif
         </div>
     </section>
 

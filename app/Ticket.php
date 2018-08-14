@@ -21,6 +21,6 @@ class Ticket extends Model
 
     public function type ()
     {
-        return $this->belongsTo('App\TicketType');
+        return $this->belongsTo('App\TicketType', 'ticket_type_id');
     }
 }

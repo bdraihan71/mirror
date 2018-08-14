@@ -1,7 +1,6 @@
 @if(count($errors) > 0)
     @foreach($errors->all() as $error)
         <div class="row text-center alert alert-danger">
-            <br><br><br><br><br><br><br><br>
             <div class="col-md-4"></div>
             <div class="col-md-4">
                 {{$error}}
@@ -13,7 +12,6 @@
 
 @if(session('success'))
     <div class="row text-center alert alert-success">
-        <br><br><br><br><br><br><br><br>
         <div class="col-md-4"></div>
         <div class="col-md-4">
             {{session('success')}}
@@ -24,7 +22,6 @@
 
 @if(session('error'))
     <div class="row text-center alert alert-danger">
-        <br><br><br><br><br><br><br><br>
         <div class="col-md-4"></div>
         <div class="col-md-4">
             {{session('error')}}

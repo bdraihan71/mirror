@@ -57,4 +57,9 @@ Route::get('/events/{id}', 'EventsController@show');
 //Ticket Routes
 Route::get('/ticket/type/{id}', 'TicketsController@typeSelect')->middleware('auth');
 Route::get('/ticket/types/{id}', 'TicketsController@show')->middleware('auth');
+Route::get('/ticket/buy/{id}', 'TicketsController@buy')->middleware('auth');
+Route::post('/ticket/buy/{id}', 'TicketsController@purchase')->middleware('auth');
 Route::post('/tickets/create', 'TicketsController@create')->middleware('auth');
+
+//SSL Commerz Test route
+Route::post('/ipn_listener', 'TicketsController@purchase')->middleware('auth');

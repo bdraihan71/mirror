@@ -27,6 +27,7 @@
 </head>
 @if (Request::is('/'))
     <body>
+        @include('layouts.messages')
         @yield('content')
         @include('layouts.footer')
         @include('layouts.scripts')
@@ -35,6 +36,7 @@
     <body class="black-bg">
         <div class="container-fluid">
             @include('layouts.nav')
+            @include('layouts.messages')
             @yield('content')
             @include('layouts.footer')
             @include('layouts.scripts')

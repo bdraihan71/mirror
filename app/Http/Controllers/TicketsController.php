@@ -52,4 +52,37 @@ class TicketsController extends Controller
 
         // dd($ticket);
     }
+
+    public function buy (Request $request, $id)
+    {
+        $ticket = Ticket::where('user_id', auth()->user()->id)->first();
+
+        if ($ticket != null) {
+            $url = '/events/'.$id;
+            return redirect($url)->with('error', 'You cannot buy more than one ticket for an event');
+        }
+
+        $types = TicketType::where('event_id', $id)->get();
+
+        return view('tickets/buy')->with('types', $types)->with('id', $id);
+    }
+
+    public function purchase (Request $request, $id)
+    {
+        $ticket = Ticket::where('user_id', auth()->user()->id)->first();
+
+        if ($ticket != null) {
+            $url = '/events/'.$id;
+            return redirect($url)->with('error', 'You cannot buy more than one ticket for an event');
+        }
+
+        $type = TicketType::where('id', $request->type)->get();
+        $event = Event::where('id', $id)->first();
+        $ticket = Ticket::where('event_id', $id)->where('ticket_type_id', $request->type)->whereNull('user_id')->first();
+
+        $ticket->user_id = auth()->user()->id;
+        $ticket->save();
+
+        dd($ticket->type);
+    }
 }
