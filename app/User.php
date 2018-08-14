@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Profile;
 use App\SocialFacebookAccount;
 use App\Ticket;
+use App\EventAnswer;
 
 class User extends Authenticatable
 {
@@ -43,5 +44,10 @@ class User extends Authenticatable
     public function tickets ()
     {
         return $this->hasMany('App\Ticket');
+    }
+
+    public function answers ()
+    {
+        return $this->hasMany('App\EventAnswer');
     }
 }
