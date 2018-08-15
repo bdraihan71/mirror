@@ -10,7 +10,7 @@
                             @csrf
 
                             <div class=" black-bg form-group row">
-                                <label for="type" class=" black-bg col-md-4 col-form-label text-md-right">First Name*</label>
+                                <label for="type" class=" black-bg col-md-4 col-form-label text-md-right">Select Ticket Type</label>
 
                                 <div class=" black-bg col-md-6">
                                     <select name="type" class="form-control" required autofocus>
@@ -29,6 +29,14 @@
                                     <button type="submit" class="black-bg btn btn-reg">
                                         {{ __('Buy') }}
                                     </button>
+                                </div>
+                            </div>
+
+                            <br>
+
+                            <div class="black-bg form-group row mb-0">
+                                <div class="black-bg">
+                                    <a href="/cancel/purchase/{{$id}}" class="btn btn-google">Cancel</a>
                                 </div>
                             </div>
                         </form>

@@ -37,7 +37,21 @@ class AnswersController extends Controller
         }
 
         $answers = EventAnswer::where('event_id', $id)->get();
+        $url = '/ticket/buy/'.$id;
 
-        dd($answers);
+        return redirect($url);
+    }
+
+    public function cancel (Request $request, $id)
+    {
+        $answers = EventAnswer::where('event_id', $id)->where('user_id', auth()->user()->id)->get();
+
+        foreach ($answers as $answer) {
+            $answer->delete();
+        }
+
+        $url = '/events/'.$id;
+
+        return redirect($url);
     }
 }

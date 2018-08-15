@@ -7,7 +7,7 @@
         <i class="fas fa-map-marker-alt fa-1x"> {{strtoupper($event->location)}}</i>
         <br>
         @if ($flow)
-            <a href="/ticket/buy/{{$event->id}}" class="btn btn-danger btn-radius px-5 py-3">BUY TICKET</a>
+            <a href="/question/answer/{{$event->id}}" class="btn btn-danger btn-radius px-5 py-3">BUY TICKET</a>
         @else
             <button type="button" class="btn btn-default btn-radius px-5 py-3" disabled>
                 <strong>SOLD OUT</strong>
@@ -64,7 +64,7 @@
                 
             </div>
             @if ($flow)
-                <a href="/ticket/buy/{{$event->id}}" class="btn btn-danger btn-radius px-5 py-3">BUY TICKET</a>
+                <a href="/question/answer/{{$event->id}}" class="btn btn-danger btn-radius px-5 py-3">BUY TICKET</a>
             @else
                 <button type="button" class="btn btn-default btn-radius px-5 py-3" disabled>
                     <strong>SOLD OUT</strong>

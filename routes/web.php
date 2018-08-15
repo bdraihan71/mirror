@@ -64,6 +64,7 @@ Route::post('/tickets/create', 'TicketsController@create')->middleware('auth');
 //Event Question Answers Routes
 Route::get('/question/answer/{id}', 'AnswersController@answer')->middleware('auth');
 Route::post('/question/answer/{id}', 'AnswersController@store')->middleware('auth');
+Route::get('/cancel/purchase/{id}', 'AnswersController@cancel')->middleware('auth');
 
 //SSL Commerz Test route
 Route::post('/ipn_listener', 'TicketsController@purchase')->middleware('auth');
