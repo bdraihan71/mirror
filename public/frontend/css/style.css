@@ -786,6 +786,11 @@ header .download .btn-light:hover {
   color: white;
 }
 
+.white-bg {
+  color: black;
+  background: white;
+}
+
 .input-container {
   background: white;
   color: black;
