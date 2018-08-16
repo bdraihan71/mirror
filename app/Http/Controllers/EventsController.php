@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Event;
+use App\Ticket;
 use App\AdditionalInformation;
 use App\Question;
 
@@ -12,8 +13,17 @@ class EventsController extends Controller
     public function show (Request $request, $id)
     {
         $event = Event::where('id', $id)->first();
+        $tickets = Ticket::where('event_id', $id)->get();
+        $flow = false;
 
-        dd($event);
+        foreach ($tickets as $ticket) {
+            if ($ticket->user_id == null) {
+                $flow = true;
+                break;
+            }
+        }
+
+        return view('events/show')->with('event', $event)->with('flow', $flow);
     }
 
     public function create ()
@@ -44,7 +54,7 @@ class EventsController extends Controller
         //need to implement tickets
         //ceate tickets in DB
         
-        return view('events/add-info')->with('id', $event->id);
+        return view('events/add-info')->with('id', $event->id)->with('information', null);
     }
 
     public function addInfo (Request $request)
@@ -59,12 +69,14 @@ class EventsController extends Controller
         $info->event_id = $request->id;
         $info->save();
 
-        return view('events/add-info')->with('id', $request->id);
+        $information = AdditionalInformation::where('event_id', $request->id)->get();
+
+        return view('events/add-info')->with('id', $request->id)->with('information', $information);
     }
 
     public function addQ (Request $request, $id)
     {
-        return view('events/add-q')->with('id', $id);
+        return view('events/add-q')->with('id', $id)->with('questions', null);
     }
 
     public function storeQ (Request $request)
@@ -74,7 +86,9 @@ class EventsController extends Controller
         $question->event_id = $request->id;
         $question->save();
 
-        return view('events/add-q')->with('id', $request->id);
+        $questions = Question::where('event_id', $request->id)->get();
+
+        return view('events/add-q')->with('id', $request->id)->with('questions', $questions);
     }
 
     public function edit (Request $request, $id)
@@ -113,7 +127,7 @@ class EventsController extends Controller
         $event->description = $request->description;
         $event->img_1 = $request->url_1;
         $event->img_2 = $request->url_2;
-        //$event->ticket_number = $request->ticket_number;
+        $event->ticket_number = $request->ticket_number;
         $event->save();
 
         $url = '/events/edit/'.$event->id;

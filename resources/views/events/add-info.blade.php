@@ -40,6 +40,31 @@
                 </div>
                 
             </form>
+
+            @if (count($information) > 0)
+                <br><br>
+                <div class="row">
+                    <div class="col-md-1">
+
+                    </div>
+                    <h2 class="page-title ml-5">Previous Information added</h2>
+                </div>
+
+                <br>
+
+                @foreach ($information as $info)
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-1 text-right">
+                            {{$info->name}}
+                        </div>
+                        <div class="col-8 ml-2">
+                            {!!$info->info!!}
+                        </div>
+                    </div>
+                    <br>
+                @endforeach
+            @endif
         </div>
     </div>
 @endsection

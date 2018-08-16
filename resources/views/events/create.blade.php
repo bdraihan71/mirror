@@ -64,24 +64,30 @@
                         <input type="text" class="form-control" name="location" value="{{ old('location') }}" placeholder="Location of the event" required autofocus>
                     </div>
 
-                    <label for="ticket_number" class="col-md-2 col-form-label text-md-right" >Total Tickets</label>
+                    <label for="ticket_number" class="col-md-2 col-form-label text-md-right" >Total Ticket Types</label>
 
                     <div class="col-md-3">
-                        <input type="number" class="form-control" name="ticket_number" value="{{ old('ticket_number') }}" placeholder="Total number of tickets" required autofocus>
+                        <input type="number" class="form-control" name="ticket_number" value="{{ old('ticket_number') }}" placeholder="Total number of ticket types" required autofocus>
                     </div>
                 </div>
 
                 <div class="form-group row">
-                    <label for="url_1" class="col-md-2 col-form-label text-md-right" >Ticket image url</label>
+                    <label for="url_1" class="col-md-2 col-form-label text-md-right" >Ticket header</label>
 
-                    <div class="col-md-3">
-                        <input type="text" class="form-control" name="url_1" value="{{ old('url_1') }}" placeholder="Image 2 of the event" required autofocus>
+                    <div class="custom-file col-md-8 ml-3">
+                        <input type="file" name="url_1" class="custom-file-input" accept="image/*" required>
+                        <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                        <div class="invalid-feedback">Example invalid custom file feedback</div>
                     </div>
+                </div>
 
-                    <label for="url_2" class="col-md-2 col-form-label text-md-right" >Ticket image url</label>
+                <div class="form-group row ">
+                    <label for="url_2" class="col-md-2 col-form-label text-md-right" >Ticket footer</label>
 
-                    <div class="col-md-3">
-                        <input type="text" class="form-control" name="url_2" value="{{ old('url_2') }}" placeholder="Image 1 of the event" required autofocus>
+                    <div class="custom-file col-md-8 ml-3 r-5">
+                        <input type="file" name="url_2" class="custom-file-input" accept="image/*" required>
+                        <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                        <div class="invalid-feedback">Example invalid custom file feedback</div>
                     </div>
                 </div>
 

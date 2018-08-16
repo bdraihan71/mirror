@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 use App\Sponsor;
 use App\AdditionalInformation;
 use App\Question;
+use App\Ticket;
+use App\TicketType;
+use App\EventAnswer;
 
 class Event extends Model
 {
@@ -22,5 +25,20 @@ class Event extends Model
     public function event()
     {
         return $this->hasMany('App\Question');
+    }
+
+    public function tickets ()
+    {
+        return $this->hasMany('App\Ticket');
+    }
+
+    public function types ()
+    {
+        return $this->hasMany('App\TicketType');
+    }
+
+    public function answers ()
+    {
+        return $this->hasMany('App\EventAnswer');
     }
 }

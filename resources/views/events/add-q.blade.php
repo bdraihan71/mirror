@@ -26,11 +26,33 @@
                 <div class="black-bg form-group row ml-1">
                     <div class="col-2"></div>
                     <div class="black-bg">
-                        <a href="/events/{{$id}}" class="black-bg btn btn-google" style="width: 900px">No more additional information</a>
+                        <a href="/ticket/type/{{$id}}" class="black-bg btn btn-google" style="width: 900px">No more additional information</a>
                     </div>
                 </div>
                 
             </form>
+
+            @if (count($questions) > 0)
+            <br><br>
+                <div class="row">
+                    <div class="col-md-1">
+
+                    </div>
+                    <h2 class="page-title ml-5">Previous Questions added</h2>
+                </div>
+
+                <br>
+
+                @foreach ($questions as $question)
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-8 ml-2">
+                            {{$question->question}}
+                        </div>
+                    </div>
+                    <br>
+                @endforeach
+            @endif
         </div>
     </div>
 @endsection

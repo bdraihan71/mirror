@@ -26,15 +26,19 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 @if (Request::is('/'))
-    <body>
+    <body class="black-bg">
+        @include('layouts.messages')
         @yield('content')
+        @include('layouts.footer')
         @include('layouts.scripts')
     </body>
 @else
     <body class="black-bg">
         <div class="container-fluid">
             @include('layouts.nav')
+            @include('layouts.messages')
             @yield('content')
+            @include('layouts.footer')
             @include('layouts.scripts')
         </div>
     </body>
