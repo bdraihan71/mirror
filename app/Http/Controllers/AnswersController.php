@@ -12,13 +12,15 @@ class AnswersController extends Controller
 {
     public function answer (Request $request, $id)
     {
-        $questions = Question::where('event_id', $id)->get();
+        $answers = EventAnswer::where('event_id', $id)->where('user_id', auth()->user()->id)->get();
 
-        if ($questions == null) {
-            $url = '/ticket/buy/'.$id;
+        if (count($answers) != 0) {
+            $url = '/events/'.$id;
             
-            return redirect($url);
+            return redirect($url)->with('error', 'You can only buy one ticket');
         }
+
+        $questions = Question::where('event_id', $id)->get();
 
         return view('answers/answer')->with('questions', $questions)->with('id', $id);
     }
@@ -34,6 +36,7 @@ class AnswersController extends Controller
             $answer->user_id = auth()->user()->id;
             $answer->answer = $answers[$i];
             $answer->question_id = $qid[$id];
+            $answer->save();
         }
 
         $answers = EventAnswer::where('event_id', $id)->get();
