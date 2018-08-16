@@ -64,9 +64,6 @@ class EventsController extends Controller
         $event->img_2 = $fileNameToStore2;
         $event->ticket_number = $request->ticket_number;
         $event->save();
-
-        //need to implement tickets
-        //ceate tickets in DB
         
         return view('events/add-info')->with('id', $event->id)->with('information', null);
     }
