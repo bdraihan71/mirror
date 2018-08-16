@@ -13,6 +13,10 @@ class TicketsController extends Controller
 {
     public function typeSelect (Request $request, $id)
     {
+        if (auth()->user()->role != 'admin') {
+            return redirect('/')->with('error', 'You are not authorized to access this');
+        }
+
         $event = Event::where('id', $id)->first();
 
         return view('tickets/type')->with('event', $event);
@@ -20,6 +24,10 @@ class TicketsController extends Controller
 
     public function create (Request $request)
     {
+        if (auth()->user()->role != 'admin') {
+            return redirect('/')->with('error', 'You are not authorized to access this');
+        }
+        
         $types = $request->type;
         $numbers = $request->number;
         $prices = $request->price;
