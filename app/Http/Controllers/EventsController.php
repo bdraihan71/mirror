@@ -35,6 +35,8 @@ class EventsController extends Controller
     {
         $this->validate($request, [
             'description' => 'required',
+            'url_1' => 'image|required|max:1999',
+            'url_2' => 'image|required|max:1999'
         ]);
 
         $event = new Event;
@@ -46,8 +48,20 @@ class EventsController extends Controller
         $event->start = $request->start;
         $event->end = $request->end;
         $event->description = $request->description;
-        $event->img_1 = $request->url_1;
-        $event->img_2 = $request->url_2;
+
+        $filenameWithExt1 = $request->file('url_1')->getClientOriginalName();
+        $filenameWithExt2 = $request->file('url_2')->getClientOriginalName();
+        $filename1 = pathinfo($filenameWithExt1, PATHINFO_FILENAME);
+        $filename2 = pathinfo($filenameWithExt2, PATHINFO_FILENAME);
+        $extension1 = $request->file('url_1')->getClientOriginalExtension();
+        $extension2 = $request->file('url_2')->getClientOriginalExtension();
+        $fileNameToStore1 = $filename1.'_'.time().'.'.$extension1;
+        $fileNameToStore2 = $filename2.'_'.time().'.'.$extension2;
+        $path1 = $request->file('url_1')->storeAs('public/uploadedImg', $fileNameToStore);
+        $path2 = $request->file('url_2')->storeAs('public/uploadedImg', $fileNameToStore);
+
+        $event->img_1 = $fileNameToStore1;
+        $event->img_2 = $fileNameToStore2;
         $event->ticket_number = $request->ticket_number;
         $event->save();
 
