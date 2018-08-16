@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\TicketType;
 use App\Ticket;
 use App\Event;
+use App\EventAnswer;
 
 class TicketsController extends Controller
 {
@@ -69,20 +70,17 @@ class TicketsController extends Controller
 
     public function purchase (Request $request, $id)
     {
-        $ticket = Ticket::where('user_id', auth()->user()->id)->first();
+        $ticket = Ticket::where('user_id', auth()->user()->id)->where('event_id', $id)->first();
 
         if ($ticket != null) {
             $url = '/events/'.$id;
+
             return redirect($url)->with('error', 'You cannot buy more than one ticket for an event');
         }
 
-        $type = TicketType::where('id', $request->type)->get();
-        $event = Event::where('id', $id)->first();
-        $ticket = Ticket::where('event_id', $id)->where('ticket_type_id', $request->type)->whereNull('user_id')->first();
+        $type = TicketType::where('id', $request->type)->first();
+        $url = '/payment/session/'.$type->id;
 
-        $ticket->user_id = auth()->user()->id;
-        $ticket->save();
-
-        dd($ticket->type);
+        return redirect($url);
     }
 }

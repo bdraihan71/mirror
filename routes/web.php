@@ -68,3 +68,6 @@ Route::get('/cancel/purchase/{id}', 'AnswersController@cancel')->middleware('aut
 
 //SSL Commerz Test route
 Route::post('/ipn_listener', 'TicketsController@purchase')->middleware('auth');
+
+//Payment Routes
+Route::get('/payment/session/{id}', 'PaymentsController@sessionId')->middleware('auth');
