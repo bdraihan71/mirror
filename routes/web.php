@@ -22,6 +22,11 @@ Route::post('/profile/password', 'ProfilesController@name')->middleware('auth');
 Route::get('/profile/delete', 'ProfilesController@delete')->middleware('auth');
 Route::get('/profile/delete/confirm', 'ProfilesController@destroy')->middleware('auth');
 
+//CMS Routes
+Route::post('/alter/{id}', 'CMSController@update')->middleware('auth');
+Route::get('/alter/index', 'CMSController@getIndex')->middleware('auth');
+Route::post('/alter/index', 'CMSController@setIndex')->middleware('auth');
+
 
 //Auth Routes
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

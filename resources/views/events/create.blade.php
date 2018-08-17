@@ -89,7 +89,7 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="url_3" class="col-md-2 col-form-label text-md-right" >Carosel Image 1</label>
+                    <label for="url_3" class="col-md-2 col-form-label text-md-right" >Carousel Image 1</label>
 
                     <div class="col-md-8">
                         <input required type="file" class="form-control" name="url_3" placeholder="address">
@@ -97,7 +97,7 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="url_4" class="col-md-2 col-form-label text-md-right" >Carosel Image 2</label>
+                    <label for="url_4" class="col-md-2 col-form-label text-md-right" >Carousel Image 2</label>
 
                     <div class="col-md-8">
                         <input required type="file" class="form-control" name="url_4" placeholder="address">
