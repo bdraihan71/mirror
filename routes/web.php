@@ -15,6 +15,11 @@
 Route::get('register', 'ProfilesController@register')->name('register');
 Route::post('register', 'ProfilesController@create');
 Route::post('social-register', 'ProfilesController@social');
+Route::get('home', 'ProfilesController@dashboard')->middleware('auth');
+Route::post('/profile/name', 'ProfilesController@name')->middleware('auth');
+Route::post('/profile/email', 'ProfilesController@email')->middleware('auth');
+Route::post('/profile/password', 'ProfilesController@name')->middleware('auth');
+
 
 //Auth Routes
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

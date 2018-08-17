@@ -77,4 +77,75 @@ class ProfilesController extends Controller
 
         return redirect('/')->with('success', 'Welcome to Ecube!');
     }
+
+    public function dashboard ()
+    {
+        $user = auth()->user();
+
+        return view('profiles/dashboard')->with('user', $user);
+    }
+
+    public function name (Request $request)
+    {
+        $profile = Profile::where('id', auth()->user()->id)->first();
+
+        $name = explode(' ', $request->name);
+        $profile->f_name = $name[0];
+        $profile->phone = $request->phone;
+        $profile->address = $request->address;
+
+        if (sizeof($name) == 1) {
+            $profile->l_name = '---';
+        } elseif (sizeof($name) == 2) {
+            $profile->l_name = $name[1];
+        } else {
+            $profile->l_name = $name[sizeof($name) - 1];
+            $x = '';
+
+            for ($i = 1; $i <= sizeof($name) - 2; $i++) {
+                $x = $x.$name[$i];
+            }
+
+            $profile->m_name = $x;
+        }
+
+        $profile->save();
+
+        return redirect('home');
+    }
+
+    public function email (Request $request)
+    {
+        $user = auth()->user();
+        $password = bcrypt($request->password);
+
+        if ($password != $user->password) {
+            return redirect('home')->with('error', 'Sorry, the password did not match our records.');
+        }
+
+        $user->email = $request->email;
+        $user->save();
+
+        return redirect('home');
+    }
+
+    public function password (Request $request)
+    {
+        $user = auth()->user();
+
+        $password = bcrypt($request->current);
+
+        if ($password != $user->password) {
+            return redirect('home')->with('error', 'Sorry, the password did not match our records.');
+        }
+
+        if ($request->next != $request->confirm) {
+            return redirect('home')->with('error', 'The new password entered do not match.');
+        }
+
+        $user->password = bcrypt($request->next);
+        $user->save();
+
+        return redirect('home')->with('success', 'Password successfully changed');
+    }
 }
