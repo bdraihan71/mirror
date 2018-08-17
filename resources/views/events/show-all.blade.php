@@ -22,6 +22,8 @@
                 </div>
             </div>
         </div>
+    @else
+        <br><br><br><br><br>
     @endif
 
     <section id="events" class="events text-center py-5 bg-light white-bg">

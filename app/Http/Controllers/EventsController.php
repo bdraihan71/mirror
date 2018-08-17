@@ -129,7 +129,7 @@ class EventsController extends Controller
         $event->ticket_number = $request->ticket_number;
         $event->save();
         
-        return view('events/add-info')->with('id', $event->id)->with('information', null);
+        return view('events/add-info')->with('id', $event->id)->with('information', array());
     }
 
     public function addInfo (Request $request)
