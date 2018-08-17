@@ -4,18 +4,18 @@
     <section id="dashboard" class="dashboard">
         <div class="container">
             <div class="row">
-                <div class="col-md-3">
-                    <nav class="nav flex-column bg-dark nav-height">
+                <div class="col-md-1">
+                    {{-- <nav class="nav flex-column bg-dark nav-height">
                       <a class="nav-link text-white" href="#">Profile</a>
                       <a class="nav-link text-white" href="#">Events</a>
                       <a class="nav-link text-white" href="#">Settings</a>
                       <a class="nav-link text-white" href="#">Logout</a>
-                    </nav>
+                    </nav> --}}
                 </div>
                 <div class="col-md-3 text-center">
-                    <img class="img-fluid rounded-circle dashboard-img" src="img/carousel2.jpeg">
+                    <i class="far fa-user fa-7x img-fluid rounded-circle "></i>
+                    <br><br>
                     <h5 class="text-white">{{$user->profile->f_name.' '.$user->profile->m_name.' '.$user->profile->l_name}}</h5>
-                    <button type="button" class="btn btn-danger">Danger</button>
                 </div>
                 <div class="col-md-6">
                     <h5 class="text-danger">Username</h5>
@@ -71,7 +71,7 @@
                     <br>
                     
                     <h4 class="text-danger">Manage Account</h4>
-                    <p class="text-white">I would like to <span class="text-danger">Delete my account</span></p>
+                    <p class="text-white">I would like to <span class="text-danger"><a href="/profile/delete">Delete my account</a></span></p>
                     
                 </div>
                 

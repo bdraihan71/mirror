@@ -148,4 +148,25 @@ class ProfilesController extends Controller
 
         return redirect('home')->with('success', 'Password successfully changed');
     }
+
+    public function delete ()
+    {
+        return view('profiles/delete');
+    }
+
+    public function destroy ()
+    {
+        $user = auth()->user();
+        $profile = $user->profile;
+        $fb = $user->facebook;
+
+        if ($fb != null) {
+            $fb->delete();
+        }
+
+        $profile->delete;
+        $user->delete();
+
+        return redirect('/');
+    }
 }
