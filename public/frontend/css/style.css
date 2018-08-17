@@ -21,7 +21,7 @@
   position: absolute;
   top: 20px;
   left: 5%;
-  z-index: 2;
+  z-index: 99;
   width: 90%;
   background: transparent;
 }
@@ -48,6 +48,70 @@
 	  text-align:center;
 	}
 }
+
+
+/* Event filter */
+
+.gallery-title
+{
+    font-size: 36px;
+    color: #42B32F;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 70px;
+}
+.gallery-title:after {
+    content: "";
+    position: absolute;
+    width: 7.5%;
+    left: 46.5%;
+    height: 45px;
+    border-bottom: 1px solid #5e5e5e;
+}
+.filter-button
+{
+    font-size: 18px;
+    border: 1px solid #dc3545;
+    border-radius: 5px;
+    text-align: center;
+    color: #dc3545;
+    margin-bottom: 30px;
+	background-color:transparent;
+
+}
+.filter-button:hover
+{
+    font-size: 18px;
+    border: 1px solid #dc3545;
+    border-radius: 5px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #dc3545;
+
+}
+.btn-default:active .filter-button:active
+{
+    background-color: #42B32F;
+    color: white;
+}
+
+.port-image
+{
+    width: 100%;
+}
+
+.gallery_product
+{
+    margin-bottom: 30px;
+}
+
+
+
+
+
+
+
+
 
 
 header .navbar {
@@ -464,7 +528,7 @@ header .download .btn-light:hover {
 .center-gallery {
   display: flex;
   width: 100vw;
-  height: 20vh;
+  height: 21vh;
   background-color: black;
   background-image: url();
   background-repeat: no-repeat;
@@ -485,6 +549,7 @@ header .download .btn-light:hover {
   position: relative;
   color: white;
   mix-blend-mode: lighten;
+  overflow:hidden;
 }
 .glitch:before, .glitch:after {
   content: attr(data-text);
@@ -696,7 +761,10 @@ header .download .btn-light:hover {
     transform-origin: bottom;
 }
 
-
+.artist-img{
+	width:100%;
+	margin:auto;
+}
 
 /* Event Video */
 .event-video{
@@ -709,29 +777,58 @@ header .download .btn-light:hover {
 }
 
 
+
+
+
+/* Media */
+.media{
+	padding-top:150px;
+	background-color:black;
+}
+.media-text{
+	color: #ec1c21;
+}
+.media-img{
+	width:100%;
+}
+
+
+
+/* Shop */
+.shop{
+	padding-top:150px;
+	background-color:#ec1c21;
+}
+.shop-img{
+	width:100%;
+	box-shadow: 5px 5px 30px #1a1a1a;
+}
+
+
+
 /* Contact Us */
 .contact-us{
   background-color: #1a1a1a;
-  height: 100vh;
+  height: 100%;
 }
 .contact-text{
-  padding-top: 100px;
-  font-size: 9rem;
+  padding-top: 150px;
+  padding-bottom: 30px;
+  font-size: 5rem;
   font-weight: bold;
-  color: black; 
+  color: #ec1c21; 
 }
 @media only screen and (max-width: 850px) {
 	.contact-text{
 	  font-size: 7rem; 
 	}
 }
-@media only screen and (max-width: 575px) {
+@media only screen and (max-width: 850px) {
 	.contact-text{
 	  font-size: 4rem; 
 	}
 	.contact-us{
 	  background-color: #1a1a1a;
-	  height: 160vh;
 	  text-align:center;
 	}
 }
@@ -739,28 +836,28 @@ header .download .btn-light:hover {
   padding-top: 2%;
   color: white;
 }
-.contact-form{
-  background: transparent;
-  border-radius: 0px;
-  border: 0;
-    outline: 0;
-    border-bottom: 1px solid white;
-}
-.contact-form:focus{
-  background: transparent;
-}
 .contact-btn{
-  background: transparent;
+  background: #ec1c21;
   width: 100%;
-  border: 1px solid white;
   border-radius: 0px;
 }
-.contact-btn:hover{
-  background-color: black;
-  border: 1px solid black;
+
+/* Register */
+.register{
+  background-color: #1a1a1a;
+  height: 100%;
 }
-
-
+.register-text{
+  padding-top: 80px;
+  padding-bottom: 30px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ec1c21;
+}
+.register-btn{
+  width: 100%;
+  border-radius: 0px;
+}
 
 
 
@@ -781,6 +878,20 @@ header .download .btn-light:hover {
 	color: #2C6A93;
 }
 
+
+/* Dashboard */
+.dashboard{
+	background-color:black;
+	padding-top:150px;
+	padding-bottom:50px;
+}
+.nav-height{
+	height:90%;
+}
+.dashboard-img{
+	height:250px;
+}
+
 .black-bg {
   background: black;
   color: white;
@@ -798,7 +909,6 @@ header .download .btn-light:hover {
 
 .btn-reg {
   background: #C4250A;
-  width: 800px;
 }
 
 .btn-reg:hover {
@@ -807,7 +917,6 @@ header .download .btn-light:hover {
 
 .btn-facebook {
   background: #3B5998;
-  width: 800px;
 }
 
 .btn-facebook:hover {
@@ -817,7 +926,6 @@ header .download .btn-light:hover {
 
 .btn-google {
   background: #CCCCCC;
-  width: 800px;
 }
 
 .btn-google:hover {
@@ -832,3 +940,6 @@ header .download .btn-light:hover {
 .btn-co:hover {
   color: white;
 }
+
+
+

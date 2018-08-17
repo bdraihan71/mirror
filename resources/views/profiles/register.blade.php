@@ -1,112 +1,104 @@
 @extends('layouts.app')
 
 @section('content')
-<br><br><br><br><br>
-    <div class=" black-bg container black-bg">
-        <div class=" black-bg row justify-content-center black-bg">
-            <div class=" black-bg col-md-8">
-                <div class=" black-bg card">
-                    <div class=" black-bg card-body">
-                        <form method="POST" action="/register">
-                            @csrf
-
-                            <div class=" black-bg form-group row">
-                                <label for="name" class=" black-bg col-md-4 col-form-label text-md-right">First Name*</label>
-
-                                <div class=" black-bg col-md-6">
-                                    <input type="text" class="input-container black-bg form-control" name="f_name" required autofocus>
-                                </div>
+<br><br><br><br>
+    <section id="register" class="register black-bg">
+        <div class="container">
+            <div class="row pt-3">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <form method="POST" action="/register">
+                        @csrf
+                        <div class="form-row text-white">
+                            <div class="form-group col-md-4">
+                                <label>First Name *</label>
                             </div>
-
-                            <div class=" black-bg form-group row">
-                                <label for="name" class=" black-bg col-md-4 col-form-label text-md-right">Middle Name</label>
-
-                                <div class=" black-bg col-md-6">
-                                    <input type="text" class="input-container black-bg form-control" name="m_name" autofocus>
-                                </div>
+                            <div class="form-group col-md-8">
+                                <input type="firstname" class="form-control contact-form input-container" name="f_name" placeholder="First Name" required>
                             </div>
+                        </div>
 
-                            <div class=" black-bg form-group row">
-                                <label for="name" class=" black-bg col-md-4 col-form-label text-md-right">Last Name*</label>
-
-                                <div class=" black-bg col-md-6">
-                                    <input type="text" class="input-container black-bg form-control" name="l_name" required autofocus>
-                                </div>
+                        <div class="form-row text-white">
+                            <div class="form-group col-md-4">
+                                <label>Middle Name</label>
                             </div>
-
-                            <div class=" black-bg form-group row">
-                                <label for="email" class=" black-bg col-md-4 col-form-label text-md-right">Email-address*</label>
-
-                                <div class=" black-bg col-md-6">
-                                    <input id="email" type="email" class="input-container black-bg form-control " name="email" required>
-                                </div>
+                            <div class="form-group col-md-8">
+                                <input type="text" class="form-control contact-form input-container" name="m_name" placeholder="Middle Name">
                             </div>
+                        </div>
 
-                            <div class=" black-bg form-group row">
-                                <label for="password" class=" black-bg col-md-4 col-form-label text-md-right">Password*</label>
-
-                                <div class=" black-bg col-md-6">
-                                    <input id="password" type="password" class="input-container black-bg form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                    @if ($errors->has('password'))
-                                        <span class=" black-bg invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('password') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
+                        <div class="form-row text-white">
+                            <div class="form-group col-md-4">
+                                <label>Last Name *</label>
                             </div>
-
-                            <div class=" black-bg form-group row">
-                                <label for="password-confirm" class=" black-bg col-md-4 col-form-label text-md-right">Confirm Password*</label>
-
-                                <div class=" black-bg col-md-6">
-                                    <input id="password-confirm" type="password" class="input-container black-bg form-control" name="password_confirmation" required>
-                                </div>
+                            <div class="form-group col-md-8">
+                                <input type="lastname" class="input-container form-control contact-form" name="l_name" placeholder="Last Name" required>
                             </div>
+                        </div>
 
-                            <div class=" black-bg form-group row">
-                                <label for="name" class=" black-bg col-md-4 col-form-label text-md-right">Phone number</label>
-
-                                <div class=" black-bg col-md-6">
-                                    <input type="number" class="input-container black-bg form-control" name="phone" placeholder="+880**********" required autofocus>
-                                </div>
+                        <div class="form-row text-white">
+                            <div class="form-group col-md-4">
+                                <label>Email Address *</label>
                             </div>
-
-                            <div class=" black-bg form-group row">
-                                <label for="name" class=" black-bg col-md-4 col-form-label text-md-right">Address</label>
-
-                                <div class=" black-bg col-md-6">
-                                    <input type="text" class="input-container black-bg form-control" name="address" required autofocus>
-                                </div>
+                            <div class="form-group col-md-8">
+                                <input type="email" class="form-control contact-form" name="email" placeholder="Email address" required>
                             </div>
+                        </div>
 
-                            <div class="black-bg form-group row mb-0">
-                                <div class="black-bg">
-                                    <button type="submit" class="black-bg btn btn-reg">
-                                        {{ __('Register') }}
-                                    </button>
-                                </div>
+                        <div class="form-row text-white">
+                            <div class="form-group col-md-4">
+                                <label>Password *</label>
                             </div>
-
-                            <br>
-
-                            <div class="black-bg form-group row mb-0">
-                                <div class="black-bg">
-                                    <a href="{{url('/redirect/facebook')}}" class="black-bg btn-facebook btn">Login with Facebook</a>
-                                </div>
+                            <div class="form-group col-md-8">
+                                <input type="password" class="form-control contact-form {{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" id="password" placeholder="**********" required>
+                                @if ($errors->has('password'))
+                                    <span class=" black-bg invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
                             </div>
+                        </div>
 
-                            <br>
-
-                            <div class="black-bg form-group row mb-0">
-                                <div class="black-bg">
-                                    <a href="/redirect" class="black-bg btn-google btn">Login with Gmail</a>
-                                </div>
+                        <div class="form-row text-white">
+                            <div class="form-group col-md-4">
+                                <label>Confirm Password *</label>
                             </div>
-                        </form>
-                    </div>
+                            <div class="form-group col-md-8">
+                                <input id="password-confirm" type="password" class="form-control contact-form" id="company" placeholder="**********" required>
+                            </div>
+                        </div>	
+
+                        <div class="form-row text-white">
+                            <div class="form-group col-md-4">
+                                <label>Phone *</label>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <input type="number" class="form-control contact-form" name="phone" placeholder="+880**********" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row text-white">
+                            <div class="form-group col-md-4">
+                                <label>Address *</label>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <input type="text" class="form-control contact-form" name="address" placeholder="" required>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        
+                        <button type="submit" class="btn btn-danger register-btn">Send</button>
+                        <hr>
+                        <a href="{{url('/redirect/facebook')}}" class="black-bg btn register-btn btn-facebook">Login with Facebook</a>
+                        <hr>
+                        <a href="/redirect" class="black-bg btn register-btn btn-google">Login with Gmail</a>
+                    </form>
                 </div>
+                <div class="col-md-3"></div>
             </div>
+
         </div>
-    </div>
+    </section>
 @endsection
