@@ -159,7 +159,7 @@ class EventsController extends Controller
             return redirect('/')->with('error', 'You are not authorized to access this');
         }
 
-        return view('events/add-q')->with('id', $id)->with('questions', null);
+        return view('events/add-q')->with('id', $id)->with('questions', array());
     }
 
     public function storeQ (Request $request)
