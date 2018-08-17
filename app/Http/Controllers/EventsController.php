@@ -67,8 +67,11 @@ class EventsController extends Controller
 
         $this->validate($request, [
             'description' => 'required',
-            'url_1' => 'image|required|max:1999',
-            'url_2' => 'image|required|max:1999'
+            'url_1' => 'image|required|max:1999|mimes:jpeg,png,jpg,gif,svg',
+            'url_2' => 'image|required|max:1999|mimes:jpeg,png,jpg,gif,svg',
+            'url_3' => 'image|required|max:1999|mimes:jpeg,png,jpg,gif,svg',
+            'url_4' => 'image|required|max:1999|mimes:jpeg,png,jpg,gif,svg',
+            'url_5' => 'image|required|max:1999|mimes:jpeg,png,jpg,gif,svg'
         ]);
 
         $event = new Event;
@@ -83,17 +86,46 @@ class EventsController extends Controller
 
         $filenameWithExt1 = $request->file('url_1')->getClientOriginalName();
         $filenameWithExt2 = $request->file('url_2')->getClientOriginalName();
+        $filenameWithExt3 = $request->file('url_3')->getClientOriginalName();
+        $filenameWithExt4 = $request->file('url_4')->getClientOriginalName();
+        $filenameWithExt5 = $request->file('url_5')->getClientOriginalName();
+
         $filename1 = pathinfo($filenameWithExt1, PATHINFO_FILENAME);
         $filename2 = pathinfo($filenameWithExt2, PATHINFO_FILENAME);
+        $filename3 = pathinfo($filenameWithExt3, PATHINFO_FILENAME);
+        $filename4 = pathinfo($filenameWithExt4, PATHINFO_FILENAME);
+        $filename5 = pathinfo($filenameWithExt5, PATHINFO_FILENAME);
+
         $extension1 = $request->file('url_1')->getClientOriginalExtension();
         $extension2 = $request->file('url_2')->getClientOriginalExtension();
+        $extension3 = $request->file('url_3')->getClientOriginalExtension();
+        $extension4 = $request->file('url_4')->getClientOriginalExtension();
+        $extension5 = $request->file('url_5')->getClientOriginalExtension();
+
         $fileNameToStore1 = $filename1.'_'.time().'.'.$extension1;
         $fileNameToStore2 = $filename2.'_'.time().'.'.$extension2;
-        $path1 = $request->file('url_1')->storeAs('public/uploadedImg', $fileNameToStore);
-        $path2 = $request->file('url_2')->storeAs('public/uploadedImg', $fileNameToStore);
+        $fileNameToStore3 = $filename3.'_'.time().'.'.$extension3;
+        $fileNameToStore4 = $filename4.'_'.time().'.'.$extension4;
+        $fileNameToStore5 = $filename5.'_'.time().'.'.$extension5;
 
-        $event->img_1 = $fileNameToStore1;
-        $event->img_2 = $fileNameToStore2;
+        $path1 = $request->file('url_1')->storeAs('public/uploadedImg', $fileNameToStore1);
+        $path2 = $request->file('url_2')->storeAs('public/uploadedImg', $fileNameToStore2);
+        $path3 = $request->file('url_3')->storeAs('public/uploadedImg', $fileNameToStore3);
+        $path4 = $request->file('url_4')->storeAs('public/uploadedImg', $fileNameToStore4);
+        $path5 = $request->file('url_5')->storeAs('public/uploadedImg', $fileNameToStore5);
+
+        $request->url_1->move('public/uploadedImg', $fileNameToStore1);
+        $request->url_2->move('public/uploadedImg', $fileNameToStore2);
+        $request->url_3->move('public/uploadedImg', $fileNameToStore3);
+        $request->url_4->move('public/uploadedImg', $fileNameToStore4);
+        $request->url_5->move('public/uploadedImg', $fileNameToStore5);
+
+        $event->img_1 = '/public/uploadedImg/'.$fileNameToStore1;
+        $event->img_2 = '/public/uploadedImg/'.$fileNameToStore2;
+        $event->img_3 = '/public/uploadedImg/'.$fileNameToStore3;
+        $event->img_4 = '/public/uploadedImg/'.$fileNameToStore4;
+        $event->img_5 = '/public/uploadedImg/'.$fileNameToStore5;
+
         $event->ticket_number = $request->ticket_number;
         $event->save();
         

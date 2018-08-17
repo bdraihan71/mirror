@@ -4,7 +4,7 @@
 <br><br><br><br><br>
     <div class="card black-bg">
         <div class="card-body black-bg">
-            <form action="/events/create" method="POST">
+            <form action="/events/create" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group row">
                     <label for="name" class="col-md-2 col-form-label text-md-right">Name</label>
@@ -73,22 +73,42 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="url_1" class="col-md-2 col-form-label text-md-right" >Ticket header</label>
+                    <label for="url_1" class="col-md-2 col-form-label text-md-right" >Ticket Header</label>
 
-                    <div class="custom-file col-md-8 ml-3">
-                        <input type="file" name="url_1" class="custom-file-input" accept="image/*" required>
-                        <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-                        <div class="invalid-feedback">Example invalid custom file feedback</div>
+                    <div class="col-md-8">
+                        <input required type="file" class="form-control" name="url_1" placeholder="address">
                     </div>
                 </div>
 
-                <div class="form-group row ">
-                    <label for="url_2" class="col-md-2 col-form-label text-md-right" >Ticket footer</label>
+                <div class="form-group row">
+                    <label for="url_2" class="col-md-2 col-form-label text-md-right" >Ticket Footer</label>
 
-                    <div class="custom-file col-md-8 ml-3 r-5">
-                        <input type="file" name="url_2" class="custom-file-input" accept="image/*" required>
-                        <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-                        <div class="invalid-feedback">Example invalid custom file feedback</div>
+                    <div class="col-md-8">
+                        <input required type="file" class="form-control" name="url_2" placeholder="address">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="url_3" class="col-md-2 col-form-label text-md-right" >Carosel Image 1</label>
+
+                    <div class="col-md-8">
+                        <input required type="file" class="form-control" name="url_3" placeholder="address">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="url_4" class="col-md-2 col-form-label text-md-right" >Carosel Image 2</label>
+
+                    <div class="col-md-8">
+                        <input required type="file" class="form-control" name="url_4" placeholder="address">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="url_4" class="col-md-2 col-form-label text-md-right" >Thumbnail Image</label>
+
+                    <div class="col-md-8">
+                        <input required type="file" class="form-control" name="url_5" placeholder="address">
                     </div>
                 </div>
 

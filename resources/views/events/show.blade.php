@@ -2,7 +2,6 @@
 
 @section('content')
     <div class="overlay-single-event">
-        <span class="badge badge-pill badge-light py-2 px-4 text-danger mb-3">HAPPENING NOW</span>
         <h1 class="font-weight-bold">{{$event->name}}</h1>
         <i class="fas fa-map-marker-alt fa-1x"> {{strtoupper($event->location)}}</i>
         <br>
@@ -34,10 +33,10 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="/frontend/img/carousel2.jpeg" alt="First slide">
+                <img class="d-block w-100" src="{{$event->img_3}}" alt="First slide">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="/frontend/img/carousel1.jpeg" alt="Second slide">
+                <img class="d-block w-100" src="{{$event->img_4}}" alt="Second slide">
             </div>
         </div>
     </div>

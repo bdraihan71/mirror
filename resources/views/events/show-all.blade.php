@@ -14,10 +14,10 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="/frontend/img/carousel2.jpeg" alt="First slide">
+                <img class="d-block w-100" src="{{$e->img_3}}" alt="First slide">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="/frontend/img/carousel1.jpeg" alt="Second slide">
+                <img class="d-block w-100" src="{{$e->img_4}}" alt="Second slide">
             </div>
         </div>
     </div>
@@ -29,12 +29,14 @@
                 <a href="/events/all" class="btn btn-outline-danger btn-co">All</a>
                 <a href="/events/upcoming" class="btn btn-outline-danger btn-co">Upcoming</a>
                 <a href="/events/past" class="btn btn-outline-danger btn-co">Past</a>
+                <br>
+                <br>
             </div>
             <div class="row">
                 @foreach($events as $event)
                     <div class="col-md-4 gallery_product filter hdpe">
                         <div class="card rounded-0 border-0">
-                            <a href="/events/{{$event->id}}"><img class="card-img-top rounded-0" src="/frontend/img/carousel2.jpeg" alt="Card image cap"></a>
+                            <a href="/events/{{$event->id}}"><img class="card-img-top rounded-0" src="{{$event->img_5}}" alt="Card image cap"></a>
                             <div class="mx-4 pb-5">
                                 <p class="card-title font-weight-bold text-left pt-5">{{$event->name}}</p>
                                 <p class="card-text text-left">Place: {{$event->location}}<span class="float-right">{{date("d M, Y", strtotime($event->date_start))}}</span></p>
