@@ -56,29 +56,13 @@
                         </div>
 
 
-                        <div class="black-bg form-group row mb-0">
-                            <div class="black-bg">
-                                <button type="submit" class="btn black-bg btn-reg">
-                                    {{ __('Login') }}
-                                </button>
-                            </div>
-                        </div>
-                        
+                        <button type="submit" class="btn black-bg register-btn btn-reg">{{ __('Login') }}</button>
                         <br>
-
-                        <div class="black-bg form-group row mb-0">
-                            <div class="black-bg">
-                                <a href="{{url('/redirect/facebook')}}" class="black-bg btn-facebook btn">Login with Facebook</a>
-                            </div>
-                        </div>
-
                         <br>
-
-                        <div class="black-bg form-group row mb-0">
-                            <div class="black-bg">
-                                <a href="/redirect" class="black-bg btn-google btn">Login with Gmail</a>
-                            </div>
-                        </div>
+                        <a href="{{url('/redirect/facebook')}}" class="black-bg btn-facebook register-btn btn">Login with Facebook</a>
+                        <br>
+                        <br>
+                        <a href="/redirect" class="black-bg register-btn btn-google btn">Login with Gmail</a>
                     </form>
         </div>
     </div>
