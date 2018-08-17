@@ -69,26 +69,6 @@
                     <div class="col-md-3">
                         <input type="text" class="form-control" name="location" value="{{ $event->location }}" placeholder="Location of the event" required autofocus>
                     </div>
-
-                    <label for="ticket_number" class="col-md-2 col-form-label text-md-right" >Total Tickets</label>
-
-                    <div class="col-md-3">
-                        <input type="number" class="form-control" name="ticket_number" value="{{ $event->ticket_number }}" placeholder="Total number of tickets" required autofocus>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label for="url_1" class="col-md-2 col-form-label text-md-right" >Ticket image url</label>
-
-                    <div class="col-md-3">
-                        <input type="text" class="form-control" name="url_1" value="{{ $event->img_1 }}" placeholder="Image 2 of the event" required autofocus>
-                    </div>
-
-                    <label for="url_2" class="col-md-2 col-form-label text-md-right" >Ticket image url</label>
-
-                    <div class="col-md-3">
-                        <input type="text" class="form-control" name="url_2" value="{{ $event->img_2 }}" placeholder="Image 1 of the event" required autofocus>
-                    </div>
                 </div>
 
                 <div class="black-bg form-group row ml-1">

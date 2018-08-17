@@ -221,9 +221,6 @@ class EventsController extends Controller
         $event->start = $request->start;
         $event->end = $request->end;
         $event->description = $request->description;
-        $event->img_1 = $request->url_1;
-        $event->img_2 = $request->url_2;
-        $event->ticket_number = $request->ticket_number;
         $event->save();
 
         $url = '/events/edit/'.$event->id;
