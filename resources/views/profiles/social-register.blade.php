@@ -27,14 +27,7 @@
                                     <input type="text" class="input-container black-bg form-control" name="address" required autofocus>
                                 </div>
                             </div>
-
-                            <div class="black-bg form-group row mb-0">
-                                <div class="black-bg">
-                                    <button type="submit" class="black-bg btn btn-reg">
-                                        {{ __('Register') }}
-                                    </button>
-                                </div>
-                            </div>
+                            <button type="submit" class="black-bg btn register-btn btn-reg">{{ __('Register') }}</button>
                         </form>
                     </div>
                 </div>
