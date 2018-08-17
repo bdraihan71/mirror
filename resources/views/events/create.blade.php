@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<br><br><br><br><br>
     <div class="card black-bg">
         <div class="card-body black-bg">
             <form action="/events/create" method="POST">

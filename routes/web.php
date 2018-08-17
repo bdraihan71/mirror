@@ -51,7 +51,9 @@ Route::get('/delete/question/{id}', 'EventsController@questionD')->middleware('a
 Route::post('/events/event/{id}', 'EventsController@eStore')->middleware('auth');
 Route::post('/events/add/{id}', 'EventsController@addStore')->middleware('auth');
 Route::post('/events/q/{id}', 'EventsController@qStore')->middleware('auth');
-
+Route::get('/events', function() {
+    return redirect('/events/upcoming');
+});
 Route::get('/events/{id}', 'EventsController@show');
 
 //Ticket Routes

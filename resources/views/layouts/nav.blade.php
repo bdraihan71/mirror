@@ -1,51 +1,30 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-light navbar-transparent">
-    <a class="navbar-brand" href="/"><img class="logo" src="/frontend/img/logo.png" alt="Logo"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-            <a class="nav-link text-white" href="/">HOME</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-white" href="#">ABOUT US</a>
-        </li>
-        <li class="nav-item active">
-            <a class="nav-link text-white" href="/events/create">PARTNERS</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-white" href="/events/create">EVENTS</a>
-        </li>
-        <li class="nav-item active">
-            <a class="nav-link text-white" href="#">MEDIA</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-white" href="#">MUSIC</a>
-        </li>
-        <li class="nav-item active">
-            <a class="nav-link text-white" href="#">CONTACT US</a>
-        </li>
-
-        @if(auth()->user() != null)
-            <li class="nav-item active">
-                <a class="nav-link text-white" href="/logout">LOGOUT</a>
-            </li>
-        @else
-            <li class="nav-item active">
-                <a class="nav-link text-white" href="/register">REGISTER</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link text-white" href="/login">LOGIN</a>
-            </li>
-        @endif
-
-        <li class="nav-item">
-            <a class="nav-link text-white" href="#"><i class="fas fa-cart-plus fa-2x"></i></a>
-        </li>
-        </ul>
-    </div>
-</nav>
-
-<br><br><br><br><br>
+<div class="section">
+    <header id="home">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark header">
+            <div class="container">
+                <a class="navbar-brand" href="/"><img class="logo" src="/frontend/img/logo.png" alt="Logo"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <div class="navbar-nav font-weight-bold nav-back">
+                        <a class="nav-item nav-link mt-1" href="/">HOME</a>
+                        <a class="nav-item nav-link mt-1" href="#">ABOUT US</a>
+                        <a class="nav-item nav-link mt-1" href="/events/create">PARTNERS</a>
+                        <a class="nav-item nav-link mt-1" href="/events/upcoming">EVENTS</a>
+                        <a class="nav-item nav-link mt-1" href="#">MEDIA</a>
+                        <a class="nav-item nav-link mt-1" href="#">MUSIC</a>
+                        @if(auth()->user() != null)
+                            <a class="nav-item nav-link mt-1" href="/logout">LOGOUT</a>
+                        @else
+                            <a class="nav-item nav-link mt-1" href="/register">REGISTER</a>
+                            <a class="nav-item nav-link mt-1" href="/login">LOGIN</a>
+                        @endif
+                        <a class="nav-item nav-link mt-1" href="#">CONTACT US</a>
+                        <a class="nav-item nav-link" href="#"><i class="fas fa-cart-plus fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+</div>

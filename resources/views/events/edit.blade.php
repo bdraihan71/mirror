@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<br><br><br><br><br>
     <div class="card black-bg">
         <h1 class="page-title ml-5 pl-5">BASIC INFORMATION</h1>
         <div class="card-body black-bg">

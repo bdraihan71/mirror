@@ -15,7 +15,7 @@
                                 <a class="nav-item nav-link mt-1" href="/">HOME</a>
                                 <a class="nav-item nav-link mt-1" href="#">ABOUT US</a>
                                 <a class="nav-item nav-link mt-1" href="/events/create">PARTNERS</a>
-                                <a class="nav-item nav-link mt-1" href="/events/create">EVENTS</a>
+                                <a class="nav-item nav-link mt-1" href="/events/upcoming">EVENTS</a>
                                 <a class="nav-item nav-link mt-1" href="#">MEDIA</a>
                                 <a class="nav-item nav-link mt-1" href="#">MUSIC</a>
                                 @if(auth()->user() != null)
@@ -234,10 +234,10 @@
                             <a href="#"><img class="card-img-top" src="/frontend/img/carousel1.jpeg" alt="Service Image"></a>
                             </div>
                             <div class="card">
-                            <a href="#"><img class="card-img-top" src="img/carousel2.jpeg" alt="Service Image"></a>
+                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel2.jpeg" alt="Service Image"></a>
                             </div>
                             <div class="card">
-                            <a href="#"><img class="card-img-top" src="img/carousel3.jpeg" alt="Service Image"></a>
+                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel3.jpeg" alt="Service Image"></a>
                             </div>
                         </div>
                     </div>
@@ -250,30 +250,30 @@
                     <div class="row">
                         <div class="owl-carousel partners-carousel">
                             <div class="card">
-                            <a href="#"><img class="card-img-top" src="img/carousel1.jpeg" alt="Service Image"></a>
+                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel1.jpeg" alt="Service Image"></a>
                             </div>
                             <div class="card">
-                            <a href="#"><img class="card-img-top" src="img/carousel2.jpeg" alt="Service Image"></a>
+                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel2.jpeg" alt="Service Image"></a>
                             </div>
                             <div class="card">
-                            <a href="#"><img class="card-img-top" src="img/carousel3.jpeg" alt="Service Image"></a>
+                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel3.jpeg" alt="Service Image"></a>
                             </div>
                             <div class="card">
-                            <a href="#"><img class="card-img-top" src="img/carousel1.jpeg" alt="Service Image"></a>
+                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel1.jpeg" alt="Service Image"></a>
                             </div>
                             <div class="card">
-                            <a href="#"><img class="card-img-top" src="img/carousel2.jpeg" alt="Service Image"></a>
+                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel2.jpeg" alt="Service Image"></a>
                             </div>
                             <div class="card">
-                            <a href="#"><img class="card-img-top" src="img/carousel3.jpeg" alt="Service Image"></a>
+                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel3.jpeg" alt="Service Image"></a>
                             </div><div class="card">
-                            <a href="#"><img class="card-img-top" src="img/carousel1.jpeg" alt="Service Image"></a>
+                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel1.jpeg" alt="Service Image"></a>
                             </div>
                             <div class="card">
-                            <a href="#"><img class="card-img-top" src="img/carousel2.jpeg" alt="Service Image"></a>
+                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel2.jpeg" alt="Service Image"></a>
                             </div>
                             <div class="card">
-                            <a href="#"><img class="card-img-top" src="img/carousel3.jpeg" alt="Service Image"></a>
+                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel3.jpeg" alt="Service Image"></a>
                             </div>
                         </div>
                     </div>
@@ -291,7 +291,7 @@
                     <div class="row footer-padding-top">
                         <div class="col-md-3">
                         <br>
-                            <img class="logo" src="img/logo.png" alt="Logo">
+                            <img class="logo" src="/frontend/img/logo.png" alt="Logo">
                         </div>
                         <div class="col-md-3">
                             <h4 class="text-danger font-weight-bold">Head Office</h4><br>

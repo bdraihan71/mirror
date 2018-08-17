@@ -13,11 +13,18 @@ class AnswersController extends Controller
     public function answer (Request $request, $id)
     {
         $answers = EventAnswer::where('event_id', $id)->where('user_id', auth()->user()->id)->get();
+        $questions = Question::where('event_id', $id)->get();
 
         if (count($answers) != 0) {
             $url = '/events/'.$id;
             
             return redirect($url)->with('error', 'You can only buy one ticket');
+        }
+
+        if (count($questions) == 0) {
+            $url = '/ticket/buy/'.$id;
+
+            return redirect($url);
         }
 
         $questions = Question::where('event_id', $id)->get();

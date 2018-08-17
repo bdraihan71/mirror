@@ -7,11 +7,15 @@ use App\Event;
 use App\Ticket;
 use App\AdditionalInformation;
 use App\Question;
+use Carbon\Carbon;
 
 class EventsController extends Controller
 {
     public function show (Request $request, $id)
     {
+        if ($id == 'all' || $id == 'past' || $id == 'upcoming') {
+            return $this->showAll($id);
+        }
         $event = Event::where('id', $id)->first();
         $tickets = Ticket::where('event_id', $id)->get();
         $flow = false;
@@ -24,6 +28,26 @@ class EventsController extends Controller
         }
 
         return view('events/show')->with('event', $event)->with('flow', $flow);
+    }
+
+    public function showAll ($range)
+    {
+        $now = new Carbon;
+        $e = Event::where('date_start', '>=', $now->copy()->format('Y-m-d'))->orderBy('date_start')->first();
+
+        if ($e == null) {
+            $e = Event::where('date_start', '<=', $now->copy()->format('Y-m-d'))->orderBy('date_start', 'desc')->first();
+        }
+
+        $events = Event::where('date_start', '>=', $now->copy()->format('Y-m-d'))->orderBy('date_start')->get();
+
+        if ($range == 'all') {
+            $events = Event::all();
+        } elseif ($range == 'past') {
+            $events = Event::where('date_start', '<=', $now->copy()->format('Y-m-d'))->orderBy('date_start')->get();
+        }
+
+        return view('events/show-all')->with('e', $e)->with('events', $events);
     }
 
     public function create ()
@@ -263,7 +287,7 @@ class EventsController extends Controller
         if (auth()->user()->role != 'admin') {
             return redirect('/')->with('error', 'You are not authorized to access this');
         }
-        
+
         $event = Event::where('id', $id)->first();
         $information = AdditionalInformation::where('event_id', $id)->get();
         $questions = Question::where('event_id', $id)->get();

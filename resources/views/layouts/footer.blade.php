@@ -1,5 +1,5 @@
-<section id="footer" class="footer text-white text-center">
-    <div class="container">
+<section id="footer" class="footer text-white text-center black-bg">
+    <div class="container black-bg">
         <div class="row footer-padding-top">
             <div class="col-md-3">
             <br>

@@ -824,3 +824,11 @@ header .download .btn-light:hover {
   background: #FFFFFF;
   color: black;
 }
+
+.btn-co {
+  color: red;
+}
+
+.btn-co:hover {
+  color: white;
+}

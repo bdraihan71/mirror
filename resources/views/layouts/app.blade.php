@@ -29,7 +29,6 @@
     <body class="black-bg">
         @include('layouts.messages')
         @yield('content')
-        @include('layouts.footer')
         @include('layouts.scripts')
     </body>
 @else
