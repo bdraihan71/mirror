@@ -78,8 +78,11 @@ class WebContentTableSeeder extends Seeder
         ]);
 
         DB::table('web_contents')->insert([
-            'content' => '<p>Call Us : 017*******, <br>019********<br> 
-            Email: ecube@gmail.com</p>',
+            'content' => '<p>Call Us : 017*******, <br>019********</p>',
+        ]);
+
+        DB::table('web_contents')->insert([
+            'content' => '<p>Email: ecube@gmail.com</p>',
         ]);
     }
 }

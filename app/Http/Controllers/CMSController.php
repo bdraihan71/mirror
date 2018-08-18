@@ -162,7 +162,7 @@ class CMSController extends Controller
             return redirect('/')->with('error', 'You are not authorized to access this');
         }
 
-        if ($request->tagline != null) {
+        if ($request->head_office != null) {
             $content = WebContent::where('id', 16)->first();
 
             if ($content == null) {
@@ -173,14 +173,25 @@ class CMSController extends Controller
             $content->save();
         }
 
-        if ($request->tagline != null) {
+        if ($request->contact != null) {
             $content = WebContent::where('id', 17)->first();
 
             if ($content == null) {
                 $content = new WebContent;
             }
 
-            $content->content = $request->head_office;
+            $content->content = $request->contact;
+            $content->save();
+        }
+
+        if ($request->email != null) {
+            $content = WebContent::where('id', 17)->first();
+
+            if ($content == null) {
+                $content = new WebContent;
+            }
+
+            $content->content = $request->email;
             $content->save();
         }
 

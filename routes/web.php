@@ -40,7 +40,10 @@ Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail'
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
+//Home Routes
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/contact-us', 'HomeController@contactUs');
+Route::post('/contact-us', 'HomeController@contacted');
 
 Route::get('/loggedin', function(){
     return auth()->user();

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\WebContent;
+use App\Contactee;
 
 class HomeController extends Controller
 {
@@ -36,5 +37,31 @@ class HomeController extends Controller
 
         return view('index')->with('imgs', $imgs)->with('description', $description)->with('wwd', $wwd)->
         with('wwds', $wwds)->with('footer', $this->footer())->with('tagline', $tagline);
+    }
+
+    public function contactUs ()
+    {
+        $contact = array(WebContent::where('id', 16)->first(), WebContent::where('id', 17)->first(), WebContent::where('id', 18)->first());
+        return view('contact-us')->with('footer', $this->footer())->with('contact', $contact);
+        if (auth()->user()->role == 'admin') {
+
+        } else {
+            
+        }
+    }
+
+    public function contacted (Request $request)
+    {
+        $this->validate($request, [
+            'body' => 'required',
+        ]);
+
+        $contact = new Contactee;
+        $contact->name = $request->name;
+        $contact->email = $request->email;
+        $contact->body = $request->body;
+        $contact->save();
+
+        return redirect('/')->with('success', 'Message successfully delivered');
     }
 }

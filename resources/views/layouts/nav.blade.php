@@ -10,7 +10,7 @@
                     <div class="navbar-nav font-weight-bold nav-back">
                         <a class="nav-item nav-link mt-1" href="/">HOME</a>
                         <a class="nav-item nav-link mt-1" href="/#page2">ABOUT US</a>
-                        <a class="nav-item nav-link mt-1" href="/events/create">PARTNERS</a>
+                        <a class="nav-item nav-link mt-1" href="/contact-us">CONTACT US</a>
                         <a class="nav-item nav-link mt-1" href="/events/upcoming">EVENTS</a>
                         <a class="nav-item nav-link mt-1" href="#">MEDIA</a>
                         <a class="nav-item nav-link mt-1" href="#">MUSIC</a>
@@ -20,7 +20,7 @@
                             <a class="nav-item nav-link mt-1" href="/register">REGISTER</a>
                             <a class="nav-item nav-link mt-1" href="/login">LOGIN</a>
                         @endif
-                        <a class="nav-item nav-link mt-1" href="#">CONTACT US</a>
+                        <a class="nav-item nav-link mt-1" href="/contact-us">CONTACT US</a>
                         <a class="nav-item nav-link" href="#"><i class="fas fa-cart-plus fa-2x"></i></a>
                     </div>
                 </div>

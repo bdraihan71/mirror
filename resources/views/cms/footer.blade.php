@@ -27,6 +27,15 @@
         <br>
 
         <div class="row">
+            <div class="col-md-3  text-right  form-label-control">Email Address</div>
+            <div class="col-md-7">
+                <input type="text" class="form-control" name="email" placeholder="Email Address">
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row">
             <div class="col-md-5"></div>
             <div class="col-md-2"><button type="submit" class="btn btn-danger w-100">Save</button></div>
             <div class="col-md-5"></div>
