@@ -153,7 +153,7 @@ class CMSController extends Controller
             return redirect('/')->with('error', 'You are not authorized to access this');
         }
 
-        return view('cms/footer');
+        return view('cms/footer')->with('footer', $this->footer());
     }
 
     public function setFooter (Request $request)

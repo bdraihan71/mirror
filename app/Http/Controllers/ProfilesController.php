@@ -15,7 +15,7 @@ class ProfilesController extends Controller
             return redirect('/');
         }
         
-        return view('profiles/register');
+        return view('profiles/register')->with('footer', $this->footer());
     }
 
     public function create (Request $request)
@@ -82,7 +82,7 @@ class ProfilesController extends Controller
     {
         $user = auth()->user();
 
-        return view('profiles/dashboard')->with('user', $user);
+        return view('profiles/dashboard')->with('user', $user)->with('footer', $this->footer());
     }
 
     public function name (Request $request)
@@ -151,7 +151,7 @@ class ProfilesController extends Controller
 
     public function delete ()
     {
-        return view('profiles/delete');
+        return view('profiles/delete')->with('footer', $this->footer());
     }
 
     public function destroy ()

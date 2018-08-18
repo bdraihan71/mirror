@@ -29,7 +29,7 @@ class AnswersController extends Controller
 
         $questions = Question::where('event_id', $id)->get();
 
-        return view('answers/answer')->with('questions', $questions)->with('id', $id);
+        return view('answers/answer')->with('questions', $questions)->with('id', $id)->with('footer', $this->footer());
     }
 
     public function store (Request $request, $id)

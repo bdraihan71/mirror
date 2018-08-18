@@ -35,6 +35,6 @@ class HomeController extends Controller
         }
 
         return view('index')->with('imgs', $imgs)->with('description', $description)->with('wwd', $wwd)->
-        with('wwds', $wwds);
+        with('wwds', $wwds)->with('footer', $this->footer());
     }
 }

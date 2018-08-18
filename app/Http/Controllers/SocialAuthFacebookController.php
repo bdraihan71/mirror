@@ -33,7 +33,7 @@ class SocialAuthFacebookController extends Controller
             $user->password = bcrypt($account->id);
             $user->save();
 
-            return view('profiles/social-register')->with('name', $account->name)->with('id', $user->id);
+            return view('profiles/social-register')->with('name', $account->name)->with('id', $user->id)->with('footer', $this->footer());
         } else {
             Auth::login($user);
         }

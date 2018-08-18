@@ -19,7 +19,7 @@ class TicketsController extends Controller
 
         $event = Event::where('id', $id)->first();
 
-        return view('tickets/type')->with('event', $event);
+        return view('tickets/type')->with('event', $event)->with('footer', $this->footer());
     }
 
     public function create (Request $request)
@@ -73,7 +73,7 @@ class TicketsController extends Controller
 
         $types = TicketType::where('event_id', $id)->get();
 
-        return view('tickets/buy')->with('types', $types)->with('id', $id);
+        return view('tickets/buy')->with('types', $types)->with('id', $id)->with('footer', $this->footer());
     }
 
     public function purchase (Request $request, $id)

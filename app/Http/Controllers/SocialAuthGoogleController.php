@@ -39,7 +39,7 @@ class SocialAuthGoogleController extends Controller
             $user->password = md5($googleUser->id);
             $user->save();
             
-            return view('profiles/social-register')->with('name', $googleUser->name)->with('id', $user->id);
+            return view('profiles/social-register')->with('name', $googleUser->name)->with('id', $user->id)->with('footer', $this->footer());
         }
 
         return redirect()->to('/');

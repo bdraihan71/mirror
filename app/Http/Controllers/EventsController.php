@@ -27,7 +27,7 @@ class EventsController extends Controller
             }
         }
 
-        return view('events/show')->with('event', $event)->with('flow', $flow);
+        return view('events/show')->with('event', $event)->with('flow', $flow)->with('footer', $this->footer());
     }
 
     public function showAll ($range)
@@ -47,7 +47,7 @@ class EventsController extends Controller
             $events = Event::where('date_start', '<=', $now->copy()->format('Y-m-d'))->orderBy('date_start')->get();
         }
 
-        return view('events/show-all')->with('e', $e)->with('events', $events);
+        return view('events/show-all')->with('e', $e)->with('events', $events)->with('footer', $this->footer());
     }
 
     public function create ()
@@ -56,7 +56,7 @@ class EventsController extends Controller
             return redirect('/')->with('error', 'You are not authorized to access this');
         }
 
-        return view('events/create');
+        return view('events/create')->with('footer', $this->footer());
     }
 
     public function store (Request $request)
@@ -129,7 +129,7 @@ class EventsController extends Controller
         $event->ticket_number = $request->ticket_number;
         $event->save();
         
-        return view('events/add-info')->with('id', $event->id)->with('information', array());
+        return view('events/add-info')->with('id', $event->id)->with('information', array())->with('footer', $this->footer());
     }
 
     public function addInfo (Request $request)
@@ -150,7 +150,7 @@ class EventsController extends Controller
 
         $information = AdditionalInformation::where('event_id', $request->id)->get();
 
-        return view('events/add-info')->with('id', $request->id)->with('information', $information);
+        return view('events/add-info')->with('id', $request->id)->with('information', $information)->with('footer', $this->footer());
     }
 
     public function addQ (Request $request, $id)
@@ -159,7 +159,7 @@ class EventsController extends Controller
             return redirect('/')->with('error', 'You are not authorized to access this');
         }
 
-        return view('events/add-q')->with('id', $id)->with('questions', array());
+        return view('events/add-q')->with('id', $id)->with('questions', array())->with('footer', $this->footer());
     }
 
     public function storeQ (Request $request)
@@ -175,7 +175,7 @@ class EventsController extends Controller
 
         $questions = Question::where('event_id', $request->id)->get();
 
-        return view('events/add-q')->with('id', $request->id)->with('questions', $questions);
+        return view('events/add-q')->with('id', $request->id)->with('questions', $questions)->with('footer', $this->footer());
     }
 
     public function edit (Request $request, $id)
@@ -199,7 +199,7 @@ class EventsController extends Controller
         }
 
         return view('events/edit')->with('event', $event)->with('information', $information)->
-        with('questions', $questions)->with('add_flow', $add_flow)->with('q_flow', $q_flow);
+        with('questions', $questions)->with('add_flow', $add_flow)->with('q_flow', $q_flow)->with('footer', $this->footer());
     }
 
     public function eStore (Request $request, $id)

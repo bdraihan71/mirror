@@ -7,12 +7,11 @@
             </div>
             <div class="col-md-3">
                 <h4 class="text-danger font-weight-bold">Head Office</h4><br>
-                <p>Banani, Dhaka, Bangladesh</p>
+                {{-- {!!$footer[0]->content!!} --}}
             </div>
             <div class="col-md-3">
                 <h4 class="text-danger font-weight-bold">Contact Us</h4><br>
-                <p>Call Us : 017*******, <br>019********<br> 
-                Email: ecube@gmail.com</p>	
+                {{-- {!!$footer[1]->content!!}	 --}}
             </div>
             <div class="col-md-3">
                 <h4 class="text-danger font-weight-bold">Stay Connected</h4><br>
