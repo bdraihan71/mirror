@@ -5,6 +5,13 @@
         <div class="section">
             <header id="home">
                 <nav class="navbar fixed-top navbar-expand-lg navbar-dark header">
+                    @if (auth()->user()->role == 'admin')
+                        <div class="row">
+                            <div class="col-md-3">
+                                <a href="/alter/index" class="btn btn-primary">Edit</a>
+                            </div>
+                        </div>
+                    @endif
                     <div class="container">
                         <a class="navbar-brand" href="/"><img class="logo" src="/frontend/img/logo.png" alt="Logo"></a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,16 +44,17 @@
                         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                     </ol>
                     <div class="carousel-inner">
-                        <div class="carousel-item item active">
-                            <img class="d-block w-100" src="/frontend/img/carousel1.jpeg" alt="First slide">
-                        </div>
-                        <div class="carousel-item item">
-                            <img class="d-block w-100" src="/frontend/img/carousel2.jpeg" alt="Second slide">
-                        </div>
-                        <div class="carousel-item item">
-                            <img class="d-block w-100" src="/frontend/img/carousel3.jpeg" alt="Third slide">
-                        </div>
-
+                        @foreach($imgs as $img)
+                            @if($loop->iteration == 1)
+                                <div class="carousel-item item active">
+                                    <img class="d-block w-100" src="{{$img->content}}" alt="Slide {{$loop->iteration}}">
+                                </div>
+                            @else
+                                <div class="carousel-item item">
+                                    <img class="d-block w-100" src="{{$img->content}}" alt="Slide {{$loop->iteration}}">
+                                </div>
+                            @endif
+                        @endforeach
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -81,8 +89,7 @@
                 <header id="header">
                     <img class="parallax-img" src="/frontend/img/parallax6.png">
                     <h1 class="text-danger parallax-text">Ecube Entertainment</h1>
-                    <p>Lorem ipsum elit. Odit, voluptas, optio, libero, quam fugit vero voluptates dolores atque praesentium! Dolorum, nulla, placeat commodi deserunt amet corrupti dignissimos vel similique laudantium debitis ab at quas alias sunt harum minima nobis est deleniti aperiam earum?<div class="d-none d-sm-block"> Distinctio, vel, odio, repudiandae excepturi nostrum numquam voluptatem consequatur
-                    <br><br>quasi quibusdam et porro assumenda nesciunt ipsam facere mollitia quam esse beatae optio dolorem fugiat culpa? Itaque, nam, error, officia ab dolor nulla voluptatum veniam omnis suscipit aut exercitationem natus tenetur pariatur. Earum, magni, aliquam autem natus fugiat odio error laudantium nam temporibus placeat! Omnis.</div></p>
+                    {!!$description->content!!}
                 </header>
             </div>
         </div>
@@ -95,12 +102,12 @@
                         <div class="row">
                             <div class="col-md-3"></div>
                             <div class="col-md-3">
-                                <h5>EVENTS</h5>
-                                <p>Lorem ipsum dolor sit amet. Facilis, ullam velit quod delectus beatae quia nam culpa?</p>
+                                <h5>{{$wwd[0]->content}}</h5>
+                                <p>{{$wwds[0]->content}}</p>
                             </div>
                             <div class="col-md-3">
-                                <h5>DESIGN & PRODUCTION</h5>
-                                <p>Lorem ipsum dolor sit amet. Facilis, ullam velit quod delectus beatae quia nam?</p>
+                                <h5>{{$wwd[1]->content}}</h5>
+                                <p>{{$wwds[1]->content}}</p>
                             </div>
                             <div class="col-md-3"></div>
                         </div>
@@ -108,16 +115,16 @@
                         <div class="row pt-5">
                             <div class="col-md-3"></div>
                             <div class="col-md-3">
-                                <h5>INTERNATIONAL ARTISTS</h5>
-                                <p>Lorem ipsum dolor sit amet. Facilis, ullam velit quod delectus beatae quia nam culpa? quod delectus beatae quia nam culpa?</p>
+                                <h5>{{$wwd[2]->content}}</h5>
+                                <p>{{$wwds[2]->content}}</p>
                             </div>
                             <div class="col-md-3">
-                                <h5>PR & <br>DATABASE</h5>
-                                <p>Lorem ipsum dolor sit amet. Facilis, ullam velit quod delectus beatae quia nam culpa? quod delectus beatae quia nam culpa?</p>
+                                <h5>{{$wwd[3]->content}}</h5>
+                                <p>{{$wwds[3]->content}}</p>
                             </div>
                             <div class="col-md-3">
-                                <h5>BRAND BUILDING</h5>
-                                <p>Lorem ipsum dolor sit amet. Facilis, ullam velit quod delectus beatae quia nam culpa?</p>
+                                <h5>{{$wwd[4]->content}}</h5>
+                                <p>{{$wwds[4]->content}}</p>
                             </div>
                             <div class="col-md-3"></div>
                         </div>

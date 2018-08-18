@@ -3,6 +3,7 @@
 @section('content')
     <br><br><br><br><br>
     <form action="/alter/index" method="POST" enctype="multipart/form-data">
+        @csrf
         <div class="row">
             <div class="col-md-3  text-right  form-label-control form-label-control">Carousel Image 1</div>
             <div class="col-md-7">
