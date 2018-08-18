@@ -5,12 +5,14 @@
         <div class="section">
             <header id="home">
                 <nav class="navbar fixed-top navbar-expand-lg navbar-dark header">
-                    @if (auth()->user()->role == 'admin')
-                        <div class="row">
-                            <div class="col-md-3">
-                                <a href="/alter/index" class="btn btn-primary">Edit</a>
+                    @if (auth()->user() != null)
+                        @if (auth()->user()->role == 'admin')
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <a href="/alter/index" class="btn btn-primary">Edit</a>
+                                </div>
                             </div>
-                        </div>
+                        @endif
                     @endif
                     <div class="container">
                         <a class="navbar-brand" href="/"><img class="logo" src="/frontend/img/logo.png" alt="Logo"></a>
@@ -69,7 +71,7 @@
                     </a>
                 </div>
                 <div class="title">
-                    <h1>EVENTS. ENTERTAINMENT. EXPERIENCE.</h1>
+                    <h1>{{$tagline->content}}</h1>
                 </div>
             </header>
         </div>
@@ -316,6 +318,17 @@
                             <i class="fab fa-instagram fa-2x instagram"></i>&ensp;
                             <i class="fab fa-google-plus-g fa-2x google"></i>&ensp;
                         </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5"></div>
+                        <div class="col-md-2 w-100">
+                            @if (auth()->user() != null)
+                                @if (auth()->user()->role == 'admin')
+                                    <a href="/alter/footer" class="btn btn-primary w-100">Edit</a>
+                                @endif
+                            @endif
+                        </div>
+                        <div class="col-md-5"></div>
                     </div>
                 </div>
                 <p class="copyright text-center">ECUBE Entertainment &copy; 2018, <a href="http://www.techynaf.com/" class="text-danger font-weight-bold">Techynaf</a></p>

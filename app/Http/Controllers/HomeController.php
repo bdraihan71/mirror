@@ -21,8 +21,8 @@ class HomeController extends Controller
             array_push($imgs, WebContent::where('id', $i)->first());
         }
 
-        $description = WebContent::where('id', 4)->first();
-        $tagline = WebContent::where('id', 5)->first();
+        $description = WebContent::where('id', 5)->first();
+        $tagline = WebContent::where('id', 4)->first();
         $wwd = array();
         $wwds = array();
 
@@ -35,6 +35,6 @@ class HomeController extends Controller
         }
 
         return view('index')->with('imgs', $imgs)->with('description', $description)->with('wwd', $wwd)->
-        with('wwds', $wwds)->with('footer', $this->footer());
+        with('wwds', $wwds)->with('footer', $this->footer())->with('tagline', $tagline);
     }
 }

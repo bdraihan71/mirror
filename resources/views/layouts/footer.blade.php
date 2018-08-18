@@ -22,6 +22,17 @@
                 <i class="fab fa-google-plus-g fa-2x google"></i>&ensp;
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-5"></div>
+            <div class="col-md-2 w-100">
+                @if (auth()->user() != null)
+                    @if (auth()->user()->role == 'admin')
+                        <a href="/alter/footer" class="btn btn-primary w-100">Edit</a>
+                    @endif
+                @endif
+            </div>
+            <div class="col-md-5"></div>
+        </div>
     </div>
     <p class="copyright text-center">ECUBE Entertainment &copy; 2018, <a href="http://www.techynaf.com/" class="text-danger font-weight-bold">Techynaf</a></p>
 </section>
