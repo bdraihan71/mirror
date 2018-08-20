@@ -15,6 +15,7 @@
                 
                 <div class="col-md-8">
                     <form action="/contact-us" method="POST">
+                        @csrf
                         @if (auth()->user() == null)
                             <div class="form-row">
                                 <div class="form-group col-md-6">

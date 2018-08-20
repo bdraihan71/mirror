@@ -42,11 +42,14 @@ class HomeController extends Controller
     public function contactUs ()
     {
         $contact = array(WebContent::where('id', 16)->first(), WebContent::where('id', 17)->first(), WebContent::where('id', 18)->first());
-        return view('contact-us')->with('footer', $this->footer())->with('contact', $contact);
+        
         if (auth()->user()->role == 'admin') {
+            $contacts = Contactee::all()->orderBy('id', 'desc')->get();
 
+            return view('view-contactees')->with('footer', $this->footer())->with('contact', $contact)->
+            with('contacts', $contacts);
         } else {
-            
+            return view('contact-us')->with('footer', $this->footer())->with('contact', $contact);
         }
     }
 
