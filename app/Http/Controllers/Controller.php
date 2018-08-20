@@ -14,7 +14,7 @@ class Controller extends BaseController
 
     public function footer ()
     {
-        $footer = array(WebContent::where('id', 16)->first(), WebContent::where('id', 17)->first());
+        $footer = array(WebContent::where('id', 16)->first(), WebContent::where('id', 17)->first(), WebContent::where('id', 18)->first());
 
         return $footer;
     }

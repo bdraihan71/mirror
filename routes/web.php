@@ -101,3 +101,9 @@ Route::get('/shop/buy/{id}', 'ShopController@buy')->middleware('auth');
 Route::get('/shop/edit/{id}', 'ShopController@edit')->middleware('auth');
 Route::post('/shop/edit/{id}', 'ShopController@update')->middleware('auth');
 Route::post('/shop/delete/{id}', 'ShopController@delete')->middleware('auth');
+
+//Partners Routes
+Route::get('/partner/create', 'PartnersController@create')->middleware('auth');
+Route::post('/partner/create', 'PartnersController@create')->middleware('auth');
+Route::get('/partners', 'PartnersController@showAll');
+Route::get('/partner/delete/{id}', 'PartnersController@delete')->middleware('auth');

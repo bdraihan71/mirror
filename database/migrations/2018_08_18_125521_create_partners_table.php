@@ -18,6 +18,7 @@ class CreatePartnersTable extends Migration
             $table->string('name');
             $table->string('type');
             $table->text('img');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

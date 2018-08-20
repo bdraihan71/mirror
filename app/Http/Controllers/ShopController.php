@@ -12,14 +12,14 @@ class ShopController extends Controller
     {
         $products = Product::where('quantity', '>=', 0)->get();
 
-        return view('shop/index')->with('products', $products);
+        return view('shop/index')->with('products', $products)->with('footer', $this->footer());
     }
 
     public function show (Request $request, $id)
     {
         $product = Product::where('id', $id)->first();
 
-        return view('shop/show')->with('product', $product);
+        return view('shop/show')->with('product', $product)->with('footer', $this->footer());
     }
 
     public function create ()
@@ -28,7 +28,7 @@ class ShopController extends Controller
             return redirect('/shop')->with('error', 'You are not authorized to view the page');
         }
 
-        return view('shop/create');
+        return view('shop/create')->with('footer', $this->footer());
     }
 
     public function store (Request $request)
@@ -61,7 +61,7 @@ class ShopController extends Controller
     {
         $product = Product::where('id', $id)->first();
 
-        return view('shop/edit')->with('product', $product);
+        return view('shop/edit')->with('product', $product)->with('footer', $this->footer());
     }
 
     public function update (Request $request, $id)

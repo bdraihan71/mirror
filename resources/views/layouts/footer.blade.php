@@ -7,11 +7,12 @@
             </div>
             <div class="col-md-3">
                 <h4 class="text-danger font-weight-bold">Head Office</h4><br>
-                {{-- {!!$footer[0]->content!!} --}}
+                {!!$footer[0]->content!!}
             </div>
             <div class="col-md-3">
                 <h4 class="text-danger font-weight-bold">Contact Us</h4><br>
-                {{-- {!!$footer[1]->content!!}	 --}}
+                {!!$footer[1]->content!!}
+                {!!$footer[2]->content!!}
             </div>
             <div class="col-md-3">
                 <h4 class="text-danger font-weight-bold">Stay Connected</h4><br>

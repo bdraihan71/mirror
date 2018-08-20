@@ -26,7 +26,7 @@ class CMSController extends Controller
             return redirect('/')->with('error', 'You are not authorized to access this');
         }
         
-        return view('cms/index');
+        return view('cms/index')->with('footer', $this->footer());
     }
 
     public function setIndex (Request $request)
