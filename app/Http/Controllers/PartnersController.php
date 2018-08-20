@@ -81,4 +81,12 @@ class PartnersController extends Controller
 
         return redirect('/partners');
     }
+
+    public function delete (Request $request, $id)
+    {
+        $partner = Partner::find($id);
+        $partner->delete();
+
+        return redirect('/partners/show');
+    }
 }

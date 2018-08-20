@@ -184,32 +184,11 @@
                 <div class="container">
                     <div class="row">
                         <div class="owl-carousel partners-carousel">
-                            <div class="card">
-                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel1.jpeg" alt="Service Image"></a>
-                            </div>
-                            <div class="card">
-                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel2.jpeg" alt="Service Image"></a>
-                            </div>
-                            <div class="card">
-                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel3.jpeg" alt="Service Image"></a>
-                            </div>
-                            <div class="card">
-                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel1.jpeg" alt="Service Image"></a>
-                            </div>
-                            <div class="card">
-                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel2.jpeg" alt="Service Image"></a>
-                            </div>
-                            <div class="card">
-                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel3.jpeg" alt="Service Image"></a>
-                            </div><div class="card">
-                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel1.jpeg" alt="Service Image"></a>
-                            </div>
-                            <div class="card">
-                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel2.jpeg" alt="Service Image"></a>
-                            </div>
-                            <div class="card">
-                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel3.jpeg" alt="Service Image"></a>
-                            </div>
+                            @foreach($local_partners as $partner)
+                                <div class="card">
+                                    <a href="/partners"><img class="card-img-top" src="{{$partner->img}}" alt="Partner Logo"></a>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -220,32 +199,11 @@
                 <div class="container">
                     <div class="row">
                         <div class="owl-carousel partners-carousel">
-                            <div class="card">
-                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel1.jpeg" alt="Service Image"></a>
-                            </div>
-                            <div class="card">
-                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel2.jpeg" alt="Service Image"></a>
-                            </div>
-                            <div class="card">
-                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel3.jpeg" alt="Service Image"></a>
-                            </div>
-                            <div class="card">
-                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel1.jpeg" alt="Service Image"></a>
-                            </div>
-                            <div class="card">
-                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel2.jpeg" alt="Service Image"></a>
-                            </div>
-                            <div class="card">
-                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel3.jpeg" alt="Service Image"></a>
-                            </div><div class="card">
-                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel1.jpeg" alt="Service Image"></a>
-                            </div>
-                            <div class="card">
-                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel2.jpeg" alt="Service Image"></a>
-                            </div>
-                            <div class="card">
-                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel3.jpeg" alt="Service Image"></a>
-                            </div>
+                            @foreach($int_partners as $partner)
+                                <div class="card">
+                                    <a href="/partners"><img class="card-img-top" src="{{$partner->img}}" alt="Partner Logo"></a>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -256,32 +214,11 @@
                 <div class="container">
                     <div class="row">
                         <div class="owl-carousel partners-carousel">
-                            <div class="card">
-                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel1.jpeg" alt="Service Image"></a>
-                            </div>
-                            <div class="card">
-                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel2.jpeg" alt="Service Image"></a>
-                            </div>
-                            <div class="card">
-                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel3.jpeg" alt="Service Image"></a>
-                            </div>
-                            <div class="card">
-                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel1.jpeg" alt="Service Image"></a>
-                            </div>
-                            <div class="card">
-                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel2.jpeg" alt="Service Image"></a>
-                            </div>
-                            <div class="card">
-                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel3.jpeg" alt="Service Image"></a>
-                            </div><div class="card">
-                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel1.jpeg" alt="Service Image"></a>
-                            </div>
-                            <div class="card">
-                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel2.jpeg" alt="Service Image"></a>
-                            </div>
-                            <div class="card">
-                            <a href="#"><img class="card-img-top" src="/frontend/img/carousel3.jpeg" alt="Service Image"></a>
-                            </div>
+                            @foreach($partners as $partner)
+                                <div class="card">
+                                    <a href="/partners"><img class="card-img-top" src="{{$partner->img}}" alt="Partner Logo"></a>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -306,7 +243,8 @@
                         </div>
                         <div class="col-md-3">
                             <h4 class="text-danger font-weight-bold">Contact Us</h4><br>
-                            {!!$footer[1]->content!!}	
+                            {!!$footer[1]->content!!}
+                            {!!$footer[2]->content!!}
                         </div>
                         <div class="col-md-3">
                             <h4 class="text-danger font-weight-bold">Stay Connected</h4><br>

@@ -10,6 +10,14 @@
                     <div class="col-md-6">
                         <img src="{{$partner->img}}" height="200" width="200" alt="Partner Logo">
                         {{$partner->name}}
+                        @if (auth()->user() != null)
+                            @if (auth()->user()->role == 'admin')
+                                <br><br>
+                                <a href="/partner/edit/{{$partner->id}}" class="btn btn-warning w-100">Edit</a>
+                                <br><br>
+                                <a href="/partner/delete/{{$partner->id}}" class="btn btn-warning w-100">Edit</a>
+                            @endif
+                        @endif
                     </div>
                 @endforeach
             @else

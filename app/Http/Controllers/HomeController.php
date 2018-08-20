@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\WebContent;
 use App\Contactee;
+use App\Partner;
 
 class HomeController extends Controller
 {
@@ -17,6 +18,10 @@ class HomeController extends Controller
     {
         $imgs = array();
         $i = 1;
+
+        $partners = Partner::all();
+        $local_partners = Partner::where('type', 'local')->get();
+        $int_partners = Partner::where('type', 'international')->get();
 
         for (; $i <= 3; $i++) {
             array_push($imgs, WebContent::where('id', $i)->first());
@@ -36,7 +41,8 @@ class HomeController extends Controller
         }
 
         return view('index')->with('imgs', $imgs)->with('description', $description)->with('wwd', $wwd)->
-        with('wwds', $wwds)->with('footer', $this->footer())->with('tagline', $tagline);
+        with('wwds', $wwds)->with('footer', $this->footer())->with('tagline', $tagline)->with('partners', $partners)->
+        with('local_partners', $local_partners)->with('int_partners', $int_partners);
     }
 
     public function contactUs ()
