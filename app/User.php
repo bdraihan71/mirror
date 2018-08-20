@@ -8,6 +8,7 @@ use App\Profile;
 use App\SocialFacebookAccount;
 use App\Ticket;
 use App\EventAnswer;
+use App\Purchase;
 
 class User extends Authenticatable
 {
@@ -49,5 +50,10 @@ class User extends Authenticatable
     public function answers ()
     {
         return $this->hasMany('App\EventAnswer');
+    }
+
+    public function purchases ()
+    {
+        return $this->hasMany('App\Purchase');
     }
 }
