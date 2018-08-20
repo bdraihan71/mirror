@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use App\User;
 use App\TicketType;
+use App\Ticket;
 use App\EventAnswer;
 use GuzzleHttp\Client;
 
@@ -22,9 +24,9 @@ class PaymentsController extends Controller
         $tran_id = new Carbon;
         $tran_id = $tran_id->format('Y-m-d::H:i:s.u');
         $tran_id = $tran_id.auth()->user()->id.$type->event_id;
-        $success_url = 'http://live.ecube-entertainment.com/api/payment/0/'.$type->event_id;
-        $fail_url = 'http://live.ecube-entertainment.com/api/payment/1/'.$type->event_id;
-        $cancel_url = 'http://live.ecube-entertainment.com/api/payment/2/'.$type->event_id;
+        $success_url = 'http://live.ecube-entertainment.com/api/payment/0/'.$type->event_id.'/'.auth()->user()->id.'/'.$id;
+        $fail_url = 'http://live.ecube-entertainment.com/api/payment/1/'.$type->event_id.'/'.auth()->user()->id.'/'.$id;
+        $cancel_url = 'http://live.ecube-entertainment.com/api/payment/2/'.$type->event_id.'/'.auth()->user()->id.'/'.$id;
         $emi_potion = '0';
         $cus_name = auth()->user()->profile->f_name.auth()->user()->profile->m_name.auth()->user()->profile->l_name;
         $cus_email = auth()->user()->email;
@@ -57,13 +59,11 @@ class PaymentsController extends Controller
         return redirect(json_decode($response->getBody())->redirectGatewayURL);
     }
 
-    public function status (Request $request, $status, $id)
+    public function status (Request $request, $status, $id, $user, $type)
     {
         if ($status == 0 && $request->status == 'VALID') {
-            $type = TicketType::where('id', $request->type)->first();
-            $event = Event::where('id', $id)->first();
-            $ticket = Ticket::where('event_id', $id)->where('ticket_type_id', $request->type)->whereNull('user_id')->first();
-            $ticket->user_id = auth()->user()->id;
+            $ticket = Ticket::where('event_id', $id)->where('ticket_type_id', $type)->whereNull('user_id')->first();
+            $ticket->user_id = $user;
             $ticket->save();
             $url = '/events/'.$id;
 

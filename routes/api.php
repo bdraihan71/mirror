@@ -13,8 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::post('/payment/{status}/{id}/{user}/{type}', 'PaymentsController@status');
+//Route::get('/payment/{status}/{id}/{$user}', 'PaymentsController@status');
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/payment/{status}/{id}', 'PaymentsController@status');
