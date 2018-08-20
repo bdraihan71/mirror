@@ -96,5 +96,8 @@ Route::get('/payment/session/{id}', 'PaymentsController@sessionId')->middleware(
 Route::get('/shop', 'ShopController@index');
 Route::get('/shop/create', 'ShopController@create')->middleware('auth');
 Route::post('/shop/create', 'ShopController@store')->middleware('auth');
+Route::get('/shop/{id}', 'ShopController@show')->middleware('auth');
+Route::get('/shop/buy/{id}', 'ShopController@buy')->middleware('auth');
 Route::get('/shop/edit/{id}', 'ShopController@edit')->middleware('auth');
 Route::post('/shop/edit/{id}', 'ShopController@update')->middleware('auth');
+Route::post('/shop/delete/{id}', 'ShopController@delete')->middleware('auth');

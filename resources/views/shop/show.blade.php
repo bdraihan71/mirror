@@ -3,19 +3,41 @@
 @section('content')
     <section id="shop" class="shop">
         <div class="container text-white text-center">
-            <div class="row py-5">
-                @foreach ($products as $product)
-                    <div class="col-md-4">
-                        <a href="/shop/{{$product->id}}"><img class="shop-img" src="{{$product->img}}" alt="Card image cap"></a>
-                        <h5>{{$product->name}}</h5>
-                        <p>{{$product->price}} BDT</p>
-                    </div>
-
-                    @if ($loop->iteration % 3 == 0)
+            <div class="row">
+                <div class="col-md-6">
+                    <img class="responsive" height="500" width="500" src="{{$product->img}}" alt="Product Image">
+                </div>
+                <div class="col-md-6">
+                    <h1>{{$product->name}}</h1>
+                    <hr class="border"><hr class="border">
+                    <div class="row">
+                        <div class="col-md-12">
+                            {!!$product->description!!}
                         </div>
-                        <div class="row py-5">
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <div class="row">
+                @if (auth()->user() != null)
+                    @if (auth()->user()->role == 'admin')
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                            <a href="/shop/edit/{{$product->id}}" class="btn btn-primary w-100">Edit</a>
+                            <br><br>
+                            <a href="/shop/delete/{{$product->id}}" class="btn btn-warning w-100">Delete</a>
+                            <br><br>
+                        </div>
+                        <div class="col-md-4"></div>
+                    @else
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                            <a href="/shop/buy/{{$product->id}}" class="btn btn-warning w-100">Buy</a>
+                        </div>
+                        <div class="col-md-4"></div>
+                        <br><br>
                     @endif
-                @endforeach
+                @endif
             </div>
         </div>
     </section>

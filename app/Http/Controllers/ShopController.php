@@ -18,6 +18,8 @@ class ShopController extends Controller
     public function show (Request $request, $id)
     {
         $product = Product::where('id', $id)->first();
+
+        return view('shop/show')->with('product', $product);
     }
 
     public function create ()
@@ -88,5 +90,14 @@ class ShopController extends Controller
         $product->save();
 
         return redirect('shop')->with('success', 'Product successfully edited');
+    }
+
+    public function delete (Request $request, $id)
+    {
+        $product = Product::where('id', $id)->first();
+        $product->quantity = -1;
+        $product->save();
+
+        return redirect('/shop')->with('error', 'Product successfully deleted');
     }
 }
