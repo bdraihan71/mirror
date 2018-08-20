@@ -94,3 +94,7 @@ Route::get('/payment/session/{id}', 'PaymentsController@sessionId')->middleware(
 
 //Shop Routes
 Route::get('/shop', 'ShopController@index');
+Route::get('/shop/create', 'ShopController@create')->middleware('auth');
+Route::post('/shop/create', 'ShopController@store')->middleware('auth');
+Route::get('/shop/edit/{id}', 'ShopController@edit')->middleware('auth');
+Route::post('/shop/edit/{id}', 'ShopController@update')->middleware('auth');
