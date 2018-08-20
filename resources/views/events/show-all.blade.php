@@ -45,7 +45,7 @@
                                 <p class="card-title font-weight-bold text-left pt-5">{{$event->name}}</p>
                                 <p class="card-text text-left">Place: {{$event->location}}<span class="float-right">{{date("d M, Y", strtotime($event->date_start))}}</span></p>
                             </div>
-                            <a href="/events/{{$event->id}}" class="btn btn-danger w-100 rounded-0 py-3">REGISTER NOW</a>
+                            <a href="/events/{{$event->id}}" class="btn btn-danger w-100 rounded-0 py-3">VIEW DETAILS</a>
                         </div>
                     </div>
                 @endforeach
