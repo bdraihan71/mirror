@@ -10,6 +10,7 @@
                     <div class="navbar-nav font-weight-bold nav-back">
                         <a class="nav-item nav-link mt-1" href="/">HOME</a>
                         <a class="nav-item nav-link mt-1" href="/#page2">ABOUT US</a>
+                        <a class="nav-item nav-link mt-1" href="/#page4">PARTNERS</a>
                         <a class="nav-item nav-link mt-1" href="/events/upcoming">EVENTS</a>
                         @if(auth()->user() != null)
                             <a class="nav-item nav-link mt-1" href="/logout">LOGOUT</a>
