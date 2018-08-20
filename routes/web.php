@@ -104,6 +104,8 @@ Route::post('/shop/delete/{id}', 'ShopController@delete')->middleware('auth');
 
 //Partners Routes
 Route::get('/partner/create', 'PartnersController@create')->middleware('auth');
-Route::post('/partner/create', 'PartnersController@create')->middleware('auth');
+Route::post('/partner/create', 'PartnersController@store')->middleware('auth');
+Route::get('/partner/edit/{id}', 'PartnersController@edit')->middleware('auth');
+Route::post('/partner/edit/{id}', 'PartnersController@update')->middleware('auth');
 Route::get('/partners', 'PartnersController@showAll');
 Route::get('/partner/delete/{id}', 'PartnersController@delete')->middleware('auth');

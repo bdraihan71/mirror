@@ -6,14 +6,14 @@
             <div class="row pt-3">
                 <div class="col-md-1"></div>
                 <div class="col-md-10">
-                    <form method="POST" action="/partner/create">
+                    <form method="POST" action="/partner/edit/{{$partner->id}}">
                         @csrf
                         <div class="form-row text-white text-left">
                             <div class="form-group col-md-2">
                                 <label class="">Name *</label>
                             </div>
                             <div class="form-group col-md-10">
-                                <input type="text" class="form-control contact-form input-container" name="name" placeholder="Name of the product" required>
+                                <input type="text" class="form-control contact-form input-container" name="name" placeholder="Name of the product" value="{{$partner->name}}" required>
                             </div>
                         </div>
 
@@ -23,9 +23,13 @@
                             </div>
                             <div class="form-group col-md-10">
                                 <select name="type" class="form-control" required>
-                                    <option value="">Please select a partner type</option>
-                                    <option value="local">Local Partner</option>
-                                    <option value="international">International Partner</option>
+                                    @if($partner->type == 'local')
+                                        <option value="local">Local Partner</option>
+                                        <option value="international">International Partner</option>
+                                    @else
+                                        <option value="international">International Partner</option>
+                                        <option value="local">Local Partner</option>
+                                    @endif
                                 </select>
                             </div>
                         </div>
@@ -35,7 +39,7 @@
                                 <label>Partner Logo *</label>
                             </div>
                             <div class="form-group col-md-10">
-                                <input required type="file" class="form-control" name="img" placeholder="address" required>
+                                <input required type="file" class="form-control" name="img" placeholder="address">
                             </div>
                         </div>
                         

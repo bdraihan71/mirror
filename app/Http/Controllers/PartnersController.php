@@ -51,4 +51,34 @@ class PartnersController extends Controller
         return view('partners/show-all')->with('local_partners', $local_partners)->with('int_partners', $int_partners)->
         with('footer', $this->footer());
     }
+
+    public function edit (Request $request, $id)
+    {
+        $partner = Partner::find($id);
+
+        return view('partners/edit')->with('partner', $partner)->with('footer', $this->footer());
+    }
+
+    public function update (Request $request, $id)
+    {
+        $partner = Partner::find($id);
+
+        $partner->name = $request->name;
+        $partner->type = $request->type;
+        
+        if ($request->hasFile('img')) {
+            $filenameWithExt = $request->file('img')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);            
+            $extension = $request->file('img')->getClientOriginalExtension();
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;                       
+            $path = $request->file('img')->storeAs('public/partners', $fileNameToStore);
+            $request->img->move('public/partners', $fileNameToStore);
+
+            $partner->img = '/public/partners/'.$fileNameToStore;
+        }
+
+        $partner->save();
+
+        return redirect('/partners');
+    }
 }
