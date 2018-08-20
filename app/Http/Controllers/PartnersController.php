@@ -19,7 +19,7 @@ class PartnersController extends Controller
     public function store (Request $request)
     {
         $this->validate($request, [
-            'img' => 'image|required|max:1999|mimes:jpeg,png,jpg,gif,svg',
+            'url' => 'image|required|max:1999|mimes:jpeg,png,jpg,gif,svg',
         ]);
 
         if (auth()->user()->role != 'admin') {
@@ -30,11 +30,11 @@ class PartnersController extends Controller
         $partner->name = $request->name;
         $partner->type = $request->type;
 
-        $filenameWithExt = $request->file('img')->getClientOriginalName();
+        $filenameWithExt = $request->file('url')->getClientOriginalName();
         $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);            
-        $extension = $request->file('img')->getClientOriginalExtension();
+        $extension = $request->file('url')->getClientOriginalExtension();
         $fileNameToStore = $filename.'_'.time().'.'.$extension;                       
-        $path = $request->file('img')->storeAs('public/partners', $fileNameToStore);
+        $path = $request->file('url')->storeAs('public/partners', $fileNameToStore);
         $request->img->move('public/partners', $fileNameToStore);
 
         $partner->img = '/public/partners/'.$fileNameToStore;
@@ -46,7 +46,7 @@ class PartnersController extends Controller
     public function showAll ()
     {
         $local_partners = Partner::where('type', 'local')->get();
-        $int_partners = Partner::where('type', 'internatinal')->get();
+        $int_partners = Partner::where('type', 'international')->get();
 
         return view('partners/show-all')->with('local_partners', $local_partners)->with('int_partners', $int_partners)->
         with('footer', $this->footer());

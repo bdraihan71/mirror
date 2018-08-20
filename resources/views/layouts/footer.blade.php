@@ -1,3 +1,5 @@
+<?php $footer = App\Http\Controllers\Controller::footer()?>
+
 <section id="footer" class="footer text-white text-center black-bg">
     <div class="container black-bg">
         <div class="row footer-padding-top">

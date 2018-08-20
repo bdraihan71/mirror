@@ -6,7 +6,7 @@
             <div class="row pt-3">
                 <div class="col-md-1"></div>
                 <div class="col-md-10">
-                    <form method="POST" action="/partner/create">
+                    <form method="POST" action="/partner/create" enctype="multipart/form-data">
                         @csrf
                         <div class="form-row text-white text-left">
                             <div class="form-group col-md-2">
@@ -30,12 +30,12 @@
                             </div>
                         </div>
                         
-                        <div class="form-row text-white">
+                        <div class="form-row text-white text-left">
                             <div class="form-group col-md-2">
                                 <label>Partner Logo *</label>
                             </div>
                             <div class="form-group col-md-10">
-                                <input required type="file" class="form-control" name="img" placeholder="address" required>
+                                <input required type="file" class="form-control" name="url" placeholder="address">
                             </div>
                         </div>
                         
