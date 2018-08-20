@@ -12,73 +12,73 @@ class PartnersTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('products')->insert([
+        DB::table('partners')->insert([
             'name' => 'Le Name',
             'type' => 'local',
             'img' => '/frontend/img/carousel1.jpeg',
         ]);
 
-        DB::table('products')->insert([
+        DB::table('partners')->insert([
             'name' => 'Le Name',
             'type' => 'local',
             'img' => '/frontend/img/carousel2.jpeg',
         ]);
 
-        DB::table('products')->insert([
+        DB::table('partners')->insert([
             'name' => 'Le Name',
             'type' => 'local',
             'img' => '/frontend/img/carousel3.jpeg',
         ]);
 
-        DB::table('products')->insert([
+        DB::table('partners')->insert([
             'name' => 'Le Name',
             'type' => 'local',
             'img' => '/frontend/img/carousel1.jpeg',
         ]);
 
-        DB::table('products')->insert([
+        DB::table('partners')->insert([
             'name' => 'Le Name',
             'type' => 'local',
             'img' => '/frontend/img/carousel2.jpeg',
         ]);
 
-        DB::table('products')->insert([
+        DB::table('partners')->insert([
             'name' => 'Le Name',
             'type' => 'local',
             'img' => '/frontend/img/carousel3.jpeg',
         ]);
 
-        DB::table('products')->insert([
+        DB::table('partners')->insert([
             'name' => 'Le Name',
             'type' => 'international',
             'img' => '/frontend/img/carousel1.jpeg',
         ]);
 
-        DB::table('products')->insert([
+        DB::table('partners')->insert([
             'name' => 'Le Name',
             'type' => 'international',
             'img' => '/frontend/img/carousel2.jpeg',
         ]);
 
-        DB::table('products')->insert([
+        DB::table('partners')->insert([
             'name' => 'Le Name',
             'type' => 'international',
             'img' => '/frontend/img/carousel3.jpeg',
         ]);
 
-        DB::table('products')->insert([
+        DB::table('partners')->insert([
             'name' => 'Le Name',
             'type' => 'international',
             'img' => '/frontend/img/carousel1.jpeg',
         ]);
 
-        DB::table('products')->insert([
+        DB::table('partners')->insert([
             'name' => 'Le Name',
             'type' => 'international',
             'img' => '/frontend/img/carousel2.jpeg',
         ]);
 
-        DB::table('products')->insert([
+        DB::table('partners')->insert([
             'name' => 'Le Name',
             'type' => 'international',
             'img' => '/frontend/img/carousel3.jpeg',
