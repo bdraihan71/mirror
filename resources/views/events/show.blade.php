@@ -12,6 +12,12 @@
                 <strong>SOLD OUT</strong>
             </button>
         @endif
+
+        @if (auth()->user() != null)
+            @if (auth()->user()->role == 'admin')
+                <a href="/events/edit/{{$event->id}}" class="btn btn-primary btn-radius px-5 py-3">EDIT EVENT</a>
+            @endif
+        @endif
         <br>
         <i class="far fa-calendar-alt"> 
             @if ($event->date_start == $event->date_end)

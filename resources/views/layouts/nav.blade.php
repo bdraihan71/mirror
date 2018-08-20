@@ -10,7 +10,6 @@
                     <div class="navbar-nav font-weight-bold nav-back">
                         <a class="nav-item nav-link mt-1" href="/">HOME</a>
                         <a class="nav-item nav-link mt-1" href="/#page2">ABOUT US</a>
-                        <a class="nav-item nav-link mt-1" href="/contact-us">CONTACT US</a>
                         <a class="nav-item nav-link mt-1" href="/events/upcoming">EVENTS</a>
                         <a class="nav-item nav-link mt-1" href="#">MEDIA</a>
                         <a class="nav-item nav-link mt-1" href="#">MUSIC</a>
