@@ -25,21 +25,13 @@
 
                             <br>
 
-                            <div class="black-bg form-group row mb-0">
-                                <div class="black-bg">
-                                    <button type="submit" class="black-bg btn btn-reg">
-                                        {{ __('Buy') }}
-                                    </button>
-                                </div>
-                            </div>
+                            <button type="submit" class="black-bg btn btn-reg w-100">
+                                {{ __('Buy') }}
+                            </button>
 
-                            <br>
+                            <br><br>
 
-                            <div class="black-bg form-group row mb-0">
-                                <div class="black-bg">
-                                    <a href="/cancel/purchase/{{$id}}" class="btn btn-google">Cancel</a>
-                                </div>
-                            </div>
+                            <a href="/cancel/purchase/{{$id}}" class="btn btn-google w-100">Cancel</a>
                         </form>
                     </div>
                 </div>
