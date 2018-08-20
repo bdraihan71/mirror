@@ -29,6 +29,8 @@
                     </div>
                 </div>
             @endforeach
+
+            {{ $contacts->links() }}
         @else
         <br><br><br>
             <hr>
