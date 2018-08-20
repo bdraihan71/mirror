@@ -4,13 +4,15 @@
     <section id="dashboard" class="dashboard">
         <div class="container">
             <div class="row">
-                <div class="col-md-1">
-                    {{-- <nav class="nav flex-column bg-dark nav-height">
-                      <a class="nav-link text-white" href="#">Profile</a>
-                      <a class="nav-link text-white" href="#">Events</a>
-                      <a class="nav-link text-white" href="#">Settings</a>
-                      <a class="nav-link text-white" href="#">Logout</a>
-                    </nav> --}}
+                <div class="col-md-3">
+                    <nav class="nav flex-column bg-dark nav-height">
+                      @if (auth()->user()->role == 'admin')
+                        <strong><a class="nav-link text-white" href="/events/create">CREATE EVENTS</a></strong>
+                      @endif
+                      <strong><a class="nav-link text-white" href="/events">EVENTS</a></strong>
+                      <strong><a class="nav-link text-white" href="/shop">SHOP</a></strong>
+                      <strong><a class="nav-link text-white" href="/logout">LOGOUT</a></strong>
+                    </nav>
                 </div>
                 <div class="col-md-3 text-center">
                     <i class="far fa-user fa-7x img-fluid rounded-circle "></i>
@@ -34,7 +36,7 @@
                     
                     <h5 class="text-danger">Email Address</h5>
                     <p class="text-white">{{$user->email}}</p>
-                    <form action="/profile/email" method="POST">
+                    <form action="/profile/email" method="POST" autocomplete="off">
                         @csrf
                         <input type="text" name="email" class="form-control" value="{{$user->email}}" required>
                         <br>
@@ -43,7 +45,31 @@
                         <button type="submit" class="btn btn-outline-danger">Update</button>
                     </form>
                     
+                    <br>
+                    <br>
+                    <br>
                     
+                    <h5 class="text-danger">Physical Address</h5>
+                    <p class="text-white">{{$user->profile->address}}</p>
+                    <form action="/profile/address" method="POST">
+                        @csrf
+                        <input type="text" name="email" class="form-control" value="{{$user->profile->address}}" required>
+                        <br>
+                        <button type="submit" class="btn btn-outline-danger">Update</button>
+                    </form>
+
+                    <br>
+                    <br>
+                    <br>
+                    
+                    <h5 class="text-danger">Phone Number</h5>
+                    <p class="text-white">{{$user->profile->address}}</p>
+                    <form action="/profile/phone" method="POST">
+                        @csrf
+                        <input type="text" name="email" class="form-control" value="{{$user->profile->phone}}" required>
+                        <br>
+                        <button type="submit" class="btn btn-outline-danger">Update</button>
+                    </form>
                     
                     <br>
                     <br>

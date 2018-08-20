@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\User;
 use App\Profile;
@@ -117,9 +117,8 @@ class ProfilesController extends Controller
     public function email (Request $request)
     {
         $user = auth()->user();
-        $password = bcrypt($request->password);
 
-        if ($password != $user->password) {
+        if (!Hash::check($request->password, $user->password)) {
             return redirect('home')->with('error', 'Sorry, the password did not match our records.');
         }
 
@@ -127,6 +126,24 @@ class ProfilesController extends Controller
         $user->save();
 
         return redirect('home');
+    }
+
+    public function address (Request $request)
+    {
+        $profile = auth()->user()->profile;
+        $profile->address = $request->address;
+        $profile->save();
+
+        return redirect('/home');
+    }
+
+    public function phone (Request $request)
+    {
+        $profile = auth()->user()->profile;
+        $profile->phone = $request->phone;
+        $profile->save();
+
+        return redirect('/home');
     }
 
     public function password (Request $request)

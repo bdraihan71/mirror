@@ -16,6 +16,7 @@
                         <a class="nav-item nav-link mt-1" href="#">MUSIC</a>
                         @if(auth()->user() != null)
                             <a class="nav-item nav-link mt-1" href="/logout">LOGOUT</a>
+                            <a class="nav-item nav-link mt-1" href="/home">DASHBOARD</a>
                         @else
                             <a class="nav-item nav-link mt-1" href="/register">REGISTER</a>
                             <a class="nav-item nav-link mt-1" href="/login">LOGIN</a>
