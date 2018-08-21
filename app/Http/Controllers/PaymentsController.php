@@ -24,9 +24,9 @@ class PaymentsController extends Controller
         $tran_id = new Carbon;
         $tran_id = $tran_id->format('Y-m-d::H:i:s.u');
         $tran_id = $tran_id.auth()->user()->id.$type->event_id;
-        $success_url = 'http://127.0.0.1:8000/api/payment/0/'.$type->event_id.'/'.auth()->user()->id.'/'.$id;
-        $fail_url = 'http://127.0.0.1:8000/api/payment/1/'.$type->event_id.'/'.auth()->user()->id.'/'.$id;
-        $cancel_url = 'http://127.0.0.1:8000/api/payment/2/'.$type->event_id.'/'.auth()->user()->id.'/'.$id;
+        $success_url = 'https://live.ecube-entertainment.com/api/payment/0/'.$type->event_id.'/'.auth()->user()->id.'/'.$id;
+        $fail_url = 'https://live.ecube-entertainment.com/api/payment/1/'.$type->event_id.'/'.auth()->user()->id.'/'.$id;
+        $cancel_url = 'https://live.ecube-entertainment.com/api/payment/2/'.$type->event_id.'/'.auth()->user()->id.'/'.$id;
         $emi_potion = '0';
         $cus_name = auth()->user()->profile->f_name.auth()->user()->profile->m_name.auth()->user()->profile->l_name;
         $cus_email = auth()->user()->email;
