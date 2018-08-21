@@ -39,6 +39,7 @@
             
             <div class="padded">Order number: something</div>
             <div class="padded">Order date: something</div>
+            {{  }}
         </div>
     </div>
 </page>

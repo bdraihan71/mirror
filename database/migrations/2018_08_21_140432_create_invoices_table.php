@@ -17,6 +17,7 @@ class CreateInvoicesTable extends Migration
             $table->increments('id');
             $table->integer('number');
             $table->string('type');
+            $table->text('barcode');
             $table->timestamps();
         });
     }

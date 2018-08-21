@@ -26,7 +26,7 @@
 
 <body>
     <section id="ticket" class="ticket pb-5">
-        <img class="ticket-image" src="/frontend/img/ticket.jpg">
+        <img class="ticket-image" src="{{$ticket->event->img_1}}">
         <div class="container">
             <div class="row pt-5">
                 <div class="col-md-12 ticket-text-line-height">
@@ -89,10 +89,9 @@
                     <br>
                     <br>
                     <p class="text-danger">This is your order barcode</p>
-                    <p>575asdfsd77347000o</p>
                 </div>
                 <div class="col-md-6 ticket-text-line-height">
-                    <i class="fas fa-barcode fa-5x"></i>
+                    {!! Milon\Barcode\Facades\DNS1DFacade::getBarcodeHTML($ticket->invoice->barcode, "PHARMA2T") !!}
                 </div>
             </div>
         </div>      
