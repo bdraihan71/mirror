@@ -9,19 +9,19 @@
 	<meta name="author" content="Techynaf">
 	<title>Ecube Entertainment</title>
 	<!-- Bootstrap core CSS -->
-	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/frontend/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<!-- Font Awesome -->
-	<link href="vendor/font-awesome/css/all.css" rel="stylesheet" type="text/css">
+	<link href="/frontend/vendor/font-awesome/css/all.css" rel="stylesheet" type="text/css">
 	<!-- Animate CSS -->
-	<link href="vendor/animate/animate.min.css" rel="stylesheet">
+	<link href="/frontend/vendor/animate/animate.min.css" rel="stylesheet">
 	<!-- Owl CSS -->
-	<link href="vendor/owl/css/owl.carousel.min.css" rel="stylesheet">
+	<link href="/frontend/vendor/owl/css/owl.carousel.min.css" rel="stylesheet">
 	<!-- Fullpage CSS -->
-	<link href="vendor/fullpage/fullpage.min.css" rel="stylesheet">
+	<link href="/frontend/vendor/fullpage/fullpage.min.css" rel="stylesheet">
 	<!-- Favicon -->
-	<link rel="icon" href="img/favicon.png">
+	<link rel="icon" href="/frontend/img/favicon.png">
 	<!-- Custom styles -->
-	<link href="css/style.css" rel="stylesheet">
+	<link href="/frontend/css/style.css" rel="stylesheet">
 </head>
 
 <body>
