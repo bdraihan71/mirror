@@ -274,7 +274,7 @@
                 <div class="row footer-padding-top">
                     <div class="col-md-3">
                     <br>
-                        <img class="logo" src="img/logo.png" alt="Logo">
+                        <img class="logo" src="/frontend/img/logo.png" alt="Logo">
                     </div>
                     <div class="col-md-3">
                         <h4 class="text-danger font-weight-bold">Head Office</h4><br>
