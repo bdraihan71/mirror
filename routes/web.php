@@ -117,3 +117,8 @@ Route::get('/page', function () {
     return view('tickets/show');
 });
 
+//Privacy Policy Route
+Route::get('/privacy-policy', function () {
+    return view('privacy-policy');
+});
+
