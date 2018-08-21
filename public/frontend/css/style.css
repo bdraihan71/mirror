@@ -401,7 +401,7 @@ header .download .btn-light:hover {
   width: 100%;
   top:0;
   left: 0;
-  z-index: 0;
+  z-index: 1;
 }
 #header {
   padding: 100px 200px 0px 200px;
@@ -804,19 +804,55 @@ header .download .btn-light:hover {
 	box-shadow: 5px 5px 30px #1a1a1a;
 }
 
+/* Checkout */
+.checkout{
+  background-color: #1a1a1a;
+  height: 100%;
+}
+.checkout-padding{
+  padding-top: 180px;
+  padding-bottom: 50px;
+}
+.checkout-text{
+  color: black;
+  border-bottom: none;
+}
+.checkout-text:hover {
+  color: grey;
+  border-bottom: none;
+}
 
+
+
+/* ticket */
+.ticket{
+  height: 100%;
+}
+.ticket-image{
+  height:100%;
+  width:100%;
+}
+.ticket-text-line-height{
+  line-height: 8px;
+}
+.ticket-price-background{
+  background-color:red;
+  padding: 30px 30px 30px 30px;
+}
 
 /* Contact Us */
 .contact-us{
   background-color: #1a1a1a;
-  height: 100%;
+  height: 100vh;
 }
 .contact-text{
-  padding-top: 150px;
-  padding-bottom: 30px;
   font-size: 5rem;
   font-weight: bold;
   color: #ec1c21; 
+}
+.contact-text-padding{
+  padding-top: 180px;
+  padding-bottom: 50px;
 }
 @media only screen and (max-width: 850px) {
 	.contact-text{
@@ -944,6 +980,4 @@ header .download .btn-light:hover {
 .c-header{
   background: #C4250A;
 }
-
-
 

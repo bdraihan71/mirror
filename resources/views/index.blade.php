@@ -86,32 +86,32 @@
     
     
     <div id="about" class="section">
-    
-        <div id="container">
-            <div id="simple3D">
-              <div class="bag-3 d-none d-sm-block"></div>
-              <div class="cup-3 d-none d-sm-block"></div>
-              <div class="bag-2 d-none d-sm-block"></div>
-              <div class="cup-2 d-none d-sm-block"></div>
-              <div class="bag-1 d-none d-sm-block"></div>
-              <div class="cup-1 d-none d-sm-block"></div>
-            </div>
-        </div>
-    
-        <div id="content">
+		
+			<div id="container">
+				<div id="simple3D">
+				  <div class="bag-3 d-none d-sm-block"></div>
+				  <div class="cup-3 d-none d-sm-block"></div>
+				  <div class="bag-2 d-none d-sm-block"></div>
+				  <div class="cup-2 d-none d-sm-block"></div>
+				  <div class="bag-1 d-none d-sm-block"></div>
+				  <div class="cup-1 d-none d-sm-block"></div>
+				</div>
+			</div>
+		
+			<div id="content">
 
-            <header id="header">
-                <div id="div1" style="display: none">
-                <img class="parallax-img" src="/frontend/img/parallax6.png">
-                <h1 class="text-danger parallax-text">Ecube Entertainment</h1>
-                {!!$description->content!!}
-            </div>	
-            </header>
-
-        </div>
-    
-    
-    </div>
+				<header id="header">
+					<div id="div1" style="display: none">
+					<img class="parallax-img" src="/frontend/img/parallax6.png">
+					<h1 class="text-danger parallax-text">Ecube Entertainment</h1>
+					{!!$description->content!!}
+				</div>	
+				</header>
+	
+			</div>
+		
+		
+		</div>
     
     
     

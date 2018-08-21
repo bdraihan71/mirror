@@ -65,7 +65,7 @@ class PaymentsController extends Controller
         if ($status == 0 && $request->status == 'VALID') {
             $total_tickets = count(Ticket::where('event_id', $id)->get());
             $unsold_tickets = count(Ticket::where('event_id', $id)->whereNull('user_id')->get());
-            $barcode = date("Ymd", strtotime(Carbon\Carbon::now())).time().$id;
+            $barcode = date("Ymd", strtotime(Carbon::now())).time().$id;
 
             $invoice = new Invoice;
             $invoice->type = 'ticket';
