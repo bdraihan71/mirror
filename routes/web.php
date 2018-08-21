@@ -109,3 +109,9 @@ Route::get('/partner/edit/{id}', 'PartnersController@edit')->middleware('auth');
 Route::post('/partner/edit/{id}', 'PartnersController@update')->middleware('auth');
 Route::get('/partners', 'PartnersController@showAll');
 Route::get('/partner/delete/{id}', 'PartnersController@delete')->middleware('auth');
+
+//Test Route
+Route::get('/page', function () {
+    return view('tickets/show');
+});
+

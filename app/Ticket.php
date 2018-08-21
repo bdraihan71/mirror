@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Event;
 use App\User;
 use App\TicketType;
+use App\Invoice;
 
 class Ticket extends Model
 {
@@ -22,5 +23,10 @@ class Ticket extends Model
     public function type ()
     {
         return $this->belongsTo('App\TicketType', 'ticket_type_id');
+    }
+
+    public function invoice ()
+    {
+        return $this->belongsTo('App\Invoice');
     }
 }

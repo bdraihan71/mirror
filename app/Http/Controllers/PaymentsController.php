@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use App\User;
 use App\TicketType;
 use App\Ticket;
+use App\Invoice;
 use App\EventAnswer;
 use GuzzleHttp\Client;
 
@@ -62,17 +63,27 @@ class PaymentsController extends Controller
     public function status (Request $request, $status, $id, $user, $type)
     {
         if ($status == 0 && $request->status == 'VALID') {
+            $total_tickets = count(Ticket::where('event_id', $id)->get());
+            $unsold_tickets = count(Ticket::where('event_id', $id)->whereNull('user_id')->get());
+            
+            $invoice = new Invoice;
+            $invoice->type = 'ticket';
+            $invoice->number = ($total_tickets - $unsold_tickets + 1);
+            $invoice->save();
+
             $ticket = Ticket::where('event_id', $id)->where('ticket_type_id', $type)->whereNull('user_id')->first();
             $ticket->user_id = $user;
+            $ticket->invoice_id = $invoice->id;
             $ticket->save();
-            $url = '/events/'.$id;
+            $user = User::find($user);
 
-            return redirect($url)->with('success', 'Ticket successfully bought!');
+
+            return view('tickets/ticket')->with('user', $user)->with('ticket', $ticket);
         } else {
             $answers = EventAnswer::where('event_id')->where('user_id', auth()->user()->id)->get();
 
             foreach ($answers as $answer) {
-                $answer->deleteO();
+                $answer->delete();
             }
 
             $url = '/events/'.$id;
