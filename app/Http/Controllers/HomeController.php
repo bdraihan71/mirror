@@ -48,7 +48,11 @@ class HomeController extends Controller
     public function contactUs ()
     {
         $contact = array(WebContent::where('id', 16)->first(), WebContent::where('id', 17)->first(), WebContent::where('id', 18)->first());
-        
+
+        if (auth()->user() == null) {
+            return view('contact-us')->with('footer', $this->footer())->with('contact', $contact);
+        }
+
         if (auth()->user()->role == 'admin') {
             $contacts = Contactee::orderBy('id', 'desc')->paginate(10);
 
