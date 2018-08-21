@@ -206,7 +206,7 @@
     
     
     
-    <div class="section">
+    <div class="section white-bg">
     
         <section id="partners" class="partners py-1 text-center d-none d-sm-block">
         <h1 class="text-danger">Partners</h1>
