@@ -42,7 +42,7 @@ class AnswersController extends Controller
             $answer->event_id = $id;
             $answer->user_id = auth()->user()->id;
             $answer->answer = $answers[$i];
-            $answer->question_id = $qid[$id];
+            $answer->question_id = $qid[$i];
             $answer->save();
         }
 
