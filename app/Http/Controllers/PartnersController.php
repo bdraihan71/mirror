@@ -35,7 +35,7 @@ class PartnersController extends Controller
         $extension = $request->file('url')->getClientOriginalExtension();
         $fileNameToStore = $filename.'_'.time().'.'.$extension;                       
         $path = $request->file('url')->storeAs('public/partners', $fileNameToStore);
-        $request->img->move('public/partners', $fileNameToStore);
+        $request->url->move('public/partners', $fileNameToStore);
 
         $partner->img = '/public/partners/'.$fileNameToStore;
         $partner->save();
@@ -66,13 +66,13 @@ class PartnersController extends Controller
         $partner->name = $request->name;
         $partner->type = $request->type;
         
-        if ($request->hasFile('img')) {
-            $filenameWithExt = $request->file('img')->getClientOriginalName();
+        if ($request->hasFile('url')) {
+            $filenameWithExt = $request->file('url')->getClientOriginalName();
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);            
-            $extension = $request->file('img')->getClientOriginalExtension();
+            $extension = $request->file('url')->getClientOriginalExtension();
             $fileNameToStore = $filename.'_'.time().'.'.$extension;                       
-            $path = $request->file('img')->storeAs('public/partners', $fileNameToStore);
-            $request->img->move('public/partners', $fileNameToStore);
+            $path = $request->file('url')->storeAs('public/partners', $fileNameToStore);
+            $request->url->move('public/partners', $fileNameToStore);
 
             $partner->img = '/public/partners/'.$fileNameToStore;
         }
