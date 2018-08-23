@@ -92,18 +92,17 @@ class ProfilesController extends Controller
         $name = explode(' ', $request->name);
         $profile->f_name = $name[0];
 
-
         if (sizeof($name) == 1) {
             $profile->l_name = '---';
 
             if ($profile->m_name != null) {
-                $profile->m_name == null;
+                $profile->m_name = null;
             }
         } elseif (sizeof($name) == 2) {
             $profile->l_name = $name[1];
 
             if ($profile->m_name != null) {
-                $profile->m_name == null;
+                $profile->m_name = null;
             }
         } else {
             $profile->l_name = $name[sizeof($name) - 1];
