@@ -87,16 +87,23 @@ class ProfilesController extends Controller
 
     public function name (Request $request)
     {
-        $profile = Profile::where('id', auth()->user()->id)->first();
+        $profile = Profile::find(auth()->user()->id);
 
         $name = explode(' ', $request->name);
         $profile->f_name = $name[0];
+
+        dd($name);
 
 
         if (sizeof($name) == 1) {
             $profile->l_name = '---';
         } elseif (sizeof($name) == 2) {
             $profile->l_name = $name[1];
+
+            if ($profile->m_name != null) {
+                $profile->m_name == null;
+            }
+
         } else {
             $profile->l_name = $name[sizeof($name) - 1];
             $x = '';
