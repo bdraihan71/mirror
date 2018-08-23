@@ -961,12 +961,11 @@ header .download .btn-light:hover {
 }
 
 .btn-google {
-  background: #CCCCCC;
+  background: #D44638;
 }
 
 .btn-google:hover {
   background: #FFFFFF;
-  color: black;
 }
 
 .btn-co {
