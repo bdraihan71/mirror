@@ -83,7 +83,7 @@
                     <p>Total <span class="float-right text-danger">{{$ticket->type->price}}</span></p>
                 </div>
             </div>
-            <p class="text-danger">Items will be hipped within 2 days.</p>
+            <p class="text-danger">Items will be shipped within 2 days.</p>
             <div class="row pt-5">
                 <div class="col-md-6 ticket-text-line-height">
                     <br>
