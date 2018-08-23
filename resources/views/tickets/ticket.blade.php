@@ -85,12 +85,12 @@
             </div>
             <p class="text-danger">Items will be shipped within 2 days.</p>
             <div class="row pt-5">
-                <div class="col-md-6 ticket-text-line-height">
+                <div class="col-md-3 ticket-text-line-height">
                     <br>
                     <br>
                     <p class="text-danger">This is your order barcode</p>
                 </div>
-                <div class="col-md-6 ticket-text-line-height">
+                <div class="col-md-9 ticket-text-line-height text-center">
                     {!! Milon\Barcode\Facades\DNS1DFacade::getBarcodeSVG($ticket->invoice->barcode, "PHARMA") !!}
                 </div>
             </div>
