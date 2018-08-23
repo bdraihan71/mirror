@@ -9,21 +9,21 @@
 	<meta name="author" content="Techynaf">
 	<title>Ecube Entertainment</title>
 	<!-- Bootstrap core CSS -->
-	<link href="/frontend/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="{{ url("/frontend/vendor/bootstrap/css/bootstrap.min.css") }}" rel="stylesheet">
 	<!-- Font Awesome -->
-	<link href="/frontend/vendor/font-awesome/css/all.css" rel="stylesheet" type="text/css">
+	<link href="{{ url("/frontend/vendor/font-awesome/css/all.css") }}" rel="stylesheet" type="text/css">
 	<!-- Animate CSS -->
-	<link href="/frontend/vendor/animate/animate.min.css" rel="stylesheet">
+	<link href="{{ url("/frontend/vendor/animate/animate.min.css") }}" rel="stylesheet">
 	<!-- Owl CSS -->
-	<link href="/frontend/vendor/owl/css/owl.carousel.min.css" rel="stylesheet">
+	<link href="{{ url("/frontend/vendor/owl/css/owl.carousel.min.css") }}" rel="stylesheet">
 	<!-- Fullpage CSS -->
-	<link href="/frontend/vendor/fullpage/fullpage.min.css" rel="stylesheet">
+	<link href="{{ url("/frontend/vendor/fullpage/fullpage.min.css") }}" rel="stylesheet">
 	<!-- Favicon -->
 	<link rel="icon" href="/frontend/img/favicon.png">
 	<!-- Custom styles -->
-    <link href="/frontend/css/style.css" rel="stylesheet">
+    <link href="{{ url("/frontend/css/style.css") }}" rel="stylesheet">
     
-    <style>/*!
+    {{-- <style>/*!
             * Bootstrap v3.3.7 (http://getbootstrap.com)
             * Copyright 2011-2016 Twitter, Inc.
             * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
@@ -7779,7 +7779,7 @@ header .download .btn-light:hover {
 .bor-b {
   border-bottom: 1px solid white;
 }
-    </style>
+    </style> --}}
 </head>
 
 <body>
