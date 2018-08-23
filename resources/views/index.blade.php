@@ -7,6 +7,11 @@
         <!-- Header -->
         <header id="home">
             <nav class="navbar fixed-top navbar-expand-lg navbar-dark header">
+                @if (auth()->user() != null)
+                    @if (auth()->user()->role == 'admin')
+                        <a href="/alter/index" class="btn btn-primary">Edit</a>
+                    @endif
+                @endif
                 <div class="container">
                     <a class="navbar-brand" href="/"><img class="logo" src="/frontend/img/logo.png" alt="Logo"></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -293,6 +298,17 @@
                         <i class="fab fa-instagram fa-2x instagram"></i>&ensp;
                         <i class="fab fa-google-plus-g fa-2x google"></i>&ensp;
                     </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5"></div>
+                    <div class="col-md-2">
+                        @if (auth()->user() != null)
+                            @if (auth()->user()->role == 'admin')
+                                <a href="/alter/footer" class="btn btn-primary w-100">Edit</a>
+                            @endif
+                        @endif
+                    </div>
+                    <div class="col-md-5"></div>
                 </div>
             </div>
             <p class="copyright text-center">ECUBE Entertainment &copy; 2018, <a href="http://www.techynaf.com/" class="text-danger font-weight-bold">Techynaf</a></p>
