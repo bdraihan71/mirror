@@ -98,7 +98,7 @@ class TicketsController extends Controller
         $ticket = Ticket::find($id);
         $user = auth()->user();
 
-        $pdf = PDF::loadView('tickets/print-ticket', compact('ticket'));
+        $pdf = PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])->loadView('tickets/print-ticket', compact('ticket'));
         return $pdf->download('invoice.pdf');
     }
 }
