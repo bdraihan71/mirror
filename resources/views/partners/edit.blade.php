@@ -34,12 +34,12 @@
                             </div>
                         </div>
                         
-                        <div class="form-row text-white">
+                        <div class="form-row text-white text-left">
                             <div class="form-group col-md-2">
                                 <label>Partner Logo *</label>
                             </div>
                             <div class="form-group col-md-10">
-                                <input required type="file" class="form-control" name="img" placeholder="address">
+                                <input type="file" class="form-control" name="img" placeholder="address">
                             </div>
                         </div>
                         
