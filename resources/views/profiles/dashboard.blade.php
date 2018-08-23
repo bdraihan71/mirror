@@ -53,7 +53,7 @@
                     <p class="text-white">{{$user->profile->address}}</p>
                     <form action="/profile/address" method="POST">
                         @csrf
-                        <input type="text" name="email" class="form-control" value="{{$user->profile->address}}" required>
+                        <input type="text" name="address" class="form-control" value="{{$user->profile->address}}" required>
                         <br>
                         <button type="submit" class="btn btn-outline-danger">Update</button>
                     </form>
@@ -87,7 +87,7 @@
                         <p class="text-white">Confirm password</p>
                         <input type="password" class="form-control" name="confirm" placeholder="**********" required>
                         <br>
-                        <button type="button" class="btn btn-outline-danger">Update</button>
+                        <button type="submit" class="btn btn-outline-danger">Update</button>
                     </form>
                     
                     

@@ -91,8 +91,7 @@ class ProfilesController extends Controller
 
         $name = explode(' ', $request->name);
         $profile->f_name = $name[0];
-        $profile->phone = $request->phone;
-        $profile->address = $request->address;
+
 
         if (sizeof($name) == 1) {
             $profile->l_name = '---';
@@ -150,11 +149,10 @@ class ProfilesController extends Controller
     {
         $user = auth()->user();
 
-        $password = bcrypt($request->current);
-
-        if ($password != $user->password) {
+        if (!Hash::check($request->current, $user->password)) {
             return redirect('home')->with('error', 'Sorry, the password did not match our records.');
         }
+
 
         if ($request->next != $request->confirm) {
             return redirect('home')->with('error', 'The new password entered do not match.');
