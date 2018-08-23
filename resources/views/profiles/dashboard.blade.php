@@ -73,7 +73,7 @@
                     <p class="text-white">{{$user->profile->address}}</p>
                     <form action="/profile/phone" method="POST">
                         @csrf
-                        <input type="text" name="email" class="form-control" value="{{$user->profile->phone}}" required>
+                        <input type="text" name="phone" class="form-control" value="{{$user->profile->phone}}" required>
                         <br>
                         <button type="submit" class="btn btn-outline-danger">Update</button>
                     </form>
