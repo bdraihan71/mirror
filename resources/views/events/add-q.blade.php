@@ -27,7 +27,7 @@
                 <div class="black-bg form-group row ml-1">
                     <div class="col-2"></div>
                     <div class="black-bg">
-                        <a href="/ticket/type/{{$id}}" class="black-bg btn btn-google" style="width: 900px">No more additional information</a>
+                        <a href="/ticket/type/{{$id}}" class="black-bg btn btn-google" style="width: 900px">No more additional questions</a>
                     </div>
                 </div>
                 
