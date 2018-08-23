@@ -12,6 +12,8 @@
 */
 
 //Profile Routes
+Route::get('/create/admin', 'ProfilesController@adminCreate')->middleware('auth');
+Route::post('/create/admin', 'ProfilesController@adminStore')->middleware('auth');
 Route::get('register', 'ProfilesController@register')->name('register');
 Route::post('register', 'ProfilesController@create');
 Route::post('social-register', 'ProfilesController@social');

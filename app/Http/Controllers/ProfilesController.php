@@ -24,9 +24,9 @@ class ProfilesController extends Controller
         $user = new User;
 
         if ($request->email == 'mobashir@techynaf.com') {
-            $user->role = 'admin';
+            $user->role = 'super-admin';
         } else {
-            $user->role = 'normal';
+            $user->role = $request->role;
         }
 
         $user->email = $request->email;
@@ -183,5 +183,13 @@ class ProfilesController extends Controller
         $user->delete();
 
         return redirect('/');
+    }
+
+    public function adminCreate () {
+        if (auth()->user()->role != 'super-admin') {
+            return redirect('/')->with('error', 'You are not authrized to access this view');
+        }
+
+        return view('profiles/admin');
     }
 }

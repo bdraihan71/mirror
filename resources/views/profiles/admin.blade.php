@@ -9,7 +9,6 @@
                 <div class="col-md-6">
                     <form method="POST" action="/register">
                         @csrf
-                        <input type="hidden" name="role" value="normal">
                         <div class="form-row text-white">
                             <div class="form-group col-md-4">
                                 <label>First Name *</label>
@@ -18,6 +17,8 @@
                                 <input type="firstname" class="form-control contact-form input-container" name="f_name" placeholder="First Name" required>
                             </div>
                         </div>
+
+                        <input type="hidden" name="role" value="admin">
 
                         <div class="form-row text-white">
                             <div class="form-group col-md-4">
@@ -90,11 +91,7 @@
                         
                         
                         
-                        <button type="submit" class="btn btn-danger register-btn">Send</button>
-                        <hr>
-                        <a href="{{url('/redirect/facebook')}}" class="black-bg btn register-btn btn-facebook">Login with Facebook</a>
-                        <hr>
-                        <a href="/redirect" class="black-bg btn register-btn btn-google">Login with Gmail</a>
+                        <button type="submit" class="btn btn-danger register-btn">Create</button>
                     </form>
                 </div>
                 <div class="col-md-3"></div>
