@@ -12,6 +12,9 @@
                       @if (auth()->user()->role == 'super-admin')
                         <strong><a class="nav-link text-white" href="/create/admin">CREATE ADMIN</a></strong>
                       @endif
+                      @if (auth()->user() == 'normal')
+                        <strong><a class="nav-link text-white" href="/tickets">TICKETS</a></strong>
+                      @endif
                       <strong><a class="nav-link text-white" href="/events">EVENTS</a></strong>
                       <strong><a class="nav-link text-white" href="/shop">SHOP</a></strong>
                       <strong><a class="nav-link text-white" href="/logout">LOGOUT</a></strong>

@@ -82,6 +82,7 @@ Route::get('/ticket/types/{id}', 'TicketsController@show')->middleware('auth');
 Route::get('/ticket/buy/{id}', 'TicketsController@buy')->middleware('auth');
 Route::post('/ticket/buy/{id}', 'TicketsController@purchase')->middleware('auth');
 Route::post('/tickets/create', 'TicketsController@create')->middleware('auth');
+Route::get('/tickets', 'TicketsController@showAll')->middleware('auth');
 Route::get('/ticket/print/{id}', 'TicketsController@print')->middleware('auth');
 
 //Event Question Answers Routes

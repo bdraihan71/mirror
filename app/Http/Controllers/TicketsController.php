@@ -98,7 +98,14 @@ class TicketsController extends Controller
         $ticket = Ticket::find($id);
         $user = auth()->user();
 
-        $pdf = PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])->loadView('tickets/print-ticket', compact('ticket'));
-        return $pdf->download('invoice.pdf');
+        return view('tickets/ticket')->with('ticket', $ticket)->with('user', $user);
+    }
+
+    public function showAll ()
+    {
+        $user = auth()->user();
+        $tickets = Ticket::where('user_id', auth()->user()->id);
+
+        return view ('tickets/show-all');
     }
 }
