@@ -29,17 +29,11 @@
         <img class="ticket-image" src="{{$ticket->event->img_1}}">
         <div class="container">
             <div class="row pt-5">
-                <div class="col-md-8 ticket-text-line-height">
+                <div class="col-md-12 ticket-text-line-height">
                     <p>{{$user->profile->f_name.' '.$user->profile->m_name.' '.$user->profile->l_name}}</p>
                     <p>{{$user->email}}</p>
                     <p>{{$user->profile->phone}}</p>
                     <p>{{$user->profile->address}}</p>
-                </div>
-
-                <div class="col-md-4">
-                    <a href="/ticket/print/{{$ticket->id}}" class="btn btn-danger w-100">Print Ticket</a>
-                    <br>
-                    <a href="/" class="btn btn-primary w-100">Go Back</a>
                 </div>
             </div>
             <div class="row pt-5">
@@ -97,7 +91,7 @@
                     <p class="text-danger">This is your order barcode</p>
                 </div>
                 <div class="col-md-6 ticket-text-line-height">
-                    {!! Milon\Barcode\Facades\DNS1DFacade::getBarcodeHTML($ticket->invoice->barcode, "PHARMA") !!}
+                    {!! Milon\Barcode\Facades\DNS1DFacade::getBarcodeSVG($ticket->invoice->barcode, "PHARMA") !!}
                 </div>
             </div>
         </div>      
