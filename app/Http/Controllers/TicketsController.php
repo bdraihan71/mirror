@@ -8,6 +8,7 @@ use App\TicketType;
 use App\Ticket;
 use App\Event;
 use App\EventAnswer;
+use PDF;
 
 class TicketsController extends Controller
 {
@@ -90,5 +91,14 @@ class TicketsController extends Controller
         $url = '/payment/session/'.$type->id;
 
         return redirect($url);
+    }
+
+    public function print (Request $request, $id)
+    {
+        $ticket = Ticket::find($id);
+        $user = auth()->user();
+
+        $pdf = PDF::loadView('tickets/print-ticket', compact('ticket'));
+        return $pdf->download('invoice.pdf');
     }
 }
