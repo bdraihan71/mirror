@@ -116,7 +116,7 @@ Route::get('/partner/delete/{id}', 'PartnersController@delete')->middleware('aut
 //Test Route
 Route::get('/page', function () {
     //dd(Milon\Barcode\Facades\DNS1DFacade::getBarcodeSVG("4445645656", "PHARMA2T"));
-    //return Milon\Barcode\Facades\DNS1DFacade::getBarcodeHTML("10", "PHARMA2T");
+    return Milon\Barcode\Facades\DNS1DFacade::getBarcodeSVG("10", "PHARMA");
     return view('tickets/show');
 });
 
