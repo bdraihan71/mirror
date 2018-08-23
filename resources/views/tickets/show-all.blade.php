@@ -10,7 +10,7 @@
             </div>
             <br><br>
             @if (count($tickets) == 0)
-                <h3 class="page-title text-center">You Have No Tickets Purchased</h3>
+                <h3 class="page-title text-center">You have not purchased any tickets</h3>
             @else
                 <h4 class="text-center">Please use (Command + p) for mac and (Crtl + p) for other platforms to print the pdf of the ticket</h4>
                 <br><br>
