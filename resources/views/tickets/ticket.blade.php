@@ -91,7 +91,7 @@
                     <p class="text-danger">This is your order barcode</p>
                 </div>
                 <div class="col-md-6 ticket-text-line-height">
-                    {!! Milon\Barcode\Facades\DNS1DFacade::getBarcodeHTML($ticket->invoice->barcode, "PHARMA2T") !!}
+                    {!! Milon\Barcode\Facades\DNS1DFacade::getBarcodeHTML($ticket->invoice->barcode, "PHARMA") !!}
                 </div>
             </div>
         </div>      
