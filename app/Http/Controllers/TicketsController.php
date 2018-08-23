@@ -104,7 +104,7 @@ class TicketsController extends Controller
     public function showAll ()
     {
         $user = auth()->user();
-        $tickets = Ticket::where('user_id', auth()->user()->id)->orderBy('date', 'desc')->get();
+        $tickets = Ticket::where('user_id', auth()->user()->id)->orderBy('created_at', 'desc')->get();
 
         return view ('tickets/show-all')->with('tickets', $tickets);
     }
