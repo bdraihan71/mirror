@@ -981,4 +981,18 @@ header .download .btn-light:hover {
   background: #C4250A;
 }
 
+.bor-l {
+  border-left: 1px solid white;
+}
 
+.bor-r {
+  border-right: 1px solid white;
+}
+
+.bor-t {
+  border-top: 1px solid white;
+}
+
+.bor-b {
+  border-bottom: 1px solid white;
+}

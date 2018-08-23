@@ -5,28 +5,35 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <h3 class="page-title pl-5">Contact Attempts</h3>
+                <h3 class="page-title pl-5 bor-b">Contact Attempts</h3>
             </div>
         </div>
 
+        <br><br>
+
         @if (count($contacts) > 0)
             @foreach($contacts as $contact)
+            <br>
                 <div class="row">
-                    <div class="col-md-5">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-4 bor-b">
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-12 bor-b">
                                 {{$contact->name}}
                             </div>
                         </div>
+                        <br>
                         <div class="row">
                             <div class="col-md-12">
                                 {{$contact->email}}
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-7">
+                    <div class="col-md-1 bor-b"></div>
+                    <div class="col-md-5 bor-b">
                         {{$contact->body}}
                     </div>
+                    <div class="col-md-1"></div>
                 </div>
             @endforeach
 
