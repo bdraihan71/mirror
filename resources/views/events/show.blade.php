@@ -98,10 +98,10 @@
             @if (count($event->addInfo) > 0)
                 <div class="row">
                     <div class="col-md-9">
-                        <h2>ADDITIONAL INFORMATION</h2>
+                        <h3>ADDITIONAL INFORMATION</h3>
                         @foreach($event->addInfo as $info)
                             <div class="row ml-2">
-                                <h3>{{$info->name}}</h3>
+                                <h4>{{$info->name}}</h4>
                                 <div class="col-md-12">
                                     {!!$info->info!!}
                                 </div>
