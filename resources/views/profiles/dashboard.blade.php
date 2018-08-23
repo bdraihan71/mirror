@@ -15,7 +15,7 @@
                       @if (auth()->user() != null)
                         <strong><a class="nav-link text-white" href="/tickets">TICKETS</a></strong>
                       @endif
-                      <strong><a class="nav-link text-white" href="/partner/create">PARTNERS</a></strong>
+                      <strong><a class="nav-link text-white" href="/partners">PARTNERS</a></strong>
                       <strong><a class="nav-link text-white" href="/events">EVENTS</a></strong>
                       <strong><a class="nav-link text-white" href="/shop">SHOP</a></strong>
                       <strong><a class="nav-link text-white" href="/logout">LOGOUT</a></strong>
