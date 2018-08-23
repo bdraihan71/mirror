@@ -27,7 +27,7 @@
 <body>
     <?php $user = auth()->user() ?>
     <section id="ticket" class="ticket pb-5">
-        <img class="ticket-image" src="{{$ticket->event->img_1}}">
+        <img class="ticket-image" src="{{ url($ticket->event->img_1) }}">
         <div class="container">
             <div class="row pt-5">
                 <div class="col-md-12 ticket-text-line-height">
