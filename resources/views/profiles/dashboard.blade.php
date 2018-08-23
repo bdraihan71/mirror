@@ -70,7 +70,7 @@
                     <br>
                     
                     <h5 class="text-danger">Phone Number</h5>
-                    <p class="text-white">{{$user->profile->address}}</p>
+                    <p class="text-white">{{$user->profile->phone}}</p>
                     <form action="/profile/phone" method="POST">
                         @csrf
                         <input type="text" name="phone" class="form-control" value="{{$user->profile->phone}}" required>
