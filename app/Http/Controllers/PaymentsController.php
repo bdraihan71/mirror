@@ -82,7 +82,7 @@ class PaymentsController extends Controller
             $user = User::find($user);
 
 
-            return redirect('/home')->with('success', 'Ticket successfully purchased');
+            return redirect('/tickets')->with('success', 'Ticket successfully purchased');
         } else {
             $answers = EventAnswer::where('event_id')->where('user_id', auth()->user()->id)->get();
 

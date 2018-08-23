@@ -18,6 +18,7 @@
                             <th>Event Name</th>
                             <th>Ticket Type</th>
                             <th>Ticket Price</th>
+                            <th>Purchase Date</th>
                             <th>Ticket Link</th>
                         </tr>
                     </thead>
@@ -28,6 +29,7 @@
                                 <td>{{$ticket->event->name}}</td>
                                 <td>{{$ticket->type->name}}</td>
                                 <td>{{$ticket->type->price}}</td>
+                                <td>{{date("M d, Y", strtotime($ticket->created_at))}}</td>
                                 <td><a href="/ticket/print/{{$ticket->id}}" target="_blank">Download Link</a></td>
                             </tr>
                         @endforeach
