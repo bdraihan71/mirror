@@ -21,6 +21,7 @@ Route::get('/payment/{status}/{id}/{user}/{type}', function (Request $request, $
 });
 
 Route::post('/payment/{status}/{id}/{user}/{type}', 'PaymentsController@status');
+Route::post('/payment/{status}/{id}/{user}', 'ShopController@status');
 // Route::get('/payment/{status}/{id}/{user}/{type}', 'PaymentsController@status');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
