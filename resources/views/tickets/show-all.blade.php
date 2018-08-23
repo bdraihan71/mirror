@@ -8,7 +8,9 @@
             <div class="row">
                 <h3 class="page-title">EVENT TICKETS</h3>
             </div>
-            
+            <br><br>
+            <h4 class="text-center">Please use (Command + p) for mac and (Crtl + p) for other platforms to print the pdf of the ticket</h4>
+            <br><br>
             @if (count($tickets) == 0)
                 <h3 class="page-title text-center">You Have No Tickets Purchased</h3>
             @else
