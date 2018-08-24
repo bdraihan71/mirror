@@ -18,7 +18,7 @@
 
         @foreach($events as $event)
             <div class="row bor-b bor-t">
-                <div class="col-md-3">{{$event->name}}</div>
+                <div class="col-md-3"><a href="/analytics/events/{{$event->id}}">{{$event->name}}</a></div>
                 <div class="col-md-2">
                     @foreach($event->types as $type)
                         <div class="row bor-b">

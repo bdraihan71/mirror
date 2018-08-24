@@ -41,4 +41,9 @@ class Event extends Model
     {
         return $this->hasMany('App\EventAnswer');
     }
+
+    public function questions()
+    {
+        return $this->hasMany('App\Question');
+    }
 }

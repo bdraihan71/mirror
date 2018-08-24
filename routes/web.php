@@ -128,3 +128,4 @@ Route::get('/privacy-policy', function () {
 
 //Analytics Routes
 Route::get('/analytics/events', 'AnalyticsController@events')->middleware('auth');
+Route::get('/analytics/events/{id}', 'AnalyticsController@event')->middleware('auth');
