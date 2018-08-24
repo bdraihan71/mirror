@@ -27,23 +27,21 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
-@if (Request::is('/'))
-    <body class="black-bg">
+
+<body class="black-bg">
+    <div class="container-fluid">
         @include('flash::message')
         @include('layouts.messages')
-        @yield('content')
-        @include('layouts.scripts')
-    </body>
-@else
-    <body class="black-bg">
-        <div class="container-fluid">
-            @include('flash::message')
+
+        @if (Request::is('/'))
+            @yield('content')
+        @else
             @include('layouts.nav')
-            @include('layouts.messages')
             @yield('content')
             @include('layouts.footer')
-            @include('layouts.scripts')
-        </div>
-    </body>
-@endif
+        @endif
+       
+        @include('layouts.scripts')
+    </div>
+</body>
 </html>
