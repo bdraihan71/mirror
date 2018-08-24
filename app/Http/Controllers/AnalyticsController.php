@@ -9,7 +9,7 @@ class AnalyticsController extends Controller
 {
     public function events ()
     {
-        $events = Event::all();
+        $events = Event::all()->sortByDesc("created_at");
         $x = array();
 
         foreach ($events as $event) {
