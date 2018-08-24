@@ -1005,3 +1005,7 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none; 
   margin: 0; 
 }
+
+.sc-links {
+  color: #E3E3E3;
+}
