@@ -9,43 +9,70 @@
                 @csrf
 
                 <div class="form-group row">
-                    <div class="col-md-4">
-                        <label for="url_3">Carousel Image 1</label>
+                    <div class="col-md-4 text-center">
+                        <div class="row">
+                            <div class="col-md-4 text-right font-sm">
+                                <label for="url_3">Carousel Image 1</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="file" class="form-control" name="url_3" placeholder="address">
+                            </div>
+                        </div>
                         <br>
-                        <input type="file" class="form-control" name="url_3" placeholder="address">
-                        <br>
-                        <img src="{{$event->img_3}}" alt="Carousel Image 1">
+                        <img height="200" src="{{$event->img_3}}" alt="Carousel Image 1">
                     </div>
-                    <div class="col-md-4">
-                        <label for="url_4">Carousel Image 2</label>
+                    <div class="col-md-4 text-center">
+                        <div class="row">
+                            <div class="col-md-4 text-right font-sm">
+                                <label for="url_4">Carousel Image 2</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="file" class="form-control" name="url_4" placeholder="address">
+                            </div>
+                        </div>
                         <br>
-                        <input type="file" class="form-control" name="url_4" placeholder="address">
-                        <br>
-                        <img src="{{$event->img_4}}" alt="Carousel Image 2">
+                        <img height="200" src="{{$event->img_4}}" alt="Carousel Image 2">
                     </div>
-                    <div class="col-md-4">
-                        <label for="url_5">Carousel Image 3</label>
+                    <div class="col-md-4 text-center">
+                        <div class="row">
+                            <div class="col-md-4 text-right font-sm">
+                                <label for="url_5">Carousel Image 3</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="file" class="form-control" name="url_5" placeholder="address">
+                            </div>
+                        </div>
                         <br>
-                        <input type="file" class="form-control" name="url_5" placeholder="address">
-                        <br>
-                        <img src="{{$event->img_5}}" alt="Carousel Image 3">
+                        <img height="200" src="{{$event->img_5}}" alt="Carousel Image 3">
                     </div>
                 </div>
+                
+                <br>
 
                 <div class="form-group row">
-                    <div class="col-md-6">
-                        <label for="url_1">Ticket Header</label>
+                    <div class="col-md-6 text-center">
+                        <div class="row">
+                            <div class="col-md-4 text-right font-sm">
+                                <label for="url_1">Ticket Header</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="file" class="form-control" name="url_1" placeholder="address">
+                            </div>
+                        </div>
                         <br>
-                        <input type="file" class="form-control" name="url_1" placeholder="address">
-                        <br>
-                        <img src="{{$event->img_2}}" alt="Ticket Header">
+                        <img height="300" src="{{$event->img_2}}" alt="Ticket Header">
                     </div>
-                    <div class="col-md-6">
-                        <label for="url_2">Ticket Footer</label>
+                    <div class="col-md-6 text-center">
+                        <div class="row">
+                            <div class="col-md-4 text-right font-sm">
+                                <label for="url_2">Ticket Footer</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="file" class="form-control" name="url_2" placeholder="address">
+                            </div>
+                        </div>
                         <br>
-                        <input type="file" class="form-control" name="url_2" placeholder="address">
-                        <br>
-                        <img src="{{$event->img_2}}" alt="Ticket Footer">
+                        <img height="300" src="{{$event->img_2}}" alt="Ticket Footer">
                     </div>
                 </div>
 

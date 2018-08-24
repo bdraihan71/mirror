@@ -995,3 +995,7 @@ header .download .btn-light:hover {
 .bor-b {
   border-bottom: 1px solid white;
 }
+
+.font-sm {
+  font-size: 0.9em;
+}
