@@ -20,7 +20,7 @@
     </div>
 
     @foreach($tickets as $ticket)
-        <div class="row">
+        <div class="row bor-b">
             <div class="col-md-2">
                 {{$ticket->user->profile->f_name.' '.$ticket->user->profile->m_name.' '.$ticket->user->profile->l_name}}
                 <br>
