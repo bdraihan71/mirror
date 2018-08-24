@@ -54,7 +54,9 @@ class PaymentsController extends Controller
         if (json_decode($response->getBody())->status == 'FAILED') {
             $url = '/events/'.$type->event_id;
 
-            return redirect($url)->with('error', json_decode($response->getBody())->failedreason);
+            flash(json_decode($response->getBody())->failedreason)->error();
+
+            return redirect($url);
         }
 
         return redirect(json_decode($response->getBody())->redirectGatewayURL);
@@ -92,7 +94,9 @@ class PaymentsController extends Controller
 
             $url = '/events/'.$id;
 
-            return redirect($url)->with('error', 'Something went wrong');
+            flash('Something went wrong')->error();
+
+            return redirect($url);
         }
     }
 }

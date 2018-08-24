@@ -25,7 +25,9 @@ class ShopController extends Controller
     public function create ()
     {
         if (auth()->user()->role != 'admin') {
-            return redirect('/shop')->with('error', 'You are not authorized to view the page');
+            flash('You are not authorized to view the page')->error();
+
+            return redirect('/shop');
         }
 
         return view('shop/create')->with('footer', $this->footer());
@@ -98,7 +100,8 @@ class ShopController extends Controller
         $product->quantity = -1;
         $product->save();
 
-        return redirect('/shop')->with('error', 'Product successfully deleted');
+        flash('Product successfully deleted')->error();
+        return redirect('/shop');
     }
 
     public function buy (Request $request)
@@ -142,7 +145,9 @@ class ShopController extends Controller
         if (json_decode($response->getBody())->status == 'FAILED') {
             $url = '/shop/'.$product->id;
 
-            return redirect($url)->with('error', json_decode($response->getBody())->failedreason);
+            flash(json_decode($response->getBody())->failedreason)->error();
+
+            return redirect($url);
         }
 
         return redirect(json_decode($response->getBody())->redirectGatewayURL);

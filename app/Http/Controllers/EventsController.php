@@ -52,8 +52,10 @@ class EventsController extends Controller
 
     public function create ()
     {
-        if (auth()->user()->role != 'admin') {
-            return redirect('/')->with('error', 'You are not authorized to access this');
+        if ($this->notAdmin()) {
+            flash('You are not authorized to access this')->error();
+
+            return redirect('/');
         }
 
         return view('events/create')->with('footer', $this->footer());
@@ -61,8 +63,10 @@ class EventsController extends Controller
 
     public function store (Request $request)
     {
-        if (auth()->user()->role != 'admin') {
-            return redirect('/')->with('error', 'You are not authorized to access this');
+        if ($this->notAdmin()) {
+            flash('You are not authorized to access this')->error();
+
+            return redirect('/');
         }
 
         $this->validate($request, [
@@ -134,8 +138,10 @@ class EventsController extends Controller
 
     public function addInfo (Request $request)
     {
-        if (auth()->user()->role != 'admin') {
-            return redirect('/')->with('error', 'You are not authorized to access this');
+        if ($this->notAdmin()) {
+            flash('You are not authorized to access this')->error();
+
+            return redirect('/');
         }
 
         $this->validate($request, [
@@ -155,8 +161,10 @@ class EventsController extends Controller
 
     public function addQ (Request $request, $id)
     {
-        if (auth()->user()->role != 'admin') {
-            return redirect('/')->with('error', 'You are not authorized to access this');
+        if ($this->notAdmin()) {
+            flash('You are not authorized to access this')->error();
+
+            return redirect('/');
         }
 
         return view('events/add-q')->with('id', $id)->with('questions', array())->with('footer', $this->footer());
@@ -164,8 +172,10 @@ class EventsController extends Controller
 
     public function storeQ (Request $request)
     {
-        if (auth()->user()->role != 'admin') {
-            return redirect('/')->with('error', 'You are not authorized to access this');
+        if ($this->notAdmin()) {
+            flash('You are not authorized to access this')->error();
+
+            return redirect('/');
         }
 
         $question = new Question;
@@ -180,8 +190,10 @@ class EventsController extends Controller
 
     public function edit (Request $request, $id)
     {
-        if (auth()->user()->role != 'admin') {
-            return redirect('/')->with('error', 'You are not authorized to access this');
+        if ($this->notAdmin()) {
+            flash('You are not authorized to access this')->error();
+
+            return redirect('/');
         }
 
         $event = Event::where('id', $id)->first();
@@ -204,8 +216,10 @@ class EventsController extends Controller
 
     public function eStore (Request $request, $id)
     {
-        if (auth()->user()->role != 'admin') {
-            return redirect('/')->with('error', 'You are not authorized to access this');
+        if ($this->notAdmin()) {
+            flash('You are not authorized to access this')->error();
+            
+            return redirect('/');
         }
 
         $this->validate($request, [
@@ -286,8 +300,10 @@ class EventsController extends Controller
 
     public function addStore (Request $request, $id)
     {
-        if (auth()->user()->role != 'admin') {
-            return redirect('/')->with('error', 'You are not authorized to access this');
+        if ($this->notAdmin()) {
+            flash('You are not authorized to access this')->error();
+            
+            return redirect('/');
         }
 
         $information = AdditionalInformation::where('event_id', $id)->get();
@@ -319,8 +335,10 @@ class EventsController extends Controller
 
     public function qStore (Request $request, $id)
     {
-        if (auth()->user()->role != 'admin') {
-            return redirect('/')->with('error', 'You are not authorized to access this');
+        if ($this->notAdmin()) {
+            flash('You are not authorized to access this')->error();
+
+            return redirect('/');
         }
 
         $questions = Question::where('event_id', $id)->get();
@@ -343,8 +361,10 @@ class EventsController extends Controller
 
     public function addInfoD (Request $request, $id)
     {
-        if (auth()->user()->role != 'admin') {
-            return redirect('/')->with('error', 'You are not authorized to access this');
+        if ($this->notAdmin()) {
+            flash('You are not authorized to access this')->error();
+            
+            return redirect('/');
         }
 
         $info = AdditionalInformation::where('id', $id)->first();
@@ -356,8 +376,10 @@ class EventsController extends Controller
 
     public function questionD (Request $request, $id)
     {
-        if (auth()->user()->role != 'admin') {
-            return redirect('/')->with('error', 'You are not authorized to access this');
+        if ($this->notAdmin()) {
+            flash('You are not authorized to access this')->error();
+
+            return redirect('/');
         }
 
         $question = Question::where('id', $id)->first();
@@ -369,8 +391,10 @@ class EventsController extends Controller
 
     public function delete (Request $request, $id)
     {
-        if (auth()->user()->role != 'admin') {
-            return redirect('/')->with('error', 'You are not authorized to access this');
+        if ($this->notAdmin()) {
+            flash('You are not authorized to access this')->error();
+
+            return redirect('/');
         }
 
         $event = Event::where('id', $id)->first();

@@ -7,23 +7,12 @@ use App\WebContent;
 
 class CMSController extends Controller
 {
-    public function update (Request $request, $id)
-    {
-        if (auth()->user()->role != 'admin') {
-            return redirect('/')->with('error', 'You are not authorized to access this');
-        }
-
-        $content = Webcontent::where('id', $id)->first();
-        $content = $request->content;
-        $content->save();
-
-        return redirect($request->url);
-    }
-
     public function getIndex ()
     {
         if ($this->notAdmin()) {
-            return redirect('/')->with('error', 'You are not authorized to access this');
+            flash('You are not authorized to access this')->error();
+
+            return redirect('/');
         }
 
         $contents = array(WebContent::find(1), WebContent::find(2), WebContent::find(3), WebContent::find(4), WebContent::find(5),
@@ -36,7 +25,9 @@ class CMSController extends Controller
     public function setIndex (Request $request)
     {
         if ($this->notAdmin()) {
-            return redirect('/')->with('error', 'You are not authorized to access this');
+            flash('You are not authorized to access this')->error();
+
+            return redirect('/');
         }
 
         if($request->hasFile('url_1')) {
@@ -154,7 +145,9 @@ class CMSController extends Controller
     public function getFooter ()
     {
         if ($this->notAdmin()) {
-            return redirect('/')->with('error', 'You are not authorized to access this');
+            flash('You are not authorized to access this')->error();
+
+            return redirect('/');
         }
 
         $contents = array(WebContent::find(16), WebContent::find(17), WebContent::find(18));
@@ -165,7 +158,9 @@ class CMSController extends Controller
     public function setFooter (Request $request)
     {
         if ($this->notAdmin()) {
-            return redirect('/')->with('error', 'You are not authorized to access this');
+            flash('You are not authorized to access this')->error();
+
+            return redirect('/');
         }
 
         if ($request->head_office != null) {

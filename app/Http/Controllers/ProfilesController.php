@@ -125,7 +125,9 @@ class ProfilesController extends Controller
         $user = auth()->user();
 
         if (!Hash::check($request->password, $user->password)) {
-            return redirect('home')->with('error', 'Sorry, the password did not match our records.');
+            flash('Sorry, the password did not match our records.')->error();
+
+            return redirect('home');
         }
 
         $user->email = $request->email;
@@ -157,12 +159,15 @@ class ProfilesController extends Controller
         $user = auth()->user();
 
         if (!Hash::check($request->current, $user->password)) {
-            return redirect('home')->with('error', 'Sorry, the password did not match our records.');
+            flash('Sorry, the password did not match our records.')->error();
+
+            return redirect('home');
         }
 
 
         if ($request->next != $request->confirm) {
-            return redirect('home')->with('error', 'The new password entered do not match.');
+            flash('The new password entered do not match.')->error();
+            return redirect('home');
         }
 
         $user->password = bcrypt($request->next);
@@ -194,7 +199,8 @@ class ProfilesController extends Controller
 
     public function adminCreate () {
         if (auth()->user()->role != 'super-admin') {
-            return redirect('/')->with('error', 'You are not authrized to access this view');
+            flash('You are not authrized to access this view')->error();
+            return redirect('/');
         }
 
         return view('profiles/admin');

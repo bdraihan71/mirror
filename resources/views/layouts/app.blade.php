@@ -22,11 +22,14 @@
     <!-- Custom styles -->
     <link href="/frontend/css/style.css" rel="stylesheet">
 
+    {{-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> --}}
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 @if (Request::is('/'))
     <body class="black-bg">
+        @include('flash::message')
         @include('layouts.messages')
         @yield('content')
         @include('layouts.scripts')
@@ -34,6 +37,7 @@
 @else
     <body class="black-bg">
         <div class="container-fluid">
+            @include('flash::message')
             @include('layouts.nav')
             @include('layouts.messages')
             @yield('content')

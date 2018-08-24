@@ -18,7 +18,9 @@ class AnswersController extends Controller
         if (count($answers) != 0) {
             $url = '/events/'.$id;
             
-            return redirect($url)->with('error', 'You can only buy one ticket');
+            flash('You can only buy one ticket')->error();
+
+            return redirect($url);
         }
 
         if (count($questions) == 0) {

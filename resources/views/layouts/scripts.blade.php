@@ -16,6 +16,11 @@
 </script>
 
 <script>
+    $('#flash-overlay-modal').modal();
+    $('div.alert').not('.alert-important').delay(3000).fadeOut(350);
+</script>
+
+<script>
     $(document).ready(function() {
         $('#fullpage').fullpage({
         anchors: ['page1', 'page2', 'page3', 'page4', 'page5'],

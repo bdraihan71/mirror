@@ -9,8 +9,10 @@ class PartnersController extends Controller
 {
     public function create ()
     {
-        if (auth()->user()->role != 'admin') {
-            return redirect('/partners')->with('error', 'You are not authorized to view this page');
+        if ($this->notAdmin()) {
+            flash('You are not authorized to view this page')->error();
+
+            return redirect('/partners');
         }
 
         return view('partners/add')->with('footer', $this->footer());;
@@ -22,8 +24,10 @@ class PartnersController extends Controller
             'url' => 'image|required|max:1999|mimes:jpeg,png,jpg,gif,svg',
         ]);
 
-        if (auth()->user()->role != 'admin') {
-            return redirect('/partners')->with('error', 'You are not authorized to view this page');
+        if ($this->notAdmin()) {
+            flash('You are not authorized to view this page')->error();
+
+            return redirect('/partners');
         }
 
         $partner = new Partner;

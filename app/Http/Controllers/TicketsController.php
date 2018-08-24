@@ -15,7 +15,8 @@ class TicketsController extends Controller
     public function typeSelect (Request $request, $id)
     {
         if (auth()->user()->role != 'admin') {
-            return redirect('/')->with('error', 'You are not authorized to access this');
+            flash('You are not authorized to access this')->error();
+            return redirect('/');
         }
 
         $event = Event::where('id', $id)->first();
@@ -26,7 +27,8 @@ class TicketsController extends Controller
     public function create (Request $request)
     {
         if (auth()->user()->role != 'admin') {
-            return redirect('/')->with('error', 'You are not authorized to access this');
+            flash('You are not authorized to access this')->error();
+            return redirect('/');
         }
         
         $types = $request->type;
@@ -69,7 +71,8 @@ class TicketsController extends Controller
 
         if ($ticket != null) {
             $url = '/events/'.$id;
-            return redirect($url)->with('error', 'You cannot buy more than one ticket for an event');
+            flash('You cannot buy more than one ticket for an event')->error();
+            return redirect($url);
         }
 
         $types = TicketType::where('event_id', $id)->get();
@@ -83,8 +86,8 @@ class TicketsController extends Controller
 
         if ($ticket != null) {
             $url = '/events/'.$id;
-
-            return redirect($url)->with('error', 'You cannot buy more than one ticket for an event');
+            flash('You cannot buy more than one ticket for an event')->error();
+            return redirect($url);
         }
 
         $type = TicketType::where('id', $request->type)->first();
