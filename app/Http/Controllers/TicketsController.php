@@ -26,7 +26,7 @@ class TicketsController extends Controller
 
     public function create (Request $request)
     {
-        if (auth()->user()->role != 'admin') {
+        if ($this->notAdmin()) {
             flash('You are not authorized to access this')->error();
             return redirect('/');
         }

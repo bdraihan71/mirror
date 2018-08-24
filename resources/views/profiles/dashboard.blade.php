@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-md-3">
                     <nav class="nav flex-column bg-dark nav-height">
-                      @if (auth()->user()->role == 'admin')
+                      @if (!App\Http\Controllers\Controller::notAdmin())
                         <strong><a class="nav-link text-white" href="/events/create">CREATE EVENTS</a></strong>
                         <strong><a class="nav-link text-white" href="/partners">PARTNERS</a></strong>
                         @if (auth()->user()->role == 'super-admin')
