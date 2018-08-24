@@ -18,4 +18,13 @@ class Controller extends BaseController
 
         return $footer;
     }
+
+    public function notAdmin ()
+    {   
+        if (auth()->user()->role != 'admin' && auth()->user()->role != 'super-admin') {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

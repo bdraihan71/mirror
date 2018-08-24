@@ -22,16 +22,20 @@ class CMSController extends Controller
 
     public function getIndex ()
     {
-        if (auth()->user()->role != 'admin') {
+        if ($this->notAdmin()) {
             return redirect('/')->with('error', 'You are not authorized to access this');
         }
+
+        $contents = array(WebContent::find(1), WebContent::find(2), WebContent::find(3), WebContent::find(4), WebContent::find(5),
+        WebContent::find(6), WebContent::find(7), WebContent::find(8), WebContent::find(9), WebContent::find(10), WebContent::find(11),
+        WebContent::find(12), WebContent::find(13), WebContent::find(14), WebContent::find(15));
         
-        return view('cms/index')->with('footer', $this->footer());
+        return view('cms/index')->with('contents', $contents);
     }
 
     public function setIndex (Request $request)
     {
-        if (auth()->user()->role != 'admin') {
+        if ($this->notAdmin()) {
             return redirect('/')->with('error', 'You are not authorized to access this');
         }
 
@@ -149,16 +153,16 @@ class CMSController extends Controller
 
     public function getFooter ()
     {
-        if (auth()->user()->role != 'admin') {
+        if ($this->notAdmin()) {
             return redirect('/')->with('error', 'You are not authorized to access this');
         }
 
-        return view('cms/footer')->with('footer', $this->footer());
+        return view('cms/footer')->with('contents', $contents);
     }
 
     public function setFooter (Request $request)
     {
-        if (auth()->user()->role != 'admin') {
+        if ($this->notAdmin()) {
             return redirect('/')->with('error', 'You are not authorized to access this');
         }
 
