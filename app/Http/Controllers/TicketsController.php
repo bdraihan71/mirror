@@ -14,7 +14,7 @@ class TicketsController extends Controller
 {
     public function typeSelect (Request $request, $id)
     {
-        if (auth()->user()->role != 'admin') {
+        if ($this->notAdmin()) {
             flash('You are not authorized to access this')->error();
             return redirect('/');
         }

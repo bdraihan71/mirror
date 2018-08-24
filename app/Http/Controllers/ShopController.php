@@ -24,7 +24,7 @@ class ShopController extends Controller
 
     public function create ()
     {
-        if (auth()->user()->role != 'admin') {
+        if ($this->notAdmin()) {
             flash('You are not authorized to view the page')->error();
 
             return redirect('/shop');
