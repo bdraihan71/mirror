@@ -15,6 +15,6 @@ class Question extends Model
 
     public function answers ()
     {
-        return $this->belongsTo('App\EventAnswer');
+        return $this->hasMany('App\EventAnswer');
     }
 }
