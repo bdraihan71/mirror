@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="row" id="top"></div>
     <div class="overlay-single-event">
         <h1 class="font-weight-bold">{{$event->name}}</h1>
         <i class="fas fa-map-marker-alt fa-1x"> {{strtoupper($event->location)}}</i>

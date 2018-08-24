@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="row" id="top"></div>
 <br><br><br><br><br>
     <div class="container-fluid">
         <div class="row">

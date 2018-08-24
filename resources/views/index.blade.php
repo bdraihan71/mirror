@@ -19,16 +19,16 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                         <div class="navbar-nav font-weight-bold nav-back">
-                            <a class="nav-item nav-link mt-1" href="/">HOME</a>
+                            <a class="nav-item nav-link mt-1" href="/#top">HOME</a>
                             <a class="nav-item nav-link mt-1" href="/#page2">ABOUT US</a>
                             <a class="nav-item nav-link mt-1" href="/#page4">PARTNERS</a>
-                            <a class="nav-item nav-link mt-1" href="/events/upcoming">EVENTS</a>
+                            <a class="nav-item nav-link mt-1" href="/events/upcoming/#top">EVENTS</a>
                             @if(auth()->user() != null)
                                 <a class="nav-item nav-link mt-1" href="/logout">LOGOUT</a>
-                                <a class="nav-item nav-link mt-1" href="/home">DASHBOARD</a>
+                                <a class="nav-item nav-link mt-1" href="/home/#top">DASHBOARD</a>
                             @else
-                                <a class="nav-item nav-link mt-1" href="/register">REGISTER</a>
-                                <a class="nav-item nav-link mt-1" href="/login">LOGIN</a>
+                                <a class="nav-item nav-link mt-1" href="/register/#top">REGISTER</a>
+                                <a class="nav-item nav-link mt-1" href="/login/#top">LOGIN</a>
                             @endif
                             <a class="nav-item nav-link mt-1" href="/contact-us/#top">CONTACT US</a>
                         </div>

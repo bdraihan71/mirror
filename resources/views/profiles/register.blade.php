@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="row" id="top"></div>
 <br><br><br><br>
     <section id="register" class="register black-bg">
         <div class="container">

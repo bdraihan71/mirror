@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="row" id="top"></div>
     @if($e != null)
         <div class="overlay">
             <h1 class="font-weight-bold">{{$e->name}}</h1>

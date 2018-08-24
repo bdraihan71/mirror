@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="row" id="top"></div>
     <section id="shop" class="shop">
         <div class="container text-white text-center">
             <div class="row">

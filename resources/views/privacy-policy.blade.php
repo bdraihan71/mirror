@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+<div class="row" id="top"></div>
 <br><br><br><br><br>
 <h1>Privacy Policy</h1>
 
