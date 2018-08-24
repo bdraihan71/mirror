@@ -39,7 +39,7 @@
                             {{$question->question}}
                         </div>
                         <div class="col-md-6 h-100 bor-b">
-                            {{$question->answers->where('user_id', $ticket->user_id)->answer}}
+                            {{$question->answers->where('user_id', $ticket->user_id)}}
                         </div>
                     </div>
                 @endforeach
