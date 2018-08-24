@@ -35,10 +35,10 @@
             <div class="col-md-10">
                 @foreach($ticket->event->questions as $question)
                     <div class="row bor-b">
-                        <div class="col-md-6 h-100 bor-b">
+                        <div class="col-md-6">
                             {{$question->question}}
                         </div>
-                        <div class="col-md-6 h-100 bor-b">
+                        <div class="col-md-6">
                             {{$question->answers->where('user_id', $ticket->user_id)->first()->answer}}
                         </div>
                     </div>
