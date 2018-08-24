@@ -8,13 +8,15 @@
                     <nav class="nav flex-column bg-dark nav-height">
                       @if (auth()->user()->role == 'admin')
                         <strong><a class="nav-link text-white" href="/events/create">CREATE EVENTS</a></strong>
+                        <strong><a class="nav-link text-white" href="/partners">PARTNERS</a></strong>
                       @endif
                       @if (auth()->user()->role == 'super-admin')
+                        <strong><a class="nav-link text-white" href="/events/create">CREATE EVENTS</a></strong>
                         <strong><a class="nav-link text-white" href="/create/admin">CREATE ADMIN</a></strong>
+                        <strong><a class="nav-link text-white" href="/partners">PARTNERS</a></strong>
                       @endif
                       @if (auth()->user() != null)
                         <strong><a class="nav-link text-white" href="/tickets">TICKETS</a></strong>
-                        <strong><a class="nav-link text-white" href="/partners">PARTNERS</a></strong>
                       @endif
                       <strong><a class="nav-link text-white" href="/events">EVENTS</a></strong>
                       {{-- <strong><a class="nav-link text-white" href="/shop">SHOP</a></strong> --}}
