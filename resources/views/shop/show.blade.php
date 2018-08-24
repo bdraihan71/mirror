@@ -21,7 +21,7 @@
             <br><br>
             <div class="row">
                 @if (auth()->user() != null)
-                    @if (auth()->user()->role == 'admin')
+                    @if (!App\Http\Controllers\Controller::notAdmin())
                         <div class="col-md-4"></div>
                         <div class="col-md-4">
                             <a href="/shop/edit/{{$product->id}}" class="btn btn-primary w-100">Edit</a>

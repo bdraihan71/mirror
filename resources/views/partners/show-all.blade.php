@@ -15,7 +15,7 @@
                         <br>
                         <h4 class="text-center">{{$partner->name}}</h4>
                         @if (auth()->user() != null)
-                            @if (auth()->user()->role == 'admin')
+                            @if (!App\Http\Controllers\Controller::notAdmin())
                                 <br><br>
                                 <a href="/partner/edit/{{$partner->id}}" class="btn btn-danger w-100">Edit</a>
                                 <br><br>
@@ -46,7 +46,7 @@
                         <br>
                         <h4 class="text-center">{{$partner->name}}</h4>
                         @if (auth()->user() != null)
-                            @if (auth()->user()->role == 'admin')
+                            @if (!App\Http\Controllers\Controller::notAdmin())
                                 <br><br>
                                 <a href="/partner/edit/{{$partner->id}}" class="btn btn-danger w-100">Edit</a>
                                 <br><br>
@@ -64,7 +64,7 @@
         </div>
 
         @if (auth()->user() != null)
-            @if (auth()->user()->role == 'admin')
+            @if (!App\Http\Controllers\Controller::notAdmin())
                 <div class="row">
                     <div class="col-md-4"></div>
                     <div class="col-md-4">

@@ -15,7 +15,7 @@
         @endif
 
         @if (auth()->user() != null)
-            @if (auth()->user()->role == 'admin')
+            @if (!App\Http\Controllers\Controller::notAdmin())
                 <a href="/events/edit/{{$event->id}}" class="btn btn-primary btn-radius px-5 py-3">EDIT EVENT</a>
             @endif
         @endif

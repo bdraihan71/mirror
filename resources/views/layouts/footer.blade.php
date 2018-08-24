@@ -29,7 +29,7 @@
             <div class="col-md-5"></div>
             <div class="col-md-2 w-100">
                 @if (auth()->user() != null)
-                    @if (auth()->user()->role == 'admin')
+                    @if (!App\Http\Controllers\Controller::notAdmin())
                         <a href="/alter/footer" class="btn btn-primary w-100">Edit</a>
                     @endif
                 @endif

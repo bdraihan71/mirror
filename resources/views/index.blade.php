@@ -8,7 +8,7 @@
         <header id="home">
             <nav class="navbar fixed-top navbar-expand-lg navbar-dark header">
                 @if (auth()->user() != null)
-                    @if (auth()->user()->role == 'admin')
+                    @if (!App\Http\Controllers\Controller::notAdmin())
                         <a href="/alter/index" class="btn btn-primary">Edit</a>
                     @endif
                 @endif
@@ -286,7 +286,7 @@
                     <div class="col-md-5"></div>
                     <div class="col-md-2">
                         @if (auth()->user() != null)
-                            @if (auth()->user()->role == 'admin')
+                            @if (!App\Http\Controllers\Controller::notAdmin())
                                 <a href="/alter/footer" class="btn btn-primary w-100">Edit</a>
                             @endif
                         @endif
