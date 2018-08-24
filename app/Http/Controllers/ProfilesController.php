@@ -43,7 +43,9 @@ class ProfilesController extends Controller
 
         Auth::login($user);
 
-        return redirect('/')->with('success', 'Welcome to Ecube!');
+        flash('Welcome to Ecube!')->success();
+
+        return redirect('/');
     }
 
     public function social (Request $request)
@@ -75,7 +77,9 @@ class ProfilesController extends Controller
 
         Auth::login($user);
 
-        return redirect('/')->with('success', 'Welcome to Ecube!');
+        flash('Welcome to Ecube!')->success();
+
+        return redirect('/');
     }
 
     public function dashboard ()
@@ -173,7 +177,9 @@ class ProfilesController extends Controller
         $user->password = bcrypt($request->next);
         $user->save();
 
-        return redirect('home')->with('success', 'Password successfully changed');
+        flash('Password successfully changed')->success();
+
+        return redirect('home');
     }
 
     public function delete ()

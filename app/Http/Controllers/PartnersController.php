@@ -44,7 +44,9 @@ class PartnersController extends Controller
         $partner->img = '/public/partners/'.$fileNameToStore;
         $partner->save();
 
-        return redirect('/partners')->with('succes', 'Partner successfully created');
+        flash('Partner successfully created')->success();
+
+        return redirect('/partners');
     }
 
     public function showAll ()

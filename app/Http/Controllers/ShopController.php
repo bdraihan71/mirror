@@ -56,7 +56,9 @@ class ShopController extends Controller
         $product->img = '/public/uploadedImg/'.$fileNameToStore;
         $product->save();
 
-        return redirect('shop')->with('success', 'Product successfully added');
+        flash('Product successfully added')->success();
+
+        return redirect('shop');
     }
 
     public function edit (Request $request, $id)
@@ -91,7 +93,9 @@ class ShopController extends Controller
 
         $product->save();
 
-        return redirect('shop')->with('success', 'Product successfully edited');
+        flash('Product successfully edited')->success();
+
+        return redirect('shop');
     }
 
     public function delete (Request $request, $id)
@@ -100,7 +104,7 @@ class ShopController extends Controller
         $product->quantity = -1;
         $product->save();
 
-        flash('Product successfully deleted')->error();
+        flash('Product successfully deleted')->success();
         return redirect('/shop');
     }
 

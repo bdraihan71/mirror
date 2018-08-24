@@ -75,6 +75,7 @@ class HomeController extends Controller
         $contact->body = $request->body;
         $contact->save();
 
-        return redirect('/')->with('success', 'Message successfully delivered');
+        flash('Message successfully delivered')->success();
+        return redirect('/');
     }
 }

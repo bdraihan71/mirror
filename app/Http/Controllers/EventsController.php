@@ -411,6 +411,8 @@ class EventsController extends Controller
 
         $event->delete();
 
-        return redirect('/')->with('success', 'Event deleted');
+        flash('Event deleted')->success();
+
+        return redirect('/');
     }
 }
