@@ -27,7 +27,7 @@ class AnalyticsController extends Controller
     public function event (Request $request, $id)
     {
         $event = Event::find($id);
-        $tickets = $event->tickets;
+        $tickets = $event->tickets->where('user_id', '!=', null);
 
         return view('analytics/event')->with('event', $event)->with('tickets', $tickets);
     }
