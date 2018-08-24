@@ -5,8 +5,50 @@
     <div class="card black-bg">
         <h1 class="page-title ml-5 pl-5">BASIC INFORMATION</h1>
         <div class="card-body black-bg">
-            <form action="/events/event/{{$event->id}}" method="POST">
+            <form action="/events/event/{{$event->id}}" method="POST" enctype="multipart/form-data">
                 @csrf
+
+                <div class="form-group row">
+                    <div class="col-md-4">
+                        <label for="url_3">Carousel Image 1</label>
+                        <br>
+                        <input type="file" class="form-control" name="url_3" placeholder="address">
+                        <br>
+                        <img src="{{$event->img_3}}" alt="Carousel Image 1">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="url_4">Carousel Image 2</label>
+                        <br>
+                        <input type="file" class="form-control" name="url_4" placeholder="address">
+                        <br>
+                        <img src="{{$event->img_4}}" alt="Carousel Image 2">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="url_5">Carousel Image 3</label>
+                        <br>
+                        <input type="file" class="form-control" name="url_5" placeholder="address">
+                        <br>
+                        <img src="{{$event->img_5}}" alt="Carousel Image 3">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label for="url_1">Ticket Header</label>
+                        <br>
+                        <input type="file" class="form-control" name="url_1" placeholder="address">
+                        <br>
+                        <img src="{{$event->img_2}}" alt="Ticket Header">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="url_2">Ticket Footer</label>
+                        <br>
+                        <input type="file" class="form-control" name="url_2" placeholder="address">
+                        <br>
+                        <img src="{{$event->img_2}}" alt="Ticket Footer">
+                    </div>
+                </div>
+
                 <div class="form-group row">
                     <label for="name" class="col-md-2 col-form-label text-md-right">Name</label>
 

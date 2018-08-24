@@ -213,6 +213,62 @@ class EventsController extends Controller
         ]);
 
         $event = Event::where('id', $id)->first();
+
+        if ($request->hasFile('url_1')) {
+            $filenameWithExt = $request->file('url_1')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);            
+            $extension = $request->file('url_1')->getClientOriginalExtension();
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;                       
+            $path = $request->file('url_1')->storeAs('public/uploadedImg', $fileNameToStore);
+            $request->url_1->move('public/uploadedImg', $fileNameToStore);
+
+            $event->img_1 = '/public/uploadedImg/'.$fileNameToStore;
+        }
+
+        if ($request->hasFile('url_2')) {
+            $filenameWithExt = $request->file('url_2')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);            
+            $extension = $request->file('url_2')->getClientOriginalExtension();
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;                       
+            $path = $request->file('url_2')->storeAs('public/uploadedImg', $fileNameToStore);
+            $request->url_2->move('public/uploadedImg', $fileNameToStore);
+
+            $event->img_2 = '/public/uploadedImg/'.$fileNameToStore;
+        }
+
+        if ($request->hasFile('url_3')) {
+            $filenameWithExt = $request->file('url_3')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);            
+            $extension = $request->file('url_3')->getClientOriginalExtension();
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;                       
+            $path = $request->file('url_3')->storeAs('public/uploadedImg', $fileNameToStore);
+            $request->url_3->move('public/uploadedImg', $fileNameToStore);
+
+            $event->img_3 = '/public/uploadedImg/'.$fileNameToStore;
+        }
+
+        if ($request->hasFile('url_4')) {
+            $filenameWithExt = $request->file('url_4')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);            
+            $extension = $request->file('url_4')->getClientOriginalExtension();
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;                       
+            $path = $request->file('url_4')->storeAs('public/uploadedImg', $fileNameToStore);
+            $request->url_4->move('public/uploadedImg', $fileNameToStore);
+
+            $event->img_4 = '/public/uploadedImg/'.$fileNameToStore;
+        }
+
+        if ($request->hasFile('url_5')) {
+            $filenameWithExt = $request->file('url_5')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);            
+            $extension = $request->file('url_5')->getClientOriginalExtension();
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;                       
+            $path = $request->file('url_5')->storeAs('public/uploadedImg', $fileNameToStore);
+            $request->url_5->move('public/uploadedImg', $fileNameToStore);
+
+            $event->img_5 = '/public/uploadedImg/'.$fileNameToStore;
+        }
+
         $event->name = $request->name;
         $event->location = $request->location;
         $event->tagline = $request->tagline;
