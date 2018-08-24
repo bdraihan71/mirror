@@ -46,7 +46,7 @@
                     <p>Order Date: {{date("M d, Y", strtotime($ticket->created_at))}}</p>
                 </div>
                 <div class="col-md-6 ticket-text-line-height ticket-price-background text-white my-auto">
-                    <h1>{{$ticket->type->price}}</h1>
+                    <h1>BDT {{$ticket->type->price}}</h1>
                     <p>Thank you for your purchase</p>
                 </div>
             </div>
@@ -64,9 +64,9 @@
                         <tbody>
                             <tr>
                             <th scope="row">{{$ticket->event->name}}</th>
-                            <td>{{$ticket->type->price}}</td>
+                            <td>BDT {{$ticket->type->price}}</td>
                             <td>1</td>
-                            <td>{{$ticket->type->price}}</td>
+                            <td>BDT {{$ticket->type->price}}</td>
                             </tr>
                         </tbody>
                     </table><hr>
@@ -77,8 +77,8 @@
                     
                 </div>
                 <div class="col-md-6 ticket-text-line-height">
-                    <p>Subtotal <span class="float-right">{{$ticket->type->price}}</span></p>
-                    <p>Shipping <span class="float-right">00.00</span></p>
+                    <p>Subtotal <span class="float-right">BDT {{$ticket->type->price}}</span></p>
+                    <p>Shipping <span class="float-right">BDT 00.00</span></p>
                     <hr>
                     <p>Total <span class="float-right text-danger">{{$ticket->type->price}}</span></p>
                 </div>

@@ -30,7 +30,7 @@
                                 <a class="nav-item nav-link mt-1" href="/register">REGISTER</a>
                                 <a class="nav-item nav-link mt-1" href="/login">LOGIN</a>
                             @endif
-                            <a class="nav-item nav-link mt-1" href="/contact-us">CONTACT US</a>
+                            <a class="nav-item nav-link mt-1" href="/contact-us/#top">CONTACT US</a>
                         </div>
                     </div>
                 </div>
