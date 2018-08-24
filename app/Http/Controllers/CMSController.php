@@ -157,6 +157,8 @@ class CMSController extends Controller
             return redirect('/')->with('error', 'You are not authorized to access this');
         }
 
+        $contents = array(WebContent::find(16), WebContent::find(17), WebContent::find(18));
+
         return view('cms/footer')->with('contents', $contents);
     }
 
