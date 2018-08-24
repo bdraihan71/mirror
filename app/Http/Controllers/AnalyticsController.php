@@ -23,4 +23,12 @@ class AnalyticsController extends Controller
 
         return view('analytics/events')->with('events', $events)->with('x', $x);
     }
+
+    public function event (Request $request, $id)
+    {
+        $event = Event::find($id);
+        $tickets = $event->tickets;
+
+        return view('analytics/event')->with('event', $event)->with('tickets', $tickets);
+    }
 }
