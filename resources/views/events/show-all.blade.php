@@ -29,7 +29,8 @@
 
     <section id="events" class="events text-center py-5 bg-light white-bg">
         <div class="container-fluid">
-            <h1 class="pb-3">All Events</h1>
+
+            <h1 class="pb-3">{{$type}} Events</h1>
             <div align="center">
                 <a href="/events/all" class="btn btn-outline-danger btn-co">All</a>
                 <a href="/events/upcoming" class="btn btn-outline-danger btn-co">Upcoming</a>

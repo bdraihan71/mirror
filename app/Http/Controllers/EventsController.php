@@ -34,6 +34,7 @@ class EventsController extends Controller
     {
         $now = new Carbon;
         $e = Event::where('date_start', '>=', $now->copy()->format('Y-m-d'))->orderBy('date_start')->first();
+        $type = 'Upcoming';
 
         if ($e == null) {
             $e = Event::where('date_start', '<=', $now->copy()->format('Y-m-d'))->orderBy('date_start', 'desc')->first();
@@ -43,11 +44,13 @@ class EventsController extends Controller
 
         if ($range == 'all') {
             $events = Event::all();
+            $type = 'All';
         } elseif ($range == 'past') {
             $events = Event::where('date_start', '<=', $now->copy()->format('Y-m-d'))->orderBy('date_start')->get();
+            $type = 'Past';
         }
 
-        return view('events/show-all')->with('e', $e)->with('events', $events)->with('footer', $this->footer());
+        return view('events/show-all')->with('e', $e)->with('events', $events)->with('type', $type);
     }
 
     public function create ()
