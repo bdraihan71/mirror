@@ -20,6 +20,14 @@ class EventsController extends Controller
         $tickets = Ticket::where('event_id', $id)->get();
         $flow = false;
 
+        if (auth()->user() == null) {
+            if ($event->deleted) {
+                flash('Sorry, the event you want is unavailable.')->error();
+    
+                return redirect('/events');
+            }
+        }
+
         if ($this->notAdmin()) {
             if ($event->deleted) {
                 flash('Sorry, the event you want is unavailable.')->error();
