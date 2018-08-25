@@ -49,7 +49,17 @@ class EventsController extends Controller
             whereNull('deleted')->first();
         }
 
-        if (!$this->notAdmin()) {
+        if (auth()->user() == null) {
+            $events = Event::where('date_start', '>=', $now->copy()->format('Y-m-d'))->orderBy('date_start')->whereNull('deleted')->get();
+
+            if ($range == 'all') {
+                $events = Event::whereNull('deleted')->get();
+                $type = 'All';
+            } elseif ($range == 'past') {
+                $events = Event::where('date_start', '<', $now->copy()->format('Y-m-d'))->orderBy('date_start')->whereNull('deleted')->get();
+                $type = 'Past';
+            }
+        } elseif (!$this->notAdmin()) {
             $events = Event::where('date_start', '>=', $now->copy()->format('Y-m-d'))->orderBy('date_start')->get();
 
             if ($range == 'all') {
