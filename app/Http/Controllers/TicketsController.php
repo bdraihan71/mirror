@@ -86,7 +86,7 @@ class TicketsController extends Controller
             }
         }
 
-        return view('tickets/buy')->with('types', $types)->with('id', $id)->with('footer', $this->footer());
+        return view('tickets/buy')->with('types', $t)->with('id', $id)->with('footer', $this->footer());
     }
 
     public function purchase (Request $request, $id)
