@@ -76,6 +76,15 @@ class TicketsController extends Controller
         }
 
         $types = TicketType::where('event_id', $id)->get();
+        $t = array();
+
+        foreach ($types as $type) {
+            $tickets = Ticket::where('ticket_type_id', $type->id)->whereNull('user_id')->get();
+
+            if ($tickets != null) {
+                array_push($t, $type);
+            }
+        }
 
         return view('tickets/buy')->with('types', $types)->with('id', $id)->with('footer', $this->footer());
     }
@@ -87,6 +96,16 @@ class TicketsController extends Controller
         if ($ticket != null) {
             $url = '/events/'.$id;
             flash('You cannot buy more than one ticket for an event')->error();
+            return redirect($url);
+        }
+
+        $t = Ticket::where('ticket_type_id', $id)->whereNull('user_id')->get();
+
+        if ($t == null) {
+            flash('Sorry, this ticket type has been sold out')->error();
+            $type = TicketType::find($id);
+            $url = '/ticket/buy/'.$type->event_id;
+
             return redirect($url);
         }
 
