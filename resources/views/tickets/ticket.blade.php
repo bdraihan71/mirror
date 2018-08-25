@@ -90,7 +90,7 @@
                 </div>
             </div>
             <div class="row pt-5">
-                <div class="col-md-3 ticket-text-line-height text-center">
+                <div class="col-md-12 ticket-text-line-height text-center">
                     <br>
                     <br>
                     <p class="text-danger text-center">This is your order barcode</p>
