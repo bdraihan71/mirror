@@ -6,7 +6,6 @@
         <div class="overlay">
             <h1 class="font-weight-bold">{{$e->name}}</h1>
             <p>{{$e->location}}</p>
-            <a href="/question/answer/{{$e->id}}" class="btn btn-danger btn-radius">Buy Ticket</a>
             <a href="/events/{{$e->id}}" class="btn btn-danger btn-radius">Visit</a>
         </div>
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

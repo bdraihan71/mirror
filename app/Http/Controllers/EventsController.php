@@ -35,6 +35,12 @@ class EventsController extends Controller
             }
         }
 
+        $now = new Carbon;
+
+        if ($event->date_start < $now->format('Y-m-d')) {
+            $flow = false;
+        }
+
         return view('events/show')->with('event', $event)->with('flow', $flow)->with('footer', $this->footer());
     }
 

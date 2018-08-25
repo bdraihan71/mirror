@@ -7,6 +7,7 @@ use App\User;
 use App\Event;
 use App\Question;
 use App\EventAnswer;
+use Carbon\Carbon;
 
 class AnswersController extends Controller
 {
@@ -14,6 +15,14 @@ class AnswersController extends Controller
     {
         $answers = EventAnswer::where('event_id', $id)->where('user_id', auth()->user()->id)->get();
         $questions = Question::where('event_id', $id)->get();
+        $now = new Carbon;
+
+        if ($event->date_start < $now->format('Y-m-d')) {
+            $url = '/events/'.$id;
+            flash('You can no longer purchase the tickets of this event')->error();
+
+            return redirect($url);
+        }
 
         if (count($answers) != 0) {
             $url = '/events/'.$id;

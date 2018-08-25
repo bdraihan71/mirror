@@ -46,7 +46,7 @@
                     <p>Order Date: {{date("M d, Y", strtotime($ticket->created_at))}}</p>
                 </div>
                 <div class="col-md-6 ticket-text-line-height ticket-price-background text-white my-auto">
-                    <h1>BDT {{$ticket->type->price}}</h1>
+                    <h1>BDT {{number_format((float)$ticket->type->price, 2, '.', '')}}</h1>
                     <p>Thank you for your purchase</p>
                 </div>
             </div>
@@ -64,9 +64,9 @@
                         <tbody>
                             <tr>
                             <th scope="row">{{$ticket->event->name}}</th>
-                            <td>BDT {{$ticket->type->price}}</td>
+                            <td>BDT {{number_format((float)$ticket->type->price, 2, '.', '')}}</td>
                             <td>1</td>
-                            <td>BDT {{$ticket->type->price}}</td>
+                            <td>BDT {{number_format((float)$ticket->type->price, 2, '.', '')}}</td>
                             </tr>
                         </tbody>
                     </table><hr>
@@ -77,21 +77,23 @@
                     
                 </div>
                 <div class="col-md-6 ticket-text-line-height">
-                    <p>Subtotal <span class="float-right">BDT {{$ticket->type->price}}</span></p>
-                    <p>Shipping <span class="float-right">BDT 00.00</span></p>
+                    <p>Subtotal <span class="float-right">BDT {{number_format((float)$ticket->type->price, 2, '.', '')}}</span></p>
+                    <p>Shipping <span class="float-right">BDT 0.00</span></p>
                     <hr>
-                    <p>Total <span class="float-right text-danger">{{$ticket->type->price}}</span></p>
+                    <p>Total <span class="float-right text-danger">BDT {{number_format((float)$ticket->type->price, 2, '.', '')}}</span></p>
                 </div>
             </div>
             <p class="text-danger">Items will be shipped within 2 days.</p>
+            <div class="row pt-5">
+                <div class="col-md-12 ticket-text-line-height text-center">
+                    {!! Milon\Barcode\Facades\DNS1DFacade::getBarcodeSVG($ticket->invoice->barcode, "PHARMA") !!}
+                </div>
+            </div>
             <div class="row pt-5">
                 <div class="col-md-3 ticket-text-line-height">
                     <br>
                     <br>
                     <p class="text-danger">This is your order barcode</p>
-                </div>
-                <div class="col-md-9 ticket-text-line-height text-center">
-                    {!! Milon\Barcode\Facades\DNS1DFacade::getBarcodeSVG($ticket->invoice->barcode, "PHARMA") !!}
                 </div>
             </div>
         </div>      
