@@ -16,9 +16,6 @@
                       @else
                         <strong><a class="nav-link text-white" href="/tickets">TICKETS</a></strong>
                       @endif
-                      <strong><a class="nav-link text-white" href="/events">EVENTS</a></strong>
-                      {{-- <strong><a class="nav-link text-white" href="/shop">SHOP</a></strong> --}}
-                      <strong><a class="nav-link text-white" href="/logout">LOGOUT</a></strong>
                     </nav>
                 </div>
                 <div class="col-md-3 text-center">
