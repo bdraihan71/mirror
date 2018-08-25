@@ -49,7 +49,9 @@
                                 <label>Product Image *</label>
                             </div>
                             <div class="form-group col-md-10">
-                                <input type="file" class="form-control" name="img" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB">
+                                <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB</div><br>
+                                <input type="file" class="form-control" name="img">
+                                <img src="{{$product->img}}" class="img-fluid" alt="Product Image">
                             </div>
                         </div>
                         

@@ -7,9 +7,10 @@
         <div class="row">
             <div class="col-md-3  text-right  form-label-control form-label-control">Carousel Image 1</div>
             <div class="col-md-7">
-                <input type="file" class="form-control" name="url_1" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB">
+                <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB</div><br>
+                <input type="file" class="form-control" name="url_1">
                 <br>
-                <img src="{{ $contents[0]->content }}" height="540" alt="Image 1">
+                <img src="{{ $contents[0]->content }}" class="img-fluid" alt="Image 1">
             </div>
         </div>
 
@@ -18,9 +19,10 @@
         <div class="row">
             <div class="col-md-3  text-right  form-label-control">Carousel Image 2</div>
             <div class="col-md-7">
+                <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB</div><br>
                 <input type="file" class="form-control" name="url_2" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB">
                 <br>
-                <img src="{{ $contents[1]->content }}" height="540" alt="Image 1">
+                <img src="{{ $contents[1]->content }}" class="img-fluid" alt="Image 1">
             </div>
         </div>
 
@@ -29,9 +31,10 @@
         <div class="row">
             <div class="col-md-3  text-right  form-label-control">Carousel Image 3</div>
             <div class="col-md-7">
+                <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB</div><br>
                 <input type="file" class="form-control" name="url_3" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB">
                 <br>
-                <img src="{{ $contents[2]->content }}" height="540" alt="Image 1">
+                <img src="{{ $contents[2]->content }}" class="img-fluid" alt="Image 1">
             </div>
         </div>
 

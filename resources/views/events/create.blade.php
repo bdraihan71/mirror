@@ -80,13 +80,13 @@
                     </div>
                 </div>
 
-                <div class="form-group row">
+                {{-- <div class="form-group row">
                     <label for="url_2" class="col-md-2 col-form-label text-md-right" >Ticket Footer</label>
 
                     <div class="col-md-8">
                         <input required type="file" class="form-control" name="url_2" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB">
                     </div>
-                </div>
+                </div> --}}
 
                 <div class="form-group row">
                     <label for="url_3" class="col-md-2 col-form-label text-md-right" >Carousel Image 1</label>

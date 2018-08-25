@@ -23,7 +23,7 @@ class CreateEventsTable extends Migration
             $table->time('start');
             $table->time('end');
             $table->text('img_1');
-            $table->text('img_2');
+            $table->text('img_2')->nullable();
             $table->text('img_3');
             $table->text('img_4');
             $table->text('img_5');

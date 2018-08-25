@@ -8,13 +8,77 @@
             <form action="/events/event/{{$event->id}}" method="POST" enctype="multipart/form-data">
                 @csrf
 
-                <div class="form-group row">
+                <div class="row">
+                    <div class="col-md-10 pl-5 ml-2 pr-4">
+                        <div class="form-group row">
+                            <div class="col-md-6 text-center">
+                                <div class="row">
+                                    <div class="col-md-4 text-right font-sm">
+                                        <label for="url_3">Carousel Image 1</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB</div><br>
+                                        <input type="file" class="form-control" name="url_3" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB">
+                                    </div>
+                                </div>
+                                <br>
+                                <img class="img-fluid" src="{{$event->img_3}}" alt="Ticket Header">
+                            </div>
+                            <div class="col-md-6 text-center">
+                                <div class="row">
+                                    <div class="col-md-4 text-right font-sm">
+                                        <label for="url_4">Carousel Image 2</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB</div><br>
+                                        <input type="file" class="form-control" name="url_4" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB">
+                                    </div>
+                                </div>
+                                <br>
+                                <img class="img-fluid" src="{{$event->img_4}}" alt="Ticket Footer">
+                            </div>
+                        </div>
+        
+                        <div class="form-group row">
+                            <div class="col-md-6 text-center">
+                                <div class="row">
+                                    <div class="col-md-4 text-right font-sm">
+                                        <label for="url_5">Carousel Image 3</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB</div><br>
+                                        <input type="file" class="form-control" name="url_5" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB">
+                                    </div>
+                                </div>
+                                <br>
+                                <img class="img-fluid" src="{{$event->img_5}}" alt="Ticket Header">
+                            </div>
+                            <div class="col-md-6 text-center">
+                                <div class="row">
+                                    <div class="col-md-4 text-right font-sm">
+                                        <label for="url_1">Ticket Header</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB</div><br>
+                                        <input type="file" class="form-control" name="url_1" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB">
+                                    </div>
+                                </div>
+                                <br>
+                                <img class="img-fluid" src="{{$event->img_1}}" alt="Ticket Header">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+
+                {{-- <div class="form-group row">
                     <div class="col-md-4 text-center">
                         <div class="row">
                             <div class="col-md-4 text-right font-sm">
                                 <label for="url_3">Carousel Image 1</label>
                             </div>
                             <div class="col-md-8">
+                                <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB</div>
                                 <input type="file" class="form-control" name="url_3" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB">
                             </div>
                         </div>
@@ -27,6 +91,7 @@
                                 <label for="url_4">Carousel Image 2</label>
                             </div>
                             <div class="col-md-8">
+                                <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB</div>
                                 <input type="file" class="form-control" name="url_4" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB">
                             </div>
                         </div>
@@ -39,6 +104,7 @@
                                 <label for="url_5">Carousel Image 3</label>
                             </div>
                             <div class="col-md-8">
+                                <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB</div>
                                 <input type="file" class="form-control" name="url_5" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB">
                             </div>
                         </div>
@@ -56,11 +122,12 @@
                                 <label for="url_1">Ticket Header</label>
                             </div>
                             <div class="col-md-8">
+                                <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB</div>
                                 <input type="file" class="form-control" name="url_1" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB">
                             </div>
                         </div>
                         <br>
-                        <img height="300" src="{{$event->img_2}}" alt="Ticket Header">
+                        <img class="img-fluid" src="{{$event->img_2}}" alt="Ticket Header">
                     </div>
                     <div class="col-md-6 text-center">
                         <div class="row">
@@ -68,13 +135,14 @@
                                 <label for="url_2">Ticket Footer</label>
                             </div>
                             <div class="col-md-8">
+                                <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB</div>
                                 <input type="file" class="form-control" name="url_2" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB">
                             </div>
                         </div>
                         <br>
-                        <img height="300" src="{{$event->img_2}}" alt="Ticket Footer">
+                        <img class="img-fluid" src="{{$event->img_2}}" alt="Ticket Footer">
                     </div>
-                </div>
+                </div> --}}
 
                 <div class="form-group row">
                     <label for="name" class="col-md-2 col-form-label text-md-right">Name</label>
