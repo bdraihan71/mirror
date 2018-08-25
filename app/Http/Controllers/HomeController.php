@@ -53,7 +53,7 @@ class HomeController extends Controller
             return view('contact-us')->with('footer', $this->footer())->with('contact', $contact);
         }
 
-        if ($this->notAdmin()) {
+        if (!$this->notAdmin()) {
             $contacts = Contactee::orderBy('id', 'desc')->paginate(10);
 
             return view('view-contactees')->with('footer', $this->footer())->with('contact', $contact)->
