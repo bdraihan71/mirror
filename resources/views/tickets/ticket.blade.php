@@ -90,10 +90,10 @@
                 </div>
             </div>
             <div class="row pt-5">
-                <div class="col-md-3 ticket-text-line-height">
+                <div class="col-md-3 ticket-text-line-height text-center">
                     <br>
                     <br>
-                    <p class="text-danger">This is your order barcode</p>
+                    <p class="text-danger text-center">This is your order barcode</p>
                 </div>
             </div>
         </div>      
