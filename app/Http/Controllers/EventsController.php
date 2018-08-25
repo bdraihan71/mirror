@@ -20,6 +20,14 @@ class EventsController extends Controller
         $tickets = Ticket::where('event_id', $id)->get();
         $flow = false;
 
+        if ($this->notAdmin()) {
+            if ($event->deleted) {
+                flash('Sorry, the event you want is unavailable.')->error();
+    
+                return redirect('/events');
+            }
+        }
+
         foreach ($tickets as $ticket) {
             if ($ticket->user_id == null) {
                 $flow = true;
@@ -33,21 +41,34 @@ class EventsController extends Controller
     public function showAll ($range)
     {
         $now = new Carbon;
-        $e = Event::where('date_start', '>=', $now->copy()->format('Y-m-d'))->orderBy('date_start')->first();
+        $e = Event::where('date_start', '>=', $now->copy()->format('Y-m-d'))->orderBy('date_start')->whereNull('deleted')->first();
         $type = 'Upcoming';
 
         if ($e == null) {
-            $e = Event::where('date_start', '<=', $now->copy()->format('Y-m-d'))->orderBy('date_start', 'desc')->first();
+            $e = Event::where('date_start', '<=', $now->copy()->format('Y-m-d'))->orderBy('date_start', 'desc')->
+            whereNull('deleted')->first();
         }
 
-        $events = Event::where('date_start', '>=', $now->copy()->format('Y-m-d'))->orderBy('date_start')->get();
+        if (!$this->notAdmin()) {
+            $events = Event::where('date_start', '>=', $now->copy()->format('Y-m-d'))->orderBy('date_start')->get();
 
-        if ($range == 'all') {
-            $events = Event::all();
-            $type = 'All';
-        } elseif ($range == 'past') {
-            $events = Event::where('date_start', '<=', $now->copy()->format('Y-m-d'))->orderBy('date_start')->get();
-            $type = 'Past';
+            if ($range == 'all') {
+                $events = Event::whereNull('deleted')->get();
+                $type = 'All';
+            } elseif ($range == 'past') {
+                $events = Event::where('date_start', '<', $now->copy()->format('Y-m-d'))->orderBy('date_start')->get();
+                $type = 'Past';
+            }
+        } else {
+            $events = Event::where('date_start', '>=', $now->copy()->format('Y-m-d'))->orderBy('date_start')->whereNull('deleted')->get();
+
+            if ($range == 'all') {
+                $events = Event::whereNull('deleted')->get();
+                $type = 'All';
+            } elseif ($range == 'past') {
+                $events = Event::where('date_start', '<', $now->copy()->format('Y-m-d'))->orderBy('date_start')->whereNull('deleted')->get();
+                $type = 'Past';
+            }
         }
 
         return view('events/show-all')->with('e', $e)->with('events', $events)->with('type', $type);
@@ -392,30 +413,25 @@ class EventsController extends Controller
         return redirect($url);
     }
 
-    public function delete (Request $request, $id)
+    public function destroy (Request $request, $id)
     {
-        if ($this->notAdmin()) {
-            flash('You are not authorized to access this')->error();
+        $event = Event::find($id);
+        $event->deleted = true;
+        $event->save();
+        $url = '/events/'.$id;
+        flash('Event Successfully Deleted')->success();
 
-            return redirect('/');
-        }
+        return redirect($url);
+    }
 
-        $event = Event::where('id', $id)->first();
-        $information = AdditionalInformation::where('event_id', $id)->get();
-        $questions = Question::where('event_id', $id)->get();
+    public function restore (Request $request, $id)
+    {
+        $event = Event::find($id);
+        $event->deleted = null;
+        $event->save();
+        $url = '/events/'.$id;
+        flash('Event Successfully Restored')->success();
 
-        foreach ($information as $info) {
-            $info->delete();
-        }
-
-        foreach ($questions as $question) {
-            $question->delete();
-        }
-
-        $event->delete();
-
-        flash('Event deleted')->success();
-
-        return redirect('/');
+        return redirect($url);
     }
 }

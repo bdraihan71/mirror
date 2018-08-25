@@ -3,7 +3,16 @@
 @section('content')
 <br><br><br><br><br>
     <div class="card black-bg">
-        <h1 class="page-title ml-5 pl-5">BASIC INFORMATION</h1>
+        <div class="row">
+            <div class="col-md-9"><h1 class="page-title ml-5 pl-5">BASIC INFORMATION</h1></div>
+            <div class="col-md-2">
+                @if ($event->deleted)
+                    <a href="/event/restore/{{$event->id}}" class="btn btn-success w-100">Restore Event</a>
+                @else
+                    <a href="/event/delete/{{$event->id}}" class="btn btn-warning w-100">Delete Event</a>
+                @endif
+            </div>
+        </div>
         <div class="card-body black-bg">
             <form action="/events/event/{{$event->id}}" method="POST" enctype="multipart/form-data">
                 @csrf
@@ -18,11 +27,11 @@
                                     </div>
                                     <div class="col-md-8">
                                         <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB</div><br>
-                                        <input type="file" class="form-control" name="url_3" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB">
+                                        <input type="file" class="form-control" name="url_3" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB"><br>
+                                        <img class="img-fluid" src="{{$event->img_3}}" alt="Ticket Header">
                                     </div>
                                 </div>
                                 <br>
-                                <img class="img-fluid" src="{{$event->img_3}}" alt="Ticket Header">
                             </div>
                             <div class="col-md-6 text-center">
                                 <div class="row">
@@ -31,11 +40,11 @@
                                     </div>
                                     <div class="col-md-8">
                                         <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB</div><br>
-                                        <input type="file" class="form-control" name="url_4" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB">
+                                        <input type="file" class="form-control" name="url_4" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB"><br>
+                                        <img class="img-fluid" src="{{$event->img_4}}" alt="Ticket Footer">
                                     </div>
                                 </div>
                                 <br>
-                                <img class="img-fluid" src="{{$event->img_4}}" alt="Ticket Footer">
                             </div>
                         </div>
         
@@ -47,11 +56,11 @@
                                     </div>
                                     <div class="col-md-8">
                                         <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB</div><br>
-                                        <input type="file" class="form-control" name="url_5" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB">
+                                        <input type="file" class="form-control" name="url_5" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB"><br>
+                                        <img class="img-fluid" src="{{$event->img_5}}" alt="Ticket Header">
                                     </div>
                                 </div>
                                 <br>
-                                <img class="img-fluid" src="{{$event->img_5}}" alt="Ticket Header">
                             </div>
                             <div class="col-md-6 text-center">
                                 <div class="row">
@@ -60,11 +69,11 @@
                                     </div>
                                     <div class="col-md-8">
                                         <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB</div><br>
-                                        <input type="file" class="form-control" name="url_1" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB">
+                                        <input type="file" class="form-control" name="url_1" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB"><br>
+                                        <img class="img-fluid" src="{{$event->img_1}}" alt="Ticket Header">
                                     </div>
                                 </div>
                                 <br>
-                                <img class="img-fluid" src="{{$event->img_1}}" alt="Ticket Header">
                             </div>
                         </div>
                     </div>

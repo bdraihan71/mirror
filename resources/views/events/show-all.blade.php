@@ -46,6 +46,13 @@
                             <div class="mx-4 pb-5">
                                 <p class="card-title font-weight-bold text-left pt-5">{{$event->name}}</p>
                                 <p class="card-text text-left">Place: {{$event->location}}<span class="float-right">{{date("d M, Y", strtotime($event->date_start))}}</span></p>
+                                @if($event->deleted)
+                                    <p class="card-title font-weight-bold text-left pt-5"><i>Deleted</i></p>
+                                @endif
+
+                                @if (!App\Http\Controllers\Controller::notAdmin())
+                                    <a href="/events/edit/{{$event->id}}" class="btn btn-primary btn-radius px-5 py-3">EDIT EVENT</a>
+                                @endif
                             </div>
                             <a href="/events/{{$event->id}}" class="btn btn-danger w-100 rounded-0 py-3">VIEW DETAILS</a>
                         </div>

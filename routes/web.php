@@ -75,6 +75,8 @@ Route::get('/events', function() {
     return redirect('/events/upcoming');
 });
 Route::get('/events/{id}', 'EventsController@show');
+Route::get('/event/delete/{id}', 'EventsController@destroy')->middleware('auth');
+Route::get('/event/restore/{id}', 'EventsController@restore')->middleware('auth');
 
 //Ticket Routes
 Route::get('/ticket/type/{id}', 'TicketsController@typeSelect')->middleware('auth');

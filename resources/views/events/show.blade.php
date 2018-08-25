@@ -4,6 +4,9 @@
 <div class="row" id="top"></div>
     <div class="overlay-single-event">
         <h1 class="font-weight-bold">{{$event->name}}</h1>
+        @if ($event->deleted)
+            <h1 class="font-weight-bold">Event Deleted</h1>
+        @endif
         <i class="fas fa-map-marker-alt fa-1x"> {{strtoupper($event->location)}}</i>
         <br>
         @if ($flow)

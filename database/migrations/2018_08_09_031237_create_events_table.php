@@ -29,6 +29,7 @@ class CreateEventsTable extends Migration
             $table->text('img_5');
             $table->integer('ticket_number');
             $table->text('description');
+            $table->boolean('deleted')->nullable();
             $table->timestamps();
         });
     }
