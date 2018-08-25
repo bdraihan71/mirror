@@ -39,7 +39,7 @@
                                 <label>Partner Logo *</label>
                             </div>
                             <div class="form-group col-md-10">
-                                <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB</div>
+                                <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB</div>
                                 <input type="file" class="form-control" name="url">
                                 <img src="{{$partner->img}}" class="img-fluid" alt="Partner logo">
                             </div>

@@ -17,8 +17,8 @@
                                         <label for="url_3">Carousel Image 1</label>
                                     </div>
                                     <div class="col-md-8">
-                                        <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB</div><br>
-                                        <input type="file" class="form-control" name="url_3" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB">
+                                        <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB</div><br>
+                                        <input type="file" class="form-control" name="url_3" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB">
                                     </div>
                                 </div>
                                 <br>
@@ -30,8 +30,8 @@
                                         <label for="url_4">Carousel Image 2</label>
                                     </div>
                                     <div class="col-md-8">
-                                        <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB</div><br>
-                                        <input type="file" class="form-control" name="url_4" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB">
+                                        <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB</div><br>
+                                        <input type="file" class="form-control" name="url_4" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB">
                                     </div>
                                 </div>
                                 <br>
@@ -46,8 +46,8 @@
                                         <label for="url_5">Carousel Image 3</label>
                                     </div>
                                     <div class="col-md-8">
-                                        <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB</div><br>
-                                        <input type="file" class="form-control" name="url_5" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB">
+                                        <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB</div><br>
+                                        <input type="file" class="form-control" name="url_5" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB">
                                     </div>
                                 </div>
                                 <br>
@@ -59,8 +59,8 @@
                                         <label for="url_1">Ticket Header</label>
                                     </div>
                                     <div class="col-md-8">
-                                        <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB</div><br>
-                                        <input type="file" class="form-control" name="url_1" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB">
+                                        <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB</div><br>
+                                        <input type="file" class="form-control" name="url_1" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB">
                                     </div>
                                 </div>
                                 <br>
@@ -78,8 +78,8 @@
                                 <label for="url_3">Carousel Image 1</label>
                             </div>
                             <div class="col-md-8">
-                                <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB</div>
-                                <input type="file" class="form-control" name="url_3" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB">
+                                <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB</div>
+                                <input type="file" class="form-control" name="url_3" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB">
                             </div>
                         </div>
                         <br>
@@ -91,8 +91,8 @@
                                 <label for="url_4">Carousel Image 2</label>
                             </div>
                             <div class="col-md-8">
-                                <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB</div>
-                                <input type="file" class="form-control" name="url_4" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB">
+                                <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB</div>
+                                <input type="file" class="form-control" name="url_4" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB">
                             </div>
                         </div>
                         <br>
@@ -104,8 +104,8 @@
                                 <label for="url_5">Carousel Image 3</label>
                             </div>
                             <div class="col-md-8">
-                                <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB</div>
-                                <input type="file" class="form-control" name="url_5" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB">
+                                <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB</div>
+                                <input type="file" class="form-control" name="url_5" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB">
                             </div>
                         </div>
                         <br>
@@ -122,8 +122,8 @@
                                 <label for="url_1">Ticket Header</label>
                             </div>
                             <div class="col-md-8">
-                                <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB</div>
-                                <input type="file" class="form-control" name="url_1" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB">
+                                <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB</div>
+                                <input type="file" class="form-control" name="url_1" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB">
                             </div>
                         </div>
                         <br>
@@ -135,8 +135,8 @@
                                 <label for="url_2">Ticket Footer</label>
                             </div>
                             <div class="col-md-8">
-                                <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB</div>
-                                <input type="file" class="form-control" name="url_2" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 1999 MB">
+                                <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB</div>
+                                <input type="file" class="form-control" name="url_2" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB">
                             </div>
                         </div>
                         <br>
