@@ -81,7 +81,7 @@ class TicketsController extends Controller
         foreach ($types as $type) {
             $tickets = Ticket::where('ticket_type_id', $type->id)->whereNull('user_id')->get();
 
-            if ($tickets != null) {
+            if (count($tickets) != 0) {
                 array_push($t, $type);
             }
         }
