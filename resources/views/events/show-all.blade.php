@@ -50,8 +50,10 @@
                                     <p class="card-title font-weight-bold text-left pt-5"><i>Deleted</i></p>
                                 @endif
 
-                                @if (!App\Http\Controllers\Controller::notAdmin())
-                                    <a href="/events/edit/{{$event->id}}" class="btn btn-primary btn-radius px-5 py-3">EDIT EVENT</a>
+                                @if (auth()->user() != null)
+                                    @if (!App\Http\Controllers\Controller::notAdmin())
+                                        <a href="/events/edit/{{$event->id}}" class="btn btn-primary btn-radius px-5 py-3">EDIT EVENT</a>
+                                    @endif
                                 @endif
                             </div>
                             <a href="/events/{{$event->id}}" class="btn btn-danger w-100 rounded-0 py-3">VIEW DETAILS</a>
