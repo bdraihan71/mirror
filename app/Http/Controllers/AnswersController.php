@@ -15,6 +15,7 @@ class AnswersController extends Controller
     {
         $answers = EventAnswer::where('event_id', $id)->where('user_id', auth()->user()->id)->get();
         $questions = Question::where('event_id', $id)->get();
+        $event = Event::find($id);
         $now = new Carbon;
 
         if ($event->date_start < $now->format('Y-m-d')) {
