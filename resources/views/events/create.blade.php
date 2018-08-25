@@ -76,6 +76,7 @@
                     <label for="url_1" class="col-md-2 col-form-label text-md-right" >Ticket Header</label>
 
                     <div class="col-md-8">
+                        <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB</div><br>
                         <input required type="file" class="form-control" name="url_1" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB">
                     </div>
                 </div>
@@ -92,6 +93,7 @@
                     <label for="url_3" class="col-md-2 col-form-label text-md-right" >Carousel Image 1</label>
 
                     <div class="col-md-8">
+                        <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB</div><br>
                         <input required type="file" class="form-control" name="url_3" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB">
                     </div>
                 </div>
@@ -100,6 +102,7 @@
                     <label for="url_4" class="col-md-2 col-form-label text-md-right" >Carousel Image 2</label>
 
                     <div class="col-md-8">
+                        <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB</div><br>
                         <input required type="file" class="form-control" name="url_4" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB">
                     </div>
                 </div>
@@ -108,6 +111,7 @@
                     <label for="url_4" class="col-md-2 col-form-label text-md-right" >Thumbnail Image</label>
 
                     <div class="col-md-8">
+                        <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB</div><br>
                         <input required type="file" class="form-control" name="url_5" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB">
                     </div>
                 </div>
