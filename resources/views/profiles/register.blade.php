@@ -91,7 +91,7 @@
                         
                         
                         
-                        <button type="submit" class="btn btn-danger register-btn">Send</button>
+                        <button type="submit" class="btn btn-danger register-btn">Register</button>
                         <hr>
                         <a href="{{url('/redirect/facebook')}}" class="black-bg btn register-btn btn-facebook">Login with Facebook</a>
                         <hr>
