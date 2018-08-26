@@ -20,6 +20,14 @@ class ProfilesController extends Controller
 
     public function create (Request $request)
     {
+        $user = User::where('email', $request->email)->first();
+        
+        if ($user != null) {
+            flash('Account already exits, please login');
+
+            return redirect('/login');
+        }
+
         $profile = new Profile;
         $user = new User;
 
