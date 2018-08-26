@@ -5,7 +5,7 @@
     <div class="card black-bg">
         <div class="row">
             <div class="col-md-7"><h1 class="page-title ml-5 pl-5">BASIC INFORMATION</h1></div>
-            <div class="col-md-2"><a href="/events/{{$event->id}}" class="btn btn-primary w-100">Visit Event</a></div>
+            <div class="col-md-2"><a href="/events/{{$event->id}}" target="_blank" class="btn btn-primary w-100">Visit Event</a></div>
             <div class="col-md-2">
                 @if ($event->deleted)
                     <a href="/event/restore/{{$event->id}}" class="btn btn-success w-100">Restore Event</a>
