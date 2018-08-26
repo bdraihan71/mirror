@@ -31,9 +31,19 @@
 
             <h1 class="pb-3">{{$type}} Events</h1>
             <div align="center">
-                <a href="/events/all" class="btn btn-outline-danger btn-co">All</a>
+                @if ($type == 'All')
+                <a href="/events/all" class="btn btn-danger disabled">All</a>
                 <a href="/events/upcoming" class="btn btn-outline-danger btn-co">Upcoming</a>
                 <a href="/events/past" class="btn btn-outline-danger btn-co">Past</a>
+                @elseif ($type == 'Past')
+                <a href="/events/all" class="btn btn-outline-danger btn-co">All</a>
+                <a href="/events/upcoming" class="btn btn-outline-danger btn-co">Upcoming</a>
+                <a href="/events/past" class="btn btn-danger disabled">Past</a>
+                @else
+                <a href="/events/all" class="btn btn-outline-danger btn-co">All</a>
+                <a href="/events/upcoming" class="btn btn-danger disabled">Upcoming</a>
+                <a href="/events/past" class="btn btn-outline-danger btn-co">Past</a>
+                @endif
                 <br>
                 <br>
             </div>
