@@ -52,7 +52,7 @@
         <div class="row">
             <div class="col-md-3  text-right  form-label-control">Ecube Description</div>
             <div class="col-md-7">
-                <div><i>Max 600 characters</i></div><br>
+                <div><i>Max 450 characters</i></div><br>
                 <textarea name="description" class="form-control" id="article-ckeditor" cols="30" rows="10">{{ $contents[4]->content }}</textarea>
             </div>
         </div>
@@ -71,7 +71,7 @@
         <div class="row">
             <div class="col-md-3  text-right  form-label-control">What we do string 1</div>
             <div class="col-md-7">
-                <div><i>Max 120 characters</i></div><br>
+                <div><i>Max 90 characters</i></div><br>
                 <input type="text" class="form-control" name="wwds[]" value="{{ $contents[10]->content }}" placeholder="What we do title">
             </div>
         </div>
@@ -90,7 +90,7 @@
         <div class="row">
             <div class="col-md-3  text-right  form-label-control">What we do string 2</div>
             <div class="col-md-7">
-                <div><i>Max 120 characters</i></div><br>
+                <div><i>Max 90 characters</i></div><br>
                 <input type="text" class="form-control" name="wwds[]" value="{{ $contents[11]->content }}" placeholder="What we do title">
             </div>
         </div>
@@ -109,7 +109,7 @@
         <div class="row">
             <div class="col-md-3  text-right  form-label-control">What we do string 3</div>
             <div class="col-md-7">
-                <div><i>Max 120 characters</i></div><br>
+                <div><i>Max 90 characters</i></div><br>
                 <input type="text" class="form-control" name="wwds[]" value="{{ $contents[12]->content }}" placeholder="What we do title">
             </div>
         </div>
@@ -128,7 +128,7 @@
         <div class="row">
             <div class="col-md-3  text-right  form-label-control">What we do string 4</div>
             <div class="col-md-7">
-                <div><i>Max 120 characters</i></div><br>
+                <div><i>Max 90 characters</i></div><br>
                 <input type="text" class="form-control" name="wwds[]" value="{{ $contents[13]->content }}" placeholder="What we do title">
             </div>
         </div>
@@ -147,7 +147,7 @@
         <div class="row">
             <div class="col-md-3  text-right  form-label-control">What we do string 5</div>
             <div class="col-md-7">
-                <div><i>Max 120 characters</i></div><br>
+                <div><i>Max 90 characters</i></div><br>
                 <input type="text" class="form-control" name="wwds[]" value="{{ $contents[14]->content }}" placeholder="What we do title">
             </div>
         </div>
