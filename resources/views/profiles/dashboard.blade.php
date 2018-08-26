@@ -41,7 +41,7 @@
                     <h5 class="text-danger">Email Address</h5>
                     <p class="text-white">{{$user->email}}</p>
 
-                    @if ($user->facebook == null && $user->google_id == null)
+                    @if (($user->facebook == null && $user->google_id == null) || $user->role == 'admin')
                         <form action="/profile/email" method="POST" autocomplete="off">
                             @csrf
                             <input type="text" name="email" class="form-control" value="{{$user->email}}" required>
