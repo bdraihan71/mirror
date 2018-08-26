@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="row" id="top"></div>
-<br><br><br><br><br>
     <section id="contact-us" class="contact-us">
+        <br><br><br><br><br><br><br>
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
