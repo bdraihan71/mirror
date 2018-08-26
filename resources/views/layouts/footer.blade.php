@@ -19,10 +19,10 @@
             <div class="col-md-3">
                 <h4 class="text-danger font-weight-bold">Stay Connected</h4><br>
                 <a class="sc-links" target="_blank" href="{{ config('social.FACEBOOK_LINK') }}"><i class="fab fa-facebook-square fa-2x facebook"></i></a>&ensp;
-                        <a class="sc-links" target="_blank" href="{{ config('social.TWITTER_LINK') }}"><i class="fab fa-twitter-square fa-2x twitter"></i></a>&ensp;
-                        <a class="sc-links" target="_blank" href="{{ config('social.YOUTUBE_LINK') }}"><i class="fab fa-youtube fa-2x youtube"></i></a>&ensp;
-                        <a class="sc-links" target="_blank" href="{{ config('social.INSTAGRAM_LINK') }}"><i class="fab fa-instagram fa-2x instagram"></i></a>&ensp;
-                        <a class="sc-links" target="_blank" href="{{ config('social.GOOGLE_LINK') }}"><i class="fab fa-google-plus-g fa-2x google"></i></a>&ensp;
+                <a class="sc-links" target="_blank" href="{{ config('social.TWITTER_LINK') }}"><i class="fab fa-twitter-square fa-2x twitter"></i></a>&ensp;
+                <a class="sc-links" target="_blank" href="{{ config('social.YOUTUBE_LINK') }}"><i class="fab fa-youtube fa-2x youtube"></i></a>&ensp;
+                <a class="sc-links" target="_blank" href="{{ config('social.INSTAGRAM_LINK') }}"><i class="fab fa-instagram fa-2x instagram"></i></a>&ensp;
+                <a class="sc-links" target="_blank" href="{{ config('social.GOOGLE_LINK') }}"><i class="fab fa-google-plus-g fa-2x google"></i></a>&ensp;
             </div>
         </div>
         <div class="row">
