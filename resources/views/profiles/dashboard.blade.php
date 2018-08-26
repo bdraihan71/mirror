@@ -40,14 +40,17 @@
                     
                     <h5 class="text-danger">Email Address</h5>
                     <p class="text-white">{{$user->email}}</p>
-                    <form action="/profile/email" method="POST" autocomplete="off">
-                        @csrf
-                        <input type="text" name="email" class="form-control" value="{{$user->email}}" required>
-                        <br>
-                        <input type="password" name="password" class="form-control" placeholder="Please enter password to change email address" required>
-                        <br>
-                        <button type="submit" class="btn btn-outline-danger">Update</button>
-                    </form>
+
+                    @if ($user->facebook == null && $user->google_id == null)
+                        <form action="/profile/email" method="POST" autocomplete="off">
+                            @csrf
+                            <input type="text" name="email" class="form-control" value="{{$user->email}}" required>
+                            <br>
+                            <input type="password" name="password" class="form-control" placeholder="Please enter password to change email address" required>
+                            <br>
+                            <button type="submit" class="btn btn-outline-danger">Update</button>
+                        </form>
+                    @endif
                     
                     <br>
                     <br>
