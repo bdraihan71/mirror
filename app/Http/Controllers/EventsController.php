@@ -26,9 +26,7 @@ class EventsController extends Controller
     
                 return redirect('/events');
             }
-        }
-
-        if ($this->notAdmin()) {
+        } elseif ($this->notAdmin()) {
             if ($event->deleted) {
                 flash('Sorry, the event you want is unavailable.')->error();
     
@@ -77,7 +75,7 @@ class EventsController extends Controller
             $events = Event::where('date_start', '>=', $now->copy()->format('Y-m-d'))->orderBy('date_start')->get();
 
             if ($range == 'all') {
-                $events = Event::whereNull('deleted')->get();
+                $events = Event::all();
                 $type = 'All';
             } elseif ($range == 'past') {
                 $events = Event::where('date_start', '<', $now->copy()->format('Y-m-d'))->orderBy('date_start')->get();

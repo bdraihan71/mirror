@@ -46,7 +46,9 @@
                                 <p class="card-title font-weight-bold text-left pt-5">{{$event->name}}</p>
                                 <p class="card-text text-left">Place: {{$event->location}}<span class="float-right">{{date("d M, Y", strtotime($event->date_start))}}</span></p>
                                 @if($event->deleted)
-                                    <p class="card-title font-weight-bold text-left pt-5"><i>Deleted</i></p>
+                                    <strong><p class="text-left"><i>Deleted</i></p></strong>
+                                @else
+                                    <p class="text-left">&ensp;</p>
                                 @endif
 
                                 @if (auth()->user() != null)
