@@ -79,26 +79,28 @@
                     <br>
                     <br>
                     
-                    <form action="/profile/password" method="POST">
-                        @csrf
-                        <h5 class="text-danger">Password</h5>
-                        <p class="text-white">Current password</p>
-                        <input type="password" class="form-control" name="current" placeholder="**********" required>
+                    @if ($user->facebook == null && $user->google_id == null)
+                        <form action="/profile/password" method="POST">
+                            @csrf
+                            <h5 class="text-danger">Password</h5>
+                            <p class="text-white">Current password</p>
+                            <input type="password" class="form-control" name="current" placeholder="**********" required>
+                            <br>
+                            <p class="text-white">New password</p>
+                            <input type="password" class="form-control" name="next" placeholder="**********" required>
+                            <br>
+                            <p class="text-white">Confirm password</p>
+                            <input type="password" class="form-control" name="confirm" placeholder="**********" required>
+                            <br>
+                            <button type="submit" class="btn btn-outline-danger">Update</button>
+                        </form>
+                        
+                        
+                        
                         <br>
-                        <p class="text-white">New password</p>
-                        <input type="password" class="form-control" name="next" placeholder="**********" required>
                         <br>
-                        <p class="text-white">Confirm password</p>
-                        <input type="password" class="form-control" name="confirm" placeholder="**********" required>
                         <br>
-                        <button type="submit" class="btn btn-outline-danger">Update</button>
-                    </form>
-                    
-                    
-                    
-                    <br>
-                    <br>
-                    <br>
+                    @endif
                     
                     <h4 class="text-danger">Manage Account</h4>
                     <p class="text-white">I would like to <span class="text-danger"><a href="/profile/delete">Delete my account</a></span></p>
