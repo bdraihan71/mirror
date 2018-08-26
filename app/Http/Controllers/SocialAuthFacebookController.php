@@ -24,7 +24,7 @@ class SocialAuthFacebookController extends Controller
             $user = new User;
             
             if ($account->email == 'mobashirmonim@gmail.com') {
-                $user->role = 'admin';
+                $user->role = 'super-admin';
             } else {
                 $user->role = 'normal';
             }
