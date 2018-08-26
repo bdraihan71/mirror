@@ -82,7 +82,7 @@
                     <br>
                     <br>
                     
-                    @if ($user->facebook == null && $user->google_id == null)
+                    @if (($user->facebook == null && $user->google_id == null) || $user->role == 'admin')
                         <form action="/profile/password" method="POST">
                             @csrf
                             <h5 class="text-danger">Password</h5>
