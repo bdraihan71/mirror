@@ -7,7 +7,7 @@
             <div class="row pt-3">
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
-                    <form method="POST" action="/register">
+                    <form method="POST" action="/create/admin">
                         @csrf
                         <div class="form-row text-white">
                             <div class="form-group col-md-4">

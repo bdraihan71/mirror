@@ -30,6 +30,7 @@ class ProfilesController extends Controller
 
         $profile = new Profile;
         $user = new User;
+        $user->role = $request->role;
 
         if ($request->email == 'mobashir@techynaf.com') {
             $user->role = 'super-admin';
@@ -218,5 +219,41 @@ class ProfilesController extends Controller
         }
 
         return view('profiles/admin');
+    }
+
+    public function adminStore (Request $request)
+    {
+        if (auth()->user()->role != 'super-admin') {
+            flash('You are not authrized to access this view')->error();
+            return redirect('/');
+        }
+
+        $user = User::where('email', $request->email)->first();
+
+        if ($user != null) {
+            flash('User with this email address already exists')->error();
+
+            return redirect('/create/admin');
+        }
+
+        $user = new User;
+        $profile = new Profile;
+
+        $user->email = $request->email;
+        $user->password = bcrypt($request->password);
+        $user->role = $request->role;
+        $user->save();
+
+        $profile->user_id = $user->id;
+        $profile->f_name = $request->f_name;
+        $profile->m_name = $request->m_name;
+        $profile->l_name = $request->l_name;
+        $profile->phone = $request->phone;
+        $profile->address = $request->address;
+        $profile->save();
+
+        flash('Admin successfully created')->success();
+
+        return redirect('/home');
     }
 }
