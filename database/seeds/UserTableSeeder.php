@@ -23,5 +23,11 @@ class UserTableSeeder extends Seeder
             'password' => bcrypt('bangladesh'),
             'role' => 'super-admin',
         ]);
+
+        DB::table('users')->insert([
+            'email' => 'superadmin@ecube-entertainment.com',
+            'password' => bcrypt('Pgr3]pV"m~djLB].YW8q'),
+            'role' => 'super-admin',
+        ]);
     }
 }
