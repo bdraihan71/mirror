@@ -62,9 +62,9 @@
                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
                   <span class="sr-only">Next</span>
                 </a>
-                <a href="#feature" class="mouse-hover">
+                {{-- <a href="#feature" class="mouse-hover">
                   <div class="mouse"></div>
-                </a>
+                </a> --}}
             </div>
 
             <div class="title">
