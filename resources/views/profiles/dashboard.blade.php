@@ -41,15 +41,17 @@
                     <h5 class="text-danger">Email Address</h5>
                     <p class="text-white">{{$user->email}}</p>
 
-                    @if (($user->facebook == null && $user->google_id == null) || $user->role == 'admin')
-                        <form action="/profile/email" method="POST" autocomplete="off">
-                            @csrf
-                            <input type="text" name="email" class="form-control" value="{{$user->email}}" required>
-                            <br>
-                            <input type="password" name="password" class="form-control" placeholder="Please enter password to change email address" required>
-                            <br>
-                            <button type="submit" class="btn btn-outline-danger">Update</button>
-                        </form>
+                    @if ($user->facebook == null && $user->google_id == null)
+                        @if ($user->role != 'admin')
+                            <form action="/profile/email" method="POST" autocomplete="off">
+                                @csrf
+                                <input type="text" name="email" class="form-control" value="{{$user->email}}" required>
+                                <br>
+                                <input type="password" name="password" class="form-control" placeholder="Please enter password to change email address" required>
+                                <br>
+                                <button type="submit" class="btn btn-outline-danger">Update</button>
+                            </form>
+                        @endif
                     @endif
                     
                     <br>
@@ -82,31 +84,35 @@
                     <br>
                     <br>
                     
-                    @if (($user->facebook == null && $user->google_id == null) || $user->role == 'admin')
-                        <form action="/profile/password" method="POST">
-                            @csrf
-                            <h5 class="text-danger">Password</h5>
-                            <p class="text-white">Current password</p>
-                            <input type="password" class="form-control" name="current" placeholder="**********" required>
+                    @if ($user->facebook == null && $user->google_id == null)
+                        @if ($user->role != 'admin')
+                            <form action="/profile/password" method="POST">
+                                @csrf
+                                <h5 class="text-danger">Password</h5>
+                                <p class="text-white">Current password</p>
+                                <input type="password" class="form-control" name="current" placeholder="**********" required>
+                                <br>
+                                <p class="text-white">New password</p>
+                                <input type="password" class="form-control" name="next" placeholder="**********" required>
+                                <br>
+                                <p class="text-white">Confirm password</p>
+                                <input type="password" class="form-control" name="confirm" placeholder="**********" required>
+                                <br>
+                                <button type="submit" class="btn btn-outline-danger">Update</button>
+                            </form>
+                            
+                            
+                            
                             <br>
-                            <p class="text-white">New password</p>
-                            <input type="password" class="form-control" name="next" placeholder="**********" required>
                             <br>
-                            <p class="text-white">Confirm password</p>
-                            <input type="password" class="form-control" name="confirm" placeholder="**********" required>
                             <br>
-                            <button type="submit" class="btn btn-outline-danger">Update</button>
-                        </form>
-                        
-                        
-                        
-                        <br>
-                        <br>
-                        <br>
+                        @endif
                     @endif
                     
-                    <h4 class="text-danger">Manage Account</h4>
-                    <p class="text-white">I would like to <span class="text-danger"><a href="/profile/delete">Delete my account</a></span></p>
+                    @if ($user->role != 'admin')
+                        <h4 class="text-danger">Manage Account</h4>
+                        <p class="text-white">I would like to <span class="text-danger"><a href="/profile/delete">Delete my account</a></span></p>
+                    @endif
                     
                 </div>
                 
