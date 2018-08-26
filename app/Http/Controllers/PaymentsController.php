@@ -15,6 +15,12 @@ class PaymentsController extends Controller
 {   
     public function sessionId (Request $request, $id)
     {
+        if (auth()->user() == null) {
+            flash('Please login to purchase tickets')->error();
+
+            return redirect('/login');
+        }
+
         $type = TicketType::where('id', $id)->first();
 
         $store_id = env('SSL_STORE_ID', false);
