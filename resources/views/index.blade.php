@@ -294,7 +294,6 @@
                     <div class="col-md-5"></div>
                 </div>
             </div>
-            <p class="copyright text-center">ECUBE Entertainment &copy; 2018, <a href="http://www.techynaf.com/" class="text-danger font-weight-bold">Techynaf</a></p>
         </section>
     </div>
 </div> <!-- Fullpage div end -->
