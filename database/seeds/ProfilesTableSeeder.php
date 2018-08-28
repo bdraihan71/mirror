@@ -18,6 +18,8 @@ class ProfilesTableSeeder extends Seeder
             'address' => 'Uttara',
             'phone' => '+8801822110448',
             'user_id' => 1,
+            'dob' => '1996-09-08',
+            'gender' => 'male',
         ]);
 
         DB::table('profiles')->insert([
@@ -26,6 +28,8 @@ class ProfilesTableSeeder extends Seeder
             'address' => 'Uttara',
             'phone' => '+8801822110448',
             'user_id' => 2,
+            'dob' => '1996-09-08',
+            'gender' => 'male',
         ]);
 
         DB::table('profiles')->insert([
@@ -34,6 +38,8 @@ class ProfilesTableSeeder extends Seeder
             'address' => 'Ecube',
             'phone' => '1234567890',
             'user_id' => 3,
+            'dob' => '1996-09-08',
+            'gender' => 'male',
         ]);
     }
 }
