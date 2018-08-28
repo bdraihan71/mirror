@@ -57,6 +57,8 @@ class ProfilesController extends Controller
         $profile->m_name = $request->m_name;
         $profile->l_name = $request->l_name;
         $profile->phone = $request->phone;
+        $profile->dob = $request->dob;
+        $profile->gender = $request->gender;
         $profile->address = $request->address;
         $profile->save();
 
@@ -103,6 +105,8 @@ class ProfilesController extends Controller
         }
 
         $profile->user_id = $user->id;
+        $profile->dob = $request->dob;
+        $profile->gender = $request->gender;
         $profile->save();
 
         Auth::login($user);

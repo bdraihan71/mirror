@@ -49,6 +49,20 @@
 
                         <div class="form-row text-white">
                             <div class="form-group col-md-4">
+                                <label>Gender *</label>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <select name="gender" class="input-container form-control contact-form" required>
+                                    <option value="">Please select a gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row text-white">
+                            <div class="form-group col-md-4">
                                 <label>Email Address *</label>
                             </div>
                             <div class="form-group col-md-8">
