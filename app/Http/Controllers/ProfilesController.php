@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\User;
 use App\Profile;
+use Carbon\Carbon;
 use Auth;
 
 class ProfilesController extends Controller
@@ -26,6 +27,15 @@ class ProfilesController extends Controller
             flash('Account already exits, please login');
 
             return redirect('/login');
+        }
+
+        $now = new Carbon;
+        $dob = Carbon::parse($request->dob);
+
+        if ($dob->diffInYears($now) < 18) {
+            flash('Sorry, you cannot register unless you are 18 years of age')->error();
+
+            return redirect('/');
         }
 
         $profile = new Profile;
@@ -65,6 +75,17 @@ class ProfilesController extends Controller
         $profile->f_name = $name[0];
         $profile->phone = $request->phone;
         $profile->address = $request->address;
+
+        $now = new Carbon;
+        $dob = Carbon::parse($request->dob);
+
+        if ($dob->diffInYears($now) < 18) {
+            $user->delete();
+
+            flash('Sorry, you cannot register unless you are 18 years of age')->error();
+
+            return redirect('/');
+        }
 
         if (sizeof($name) == 1) {
             $profile->l_name = '---';

@@ -20,6 +20,15 @@
                                 </div>
                             </div>
 
+                            <div class="form-row text-white">
+                                <div class="form-group col-md-4">
+                                    <label>Date of Birth *</label>
+                                </div>
+                                <div class="form-group col-md-8">
+                                    <input type="date" class="input-container form-control contact-form" name="dob" placeholder="Date of Birth" required>
+                                </div>
+                            </div>
+
                             <div class=" black-bg form-group row">
                                 <label for="address" class=" black-bg col-md-4 col-form-label text-md-right">Address</label>
 
