@@ -3,14 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Product;
+use App\Cart;
 use App\User;
 
 class Purchase extends Model
 {
-    public function product ()
+    public function carts ()
     {
-        return $this->belongsTo('App\Product');
+        return $this->hasMany('App\Cart');
     }
 
     public function user ()

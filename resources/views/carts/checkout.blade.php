@@ -11,7 +11,7 @@
                         <hr>
                         <a href="/shop" class="btn btn-info w-100">Continue Shopping</a>
                         <hr>
-                        <a href="/shop" class="btn btn-danger w-100">Checkout</a>
+                        <a href="/shop" class="btn btn-danger w-100">Proceed to Checkout</a>
                         <hr>
                         <div class="shopping_cart">
                             <form class="" role="form" action="" method="post" id="payment-form">

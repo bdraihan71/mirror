@@ -31,7 +31,7 @@
                                 <label>Quantity *</label>
                             </div>
                             <div class="form-group col-md-10">
-                                <input type="text" class="form-control contact-form" name="quantity" placeholder="Quantity of the product" required>
+                                <input type="number" class="form-control contact-form" name="quantity" placeholder="Quantity of the product" required>
                             </div>
                         </div>
 
@@ -40,7 +40,7 @@
                                 <label>Description *</label>
                             </div>
                             <div class="form-group col-md-10">
-                                <input type="text" id="article-ckeditor" class="form-control contact-form" name="description" required>
+                                <textarea name="description" id="article-ckeditor" class="form-control contact-form" cols="30" rows="10"></textarea>
                             </div>
                         </div>
                         

@@ -5,10 +5,12 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Profile;
+use App\Cart;
 use App\SocialFacebookAccount;
 use App\Ticket;
 use App\EventAnswer;
 use App\Purchase;
+use App\Invoice;
 
 class User extends Authenticatable
 {
@@ -55,5 +57,15 @@ class User extends Authenticatable
     public function purchases ()
     {
         return $this->hasMany('App\Purchase');
+    }
+
+    public function invoices ()
+    {
+        return $this->hasMany('App\Invoice');
+    }
+
+    public function carts ()
+    {
+        return $this->hasMany('App\Cart');
     }
 }
