@@ -26,6 +26,7 @@
                             @if(auth()->user() != null)
                                 <a class="nav-item nav-link mt-1" href="/logout">LOGOUT</a>
                                 <a class="nav-item nav-link mt-1" href="/home/#top">DASHBOARD</a>
+                                <a class="nav-item nav-link" href="/cart"><i class="fas fa-cart-plus fa-2x"></i></a>
                             @else
                                 <a class="nav-item nav-link mt-1" href="/register/#top">REGISTER</a>
                                 <a class="nav-item nav-link mt-1" href="/login/#top">LOGIN</a>

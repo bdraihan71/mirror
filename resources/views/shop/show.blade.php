@@ -19,27 +19,42 @@
                 </div>
             </div>
             <br><br>
-            <div class="row">
-                @if (auth()->user() != null)
-                    @if (!App\Http\Controllers\Controller::notAdmin())
-                        <div class="col-md-4"></div>
-                        <div class="col-md-4">
-                            <a href="/shop/edit/{{$product->id}}" class="btn btn-primary w-100">Edit</a>
+            <form action="/cart/add/{{$product->id}}" method="POST">
+                @csrf
+                <div class="row">
+                    @if (auth()->user() != null)
+                        @if (!App\Http\Controllers\Controller::notAdmin())
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                                <a href="/shop/edit/{{$product->id}}" class="btn btn-primary w-100">Edit</a>
+                                <br><br>
+                                <a href="/shop/delete/{{$product->id}}" class="btn btn-warning w-100">Delete</a>
+                                <br><br>
+                            </div>
+                            <div class="col-md-4"></div>
+                        @else
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                                <a href="/cary/add/{{$product->id}}" class="btn btn-warning w-100">ADD TO CART</a>
+                            </div>
+                            <div class="col-md-4"></div>
                             <br><br>
-                            <a href="/shop/delete/{{$product->id}}" class="btn btn-warning w-100">Delete</a>
-                            <br><br>
-                        </div>
-                        <div class="col-md-4"></div>
-                    @else
-                        <div class="col-md-4"></div>
-                        <div class="col-md-4">
-                            <a href="/shop/buy/{{$product->id}}" class="btn btn-warning w-100">Buy</a>
-                        </div>
-                        <div class="col-md-4"></div>
-                        <br><br>
+                        @endif
                     @endif
-                @endif
-            </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-4">
+                        <input type="number" name="quantity" class="form-control" placeholder="Quantity" required>
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-4">
+                        <button class="btn btn-danger w-100" type="submit">Add To Cart</button>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+                <br><br>
+            </form>
         </div>
     </section>
 @endsection
