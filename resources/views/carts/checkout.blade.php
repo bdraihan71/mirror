@@ -1,75 +1,142 @@
 @extends('layouts.app')
 
 @section('content')
-<section id="checkout" class="checkout">
-    <div class="container">
-        <div class="row checkout-padding">
-            <div class="col-lg-12">
-                <div id="mainContentWrapper">
-                    <div class="col-lg-10 offset-md-1">
-                        <h2 class="text-white text-center">Review Your Purchase &amp; Complete Checkout</h2>
-                        <hr>
-                        <a href="/shop" class="btn btn-info w-100">Continue Shopping</a>
-                        <hr>
-                        <a href="/shop" class="btn btn-danger w-100">Proceed to Checkout</a>
-                        <hr>
-                        <div class="shopping_cart">
-                            <form class="" role="form" action="" method="post" id="payment-form">
-                                <div class="panel-group" id="accordion">
-                                    <div class="card">
-                                        <div class="font-black card-header">
-                                            <h4 class="card-title">Review Your Purchase</h4>
-                                        </div>
-                                        <div id="collapseOne" class="panel-collapse collapse show">
-                                            <div class="card-body font-black">
-                                                <div class="items">
-                                                    <div class="col-lg-12">
-                                                        <table class="table table-striped">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th>Name</th>
-                                                                    <th class="text-center">Unit Price (BDT)</th>
-                                                                    <th class="text-center">Quantity</th>
-                                                                    <th class="text-center">Cumulative (BDT)</th>
-                                                                    <th></th>
-                                                                </tr>
-                                                            </thead>
-                                                            @foreach ($items as $item)
-                                                                <tr>
-                                                                    <td>
-                                                                        {{$item->product->name}}
-                                                                    </td>
-                                                                    <td class="text-center">
-                                                                        {{$item->quantity}}
-                                                                    </td class="text-center">
-                                                                    <td class="text-center"> 
-                                                                        {{$item->product->price}}
-                                                                    </td>
-                                                                    <td class="text-center"> 
-                                                                        <b>{{$item->product->price * $item->quantity}}</b>
-                                                                    </td>
-                                                                    <td><a href="/cart/remove/{{$item->id}}" class="btn btn-warning"><i class="fas fa-times"></i></a></td>
-                                                                </tr>
-                                                            @endforeach
-                                                        </table>
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <div>
-                                                            <h3>Order Total</h3>
-                                                            <h3><span class="text-success">BDT {{$total}}</span></h3>
+    <section id="checkout" class="checkout">
+        <div class="container">
+            <div class="row checkout-padding">
+                <div class="col-lg-12">
+                    <div id="mainContentWrapper">
+                        <div class="col-lg-10 offset-md-1">
+                            <h2 class="text-white text-center">Review Your Purchase &amp; Complete Checkout</h2>
+                            <hr>
+                            <a href="/shop" class="btn btn-info w-100">Continue Shopping</a>
+                            <hr>
+                            <div class="shopping_cart">
+                                <form class="" role="form" action="" method="post" id="payment-form">
+                                    <div class="panel-group" id="accordion">
+                                        <div class="card">
+                                            <div class="font-black card-header">
+                                                <h4 class="card-title">Review Your Delivery and Payment Details</h4>
+                                            </div>
+                                            <div id="collapseOne" class="panel-collapse collapse show">
+                                                <div class="card-body font-black">
+                                                    <div class="items">
+                                                        <div class="col-lg-12">
+                                                            <form action="/checkout" method="POST">
+                                                                @csrf
+                                                                <div class="row">
+                                                                    <div class="col-md-3">
+                                                                        {{-- <div class="btn-group btn-group-toggle" data-toggle="buttons"> --}}
+                                                                            <input type="radio" name="add" id="current" autocomplete="off" value="current" checked>
+                                                                            <label for="current">Current</label>
+                                                                        {{-- </div> --}}
+                                                                    </div>
+                                                                    <div class="col-md-9">
+                                                                        <div class="row">
+                                                                            <div class="col-md-6">
+                                                                                Current Address:
+                                                                            </div>
+                                                                        </div>
+                                                                        <br>
+                                                                        <div class="row">
+                                                                            <div class="col-md-12">{{auth()->user()->profile->address}}</div>
+                                                                        </div>
+                                                                        <br>
+                                                                        <div class="row">
+                                                                            <div class="col-md-6">
+                                                                                Contact Number:
+                                                                            </div>
+                                                                            <div class="col-md-6">
+                                                                                {{auth()->user()->profile->phone}}
+                                                                            </div>
+                                                                        </div>
+                                                                        <br>
+                                                                        <div class="row">
+                                                                            <div class="col-md-6">
+                                                                                Email Address:
+                                                                            </div>
+                                                                            <div class="col-md-6">
+                                                                                {{auth()->user()->email}}
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <hr>
+                                                                <div class="row">
+                                                                    <div class="col-md-3">
+                                                                        {{-- <div class="btn-group btn-group-toggle" data-toggle="buttons"> --}}
+                                                                            <input type="radio" name="add" id="new" autocomplete="off" value="new">
+                                                                            <label for="new">Another Address</label>
+                                                                        {{-- </div> --}}
+                                                                    </div>
+                                                                    <div class="col-md-9">
+                                                                        <div class="row">
+                                                                            <div class="col-md-3">
+                                                                                <label for="address">Street Address</label>
+                                                                            </div>
+                                                                            <div class="col-md-9">
+                                                                                <input type="text" class="form-control" name="address">
+                                                                            </div>
+                                                                        </div>
+                                                                        <br>
+                                                                        <div class="row">
+                                                                            <div class="col-md-3">
+                                                                                <label for="division">Division</label>
+                                                                            </div>
+                                                                            <div class="col-md-9">
+                                                                                <select name="division" class="form-control">
+                                                                                    <option value="">Please select a division</option>
+                                                                                    <option value="Dhaka">Dhaka</option>
+                                                                                    <option value="Khulna">Khulna</option>
+                                                                                    <option value="Barisal">Barisal</option>
+                                                                                    <option value="Chittagong">Chittagong</option>
+                                                                                    <option value="Mymensingh">Mymensingh</option>
+                                                                                    <option value="Rajshahi">Rajshahi</option>
+                                                                                    <option value="Rangpur">Rangpur</option>
+                                                                                    <option value="Sylhet">Sylhet</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <br>
+                                                                        <div class="row">
+                                                                            <div class="col-md-3">
+                                                                                <label for="phone">Contact Number</label>
+                                                                            </div>
+                                                                            <div class="col-md-9">
+                                                                                <input type="number" class="form-control" name="phone">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <hr>
+                                                                <div class="row">
+                                                                    <div class="col-md-3">Payment Method</div>
+                                                                    <div class="col-md-3">
+                                                                        <input type="radio" name="meth" id="cash" autocomplete="off" value="cash" checked>
+                                                                        <label for="cash">Cash on delivery</label>
+                                                                    </div>
+                                                                    <div class="col-md-2"></div>
+                                                                    <div class="col-md-3">
+                                                                        <input type="radio" name="meth" id="online" autocomplete="off" value="online">
+                                                                        <label for="online">Pay online</label>
+                                                                    </div>
+                                                                    <div class="col-md-1"></div>
+                                                                </div>
+                                                                <hr>
+                                                                <button type="submit" class="btn btn-primary w-100">Continue Checkout</button>
+                                                            </form>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 @endsection

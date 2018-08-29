@@ -112,6 +112,8 @@ Route::post('/shop/delete/{id}', 'ShopController@delete')->middleware('auth');
 Route::post('/cart/add/{id}', 'CartsController@add')->middleware('auth');
 Route::get('/cart', 'CartsController@index')->middleware('auth');
 Route::get('/cart/remove/{id}', 'CartsController@remove')->middleware('auth');
+Route::get('/checkout', 'CartsController@checkout')->middleware('auth');
+Route::post('/checkout', 'CartsController@session')->middleware('auth');
 
 //Partners Routes
 Route::get('/partner/create', 'PartnersController@create')->middleware('auth');

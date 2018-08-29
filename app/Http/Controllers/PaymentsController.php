@@ -78,7 +78,6 @@ class PaymentsController extends Controller
             $barcode = $now.time().$id;
 
             $invoice = new Invoice;
-            $invoice->type = 'ticket';
             $invoice->number = ($total_tickets - $unsold_tickets + 1);
             $invoice->barcode = $barcode;
             $invoice->save();
@@ -93,7 +92,8 @@ class PaymentsController extends Controller
 
             return redirect('/tickets');
         } else {
-            $answers = EventAnswer::where('event_id')->where('user_id', auth()->user()->id)->get();
+            $ticket = Ticket::find($id);
+            $answers = EventAnswer::where('event_id', $ticket->event->id)->where('user_id', auth()->user()->id)->get();
 
             foreach ($answers as $answer) {
                 $answer->delete();

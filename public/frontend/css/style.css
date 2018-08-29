@@ -1017,3 +1017,13 @@ input[type=number] {
 .font-black {
   color: black;
 }
+
+.btn-custom {
+  background: #3C3A3D;
+  color: white;
+}
+
+.btn-custom:hover {
+  color: #3C3A3D;
+  background: white;
+}

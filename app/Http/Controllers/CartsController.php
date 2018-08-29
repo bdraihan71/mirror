@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Cart;
 use App\Product;
+use App\Purchase;
+use Carbon\Carbon;
+use GuzzleHttp\Client;
 
 class CartsController extends Controller
 {
@@ -20,14 +23,14 @@ class CartsController extends Controller
             return redirect($url);
         }
 
-        $cart = Cart::where('user_id', auth()->user()->id)->where('is_purchased', false)->where('product_id', $id)->first();
+        $cart = Cart::where('user_id', auth()->user()->id)->whereNull('purchase_id')->where('product_id', $id)->first();
 
         if ($cart == null) {
             $cart = new Cart;
             $cart->user_id = auth()->user()->id;
             $cart->product_id = $id;
             $cart->quantity = $request->quantity;
-            $cart->is_purchased = false;
+            $cart->purchase_id = null;
             $cart->save();
         } else {
             $cart->quantity = $cart->quantity + $request->quantity;
@@ -41,14 +44,14 @@ class CartsController extends Controller
 
     public function index ()
     {
-        $items = Cart::where('is_purchased', false)->where('user_id', auth()->user()->id)->get();
+        $items = Cart::whereNull('purchase_id')->where('user_id', auth()->user()->id)->get();
         $total = 0;
 
         foreach ($items as $item) {
             $total += ($item->quantity * $item->product->price);
         }
 
-        return view('carts/checkout')->with('items', $items)->with('total', $total);
+        return view('carts/cart')->with('items', $items)->with('total', $total);
     }
 
     public function remove (Request $request, $id)
@@ -57,5 +60,150 @@ class CartsController extends Controller
         $cart->delete();
 
         return redirect('/cart');
+    }
+
+    public function checkout ()
+    {
+        return view('carts/checkout');
+    }
+
+    public function session (Request $request)
+    {
+        $items = Cart::where('user_id', auth()->user()->id)->whereNull('purchase_id')->get();
+        $names = array();
+
+        foreach ($items as $item) {
+            if ($item->quantity > $item->product->quantity) {
+                array_push($names, $item->product->name);
+            }
+        }
+
+        if (sizeof($names) != 0) {
+            $message = 'Sorry, we do not have the required number of ';
+
+            for ($i = 0; $i < sizeof($names); $i++) {
+                if ($i == (sizeof($names) - 1)) {
+                    $message = $message.' '.$names[$i].'.';
+                } else {
+                    $message = $message.' '.$names[$i].', ';
+                }
+            }
+
+            flash($message)->error();
+
+            return redirect('/checkout');
+        }
+
+        if ($request->add == 'new') {
+            $this->validate($request, [
+                'address' => 'required',
+                'phone' => 'required',
+                'division' => 'required'
+            ]);
+        }
+
+        $now = new Carbon;
+
+        $purchase = new Purchase;
+        $purchase->user_id = auth()->user()->id;
+        $purchase->number = $now->format('Ymd').time();
+
+        if ($request->add == 'current') {
+            $purchase->address = auth()->user()->profile->address;
+            $purchase->division = auth()->user()->profile->division;
+            $purchase->phone = auth()->user()->profile->phone;
+        } else {
+            $purchase->address = $request->address;
+            $purchase->division = $request->division;
+            $purchase->phone = $request->phone;
+        }
+
+        if ($request->meth == 'cash') {
+            $purchase->method = 'Cash on delivery';
+            $purchase->save();
+
+            foreach ($items as $item) {
+                $item->purchase_id = $purchase->id;
+                $item->save();
+
+                $product = $item->product;
+                $product->quantity = $product->quantity - $item->quantity;
+                $product->save();
+            }
+        } else {
+            $purchase->method = 'Online Payment';
+            $purchase->save();
+            $total_amount = 0;
+
+            foreach ($items as $item) {
+                $total_amount += ($item->product->price * $item->quantity);
+            }
+
+            $store_id = env('SSL_STORE_ID', false);
+            $store_pass =  env('SSL_STORE_PASS', false);
+            $total_amount = number_format($total_amount, 2, '.', '');
+            $currency = 'BDT';
+            $tran_id = new Carbon;
+            $tran_id = $tran_id->format('Y-m-d::H:i:s.u');
+            $tran_id = $tran_id.auth()->user()->id.$purchase->id;
+            $success_url = 'http://127.0.0.1:8000/api/product/0/'.$purchase->id.'/'.auth()->user()->id;
+            $fail_url = 'http://127.0.0.1:8000/api/product/1/'.$purchase->id.'/'.auth()->user()->id;
+            $cancel_url = 'http://127.0.0.1:8000/api/product/2/'.$purchase->id.'/'.auth()->user()->id;
+            $emi_potion = '0';
+            $cus_name = auth()->user()->profile->f_name.auth()->user()->profile->m_name.auth()->user()->profile->l_name;
+            $cus_email = auth()->user()->email;
+            $cus_phone = auth()->user()->profile->phone;
+            $client = new Client();
+
+            $response = $client->request('POST', 'https://sandbox.sslcommerz.com/gwprocess/v3/api.php', [
+                'form_params' => [
+                    'store_id' => $store_id,
+                    'store_passwd' => $store_pass,
+                    'total_amount' => $total_amount,
+                    'currency' => $currency,
+                    'tran_id' => $tran_id,
+                    'success_url' => $success_url,
+                    'fail_url' => $fail_url,
+                    'cancel_url' => $cancel_url,
+                    'emi_potion' => $emi_potion,
+                    'cus_name' => $cus_name,
+                    'cus_email' => $cus_email,
+                    'cus_phone' => $cus_phone,
+                ]
+            ]);
+
+            if (json_decode($response->getBody())->status == 'FAILED') {
+                $url = '/shop';
+
+                $purchase->delete();
+
+                flash(json_decode($response->getBody())->failedreason)->error();
+
+                return redirect($url);
+            }
+
+            return redirect(json_decode($response->getBody())->redirectGatewayURL);
+        }
+    }
+
+    public function status (Request $request, $status, $id, $user)
+    {
+        if ($status == 0 && $request->status == 'VALID') {
+            $items = Cart::where('user_id', $user)->whereNull('purchase_id')->get();
+
+            foreach ($items as $item) {
+                $item->purchase_id = $id;
+                $item->save();
+            }
+
+            return redirect('/home');
+        } else {
+            $purchase = Purchase::find($id);
+            $purchase->delete();
+
+            flash('Something went wrong')->error();
+
+            return redirect('/checkout');
+        }
     }
 }

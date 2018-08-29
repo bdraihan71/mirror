@@ -18,6 +18,8 @@ class ProfilesTableSeeder extends Seeder
             'address' => 'Uttara',
             'phone' => '+8801822110448',
             'user_id' => 1,
+            'division' => 'Dhaka',
+            'fb_url' => 'something',
             'dob' => '1996-09-08',
             'gender' => 'male',
         ]);
@@ -28,6 +30,8 @@ class ProfilesTableSeeder extends Seeder
             'address' => 'Uttara',
             'phone' => '+8801822110448',
             'user_id' => 2,
+            'division' => 'Dhaka',
+            'fb_url' => 'something',
             'dob' => '1996-09-08',
             'gender' => 'male',
         ]);
@@ -38,6 +42,8 @@ class ProfilesTableSeeder extends Seeder
             'address' => 'Ecube',
             'phone' => '1234567890',
             'user_id' => 3,
+            'division' => 'Dhaka',
+            'fb_url' => 'something',
             'dob' => '1996-09-08',
             'gender' => 'male',
         ]);

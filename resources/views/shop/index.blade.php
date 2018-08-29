@@ -18,5 +18,10 @@
                 @endforeach
             </div>
         </div>
+        @if (!App\Http\Controllers\Controller::notAdmin())
+            <div class="row py-5">
+                <div class="col-md-12"><a href="/shop/create" class="btn btn-custom w-100 h-100"><i class="fas fa-plus-circle fa-5x"></i></a></div>
+            </div>
+        @endif
     </section>
 @endsection
