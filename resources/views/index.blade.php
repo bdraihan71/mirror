@@ -62,6 +62,10 @@
                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
                   <span class="sr-only">Next</span>
                 </a>
+
+                <a href="#about" class="mouse-hover">
+                    <div class="mouse"></div>
+                </a>
                 {{-- <a href="#feature" class="mouse-hover">
                   <div class="mouse"></div>
                 </a> --}}

@@ -16,6 +16,22 @@
 </script>
 
 <script>
+    $(document).ready(function(){
+        $(".mouse-hover").on('click', function(event) {
+            if (this.hash !== "") {
+                event.preventDefault();
+                var hash = this.hash;
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function(){
+                    window.location.hash = hash;
+                });
+            }
+        });
+    });
+</script>
+
+<script>
     $('#flash-overlay-modal').modal();
     $('div.alert').not('.alert-important').delay(3000).fadeOut(350);
 </script>
