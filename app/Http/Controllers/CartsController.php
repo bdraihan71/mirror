@@ -206,4 +206,32 @@ class CartsController extends Controller
             return redirect('/checkout');
         }
     }
+
+    public function invoice ()
+    {
+        $purchases = Purchase::where('user_id', auth()->user()->id)->orderBy('created_at', 'desc')->get();
+
+        return view('carts/show-all')->with('purchases', $purchases);
+    }
+
+    public function print (Request $request, $id)
+    {
+        $purchase = Purchase::find($id);
+        $user = auth()->user();
+
+        $total = 0;
+
+        foreach ($purchase->carts as $item) {
+            $total += ($item->quantity * $item->product->price);
+        }
+
+        $shipping = array(50, 3);
+
+        if ($user->profile->division != 'Dhaka') {
+            $shipping[0] = 100;
+            $shipping[1] = 10;
+        }
+
+        return view('carts/print')->with('purchase', $purchase)->with('user', $user)->with('total', $total)->with('shipping', $shipping);
+    }
 }

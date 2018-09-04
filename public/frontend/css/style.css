@@ -1027,3 +1027,7 @@ input[type=number] {
   color: #3C3A3D;
   background: white;
 }
+
+.shaded {
+  background: grey;
+}

@@ -115,6 +115,8 @@ Route::get('/cart', 'CartsController@index')->middleware('auth');
 Route::get('/cart/remove/{id}', 'CartsController@remove')->middleware('auth');
 Route::get('/checkout', 'CartsController@checkout')->middleware('auth');
 Route::post('/checkout', 'CartsController@session')->middleware('auth');
+Route::get('/cart/show-all', 'CartsController@invoice')->middleware('auth');
+Route::get('/purchase/print/{id}', 'CartsController@print')->middleware('auth');
 
 //Partners Routes
 Route::get('/partner/create', 'PartnersController@create')->middleware('auth');

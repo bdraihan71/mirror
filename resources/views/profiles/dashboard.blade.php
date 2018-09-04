@@ -15,6 +15,7 @@
                             <strong><a class="nav-link text-white" href="/analytics/events">EVENTS ANALYTICS</a></strong>
                         @endif
                       @else
+                        <strong><a class="nav-link text-white" href="/cart/show-all">PRODUCT PURCHASES</a></strong>
                         <strong><a class="nav-link text-white" href="/tickets">TICKETS</a></strong>
                       @endif
                     </nav>

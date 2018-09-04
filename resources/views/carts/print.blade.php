@@ -26,49 +26,46 @@
 
 <body>
     <section id="ticket" class="ticket pb-5">
-        <img class="ticket-image" src="{{$ticket->event->img_1}}">
         <div class="container">
             <div class="row pt-5">
-                <div class="col-md-12 ticket-text-line-height">
+                <div class="col-md-8 ticket-text-line-height">
+                    <br><br><br><br><br><br><br><br>
                     <p>{{$user->profile->f_name.' '.$user->profile->m_name.' '.$user->profile->l_name}}</p>
                     <p>{{$user->email}}</p>
                     <p>{{$user->profile->phone}}</p>
                     <p>{{$user->profile->address}}</p>
                     <p>{{$user->profile->division}}</p>
                 </div>
-            </div>
-            <div class="row pt-5">
-                <div class="col-md-6 ticket-text-line-height">
-                    <h1>INVOICE</h1>
-                    <p class="text-danger">{{$ticket->invoice->number.'-'.date("Y", strtotime($ticket->created_at))}}</p>
-                    <p>{{date("M d, Y", strtotime($ticket->created_at))}}</p>
-                    <br>
-                    <p>Order Number: {{$ticket->invoice->number}}</p>
-                    <p>Order Date: {{date("M d, Y", strtotime($ticket->created_at))}}</p>
-                </div>
-                <div class="col-md-6 ticket-text-line-height ticket-price-background text-white my-auto">
-                    <h1>BDT {{number_format((float)$ticket->type->price, 2, '.', '')}}</h1>
-                    <p>Thank you for your purchase</p>
+                <div class="col-md-3 ticket-text-line-height">
+                    <img class="img-fluid" src="/frontend/img/favicon.png">
                 </div>
             </div>
             <div class="row pt-5">
                 <div class="col-md-12 ticket-text-line-height">
-                    <table class="table">
+                    <h1 class="shaded">INVOICE</h1>
+                    <p>Order Date: {{date("M d, Y", strtotime($purchase->created_at))}}</p>
+                </div>
+            </div>
+            <div class="row pt-5">
+                <div class="col-md-12 ticket-text-line-height">
+                    <table class="table table-striped">
                         <thead>
                             <tr>
-                            <th scope="col">Description</th>
+                            <th scope="col">Product Name</th>
                             <th scope="col">Cost</th>
                             <th scope="col">Quantity</th>
                             <th scope="col">Total</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                            <th scope="row">{{$ticket->event->name}}</th>
-                            <td>BDT {{number_format((float)$ticket->type->price, 2, '.', '')}}</td>
-                            <td>1</td>
-                            <td>BDT {{number_format((float)$ticket->type->price, 2, '.', '')}}</td>
-                            </tr>
+                            @foreach ($purchase->carts as $item)
+                                <tr>
+                                    <th scope="row">{{$item->product->name}}</th>
+                                    <td>BDT {{number_format((float)$item->product->price, 2, '.', '')}}</td>
+                                    <td>{{$item->quantity}}</td>
+                                    <td>BDT {{number_format((float)($item->product->price * $item->quantity), 2, '.', '')}}</td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table><hr>
                 </div>
@@ -78,23 +75,13 @@
                     
                 </div>
                 <div class="col-md-6 ticket-text-line-height">
-                    <p>Subtotal <span class="float-right">BDT {{number_format((float)$ticket->type->price, 2, '.', '')}}</span></p>
-                    <p>Shipping <span class="float-right">BDT 0.00</span></p>
+                    <p>Subtotal <span class="float-right">BDT {{number_format((float)$total, 2, '.', '')}}</span></p>
+                    <p>Shipping <span class="float-right">BDT {{number_format((float)$shipping[0], 2, '.', '')}}</span></p>
                     <hr>
-                    <p>Total <span class="float-right text-danger">BDT {{number_format((float)$ticket->type->price, 2, '.', '')}}</span></p>
+                    <p>Total <span class="float-right text-danger">BDT {{number_format((float)($shipping[0] + $total), 2, '.', '')}}</span></p>
                 </div>
             </div>
-            <p class="text-danger">Items will be shipped within 2 days.</p>
-            <div class="row pt-5">
-                <div class="col-md-12 ticket-text-line-height text-center">
-                    {!! Milon\Barcode\Facades\DNS1DFacade::getBarcodeSVG($ticket->invoice->barcode, "PHARMA") !!}
-                </div>
-            </div>
-            <div class="row pt-5">
-                <div class="col-md-12 ticket-text-line-height text-center">
-                    <p class="text-danger text-center">This is your order barcode</p>
-                </div>
-            </div>
+            <p class="text-danger">Items will be shipped within {{$shipping[1]}} days.</p>
         </div>      
     </section>
     <!-- Scripts for Bootstrap-4 -->
