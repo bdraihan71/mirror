@@ -60,6 +60,7 @@ class ProfilesController extends Controller
         $profile->dob = $request->dob;
         $profile->gender = $request->gender;
         $profile->address = $request->address;
+        $profile->division = $request->division;
         $profile->fb_url = $request->fb_link;
         $profile->save();
 
@@ -180,6 +181,7 @@ class ProfilesController extends Controller
     {
         $profile = auth()->user()->profile;
         $profile->address = $request->address;
+        $profile->division = $request->division;
         $profile->save();
 
         return redirect('/home');
