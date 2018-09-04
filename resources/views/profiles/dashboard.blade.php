@@ -84,6 +84,19 @@
                     <br>
                     <br>
                     <br>
+
+                    <h5 class="text-danger">Facebook Link</h5>
+                    <p class="text-white">{{$user->profile->fb_url}}</p>
+                    <form action="/profile/facebook" method="POST">
+                        @csrf
+                        <input type="text" name="fb_url" class="form-control" value="{{$user->profile->fb_url}}">
+                        <br>
+                        <button type="submit" class="btn btn-outline-danger">Update</button>
+                    </form>
+                    
+                    <br>
+                    <br>
+                    <br>
                     
                     @if ($user->facebook == null && $user->google_id == null)
                         @if ($user->role != 'admin')

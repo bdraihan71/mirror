@@ -22,6 +22,7 @@ Route::post('/profile/name', 'ProfilesController@name')->middleware('auth');
 Route::post('/profile/email', 'ProfilesController@email')->middleware('auth');
 Route::post('/profile/address', 'ProfilesController@address')->middleware('auth');
 Route::post('/profile/phone', 'ProfilesController@phone')->middleware('auth');
+Route::post('/profile/facebook', 'ProfilesController@facebook')->middleware('auth');
 Route::post('/profile/password', 'ProfilesController@password')->middleware('auth');
 Route::get('/profile/delete', 'ProfilesController@delete')->middleware('auth');
 Route::get('/profile/delete/confirm', 'ProfilesController@destroy')->middleware('auth');

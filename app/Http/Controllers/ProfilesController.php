@@ -60,6 +60,7 @@ class ProfilesController extends Controller
         $profile->dob = $request->dob;
         $profile->gender = $request->gender;
         $profile->address = $request->address;
+        $profile->fb_url = $request->fb_link;
         $profile->save();
 
         Auth::login($user);
@@ -187,6 +188,15 @@ class ProfilesController extends Controller
     {
         $profile = auth()->user()->profile;
         $profile->phone = $request->phone;
+        $profile->save();
+
+        return redirect('/home');
+    }
+
+    public function facebook (Request $request)
+    {
+        $profile = auth()->user()->profile;
+        $profile->fb_url = $request->fb_url;
         $profile->save();
 
         return redirect('/home');
