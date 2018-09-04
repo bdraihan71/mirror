@@ -21,6 +21,7 @@ class CreateProfilesTable extends Migration
             $table->date('dob');
             $table->string('gender');
             $table->string('address');
+            $table->string('division');
             $table->text('fb_url')->nullable();
             $table->string('phone');
             $table->integer('user_id');

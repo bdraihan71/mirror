@@ -78,6 +78,7 @@ class ProfilesController extends Controller
         $profile->f_name = $name[0];
         $profile->phone = $request->phone;
         $profile->address = $request->address;
+        $profile->division = $request->division;
 
         $now = new Carbon;
         $dob = Carbon::parse($request->dob);

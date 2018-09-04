@@ -110,13 +110,32 @@
                                 <input type="text" class="form-control contact-form" name="address" placeholder="" required>
                             </div>
                         </div>
+
+                        <div class="form-row text-white">
+                            <div class="form-group col-md-4">
+                                <label>Division</label>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <select name="division" class="form-control">
+                                    <option value="">Please select a division</option>
+                                    <option value="Dhaka">Dhaka</option>
+                                    <option value="Khulna">Khulna</option>
+                                    <option value="Barisal">Barisal</option>
+                                    <option value="Chittagong">Chittagong</option>
+                                    <option value="Mymensingh">Mymensingh</option>
+                                    <option value="Rajshahi">Rajshahi</option>
+                                    <option value="Rangpur">Rangpur</option>
+                                    <option value="Sylhet">Sylhet</option>
+                                </select>
+                            </div>
+                        </div>
                         
                         <div class="form-row text-white">
                             <div class="form-group col-md-4">
                                 <label>FB link</label>
                             </div>
                             <div class="form-group col-md-8">
-                                <input type="text" class="form-control contact-form" name="fb_link" placeholder="" required>
+                                <input type="text" class="form-control contact-form" name="fb_link" placeholder="">
                             </div>
                         </div>
                         
