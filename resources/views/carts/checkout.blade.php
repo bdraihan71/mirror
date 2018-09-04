@@ -41,6 +41,9 @@
                                                                         <div class="row">
                                                                             <div class="col-md-12">{{auth()->user()->profile->address}}</div>
                                                                         </div>
+                                                                        <div class="row">
+                                                                            <div class="col-md-12">{{auth()->user()->profile->division}}</div>
+                                                                        </div>
                                                                         <br>
                                                                         <div class="row">
                                                                             <div class="col-md-6">
