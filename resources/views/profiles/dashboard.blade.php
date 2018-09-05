@@ -9,7 +9,6 @@
                       @if (!App\Http\Controllers\Controller::notAdmin())
                         <strong><a class="nav-link text-white" href="/events/create">CREATE EVENTS</a></strong>
                         <strong><a class="nav-link text-white" href="/partners">PARTNERS</a></strong>
-                        <strong><a class="nav-link text-white" href="/shop">SHOP</a></strong>
                         <strong><a class="nav-link text-white" href="/media/photo/edit">EDIT EVENT ALBUMS</a></strong>
                         <strong><a class="nav-link text-white" href="/media/video/edit">EDIT EVENT VIDEOS</a></strong>
                         @if (auth()->user()->role == 'super-admin')
