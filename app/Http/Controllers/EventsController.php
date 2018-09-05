@@ -7,6 +7,7 @@ use App\Event;
 use App\Ticket;
 use App\AdditionalInformation;
 use App\Question;
+use App\Album;
 use Carbon\Carbon;
 
 class EventsController extends Controller
@@ -47,7 +48,10 @@ class EventsController extends Controller
             $flow = false;
         }
 
-        return view('events/show')->with('event', $event)->with('flow', $flow)->with('footer', $this->footer());
+        $album = Album::where('event_id', $id)->get();
+
+        return view('events/show')->with('event', $event)->with('flow', $flow)->with('footer', $this->footer())->
+        with('album', $album);
     }
 
     public function showAll ($range)

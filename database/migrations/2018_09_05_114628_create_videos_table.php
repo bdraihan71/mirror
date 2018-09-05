@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAlbumsTable extends Migration
+class CreateVideosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateAlbumsTable extends Migration
      */
     public function up()
     {
-        Schema::create('albums', function (Blueprint $table) {
+        Schema::create('videos', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('url');
             $table->integer('event_id');
-            $table->string('caption')->nullable();
+            $table->text('url');
+            $table->boolean('featured');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateAlbumsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('albums');
+        Schema::dropIfExists('videos');
     }
 }

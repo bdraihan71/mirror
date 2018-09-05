@@ -145,3 +145,17 @@ Route::get('/privacy-policy', function () {
 //Analytics Routes
 Route::get('/analytics/events', 'AnalyticsController@events')->middleware('auth');
 Route::get('/analytics/events/{id}', 'AnalyticsController@event')->middleware('auth');
+
+//Media Routes
+Route::get('/media', 'MediaController@index');
+Route::get('/media/photo/add', 'MediaController@addPhoto')->middleware('auth');
+Route::post('/media/photo/add', 'MediaController@storePhoto')->middleware('auth');
+Route::get('/media/video/add', 'MediaController@addVideo')->middleware('auth');
+Route::post('/media/video/add', 'MediaController@storeVideo')->middleware('auth');
+Route::get('/media/showAll', 'MediaController@showAlbums');
+Route::get('/media/photo/edit', 'MediaController@editAlbum')->middleware('auth');
+Route::post('/media/photo/edit', 'MediaController@updateAlbum')->middleware('auth');
+Route::get('/media/video/edit', 'MediaController@editVideo')->middleware('auth');
+Route::post('/media/video/edit', 'MediaController@updateVideo')->middleware('auth');
+Route::get('/media/photo/delete/{id}', 'MediaController@deletePhoto')->middleware('auth');
+Route::get('/media/video/delete/{id}', 'MediaController@deleteVideo')->middleware('auth');

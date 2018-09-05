@@ -51,6 +51,65 @@
         </div>
     </div>
 
+    @if (count($album))
+        <style>
+            .c-hero-flex__item1 {
+                background: #222 url("<?php echo $album[0]; ?>") no-repeat center center;
+            }
+            .c-hero-flex__item2 {
+                background: #222 url("<?php echo $album[1]; ?>") no-repeat center center;
+            }
+            .c-hero-flex__item3 {
+                background: #222 url("<?php echo $album[2]; ?>") no-repeat center center;
+            }
+            .c-hero-flex__item4 {
+                background: #222 url("<?php echo $album[3]; ?>") no-repeat center center;
+            }
+            .c-hero-flex__item5 {
+                background: #222 url("<?php echo $album[4]; ?>") no-repeat center center;
+            }
+            .c-hero-flex__item6 {
+                background: #222 url("<?php echo $album[5]; ?>") no-repeat center center;
+            }
+        </style>
+
+        <section id="gallery" class="gallery">
+            <div class="container-fluid d-none d-sm-block">
+                <div class="row text-center">
+                    <div class="col-md-12 center-gallery">
+                        <h1 class="center__text glitch is-glitching" data-text="GALLERY">GALLERY</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <section class="c-hero-flex">
+                        <a class="c-hero-flex__item c-hero-flex__item1" target="_blank" href="/">
+                            
+                        </a>
+                        <a class="c-hero-flex__item c-hero-flex__item2" target="_blank" href="/">
+                            
+                        </a>
+                        <a class="c-hero-flex__item c-hero-flex__item3" target="_blank" href="/">
+
+                        </a>
+                    </section>
+                </div>
+                <div class="row">
+                    <section class="c-hero-flex">
+                        <a class="c-hero-flex__item c-hero-flex__item4" target="_blank" href="/">
+
+                        </a>
+                        <a class="c-hero-flex__item c-hero-flex__item5" target="_blank" href="/">
+
+                        </a>
+                        <a class="c-hero-flex__item c-hero-flex__item6" target="_blank" href="/">
+
+                        </a>
+                    </section>
+                </div>
+            </div>
+        </section>
+    @endif
+
     <section id="schedule" class="schedule text-center text-white py-5">
         <div class="container-fluid">
             <div class="row">
