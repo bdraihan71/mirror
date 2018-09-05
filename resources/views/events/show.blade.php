@@ -141,6 +141,20 @@
         </div>
     </section>
 
+    @if ($video != null)
+        <section id="event-video" class="event-video text-white py-5">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" width="560" height="315" src="{!!$video->url!!}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    @endif
+
     <section id="event-details" class="event-details text-white py-5">
         <div class="container">
             <div class="row">

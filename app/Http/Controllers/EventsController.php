@@ -49,9 +49,10 @@ class EventsController extends Controller
         }
 
         $album = Album::where('event_id', $id)->get();
+        $video = Video::where('event_id', $id)->first();
 
         return view('events/show')->with('event', $event)->with('flow', $flow)->with('footer', $this->footer())->
-        with('album', $album);
+        with('album', $album)->with('video', $video);
     }
 
     public function showAll ($range)
