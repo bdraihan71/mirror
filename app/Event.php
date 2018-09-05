@@ -9,6 +9,7 @@ use App\Question;
 use App\Ticket;
 use App\TicketType;
 use App\EventAnswer;
+use App\Album;
 
 class Event extends Model
 {
@@ -45,5 +46,10 @@ class Event extends Model
     public function questions()
     {
         return $this->hasMany('App\Question');
+    }
+
+    public function album ()
+    {
+        return $this->hasMany('App\Album');
     }
 }
