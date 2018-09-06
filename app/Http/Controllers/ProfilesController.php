@@ -302,11 +302,32 @@ class ProfilesController extends Controller
         }
 
         $users = User::where('role', 'normal')->paginate(15);
+        $flow = true;
 
         if ($request->role == 'admin') {
             $users = User::where('role', 'admin')->paginate(15);
+            $flow = false;
         }
 
-        return view('profiles/show-all')->with('users', $users);
+        return view('profiles/show-all')->with('users', $users)->with('flow', $flow);
+    }
+
+    public function del (Request $request, $id)
+    {
+        if (auth()->user()->role != 'super-admin') {
+            flash('You are not authorized to access this page')->error();
+
+            return redirect('/home');
+        }
+
+        $user = User::find($id);
+        $profile = Profile::find($user->id);
+
+        $user->delete();
+        $profile->delete();
+
+        flash('Admin account successfully deleted')->success();
+
+        return redirect('/profile/show-all');
     }
 }
