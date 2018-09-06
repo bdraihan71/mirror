@@ -1023,3 +1023,20 @@ input[type=number] {
 .shaded {
   background: grey;
 }
+
+.p-scroll{
+  height: 300px;
+  overflow: scroll;
+}  
+.p-scroll::-webkit-scrollbar {
+  display: none;
+}
+@media only screen and (max-width:500px){
+  .p-scroll{
+    height: 250px;
+    overflow: scroll;
+  }  
+  .p-scroll::-webkit-scrollbar {
+    display: none;
+  }
+} 

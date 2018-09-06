@@ -101,7 +101,7 @@
 					<div id="div1" style="display: none">
 					<img class="parallax-img" src="/frontend/img/parallax6.png">
 					<h1 class="text-danger parallax-text">Ecube Entertainment</h1>
-					{!!$description->content!!}
+					<div class="p-scroll">{!!$description->content!!}</div>
 				</div>	
 				</header>
 	
