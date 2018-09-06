@@ -134,9 +134,6 @@
                             <p>{{$wwds[1]->content}}</p>
                         </div>
                         <div class="col-md-3"></div>
-                    </div>
-                    
-                    <div class="row pt-5">
                         <div class="col-md-3"></div>
                         <div class="col-md-3">
                             <h5>{{$wwd[2]->content}}</h5>
@@ -162,7 +159,8 @@
             <div class="row text-white">
                 <div class="col-md-1"></div>
                 <div class="col-md-10 wwd text-center">
-                    <div class="row">
+                    <div class="row p-scroll-wwd w-100">
+                        <br><br><br><br><br><br><br>
                         <h5 class="wdwd-text-xs pt-0 pb-3">What Do We Do</h5>
                         <div class="col-md-3"></div>
                         <div class="col-md-3">
@@ -174,9 +172,6 @@
                             <p>{{$wwds[1]->content}}</p>
                         </div>
                         <div class="col-md-3"></div>
-                    </div>
-                    
-                    <div class="row">
                         <div class="col-md-3"></div>
                         <div class="col-md-3">
                             <h6>{{$wwd[2]->content}}</h6>

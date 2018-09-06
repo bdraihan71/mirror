@@ -1033,7 +1033,16 @@ input[type=number] {
 }
 @media only screen and (max-width:500px){
   .p-scroll{
-    height: 250px;
+    height: 200px;
+    overflow: scroll;
+  }  
+  .p-scroll::-webkit-scrollbar {
+    display: none;
+  }
+}
+@media only screen and (max-width:500px){
+  .p-scroll-wwd{
+    height: 450px;
     overflow: scroll;
   }  
   .p-scroll::-webkit-scrollbar {
