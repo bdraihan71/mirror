@@ -113,10 +113,10 @@
 
                         <div class="form-row text-white">
                             <div class="form-group col-md-4">
-                                <label>Division</label>
+                                <label>Division *</label>
                             </div>
                             <div class="form-group col-md-8">
-                                <select name="division" class="form-control">
+                                <select name="division" class="form-control" required>
                                     <option value="">Please select a division</option>
                                     <option value="Dhaka">Dhaka</option>
                                     <option value="Khulna">Khulna</option>

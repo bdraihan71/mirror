@@ -130,6 +130,10 @@ class CartsController extends Controller
                 $product->quantity = $product->quantity - $item->quantity;
                 $product->save();
             }
+
+            flash('You have successfully bought the product(s)')->success();
+
+            return redirect('/home');
         } else {
             $purchase->method = 'Online Payment';
             $purchase->save();
@@ -146,9 +150,9 @@ class CartsController extends Controller
             $tran_id = new Carbon;
             $tran_id = $tran_id->format('Y-m-d::H:i:s.u');
             $tran_id = $tran_id.auth()->user()->id.$purchase->id;
-            $success_url = 'http://127.0.0.1:8000/api/product/0/'.$purchase->id.'/'.auth()->user()->id;
-            $fail_url = 'http://127.0.0.1:8000/api/product/1/'.$purchase->id.'/'.auth()->user()->id;
-            $cancel_url = 'http://127.0.0.1:8000/api/product/2/'.$purchase->id.'/'.auth()->user()->id;
+            $success_url = 'https://live.ecube-entertainment.com/api/product/0/'.$purchase->id.'/'.auth()->user()->id;
+            $fail_url = 'https://live.ecube-entertainment.com/api/product/1/'.$purchase->id.'/'.auth()->user()->id;
+            $cancel_url = 'https://live.ecube-entertainment.com/api/product/2/'.$purchase->id.'/'.auth()->user()->id;
             $emi_potion = '0';
             $cus_name = auth()->user()->profile->f_name.auth()->user()->profile->m_name.auth()->user()->profile->l_name;
             $cus_email = auth()->user()->email;
@@ -194,6 +198,10 @@ class CartsController extends Controller
             foreach ($items as $item) {
                 $item->purchase_id = $id;
                 $item->save();
+
+                $product = $item->product;
+                $product->quantity = $product->quantity - $item->quantity;
+                $product->save();
             }
 
             return redirect('/home');
