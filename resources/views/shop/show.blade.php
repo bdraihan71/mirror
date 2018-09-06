@@ -6,7 +6,7 @@
         <div class="container text-white text-center">
             <div class="row">
                 <div class="col-md-6">
-                    <img class="responsive" height="500" width="500" src="{{$product->img}}" alt="Product Image">
+                    <img class="responsive" height="500" width="500" src="/{{$product->img}}" alt="Product Image">
                 </div>
                 <div class="col-md-6">
                     <h1>{{$product->name}}</h1>
@@ -32,13 +32,6 @@
                                 <br><br>
                             </div>
                             <div class="col-md-4"></div>
-                        @else
-                            <div class="col-md-4"></div>
-                            <div class="col-md-4">
-                                <a href="/cary/add/{{$product->id}}" class="btn btn-warning w-100">ADD TO CART</a>
-                            </div>
-                            <div class="col-md-4"></div>
-                            <br><br>
                         @endif
                     @endif
                 </div>
@@ -49,7 +42,7 @@
                     </div>
                     <div class="col-md-2"></div>
                     <div class="col-md-4">
-                        <button class="btn btn-danger w-100" type="submit">Add To Cart</button>
+                        <button class="btn btn-warning w-100" type="submit">Add To Cart</button>
                     </div>
                     <div class="col-md-1"></div>
                 </div>

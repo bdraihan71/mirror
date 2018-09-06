@@ -19,6 +19,7 @@
                         <tr>
                             <th>Purchase Date</th>
                             <th>Number of products</th>
+                            <th>Payment Method</th>
                             <th>Invoice Link</th>
                         </tr>
                     </thead>
@@ -28,6 +29,7 @@
                             <tr>
                                 <td>{{date("M d, Y", strtotime($purchase->created_at))}}</td>
                                 <td>{{count($purchase->carts)}}</td>
+                                <th>{{$purchase->method}}</th>
                                 <td><a href="/purchase/print/{{$purchase->id}}" target="_blank">Download Link</a></td>
                             </tr>
                         @endforeach

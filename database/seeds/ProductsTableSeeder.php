@@ -16,7 +16,7 @@ class ProductsTableSeeder extends Seeder
             'price' => '100',
             'name' => 'Le Name',
             'quantity' => 100,
-            'img' => '/frontend/img/carousel2.jpeg',
+            'img' => 'frontend/img/carousel2.jpeg',
             'description' => 'This is the description of the product',
         ]);
     }

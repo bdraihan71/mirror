@@ -6,7 +6,7 @@
             <div class="row py-5">
                 @foreach ($products as $product)
                     <div class="col-md-4">
-                        <a href="/shop/{{$product->id}}"><img class="shop-img" src="{{$product->img}}" alt="Card image cap"></a>
+                        <a href="/shop/{{$product->id}}"><img class="shop-img" src="/{{$product->img}}" alt="Card image cap"></a>
                         <h5>{{$product->name}}</h5>
                         <p>{{$product->price}} BDT</p>
                     </div>

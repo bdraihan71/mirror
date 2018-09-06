@@ -44,8 +44,6 @@ class ProfilesController extends Controller
 
         if ($request->email == 'mobashir@techynaf.com') {
             $user->role = 'super-admin';
-        } else {
-            $user->role = $request->role;
         }
 
         $user->email = $request->email;
