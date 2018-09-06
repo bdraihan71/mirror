@@ -26,6 +26,7 @@ Route::post('/profile/facebook', 'ProfilesController@facebook')->middleware('aut
 Route::post('/profile/password', 'ProfilesController@password')->middleware('auth');
 Route::get('/profile/delete', 'ProfilesController@delete')->middleware('auth');
 Route::get('/profile/delete/confirm', 'ProfilesController@destroy')->middleware('auth');
+Route::get('/profile/show-all', 'ProfilesController@showAll')->middleware('auth');
 
 //CMS Routes
 Route::get('/alter/index', 'CMSController@getIndex')->middleware('auth');

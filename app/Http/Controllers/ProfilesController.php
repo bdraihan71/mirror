@@ -292,4 +292,21 @@ class ProfilesController extends Controller
 
         return redirect('/home');
     }
+
+    public function showAll (Request $request)
+    {
+        if (auth()->user()->role != 'super-admin') {
+            flash('You are not authorized to access this')->error();
+
+            return redirect('/home');
+        }
+
+        $users = User::where('role', 'normal')->paginate(15);
+
+        if ($request->role == 'admin') {
+            $users = User::where('role', 'admin')->paginate(15);
+        }
+
+        return view('profiles/show-all')->with('users', $users);
+    }
 }

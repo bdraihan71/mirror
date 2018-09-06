@@ -207,7 +207,7 @@
                 <div class="owl-carousel partners-carousel">
                     @foreach($local_partners as $partner)
                         <div class="card">
-                            <a href="/partners"><img class="card-img-top" src="{{$partner->img}}" alt="Partner Logo"></a>
+                            <img class="card-img-top" src="{{$partner->img}}" alt="Partner Logo">
                         </div>
                     @endforeach
                 </div>
@@ -226,7 +226,7 @@
                 <div class="owl-carousel partners-carousel">
                     @foreach($int_partners as $partner)
                         <div class="card">
-                            <a href="/partners"><img class="card-img-top" src="{{$partner->img}}" alt="Partner Logo"></a>
+                            <img class="card-img-top" src="{{$partner->img}}" alt="Partner Logo">
                         </div>
                     @endforeach
                 </div>
@@ -243,7 +243,7 @@
                 <div class="owl-carousel partners-carousel">
                     @foreach($partners as $partner)
                         <div class="card">
-                            <a href="/partners"><img class="card-img-top" src="{{$partner->img}}" alt="Partner Logo"></a>
+                            <img class="card-img-top" src="{{$partner->img}}" alt="Partner Logo">
                         </div>
                     @endforeach
                 </div>
