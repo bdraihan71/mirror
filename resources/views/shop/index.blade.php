@@ -18,6 +18,7 @@
                 @endforeach
             </div>
         </div>
+        <div class="text-center">{{ $products->links() }}</div>
         @if (auth()->user() != null)
             @if (!App\Http\Controllers\Controller::notAdmin())
                 <div class="row py-5">
