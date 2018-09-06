@@ -838,9 +838,10 @@ header .download .btn-light:hover {
   min-height: 100vh;
 }
 .contact-text{
+  font: montserrat;
   font-size: 5rem;
   font-weight: bold;
-  color: #ec1c21; 
+  color: #FF0000; 
 }
 .contact-text-padding{
   padding-top: 180px;
