@@ -112,11 +112,6 @@
                         @endif
                     @endif
                     
-                    @if ($user->role != 'admin')
-                        <h4 class="text-danger">Manage Account</h4>
-                        <p class="text-white">I would like to <span class="text-danger"><a href="/profile/delete">Delete my account</a></span></p>
-                    @endif
-                    
                 </div>
                 
             </div>
