@@ -13,7 +13,7 @@
                     @endif
                 @endif
                 <div class="container">
-                    <a class="navbar-brand" href="/"><img class="logo" src="/frontend/img/logo.png" alt="Logo"></a>
+                    <a class="navbar-brand" href="/"><img class="logo" src="/frontend/img/logo.svg" alt="Logo"></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -271,7 +271,7 @@
                 <div class="row footer-padding-top">
                     <div class="col-md-3">
                     <br>
-                        <img class="logo" src="/frontend/img/logo.png" alt="Logo">
+                        <img class="logo" src="/frontend/img/logo.svg" alt="Logo">
                     </div>
                     <div class="col-md-3">
                         <h4 class="text-danger font-weight-bold">Head Office</h4><br>
