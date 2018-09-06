@@ -99,6 +99,8 @@ Route::post('/ipn_listener', 'TicketsController@purchase')->middleware('auth');
 
 //Payment Routes
 Route::get('/payment/session/{id}', 'PaymentsController@sessionId')->middleware('auth');
+Route::get('/delivery/{id}', 'PaymentsController@address')->middleware('auth');
+Route::post('/delivery', 'PaymentsController@store')->middleware('auth');
 
 //Shop Routes
 Route::get('/shop', 'ShopController@index');

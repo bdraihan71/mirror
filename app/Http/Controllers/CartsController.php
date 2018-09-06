@@ -94,29 +94,20 @@ class CartsController extends Controller
             return redirect('/checkout');
         }
 
-        if ($request->add == 'new') {
-            $this->validate($request, [
-                'address' => 'required',
-                'phone' => 'required',
-                'division' => 'required'
-            ]);
-        }
+        $this->validate($request, [
+            'address' => 'required',
+            'phone' => 'required',
+            'division' => 'required'
+        ]);
 
         $now = new Carbon;
 
         $purchase = new Purchase;
         $purchase->user_id = auth()->user()->id;
         $purchase->number = $now->format('Ymd').time();
-
-        if ($request->add == 'current') {
-            $purchase->address = auth()->user()->profile->address;
-            $purchase->division = auth()->user()->profile->division;
-            $purchase->phone = auth()->user()->profile->phone;
-        } else {
-            $purchase->address = $request->address;
-            $purchase->division = $request->division;
-            $purchase->phone = $request->phone;
-        }
+        $purchase->address = $request->address;
+        $purchase->division = $request->division;
+        $purchase->phone = $request->phone;
 
         if ($request->meth == 'cash') {
             $purchase->method = 'Cash on delivery';

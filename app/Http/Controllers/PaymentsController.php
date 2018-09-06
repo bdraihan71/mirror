@@ -9,6 +9,7 @@ use App\TicketType;
 use App\Ticket;
 use App\Invoice;
 use App\EventAnswer;
+use App\Address;
 use GuzzleHttp\Client;
 
 class PaymentsController extends Controller
@@ -88,9 +89,11 @@ class PaymentsController extends Controller
             $ticket->save();
             $user = User::find($user);
 
+            $url = '/delivery/'.$invoice->id;
+
             flash('Ticket successfully purchased')->success();
 
-            return redirect('/tickets');
+            return redirect($url);
         } else {
             $ticket = Ticket::find($id);
             $answers = EventAnswer::where('event_id', $ticket->event->id)->where('user_id', auth()->user()->id)->get();
@@ -105,5 +108,21 @@ class PaymentsController extends Controller
 
             return redirect($url);
         }
+    }
+
+    public function address (Request $request, $id)
+    {
+        return view('tickets/address')->with('id', $id);
+    }
+
+    public function store (Request $request)
+    {
+        $address = new Address;
+        $address->invoice_id = $request->id;
+        $address->address = $request->street;
+        $address->division = $request->division;
+        $address->save();
+
+        return redirect('/tickets');
     }
 }

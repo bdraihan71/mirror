@@ -25,60 +25,13 @@
                                                             <form action="/checkout" method="POST">
                                                                 @csrf
                                                                 <div class="row">
-                                                                    <div class="col-md-3">
-                                                                        {{-- <div class="btn-group btn-group-toggle" data-toggle="buttons"> --}}
-                                                                            <input type="radio" name="add" id="current" autocomplete="off" value="current" checked>
-                                                                            <label for="current">Current</label>
-                                                                        {{-- </div> --}}
-                                                                    </div>
-                                                                    <div class="col-md-9">
-                                                                        <div class="row">
-                                                                            <div class="col-md-6">
-                                                                                Current Address:
-                                                                            </div>
-                                                                        </div>
-                                                                        <br>
-                                                                        <div class="row">
-                                                                            <div class="col-md-12">{{auth()->user()->profile->address}}</div>
-                                                                        </div>
-                                                                        <div class="row">
-                                                                            <div class="col-md-12">{{auth()->user()->profile->division}}</div>
-                                                                        </div>
-                                                                        <br>
-                                                                        <div class="row">
-                                                                            <div class="col-md-6">
-                                                                                Contact Number:
-                                                                            </div>
-                                                                            <div class="col-md-6">
-                                                                                {{auth()->user()->profile->phone}}
-                                                                            </div>
-                                                                        </div>
-                                                                        <br>
-                                                                        <div class="row">
-                                                                            <div class="col-md-6">
-                                                                                Email Address:
-                                                                            </div>
-                                                                            <div class="col-md-6">
-                                                                                {{auth()->user()->email}}
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <hr>
-                                                                <div class="row">
-                                                                    <div class="col-md-3">
-                                                                        {{-- <div class="btn-group btn-group-toggle" data-toggle="buttons"> --}}
-                                                                            <input type="radio" name="add" id="new" autocomplete="off" value="new">
-                                                                            <label for="new">Another Address</label>
-                                                                        {{-- </div> --}}
-                                                                    </div>
-                                                                    <div class="col-md-9">
+                                                                    <div class="col-md-12">
                                                                         <div class="row">
                                                                             <div class="col-md-3">
                                                                                 <label for="address">Street Address</label>
                                                                             </div>
                                                                             <div class="col-md-9">
-                                                                                <input type="text" class="form-control" name="address">
+                                                                                <input type="text" class="form-control" name="address" required>
                                                                             </div>
                                                                         </div>
                                                                         <br>
@@ -87,7 +40,7 @@
                                                                                 <label for="division">Division</label>
                                                                             </div>
                                                                             <div class="col-md-9">
-                                                                                <select name="division" class="form-control">
+                                                                                <select name="division" class="form-control" required>
                                                                                     <option value="">Please select a division</option>
                                                                                     <option value="Dhaka">Dhaka</option>
                                                                                     <option value="Khulna">Khulna</option>
@@ -106,7 +59,7 @@
                                                                                 <label for="phone">Contact Number</label>
                                                                             </div>
                                                                             <div class="col-md-9">
-                                                                                <input type="number" class="form-control" name="phone">
+                                                                                <input type="number" class="form-control" name="phone" required>
                                                                             </div>
                                                                         </div>
                                                                     </div>

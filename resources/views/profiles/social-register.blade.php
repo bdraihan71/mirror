@@ -42,33 +42,6 @@
                                     </select>
                                 </div>
                             </div>
-
-                            <div class=" black-bg form-group row">
-                                <label for="address" class=" black-bg col-md-4 col-form-label text-md-right">Address</label>
-
-                                <div class=" black-bg col-md-6">
-                                    <input type="text" class="input-container black-bg form-control" name="address" required autofocus>
-                                </div>
-                            </div>
-
-                            <div class="form-row text-white">
-                                <div class="form-group col-md-4">
-                                    <label>Division</label>
-                                </div>
-                                <div class="form-group col-md-8">
-                                    <select name="division" class="form-control">
-                                        <option value="">Please select a division</option>
-                                        <option value="Dhaka">Dhaka</option>
-                                        <option value="Khulna">Khulna</option>
-                                        <option value="Barisal">Barisal</option>
-                                        <option value="Chittagong">Chittagong</option>
-                                        <option value="Mymensingh">Mymensingh</option>
-                                        <option value="Rajshahi">Rajshahi</option>
-                                        <option value="Rangpur">Rangpur</option>
-                                        <option value="Sylhet">Sylhet</option>
-                                    </select>
-                                </div>
-                            </div>
                             <button type="submit" class="black-bg btn register-btn btn-reg">{{ __('Register') }}</button>
                         </form>
                     </div>

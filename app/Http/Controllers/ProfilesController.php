@@ -57,8 +57,8 @@ class ProfilesController extends Controller
         $profile->phone = $request->phone;
         $profile->dob = $request->dob;
         $profile->gender = $request->gender;
-        $profile->address = $request->address;
-        $profile->division = $request->division;
+        $profile->address = 'nada';
+        $profile->division = 'nada';
         $profile->fb_url = $request->fb_link;
         $profile->save();
 
@@ -76,8 +76,8 @@ class ProfilesController extends Controller
         $name = explode(' ', $request->name);
         $profile->f_name = $name[0];
         $profile->phone = $request->phone;
-        $profile->address = $request->address;
-        $profile->division = $request->division;
+        $profile->address = 'nada';
+        $profile->division = 'nada';
 
         $now = new Carbon;
         $dob = Carbon::parse($request->dob);
@@ -178,8 +178,8 @@ class ProfilesController extends Controller
     public function address (Request $request)
     {
         $profile = auth()->user()->profile;
-        $profile->address = $request->address;
-        $profile->division = $request->division;
+        $profile->address = 'nada';
+        $profile->division = 'nada';
         $profile->save();
 
         return redirect('/home');

@@ -33,8 +33,8 @@
                     <p>{{$user->profile->f_name.' '.$user->profile->m_name.' '.$user->profile->l_name}}</p>
                     <p>{{$user->email}}</p>
                     <p>{{$user->profile->phone}}</p>
-                    <p>{{$user->profile->address}}</p>
-                    <p>{{$user->profile->division}}</p>
+                    <p>{{$ticket->invoice->address}}</p>
+                    <p>{{$ticket->invoice->division}}</p>
                 </div>
             </div>
             <div class="row pt-5">

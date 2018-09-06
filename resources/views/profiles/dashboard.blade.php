@@ -56,47 +56,6 @@
                             </form>
                         @endif
                     @endif
-                    
-                    <br>
-                    <br>
-                    <br>
-                    
-                    <h5 class="text-danger">Physical Address</h5>
-                    <p class="text-white">{{$user->profile->address}}</p>
-                    <form action="/profile/address" method="POST">
-                        @csrf
-                        <input type="text" name="address" class="form-control" value="{{$user->profile->address}}" required>
-                        <br>
-                        <select name="division" class="form-control">
-                            <option value="{{$user->profile->division}}">{{$user->profile->division}}</option>
-                            @if ($user->profile->division != 'Dhaka')
-                                <option value="Dhaka">Dhaka</option>
-                            @endif
-                            @if ($user->profile->division != 'Rangpur')
-                                <option value="Rangpur">Rangpur</option>
-                            @endif
-                            @if ($user->profile->division != 'Rajshahi')
-                                <option value="Rajshahi">Rajshahi</option>
-                            @endif
-                            @if ($user->profile->division != 'Mymensingh')
-                                <option value="Mymensingh">Mymensingh</option>
-                            @endif
-                            @if ($user->profile->division != 'Chittagong')
-                                <option value="Chittagong">Chittagong</option>
-                            @endif
-                            @if ($user->profile->division != 'Barisal')
-                                <option value="Barisal">Barisal</option>
-                            @endif
-                            @if ($user->profile->division != 'Khulna')
-                                <option value="Khulna">Khulna</option>
-                            @endif
-                            @if ($user->profile->division != 'Sylhet')
-                                <option value="Sylhet">Sylhet</option>
-                            @endif
-                        </select>
-                        <br>
-                        <button type="submit" class="btn btn-outline-danger">Update</button>
-                    </form>
 
                     <br>
                     <br>
