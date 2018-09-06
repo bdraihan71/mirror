@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center contact-text-padding">
-                    <h1 class="center__text glitch is-glitching contact-text" data-text="CONTACT US">CONTACT US</h1>
+                    <h1 class="center__text contact-text" data-text="CONTACT US">CONTACT US</h1>
                 </div>
             </div>
             <div class="row pt-3">
