@@ -8,6 +8,7 @@ use App\Ticket;
 use App\AdditionalInformation;
 use App\Question;
 use App\Album;
+use App\Video;
 use Carbon\Carbon;
 
 class EventsController extends Controller
