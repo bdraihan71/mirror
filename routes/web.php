@@ -112,6 +112,7 @@ Route::get('/shop/buy/{id}', 'ShopController@buy')->middleware('auth');
 Route::get('/shop/edit/{id}', 'ShopController@edit')->middleware('auth');
 Route::post('/shop/edit/{id}', 'ShopController@update')->middleware('auth');
 Route::get('/shop/delete/{id}', 'ShopController@delete')->middleware('auth');
+Route::get('/purchases', 'ShopController@showAll')->middleware('auth');
 
 //Cart Routes
 Route::post('/cart/add/{id}', 'CartsController@add')->middleware('auth');

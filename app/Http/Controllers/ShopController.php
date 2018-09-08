@@ -107,4 +107,17 @@ class ShopController extends Controller
         flash('Product successfully deleted')->success();
         return redirect('/shop');
     }
+
+    public function showAll ()
+    {
+        if (auth()->user()->role != 'super-admin') {
+            flash('You are not authorized to access this')->error();
+
+            return redirect('/home');
+        }
+
+        $purchases = Purchase::orderBy('created_at', 'desc')->paginate(20);
+
+        return view('shop/show-all')->with('purchases', $purchases);
+    }
 }

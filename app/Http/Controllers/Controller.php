@@ -7,6 +7,7 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\WebContent;
+use App\Purchase;
 
 class Controller extends BaseController
 {
@@ -53,5 +54,17 @@ class Controller extends BaseController
         }
 
         return $x;
+    }
+
+    public static function purchaseTotal ($id)
+    {
+        $purchase = Purchase::find($id);
+        $total = 0;
+
+        foreach ($purchase->carts as $item) {
+            $total += ($item->product->price * $item->quantity);
+        }
+
+        return $total;
     }
 }
