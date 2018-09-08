@@ -12,17 +12,8 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-// Route::post('/payment/{status}/{id}/{user}/{type}', function (Request $request, $status, $id, $user, $type) {
-//     dd('here');
-// });
-Route::get('/payment/{status}/{id}/{user}/{type}', function (Request $request, $status, $id, $user, $type) {
-    dd('hi');
-});
-
 Route::post('/payment/{status}/{id}/{user}/{type}', 'PaymentsController@status');
 Route::post('/product/{status}/{id}/{user}', 'CartsController@status');
-// Route::get('/payment/{status}/{id}/{user}/{type}', 'PaymentsController@status');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
