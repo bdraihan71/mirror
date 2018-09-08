@@ -21,6 +21,7 @@
                             <a class="nav-item nav-link mt-1" href="/login/#top">LOGIN</a>
                         @endif
                         <a class="nav-item nav-link mt-1" href="/media">MEDIA</a>
+                        <a class="nav-item nav-link mt-1" href="/music">MUSIC</a>
                         <a class="nav-item nav-link mt-1" href="/contact-us/#top">CONTACT US</a>
                         @if (auth()->user() != null && App\Http\Controllers\Controller::notAdmin())
                             <a class="nav-item nav-link" href="/cart"><i class="fas fa-cart-plus fa-2x"></i></a>
