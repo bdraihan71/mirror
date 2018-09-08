@@ -163,3 +163,9 @@ Route::get('/media/video/edit', 'MediaController@editVideo')->middleware('auth')
 Route::post('/media/video/edit', 'MediaController@updateVideo')->middleware('auth');
 Route::get('/media/photo/delete/{id}', 'MediaController@deletePhoto')->middleware('auth');
 Route::get('/media/video/delete/{id}', 'MediaController@deleteVideo')->middleware('auth');
+
+//Music Route
+Route::get('/music/create', 'MusicController@create')->middleware('auth');
+Route::post('/music/create', 'MusicController@store')->middleware('auth');
+Route::get('/music', 'MusicController@index');
+Route::get('/music/delete/{id}', 'MusicController@delete')->middleware('auth');
