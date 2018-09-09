@@ -11,8 +11,10 @@
                         <hr>
                         <a href="/shop" class="btn btn-info w-100">Continue Shopping</a>
                         <hr>
-                        <a href="/checkout" class="btn btn-danger w-100">Proceed to Checkout</a>
-                        <hr>
+                        @if (count($items) != 0)
+                            <a href="/checkout" class="btn btn-danger w-100">Proceed to Checkout</a>
+                            <hr>
+                        @endif
                         <div class="shopping_cart">
                             <form class="" role="form" action="" method="post" id="payment-form">
                                 <div class="panel-group" id="accordion">
