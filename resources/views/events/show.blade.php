@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="row" id="top"></div>
-    <div class="overlay-single-event">
+    <div class="overlay">
         <h1 class="font-weight-bold">{{$event->name}}</h1>
         @if ($event->deleted)
             <h1 class="font-weight-bold">Event Deleted</h1>
