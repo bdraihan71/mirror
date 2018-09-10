@@ -53,7 +53,7 @@
                             <div class="col-md-6 text-center">
                                 <div class="row">
                                     <div class="col-md-4 text-right font-sm">
-                                        <label for="url_5">Carousel Image 3</label>
+                                        <label for="url_5">Thumbnail</label>
                                     </div>
                                     <div class="col-md-8">
                                         <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB</div><br>
