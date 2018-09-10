@@ -3,7 +3,7 @@
 @section('content')
 <div class="row" id="top"></div>
     @if($e != null)
-        <div class="overlay">
+        <div class="overlay-single-event">
             <h1 class="font-weight-bold">{{$e->name}}</h1>
             <p>{{$e->location}}</p>
             <a href="/events/{{$e->id}}" class="btn btn-danger btn-radius">Visit</a>

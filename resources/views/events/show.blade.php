@@ -2,54 +2,56 @@
 
 @section('content')
 <div class="row" id="top"></div>
-    <div class="overlay">
-        <h1 class="font-weight-bold">{{$event->name}}</h1>
-        @if ($event->deleted)
-            <h1 class="font-weight-bold">Event Deleted</h1>
-        @endif
-        <i class="fas fa-map-marker-alt fa-1x"> {{strtoupper($event->location)}}</i>
-        <br>
-        @if ($flow)
-            <a href="/question/answer/{{$event->id}}" class="btn btn-danger btn-radius px-5 py-3">BUY TICKET</a>
-        @else
-            <button type="button" class="btn btn-default btn-radius px-5 py-3" disabled>
-                <strong>SOLD OUT</strong>
-            </button>
-        @endif
-
-        @if (auth()->user() != null)
-            @if (!App\Http\Controllers\Controller::notAdmin())
-                <a href="/events/edit/{{$event->id}}" class="btn btn-primary btn-radius px-5 py-3">EDIT EVENT</a>
+    <header id="home">
+        <div class="overlay">
+            <h1 class="font-weight-bold">{{$event->name}}</h1>
+            @if ($event->deleted)
+                <h1 class="font-weight-bold">Event Deleted</h1>
             @endif
-        @endif
-        <br>
-        <i class="far fa-calendar-alt"> 
-            @if ($event->date_start == $event->date_end)
-                {{date("M d, Y", strtotime($event->date_start))}}
+            <i class="fas fa-map-marker-alt fa-1x"> {{strtoupper($event->location)}}</i>
+            <br>
+            @if ($flow)
+                <a href="/question/answer/{{$event->id}}" class="btn btn-danger btn-radius px-5 py-3">BUY TICKET</a>
             @else
-                {{date("M d, Y", strtotime($event->date_start)).' - '.date("M d, Y", strtotime($event->date_end))}}
+                <button type="button" class="btn btn-default btn-radius px-5 py-3" disabled>
+                    <strong>SOLD OUT</strong>
+                </button>
             @endif
-        </i>
-        <br>
-        <i class="far fa-clock"> 
-            {{date("g:i A", strtotime($event->start)).' - '.date("g:i A", strtotime($event->end))}}
-        </i>
-    </div>
-
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active d-none d-sm-block"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="d-block w-100 h-100" src="{{$event->img_3}}" alt="First slide">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100 h-100" src="{{$event->img_4}}" alt="Second slide">
+    
+            @if (auth()->user() != null)
+                @if (!App\Http\Controllers\Controller::notAdmin())
+                    <a href="/events/edit/{{$event->id}}" class="btn btn-primary btn-radius px-5 py-3">EDIT EVENT</a>
+                @endif
+            @endif
+            <br>
+            <i class="far fa-calendar-alt"> 
+                @if ($event->date_start == $event->date_end)
+                    {{date("M d, Y", strtotime($event->date_start))}}
+                @else
+                    {{date("M d, Y", strtotime($event->date_start)).' - '.date("M d, Y", strtotime($event->date_end))}}
+                @endif
+            </i>
+            <br>
+            <i class="far fa-clock"> 
+                {{date("g:i A", strtotime($event->start)).' - '.date("g:i A", strtotime($event->end))}}
+            </i>
+        </div>
+    
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active d-none d-sm-block"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100 h-100" src="{{$event->img_3}}" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100 h-100" src="{{$event->img_4}}" alt="Second slide">
+                </div>
             </div>
         </div>
-    </div>
+    </header>
 
     @if (count($album))
         <style>
