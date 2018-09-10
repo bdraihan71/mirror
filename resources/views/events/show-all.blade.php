@@ -3,25 +3,27 @@
 @section('content')
 <div class="row" id="top"></div>
     @if($e != null)
-        <div class="overlay-single-event">
-            <h1 class="font-weight-bold">{{$e->name}}</h1>
-            <p>{{$e->location}}</p>
-            <a href="/events/{{$e->id}}" class="btn btn-danger btn-radius">Visit</a>
-        </div>
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="{{$e->img_3}}" alt="First slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="{{$e->img_4}}" alt="Second slide">
+        <header id="home">
+            <div class="overlay-single-event">
+                <h1 class="font-weight-bold">{{$e->name}}</h1>
+                <p>{{$e->location}}</p>
+                <a href="/events/{{$e->id}}" class="btn btn-danger btn-radius">Visit</a>
+            </div>
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="{{$e->img_3}}" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="{{$e->img_4}}" alt="Second slide">
+                    </div>
                 </div>
             </div>
-        </div>
+        </header>
     @else
         <br><br><br><br><br>
     @endif
