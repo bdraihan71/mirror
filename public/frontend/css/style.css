@@ -1185,3 +1185,9 @@ input[type=number] {
 .open{
   height: 100%;
 }
+
+.event-card-img-top {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
