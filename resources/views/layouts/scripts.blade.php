@@ -16,6 +16,20 @@
 </script>
 
 <script>
+$('.navbar-toggler-icon').on('click', function () {
+    if ($('.menu').is(":visible")) {
+        $('.menu').hide();
+    } else {
+        $('.menu').show();
+    }
+});
+$( '.menu a' ).on("click", function(){
+    $('.menu').hide();
+});
+
+</script>
+
+<script>
     $(document).ready(function(){
         $(".mouse-hover").on('click', function(event) {
             if (this.hash !== "") {

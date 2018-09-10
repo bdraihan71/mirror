@@ -1,9 +1,10 @@
 <div class="section">
     <header id="home">
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark header">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
             <div class="container">
-                <a class="navbar-brand" href="/"><img class="logo" src="/frontend/img/logo.svg" alt="Logo"></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand" href="index.html"><img class="logo" src="/frontend/img/logo.svg" alt="Logo"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
@@ -11,7 +12,7 @@
                         <a class="nav-item nav-link mt-1" href="/#top">HOME</a>
                         <a class="nav-item nav-link mt-1" href="/#page2">ABOUT US</a>
                         <a class="nav-item nav-link mt-1" href="/#page4">PARTNERS</a>
-                        <a class="nav-item nav-link mt-1" href="/events/upcoming/#top">EVENTS</a>
+                        <a class="nav-item nav-link mt-1" href="/events/all/#top">EVENTS</a>
                         <a class="nav-item nav-link mt-1" href="/shop">SHOP</a>
                         @if(auth()->user() != null)
                             <a class="nav-item nav-link mt-1" href="/logout">LOGOUT</a>

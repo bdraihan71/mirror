@@ -6,23 +6,24 @@
     
         <!-- Header -->
         <header id="home">
-            <nav class="navbar fixed-top navbar-expand-lg navbar-dark header">
+            <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
                 @if (auth()->user() != null)
                     @if (!App\Http\Controllers\Controller::notAdmin())
                         <a href="/alter/index" class="btn btn-primary">Edit</a>
                     @endif
                 @endif
                 <div class="container">
-                    <a class="navbar-brand" href="/"><img class="logo" src="/frontend/img/logo.svg" alt="Logo"></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <a class="navbar-brand" href="index.html"><img class="logo" src="/frontend/img/logo.svg" alt="Logo"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <div class="collapse navbar-collapse justify-content-end menu" id="navbarNavAltMarkup">
                         <div class="navbar-nav font-weight-bold nav-back">
                             <a class="nav-item nav-link mt-1" href="/#top">HOME</a>
                             <a class="nav-item nav-link mt-1" href="/#page2">ABOUT US</a>
                             <a class="nav-item nav-link mt-1" href="/#page4">PARTNERS</a>
-                            <a class="nav-item nav-link mt-1" href="/events/upcoming/#top">EVENTS</a>
+                            <a class="nav-item nav-link mt-1" href="/events/all/#top">EVENTS</a>
                             <a class="nav-item nav-link mt-1" href="/shop">SHOP</a>
                             @if(auth()->user() != null)
                                 <a class="nav-item nav-link mt-1" href="/logout">LOGOUT</a>
@@ -165,25 +166,25 @@
                         <h5 class="wdwd-text-xs pt-0 pb-3">What Do We Do</h5>
                         <div class="col-md-3"></div>
                         <div class="col-md-3">
-                            <h6>{{$wwd[0]->content}}</h6>
+                            <h4>{{$wwd[0]->content}}</h4>
                             <p>{{$wwds[0]->content}}</p>
                         </div>
                         <div class="col-md-3">
-                            <h6>{{$wwd[1]->content}}</h6>
+                            <h4>{{$wwd[1]->content}}</h4>
                             <p>{{$wwds[1]->content}}</p>
                         </div>
                         <div class="col-md-3"></div>
                         <div class="col-md-3"></div>
                         <div class="col-md-3">
-                            <h6>{{$wwd[2]->content}}</h6>
+                            <h4>{{$wwd[2]->content}}</h4>
                             <p>{{$wwds[2]->content}}</p>
                         </div>
                         <div class="col-md-3">
-                            <h6>{{$wwd[3]->content}}</h6>
+                            <h4>{{$wwd[3]->content}}</h4>
                             <p>{{$wwds[3]->content}}</p>
                         </div>
                         <div class="col-md-3">
-                            <h6>{{$wwd[4]->content}}</h6>
+                            <h4>{{$wwd[4]->content}}</h4>
                             <p>{{$wwds[4]->content}}</p>
                         </div>
                         <div class="col-md-3"></div>
@@ -192,68 +193,38 @@
                 <div class="col-md-1"></div>
             </div>
         </div>
-    
     </div>
     
-    
-    
-    
-    
-    <div class="section white-bg">
-    
-        <section id="partners" class="partners py-1 text-center d-none d-sm-block">
-        <h1 class="text-danger">Partners</h1>
-        <div class="container">
-            <div class="row">
-                <div class="owl-carousel partners-carousel">
-                    @foreach($local_partners as $partner)
-                        <div class="card">
-                            <img class="card-img-top" src="{{$partner->img}}" alt="Partner Logo">
-                        </div>
-                    @endforeach
+    <div class="section white-bg" id="partners">
+        <section class="partners py-1 text-center">
+            <h1 class="text-danger">Partners</h1>
+            <div class="container">
+                <div class="row">
+                    <div class="owl-carousel partners-carousel">
+                        @foreach($local_partners as $partner)
+                            <div class="card">
+                                <img class="card-img-top" src="{{$partner->img}}" alt="Partner Logo">
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    
-    
-    
-    
-    
-    <section id="partners" class="partners py-5 text-center d-none d-sm-block">
-        <h1 class="text-danger">International Partners</h1>
-        <div class="container">
-            <div class="row">
-                <div class="owl-carousel partners-carousel">
-                    @foreach($int_partners as $partner)
-                        <div class="card">
-                            <img class="card-img-top" src="{{$partner->img}}" alt="Partner Logo">
-                        </div>
-                    @endforeach
+        </section>
+
+        <section class="partners py-5 text-center">
+            <h1 class="text-danger">International Partners</h1>
+            <div class="container">
+                <div class="row">
+                    <div class="owl-carousel partners-carousel">
+                        @foreach($int_partners as $partner)
+                            <div class="card">
+                                <img class="card-img-top" src="{{$partner->img}}" alt="Partner Logo">
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>	
-    
-    
-    
-    <section id="partners" class="partners py-1 text-center d-block d-sm-none">
-        <h1 class="text-danger partner-xs-text">Local & International Partners</h1>
-        <div class="container">
-            <div class="row">
-                <div class="owl-carousel partners-carousel">
-                    @foreach($partners as $partner)
-                        <div class="card">
-                            <img class="card-img-top" src="{{$partner->img}}" alt="Partner Logo">
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    
-    
+        </section>
     </div>
     
     
@@ -300,4 +271,89 @@
         </section>
     </div>
 </div> <!-- Fullpage div end -->
+
+<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/jquery/popper.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!-- Scripts for WOW -->
+	<script src="vendor/animate/wow.min.js"></script>
+	<!-- Scripts for OWL -->
+	<script src="vendor/owl/js/owl.carousel.min.js"></script>
+	<!-- Scripts for Fullpage -->
+	<script src="vendor/fullpage/fullpage.min.js"></script>
+	<!-- Custom scripts -->
+	<script src="js/script.js"></script>
+
+
+
+	<script>
+		$(document).ready(function () {
+			$('#fullpage').fullpage({
+				anchors: ['page1', 'page2', 'page3', 'page4', 'page5'],
+				css3: true,
+				scrollingSpeed: 1000,
+				navigation: true,
+				slidesNavigation: true,
+				responsiveHeight: 330,
+				dragAndMove: true,
+				dragAndMoveKey: 'YWx2YXJvdHJpZ28uY29tX0EyMlpISmhaMEZ1WkUxdmRtVT0wWUc=',
+				controlArrows: false,
+				autoScrolling: false
+			});
+		});
+
+
+
+
+		$(document).ready(function () {
+
+			$('.partners-carousel').owlCarousel({
+				loop: true,
+				margin: 10,
+				responsiveClass: true,
+				responsive: {
+					0: {
+						items: 1,
+						nav: false,
+						autoplay: true
+					},
+					600: {
+						items: 3,
+						nav: false,
+						autoplay: true
+					},
+					1000: {
+						items: 6,
+						nav: true,
+						autoplay: true
+					}
+				}
+			});
+
+		});
+
+
+		$(document).ready(function () {
+			// Hide the div
+			$("#div1").hide();
+			// Show the div after 5s
+			$("#div1").delay(500).fadeIn(300);
+		});
+	</script>
+
+	<script>
+		$(document).ready(function () {
+			$(".mouse-hover").on('click', function (event) {
+				if (this.hash !== "") {
+					event.preventDefault();
+					var hash = this.hash;
+					$('html, body').animate({
+						scrollTop: $(hash).offset().top
+					}, 800, function () {
+						window.location.hash = hash;
+					});
+				}
+			});
+		});
+	</script>
 @endsection
