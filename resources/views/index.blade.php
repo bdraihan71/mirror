@@ -215,13 +215,23 @@
             <h1 class="text-danger">International Partners</h1>
             <div class="container">
                 <div class="row">
-                    <div class="owl-carousel partners-carousel">
-                        @foreach($int_partners as $partner)
-                            <div class="card">
-                                <img class="card-img-top" src="{{$partner->img}}" alt="Partner Logo">
+                    @if (count($int_partners) < 6)
+                        @foreach ($int_partners as $partner)
+                            <div class="col">
+                                <div class="card">
+                                    <img src="{{$partner->img}}" class="img-fluid" alt="Partner Logo">
+                                </div>
                             </div>
                         @endforeach
-                    </div>
+                    @else
+                        <div class="owl-carousel partners-carousel">
+                            @foreach($int_partners as $partner)
+                                <div class="card">
+                                    <img class="card-img-top" src="{{$partner->img}}" alt="Partner Logo">
+                                </div>
+                            @endforeach
+                        </div>
+                    @endif
                 </div>
             </div>
         </section>
