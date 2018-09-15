@@ -72,7 +72,11 @@
             <div class="col-md-3  text-right  form-label-control">What we do string 1</div>
             <div class="col-md-7">
                 <div><i>Max 90 characters</i></div><br>
-                <input type="text" class="form-control" name="wwds[]" value="{{ $contents[10]->content }}" placeholder="What we do title">
+                <textarea name="wwds[]" id="editor1" class="form-control ckeditor" cols="30" rows="10">{{ $contents[10]->content }}</textarea>
+                <script type="text/javascript">
+                    CKEDITOR.replace( 'editor1' );
+                    CKEDITOR.add            
+                </script>
             </div>
         </div>
         
@@ -91,7 +95,11 @@
             <div class="col-md-3  text-right  form-label-control">What we do string 2</div>
             <div class="col-md-7">
                 <div><i>Max 90 characters</i></div><br>
-                <input type="text" class="form-control" name="wwds[]" value="{{ $contents[11]->content }}" placeholder="What we do title">
+                <textarea name="wwds[]" id="editor2" class="form-control ckeditor" cols="30" rows="10">{{ $contents[11]->content }}</textarea>
+                <script type="text/javascript">
+                    CKEDITOR.replace( 'editor2' );
+                    CKEDITOR.add            
+                </script>
             </div>
         </div>
         
@@ -110,7 +118,11 @@
             <div class="col-md-3  text-right  form-label-control">What we do string 3</div>
             <div class="col-md-7">
                 <div><i>Max 90 characters</i></div><br>
-                <input type="text" class="form-control" name="wwds[]" value="{{ $contents[12]->content }}" placeholder="What we do title">
+                <textarea name="wwds[]" id="editor3" class="form-control ckeditor" cols="30" rows="10">{{ $contents[12]->content }}</textarea>
+                <script type="text/javascript">
+                    CKEDITOR.replace( 'editor3' );
+                    CKEDITOR.add            
+                </script>
             </div>
         </div>
         
@@ -119,7 +131,7 @@
         <div class="row">
             <div class="col-md-3  text-right  form-label-control">What we do Title 4</div>
             <div class="col-md-7">
-                <input type="text" class="form-control" name="wwd[]" value="{{ $contents[8]->content }}" placeholder="What we do title">
+                <input type="text" class="form-control ckeditor" name="wwd[]" value="{{ $contents[8]->content }}" placeholder="What we do title">
             </div>
         </div>
         
@@ -129,7 +141,11 @@
             <div class="col-md-3  text-right  form-label-control">What we do string 4</div>
             <div class="col-md-7">
                 <div><i>Max 90 characters</i></div><br>
-                <input type="text" class="form-control" name="wwds[]" value="{{ $contents[13]->content }}" placeholder="What we do title">
+                <textarea name="wwds[]" id="editor4" class="form-control ckeditor" cols="30" rows="10">{{ $contents[13]->content }}</textarea>
+                <script type="text/javascript">
+                    CKEDITOR.replace( 'editor4' );
+                    CKEDITOR.add            
+                </script>
             </div>
         </div>
         
@@ -148,7 +164,11 @@
             <div class="col-md-3  text-right  form-label-control">What we do string 5</div>
             <div class="col-md-7">
                 <div><i>Max 90 characters</i></div><br>
-                <input type="text" class="form-control" name="wwds[]" value="{{ $contents[14]->content }}" placeholder="What we do title">
+                <textarea name="wwds[]" id="editor5" class="form-control ckeditor" cols="30" rows="10">{{ $contents[14]->content }}</textarea>
+                <script type="text/javascript">
+                    CKEDITOR.replace( 'editor5' );
+                    CKEDITOR.add            
+                </script>
             </div>
         </div>
 
