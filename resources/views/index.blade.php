@@ -129,25 +129,25 @@
                         <div class="col-md-3"></div>
                         <div class="col-md-3">
                             <h5>{{$wwd[0]->content}}</h5>
-                            <p>{{$wwds[0]->content}}</p>
+                            <p>{!!$wwds[0]->content!!}</p>
                         </div>
                         <div class="col-md-3">
                             <h5>{{$wwd[1]->content}}</h5>
-                            <p>{{$wwds[1]->content}}</p>
+                            <p>{!!$wwds[1]->content!!}</p>
                         </div>
                         <div class="col-md-3"></div>
                         <div class="col-md-3"></div>
                         <div class="col-md-3">
                             <h5>{{$wwd[2]->content}}</h5>
-                            <p>{{$wwds[2]->content}}</p>
+                            <p>{!!$wwds[2]->content!!}</p>
                         </div>
                         <div class="col-md-3">
                             <h5>{{$wwd[3]->content}}</h5>
-                            <p>{{$wwds[3]->content}}</p>
+                            <p>{!!$wwds[3]->content!!}</p>
                         </div>
                         <div class="col-md-3">
                             <h5>{{$wwd[4]->content}}</h5>
-                            <p>{{$wwds[4]->content}}</p>
+                            <p>{!!$wwds[4]->content!!}</p>
                         </div>
                         <div class="col-md-3"></div>
                     </div>
