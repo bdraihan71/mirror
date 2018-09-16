@@ -8,16 +8,16 @@
                 <img class="logo" src="/frontend/img/logo.svg" alt="Logo">
             </div>
             <div class="col-md-3">
-                <h4 class="text-danger font-weight-bold">Head Office</h4><br>
+                <h4 class="footer-header font-weight-bold">Head Office</h4><br>
                 {!!$footer[0]->content!!}
             </div>
             <div class="col-md-3">
-                <h4 class="text-danger font-weight-bold">Contact Us</h4><br>
+                <h4 class="footer-header font-weight-bold">Contact Us</h4><br>
                 {!!$footer[1]->content!!}
                 {!!$footer[2]->content!!}
             </div>
             <div class="col-md-3">
-                <h4 class="text-danger font-weight-bold">Stay Connected</h4><br>
+                <h4 class="footer-header font-weight-bold">Stay Connected</h4><br>
                 <a class="sc-links" target="_blank" href="{{ config('social.FACEBOOK_LINK') }}"><i class="fab fa-facebook-square fa-2x facebook"></i></a>&ensp;
                 <a class="sc-links" target="_blank" href="{{ config('social.YOUTUBE_LINK') }}"><i class="fab fa-youtube fa-2x youtube"></i></a>&ensp;
                 <a class="sc-links" target="_blank" href="{{ config('social.INSTAGRAM_LINK') }}"><i class="fab fa-instagram fa-2x instagram"></i></a>&ensp;
