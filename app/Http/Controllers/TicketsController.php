@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
+use App\Invoice;
+use App\User;
 use App\TicketType;
 use App\Ticket;
 use App\Event;
@@ -105,6 +108,32 @@ class TicketsController extends Controller
             flash('Sorry, this ticket type has been sold out')->error();
             $type = TicketType::find($id);
             $url = '/ticket/buy/'.$type->event_id;
+
+            return redirect($url);
+        }
+
+        $type = TicketType::find($id);
+
+        if ($type->price == 0) {    
+            $now = new Carbon;
+            $now = $now->format('Ymd');
+            $total_tickets = count(Ticket::where('event_id', $type->event->id)->get());
+            $unsold_tickets = count(Ticket::where('event_id', $type->event->id)->whereNull('user_id')->get());
+            $barcode = $now.time().$id;
+
+            $invoice = new Invoice;
+            $invoice->number = ($total_tickets - $unsold_tickets + 1);
+            $invoice->barcode = $barcode;
+            $invoice->save();
+
+            $ticket = Ticket::where('event_id', $type->event->id)->where('ticket_type_id', $type->id)->whereNull('user_id')->first();
+            $ticket->user_id = auth()->user()->id;
+            $ticket->invoice_id = $invoice->id;
+            $ticket->save();
+
+            $url = '/delivery/'.$invoice->id;
+
+            flash('Ticket successfully purchased')->success();
 
             return redirect($url);
         }

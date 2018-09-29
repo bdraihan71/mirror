@@ -101,10 +101,10 @@
 
 				<header id="header">
 					<div id="div1" style="display: none">
-					<img class="parallax-img" src="/frontend/img/parallax6.png">
-					<h1 class="footer-header parallax-text">Ecube Entertainment</h1>
-					<div class="p-scroll">{!!$description->content!!}</div>
-				</div>	
+                        <img class="parallax-img img-sm" src="/frontend/img/parallax6.png">
+                        <h1 class="footer-header parallax-text">Ecube Entertainment</h1>
+                        <div class="p-scroll" style="height:200px">{!!$description->content!!}</div>
+                    </div>	
 				</header>
 	
 			</div>
@@ -125,29 +125,29 @@
             <div class="row text-white">
                 <div class="col-md-1"></div>
                 <div class="col-md-10 wwd">
-                    <div class="row">
+                    <div class="row p-scroll-wwd">
                         <div class="col-md-3"></div>
                         <div class="col-md-3">
                             <h5>{{$wwd[0]->content}}</h5>
-                            <p>{!!$wwds[0]->content!!}</p>
+                            <div class="wwd-text">{!!$wwds[0]->content!!}</div>
                         </div>
                         <div class="col-md-3">
                             <h5>{{$wwd[1]->content}}</h5>
-                            <p>{!!$wwds[1]->content!!}</p>
+                            <div class="wwd-text">{!!$wwds[1]->content!!}</div>
                         </div>
                         <div class="col-md-3"></div>
                         <div class="col-md-3"></div>
                         <div class="col-md-3">
                             <h5>{{$wwd[2]->content}}</h5>
-                            <p>{!!$wwds[2]->content!!}</p>
+                            <div class="wwd-text">{!!$wwds[2]->content!!}</div>
                         </div>
                         <div class="col-md-3">
                             <h5>{{$wwd[3]->content}}</h5>
-                            <p>{!!$wwds[3]->content!!}</p>
+                            <div class="wwd-text">{!!$wwds[3]->content!!}</div>
                         </div>
                         <div class="col-md-3">
                             <h5>{{$wwd[4]->content}}</h5>
-                            <p>{!!$wwds[4]->content!!}</p>
+                            <div class="wwd-text">{!!$wwds[4]->content!!}</div>
                         </div>
                         <div class="col-md-3"></div>
                     </div>
@@ -167,25 +167,25 @@
                         <div class="col-md-3"></div>
                         <div class="col-md-3">
                             <h4>{{$wwd[0]->content}}</h4>
-                            <p>{{$wwds[0]->content}}</p>
+                            <div class="wwd-text">{!!$wwds[0]->content!!}</div>
                         </div>
                         <div class="col-md-3">
                             <h4>{{$wwd[1]->content}}</h4>
-                            <p>{{$wwds[1]->content}}</p>
+                            <div class="wwd-text">{!!$wwds[1]->content!!}</div>
                         </div>
                         <div class="col-md-3"></div>
                         <div class="col-md-3"></div>
                         <div class="col-md-3">
-                            <h4>{{$wwd[2]->content}}</h4>
-                            <p>{{$wwds[2]->content}}</p>
+                            <h4>{!!$wwd[2]->content!!}</h4>
+                            <div class="wwd-text">{!!$wwds[2]->content!!}</div>
                         </div>
                         <div class="col-md-3">
                             <h4>{{$wwd[3]->content}}</h4>
-                            <p>{{$wwds[3]->content}}</p>
+                            <div class="wwd-text">{!!$wwds[3]->content!!}</div>
                         </div>
                         <div class="col-md-3">
                             <h4>{{$wwd[4]->content}}</h4>
-                            <p>{{$wwds[4]->content}}</p>
+                            <div class="wwd-text">{!!$wwds[4]->content!!}</div>
                         </div>
                         <div class="col-md-3"></div>
                     </div>

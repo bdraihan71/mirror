@@ -35,7 +35,7 @@
                                 <label>Partner Logo *</label>
                             </div>
                             <div class="form-group col-md-10">
-                                <div>Please upload image of 231 x 231 | max image size is 2 MB</div><br>
+                                <div>Please upload image of 150 x 150 | max image size is 2 MB</div><br>
                                 <input required type="file" class="form-control" name="url" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB">
                             </div>
                         </div>

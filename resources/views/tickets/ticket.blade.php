@@ -33,8 +33,7 @@
                     <p>{{$user->profile->f_name.' '.$user->profile->m_name.' '.$user->profile->l_name}}</p>
                     <p>{{$user->email}}</p>
                     <p>{{$user->profile->phone}}</p>
-                    <p>{{$ticket->invoice->address->address}}</p>
-                    <p>{{$ticket->invoice->address->division}}</p>
+                    <br><br>
                 </div>
             </div>
             <div class="row pt-5">
@@ -47,10 +46,15 @@
                     <p>Order Date: {{date("M d, Y", strtotime($ticket->created_at))}}</p>
                 </div>
                 <div class="col-md-6 ticket-text-line-height ticket-price-background text-white my-auto">
-                    <h1>BDT {{number_format((float)$ticket->type->price, 2, '.', '')}}</h1>
-                    <p>Thank you for your purchase</p>
+                    @if ($ticket->type->price == 0)
+                    <h1>COMPLIMENTARY TICKET</h1>
+                    @else
+                        <h1>BDT {{number_format((float)$ticket->type->price, 2, '.', '')}}</h1>
+                        <p>Thank you for your purchase</p>
+                    @endif
                 </div>
             </div>
+            <br><br><br><br>
             <div class="row pt-5">
                 <div class="col-md-12 ticket-text-line-height">
                     <table class="table">
@@ -73,18 +77,7 @@
                     </table><hr>
                 </div>
             </div>
-            <div class="row pt-5">
-                <div class="col-md-6 ticket-text-line-height">
-                    
-                </div>
-                <div class="col-md-6 ticket-text-line-height">
-                    <p>Subtotal <span class="float-right">BDT {{number_format((float)$ticket->type->price, 2, '.', '')}}</span></p>
-                    <p>Shipping <span class="float-right">BDT 0.00</span></p>
-                    <hr>
-                    <p>Total <span class="float-right text-danger">BDT {{number_format((float)$ticket->type->price, 2, '.', '')}}</span></p>
-                </div>
-            </div>
-            <p class="text-danger">Items will be shipped within 2 days.</p>
+
             <div class="row pt-5">
                 <div class="col-md-12 ticket-text-line-height text-center">
                     {!! Milon\Barcode\Facades\DNS1DFacade::getBarcodeSVG($ticket->invoice->barcode, "PHARMA") !!}
@@ -134,6 +127,15 @@
 			}
 		});
 	});
-	</script>
+    </script>
+    <script>
+        $('.pull-down').each(function() {
+            var $this = $(this);
+            $this.css('margin-top', $this.parent().height() - $this.height())
+        });
+    </script>
+    <script>
+        window.print();
+    </script>
 </body>
 </html>

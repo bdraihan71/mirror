@@ -956,7 +956,7 @@ header .download .btn-light:hover {
 /* Contact Us */
 .contact-us {
   background-color: #000000;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .contact-text {
@@ -1158,24 +1158,26 @@ input[type=number] {
 }
 
 .p-scroll{
-  height: 300px;
+  height: 200px;
   overflow: scroll;
 }  
 .p-scroll::-webkit-scrollbar {
   display: none;
 }
+
 @media only screen and (max-width:500px){
   .p-scroll{
-    height: 200px;
+    height: 150px;
     overflow: scroll;
   }  
   .p-scroll::-webkit-scrollbar {
     display: none;
   }
 }
+
 @media only screen and (max-width:500px){
   .p-scroll-wwd{
-    height: 450px;
+    height: 350px;
     overflow: scroll;
   }  
   .p-scroll::-webkit-scrollbar {
@@ -1200,4 +1202,13 @@ input[type=number] {
 
 .footer-header {
   color: #FF0000;
+}
+
+.wwd-text {
+  font-size: 0.8em;
+}
+
+.navbar-collapse.collapse.show {
+  max-height: 280px;
+  overflow-y: auto;
 }
