@@ -156,12 +156,6 @@ class MediaController extends Controller
         $es = Event::orderBy('created_at', 'desc')->get();
         $events = array();
 
-        foreach ($es as $e) {
-            if (count($e->video) == 0) {
-                array_push($events, $e);
-            }
-        }
-
         if (sizeof($events) == 0) {
             flash('Please create an event first')->error();
 
