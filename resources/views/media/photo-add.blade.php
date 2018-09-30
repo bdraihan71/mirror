@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8">
-                <h4 class="text-center">ALL IMAGES HAVE TO BE OF 3:2 RATIO (1920 x 1280) AND OF MAX SIZE 2 MB</h4>
+                <h4 class="text-center">ALL IMAGES HAVE TO BE OF 3:2 RATIO (290 x 193) AND OF MAX SIZE 2 MB</h4>
                 <br><br>
                 <form action="/media/photo/add" method="POST" enctype="multipart/form-data">
                     @csrf
