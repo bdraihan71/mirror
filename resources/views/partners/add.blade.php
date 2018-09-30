@@ -13,7 +13,7 @@
                                 <label class="">Name *</label>
                             </div>
                             <div class="form-group col-md-10">
-                                <input type="text" class="form-control contact-form input-container" name="name" placeholder="Name of the product" required>
+                                <input type="text" class="form-control contact-form input-container" name="name" placeholder="Name of the partner" required>
                             </div>
                         </div>
 
