@@ -153,10 +153,9 @@ class MediaController extends Controller
             return redirect('/media');
         }
 
-        $es = Event::orderBy('created_at', 'desc')->get();
-        $events = array();
+        $events = Event::orderBy('created_at', 'desc')->get();
 
-        if (sizeof($events) == 0) {
+        if (count($events) == 0) {
             flash('Please create an event first')->error();
 
             return redirect('/events/create');
