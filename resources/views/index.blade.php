@@ -218,8 +218,8 @@
                     @if (count($int_partners) < 6)
                         @foreach ($int_partners as $partner)
                             <div class="col">
-                                <div class="card">
-                                    <img src="{{$partner->img}}" class="img-fluid" alt="Partner Logo">
+                                <div class="text-center">
+                                    <img src="{{$partner->img}}" class="partner-logo" alt="Partner Logo">
                                 </div>
                             </div>
                         @endforeach
