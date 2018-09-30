@@ -45,15 +45,7 @@ class ShopController extends Controller
         $product->price = $request->price;
         $product->quantity = $request->quantity;
         $product->description = $request->description;
-
-        $filenameWithExt = $request->file('img')->getClientOriginalName();
-        $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);            
-        $extension = $request->file('img')->getClientOriginalExtension();
-        $fileNameToStore = $filename.'_'.time().'.'.$extension;                       
-        $path = $request->file('img')->storeAs('public/uploadedImg', $fileNameToStore);
-        $request->img->move('public/uploadedImg', $fileNameToStore);
-
-        $product->img = '/public/uploadedImg/'.$fileNameToStore;
+        $product->img = $this->uploadImage($request->img);
         $product->save();
 
         flash('Product successfully added')->success();
@@ -81,14 +73,7 @@ class ShopController extends Controller
         $product->description = $request->description;
 
         if ($request->hasFile('img')) {
-            $filenameWithExt = $request->file('img')->getClientOriginalName();
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);            
-            $extension = $request->file('img')->getClientOriginalExtension();
-            $fileNameToStore = $filename.'_'.time().'.'.$extension;                       
-            $path = $request->file('img')->storeAs('public/uploadedImg', $fileNameToStore);
-            $request->img->move('public/uploadedImg', $fileNameToStore);
-
-            $product->img = '/public/uploadedImg/'.$fileNameToStore;
+            $product->img = $this->uploadImage($request->img);
         }
 
         $product->save();

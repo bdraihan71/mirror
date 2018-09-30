@@ -31,53 +31,35 @@ class CMSController extends Controller
         }
 
         if($request->hasFile('url_1')) {
-            $filenameWithExt = $request->file('url_1')->getClientOriginalName();
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);            
-            $extension = $request->file('url_1')->getClientOriginalExtension();
-            $fileNameToStore = $filename.'_'.time().'.'.$extension;                       
-            $path = $request->file('url_1')->storeAs('public/uploadedImg', $fileNameToStore);
-            $request->url_1->move('public/uploadedImg', $fileNameToStore);
             $content = WebContent::where('id', 1)->first();
 
             if ($content == null) {
                 $content = new WebContent;
             }
 
-            $content->content = '/public/uploadedImg/'.$fileNameToStore;
+            $content->content = $this->uploadImage($request->url_1);
             $content->save();
         }
 
         if($request->hasFile('url_2')) {
-            $filenameWithExt = $request->file('url_2')->getClientOriginalName();
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);            
-            $extension = $request->file('url_2')->getClientOriginalExtension();
-            $fileNameToStore = $filename.'_'.time().'.'.$extension;                       
-            $path = $request->file('url_2')->storeAs('public/uploadedImg', $fileNameToStore);
-            $request->url_2->move('public/uploadedImg', $fileNameToStore);
             $content = WebContent::where('id', 2)->first();
 
             if ($content == null) {
                 $content = new WebContent;
             }
 
-            $content->content = '/public/uploadedImg/'.$fileNameToStore;
+            $content->content = $this->uploadImage($request->url_2);
             $content->save();
         }
 
         if($request->hasFile('url_3')) {
-            $filenameWithExt = $request->file('url_3')->getClientOriginalName();
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);            
-            $extension = $request->file('url_3')->getClientOriginalExtension();
-            $fileNameToStore = $filename.'_'.time().'.'.$extension;                       
-            $path = $request->file('url_3')->storeAs('public/uploadedImg', $fileNameToStore);
-            $request->url_3->move('public/uploadedImg', $fileNameToStore);
             $content = WebContent::where('id', 3)->first();
 
             if ($content == null) {
                 $content = new WebContent;
             }
 
-            $content->content = '/public/uploadedImg/'.$fileNameToStore;
+            $content->content = $this->uploadImage($request->url_3);
             $content->save();
         }
 

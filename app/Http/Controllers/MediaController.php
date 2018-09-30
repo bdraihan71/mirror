@@ -57,13 +57,7 @@ class MediaController extends Controller
 
         foreach ($request->url as $url) {
             $album = new Album;
-
-            $filenameWithExt = $url->getClientOriginalName();
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);            
-            $extension = $url->getClientOriginalExtension();
-            $fileNameToStore = $filename.'_'.time().'.'.$extension;                       
-            $path = $url->storeAs('public/uploadedImg', $fileNameToStore);
-            $album->url = $url->move('public/uploadedImg', $fileNameToStore);
+            $album->url = $this->uploadImage($url);
             $album->caption = $request->caption[$counter];
             $album->event_id = $request->event;
             $counter++;
@@ -101,6 +95,8 @@ class MediaController extends Controller
             flash('You are not authorized to access this view')->error;
         }
 
+        $this->uploadImage($request->all);
+
         $event = Event::find($request->id);
         $counter = 0;
 
@@ -112,15 +108,8 @@ class MediaController extends Controller
         }
 
         if ($request->hasfile('all')) {
-            $url = $request->all;
             $album = new Album;
-
-            $filenameWithExt = $url->getClientOriginalName();
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);            
-            $extension = $url->getClientOriginalExtension();
-            $fileNameToStore = $filename.'_'.time().'.'.$extension;                       
-            $path = $url->storeAs('public/uploadedImg', $fileNameToStore);
-            $album->url = $url->move('public/uploadedImg', $fileNameToStore);
+            $album->url = $this->uploadImage($request->all);
             $album->event_id = $request->id;
             $album->caption = $request->cap;
 

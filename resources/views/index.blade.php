@@ -121,7 +121,7 @@
     
     <div class="section">
     
-        <div class="container-fluid what-we-do d-none d-sm-block">
+        <div class="container-fluid what-we-do d-none d-md-block">
             <div class="row text-white">
                 <div class="col-md-1"></div>
                 <div class="col-md-10 wwd">
@@ -157,7 +157,7 @@
         </div>
         
         
-        <div class="container-fluid what-we-do-xs d-block d-sm-none">
+        <div class="container-fluid what-we-do-xs d-block d-md-none">
             <div class="row text-white">
                 <div class="col-md-1"></div>
                 <div class="col-md-10 wwd text-center">

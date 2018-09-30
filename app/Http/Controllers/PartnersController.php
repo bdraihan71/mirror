@@ -33,15 +33,7 @@ class PartnersController extends Controller
         $partner = new Partner;
         $partner->name = $request->name;
         $partner->type = $request->type;
-
-        $filenameWithExt = $request->file('url')->getClientOriginalName();
-        $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);            
-        $extension = $request->file('url')->getClientOriginalExtension();
-        $fileNameToStore = $filename.'_'.time().'.'.$extension;                       
-        $path = $request->file('url')->storeAs('public/partners', $fileNameToStore);
-        $request->url->move('public/partners', $fileNameToStore);
-
-        $partner->img = '/public/partners/'.$fileNameToStore;
+        $partner->img = $this->uploadImage($request->url);
         $partner->save();
 
         flash('Partner successfully created')->success();
@@ -73,14 +65,7 @@ class PartnersController extends Controller
         $partner->type = $request->type;
         
         if ($request->hasFile('url')) {
-            $filenameWithExt = $request->file('url')->getClientOriginalName();
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);            
-            $extension = $request->file('url')->getClientOriginalExtension();
-            $fileNameToStore = $filename.'_'.time().'.'.$extension;                       
-            $path = $request->file('url')->storeAs('public/partners', $fileNameToStore);
-            $request->url->move('public/partners', $fileNameToStore);
-
-            $partner->img = '/public/partners/'.$fileNameToStore;
+            $partner->img = $this->uploadImage($request->url);
         }
 
         $partner->save();

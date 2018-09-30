@@ -67,4 +67,15 @@ class Controller extends BaseController
 
         return $total;
     }
+
+    public function uploadImage ($request)
+    {
+        $filenameWithExt = $request->getClientOriginalName();
+        $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);            
+        $extension = $request->getClientOriginalExtension();
+        $fileNameToStore = $filename.'_'.time().'.'.$extension;                       
+        $path = $request->storeAs('/uploads', $fileNameToStore);
+
+        return 'storage/uploads/'.$fileNameToStore;
+    }
 }
