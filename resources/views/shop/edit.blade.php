@@ -6,7 +6,7 @@
             <div class="row pt-3">
                 <div class="col-md-1"></div>
                 <div class="col-md-10">
-                    <form method="POST" action="/shop/edit/{{$product->id}}">
+                    <form method="POST" action="/shop/edit/{{$product->id}}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-row text-white text-left">
                             <div class="form-group col-md-2">
