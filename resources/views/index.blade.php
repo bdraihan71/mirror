@@ -219,7 +219,7 @@
                         @foreach ($int_partners as $partner)
                             <div class="col">
                                 <div class="card">
-                                    <img src="{{$partner->img}}" class="card-img-top" alt="Partner Logo">
+                                    <img src="{{$partner->img}}" class="img-fluid" alt="Partner Logo">
                                 </div>
                             </div>
                         @endforeach
