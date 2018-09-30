@@ -56,7 +56,7 @@
                                         <label for="url_5">Thumbnail</label>
                                     </div>
                                     <div class="col-md-8">
-                                        <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB</div><br>
+                                        <div>Please upload images with ratio of 3:2, e.g. 346 x 300 | max image size is 2 MB</div><br>
                                         <input type="file" class="form-control" name="url_5" placeholder="Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB"><br>
                                         <img class="img-fluid" src="{{$event->img_5}}" alt="Ticket Header">
                                     </div>

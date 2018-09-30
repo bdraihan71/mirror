@@ -23,7 +23,7 @@
                 @endforeach
             </div>
 
-            <h4 class="text-center">ALL IMAGES HAVE TO BE OF 3:2 RATIO (1920 x 1280) AND OF MAX SIZE 2 MB</h4>
+            <h4 class="text-center">ALL IMAGES HAVE TO BE OF 3:2 RATIO (376 x 195) AND OF MAX SIZE 2 MB</h4>
             <br>
 
             <div class="form-group row">

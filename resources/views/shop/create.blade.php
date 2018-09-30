@@ -49,7 +49,7 @@
                                 <label>Product Image *</label>
                             </div>
                             <div class="form-group col-md-10">
-                                <div>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB</div><br>
+                                <div>Please upload images with ratio of 3:2, e.g. 290 x 193 | max image size is 2 MB</div><br>
                                 <input required type="file" class="form-control" name="img">
                             </div>
                         </div>
