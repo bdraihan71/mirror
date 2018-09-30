@@ -19,12 +19,12 @@
                         <br>
                         <div class="row text-center">
                             <div class="col-md-6">
-                                <img src="/{{$event->album[0]->url}}" alt="Image 1" class="img-fluid">
+                                <img src="{{$event->album[0]->url}}" alt="Image 1" class="img-fluid">
                                 <br><br>
                                 {{$event->album[0]->caption}}
                             </div>
                             <div class="col-md-6">
-                                <img src="/{{$event->album[1]->url}}" alt="Image 2" class="img-fluid">
+                                <img src="{{$event->album[1]->url}}" alt="Image 2" class="img-fluid">
                                 <br><br>
                                 {{$event->album[1]->caption}}
                             </div>
@@ -32,12 +32,12 @@
                         <br><br>
                         <div class="row text-center">
                             <div class="col-md-6">
-                                <img src="/{{$event->album[2]->url}}" alt="Image 3" class="img-fluid">
+                                <img src="{{$event->album[2]->url}}" alt="Image 3" class="img-fluid">
                                 <br><br>
                                 {{$event->album[2]->caption}}
                             </div>
                             <div class="col-md-6">
-                                <img src="/{{$event->album[3]->url}}" alt="Image 4" class="img-fluid">
+                                <img src="{{$event->album[3]->url}}" alt="Image 4" class="img-fluid">
                                 <br><br>
                                 {{$event->album[3]->caption}}
                             </div>
@@ -45,12 +45,12 @@
                         <br><br>
                         <div class="row text-center">
                             <div class="col-md-6">
-                                <img src="/{{$event->album[4]->url}}" alt="Image 5" class="img-fluid">
+                                <img src="{{$event->album[4]->url}}" alt="Image 5" class="img-fluid">
                                 <br><br>
                                 {{$event->album[4]->caption}}
                             </div>
                             <div class="col-md-6">
-                                <img src="/{{$event->album[5]->url}}" alt="Image 6" class="img-fluid">
+                                <img src="{{$event->album[5]->url}}" alt="Image 6" class="img-fluid">
                                 <br><br>
                                 {{$event->album[5]->caption}}
                             </div>

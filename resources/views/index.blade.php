@@ -282,17 +282,17 @@
     </div>
 </div> <!-- Fullpage div end -->
 
-<script src="vendor/jquery/jquery.min.js"></script>
-	<script src="vendor/jquery/popper.min.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="/frontend/vendor/jquery/jquery.min.js"></script>
+	<script src="/frontend/vendor/jquery/popper.min.js"></script>
+	<script src="/frontend/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<!-- Scripts for WOW -->
-	<script src="vendor/animate/wow.min.js"></script>
+	<script src="/frontend/vendor/animate/wow.min.js"></script>
 	<!-- Scripts for OWL -->
-	<script src="vendor/owl/js/owl.carousel.min.js"></script>
+	<script src="/frontend/vendor/owl/js/owl.carousel.min.js"></script>
 	<!-- Scripts for Fullpage -->
-	<script src="vendor/fullpage/fullpage.min.js"></script>
+	<script src="/frontend/vendor/fullpage/fullpage.min.js"></script>
 	<!-- Custom scripts -->
-	<script src="js/script.js"></script>
+	<script src="/frontend/js/script.js"></script>
 
 
 

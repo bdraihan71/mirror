@@ -76,6 +76,6 @@ class Controller extends BaseController
         $fileNameToStore = $filename.'_'.time().'.'.$extension;                       
         $path = $request->storeAs('/uploads', $fileNameToStore);
 
-        return 'storage/uploads/'.$fileNameToStore;
+        return '/storage/uploads/'.$fileNameToStore;
     }
 }

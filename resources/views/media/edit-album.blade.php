@@ -13,7 +13,7 @@
             <div class="row">
                 @foreach ($event->album as $album)
                     <div class="col-md-4">
-                        <img src="/{{$album->url}}" class="img-fluid" alt="image">
+                        <img src="{{$album->url}}" class="img-fluid" alt="image">
                         <br>
                         <input type="text" class="form-control" name="caption[]" value="{{$album->caption}}" placeholder="Caption for image" id="">
                         <br>

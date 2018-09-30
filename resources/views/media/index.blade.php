@@ -12,7 +12,7 @@
     <div class="row pt-3">
         @foreach ($albums as $album)
             <div class="col-md-2">
-                <img class="media-img" src="/{{$album->url}}" alt="Card image cap">
+                <img class="media-img" src="{{$album->url}}" alt="Card image cap">
                 <p class="media-text">{{$album->caption}}</p>
             </div>
         @endforeach
