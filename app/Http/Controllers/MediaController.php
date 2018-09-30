@@ -247,7 +247,7 @@ class MediaController extends Controller
     {
         $video = Video::find($id);
         $url = '/media/video/edit?event='.$video->event->id;
-        $album->delete();
+        $video->delete();
 
         flash('Video successfully deleted');
 
