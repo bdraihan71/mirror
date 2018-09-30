@@ -70,7 +70,7 @@ class TicketsController extends Controller
 
     public function buy (Request $request, $id)
     {
-        $ticket = Ticket::where('user_id', auth()->user()->id)->first();
+        $ticket = Ticket::where('user_id', auth()->user()->id)->where('event_id', $id)->first();
 
         if ($ticket != null) {
             $url = '/events/'.$id;
