@@ -17,7 +17,11 @@
                                     <select name="type" class="form-control" required autofocus>
                                         <option value="">Please select a ticket</option>
                                         @foreach($types as $type)
-                                            <option value="{{$type->id}}">{{$type->name.' - '.$type->price.' BDT '}}</option>
+                                            @if ($type->price == 0)
+                                                <option value="{{$type->id}}">Complimentary</option>
+                                            @else
+                                                <option value="{{$type->id}}">{{$type->name.' - '.$type->price.' BDT '}}</option>
+                                            @endif
                                         @endforeach
                                     </select>
                                 </div>
