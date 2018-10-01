@@ -491,6 +491,7 @@ header .download .btn-light:hover {
   .p-scroll {
     height: 250px;
     overflow: scroll;
+    overflow: -moz-scrollbars-none;
   }
 
   .p-scroll::-webkit-scrollbar {
@@ -502,6 +503,7 @@ header .download .btn-light:hover {
   .p-scroll {
     height: 130px;
     overflow: scroll;
+    overflow: -moz-scrollbars-none;
   }
 
   .p-scroll::-webkit-scrollbar {
@@ -512,6 +514,7 @@ header .download .btn-light:hover {
 .p-scroll-wwd {
   height: 300px;
   overflow: scroll;
+  overflow: -moz-scrollbars-none;
 }
 
 /* What we do */
@@ -1160,6 +1163,7 @@ input[type=number] {
 .p-scroll{
   height: 200px;
   overflow: scroll;
+  overflow: -moz-scrollbars-none;
 }  
 .p-scroll::-webkit-scrollbar {
   display: none;
@@ -1169,6 +1173,7 @@ input[type=number] {
   .p-scroll{
     height: 150px;
     overflow: scroll;
+    overflow: -moz-scrollbars-none;
   }  
   .p-scroll::-webkit-scrollbar {
     display: none;
@@ -1179,6 +1184,7 @@ input[type=number] {
   .p-scroll-wwd{
     height: 350px;
     overflow: scroll;
+    overflow: -moz-scrollbars-none;
   }  
   .p-scroll::-webkit-scrollbar {
     display: none;
