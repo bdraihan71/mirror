@@ -1217,3 +1217,30 @@ input[type=number] {
   height: 150px;
   width: 150px;
 }
+
+@media (min-width : 0px) and (max-width : 853px) and (orientation : landscape) {
+    header .title h1 {
+      font-size: 1.0rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+    }
+    
+    .parallax-img {
+      width: 150px;
+      padding: 0%;
+    }
+    
+    .parallax-text {
+      font-size: 1.8rem;
+    }
+    
+    .p-scroll {
+      height: 100px;
+      overflow: scroll;
+      overflow: -moz-scrollbars-none;
+    }
+    
+    .p-scroll::-webkit-scrollbar {
+      display: none;
+    }
+  }
