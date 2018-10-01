@@ -36,15 +36,15 @@ return [
     ],
 
     'facebook' => [
-        'client_id' => '286422042166640',
-        'client_secret' => '35e5a9ac38c6676743761d41557af7f4',
-        'redirect' => 'https://live.ecube-entertainment.com/callback/facebook',
+        'client_id' => env('FACEBOOK_ID'),
+        'client_secret' => env('FACEBOOK_SECRET'),
+        'redirect' => env('FACEBOOK_CALLBACK'),
     ],
 
     'google' => [
-        'client_id' => '865802541169-88duqlufeblb93pda2618tp3q6pb7h73.apps.googleusercontent.com',
-        'client_secret' => '-4aS8_pq2nh6gvNJ5yH_KcrY',
-        'redirect' => 'http://live.ecube-entertainment.com/callback'
+        'client_id' => env('GOOGLE_ID'),
+        'client_secret' => env('GOOGLE_SECRET'),
+        'redirect' => env('GOOGLE_CALLBACK'),
     ],
 
 ];

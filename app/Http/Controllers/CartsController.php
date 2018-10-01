@@ -134,6 +134,8 @@ class CartsController extends Controller
                 $total_amount += ($item->product->price * $item->quantity);
             }
 
+            $appURl = config('app.url');
+
             $store_id = env('SSL_STORE_ID', false);
             $store_pass =  env('SSL_STORE_PASS', false);
             $total_amount = number_format($total_amount, 2, '.', '');
@@ -141,9 +143,9 @@ class CartsController extends Controller
             $tran_id = new Carbon;
             $tran_id = $tran_id->format('Y-m-d::H:i:s.u');
             $tran_id = $tran_id.auth()->user()->id.$purchase->id;
-            $success_url = 'https://live.ecube-entertainment.com/api/product/0/'.$purchase->id.'/'.auth()->user()->id;
-            $fail_url = 'https://live.ecube-entertainment.com/api/product/1/'.$purchase->id.'/'.auth()->user()->id;
-            $cancel_url = 'https://live.ecube-entertainment.com/api/product/2/'.$purchase->id.'/'.auth()->user()->id;
+            $success_url = $appURl.'/api/product/0/'.$purchase->id.'/'.auth()->user()->id;
+            $fail_url = $appURl.'/api/product/1/'.$purchase->id.'/'.auth()->user()->id;
+            $cancel_url = $appURl.'/api/product/2/'.$purchase->id.'/'.auth()->user()->id;
             $emi_potion = '0';
             $cus_name = auth()->user()->profile->f_name.auth()->user()->profile->m_name.auth()->user()->profile->l_name;
             $cus_email = auth()->user()->email;
