@@ -10,7 +10,7 @@
         </div>
 
         <br>
-
+        
         <div class="row">
             @foreach ($events as $event)
                 @if (count($event->album) != 0)
