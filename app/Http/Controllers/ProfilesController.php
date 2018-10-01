@@ -285,7 +285,6 @@ class ProfilesController extends Controller
         $profile->m_name = $request->m_name;
         $profile->l_name = $request->l_name;
         $profile->phone = $request->phone;
-        $profile->address = $request->address;
         $profile->save();
 
         flash('Admin successfully created')->success();

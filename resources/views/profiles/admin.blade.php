@@ -78,19 +78,7 @@
                                 <input type="number" class="form-control contact-form" name="phone" placeholder="+880**********" required>
                             </div>
                         </div>
-                        
-                        <div class="form-row text-white">
-                            <div class="form-group col-md-4">
-                                <label>Address *</label>
-                            </div>
-                            <div class="form-group col-md-8">
-                                <input type="text" class="form-control contact-form" name="address" placeholder="" required>
-                            </div>
-                        </div>
-                        
-                        
-                        
-                        
+
                         <button type="submit" class="btn btn-danger register-btn">Create</button>
                     </form>
                 </div>
