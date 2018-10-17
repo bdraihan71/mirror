@@ -11,6 +11,8 @@ use App\TicketType;
 use App\Ticket;
 use App\Event;
 use App\EventAnswer;
+use Mail;
+use App\Mail\TicketPurchase as vMail;
 use PDF;
 
 class TicketsController extends Controller
@@ -131,11 +133,11 @@ class TicketsController extends Controller
             $ticket->invoice_id = $invoice->id;
             $ticket->save();
 
-            $url = '/delivery/'.$invoice->id;
+            Mail::to(auth()->user()->email)->send(new vMail(auth()->user(), $ticket));
 
             flash('Ticket successfully purchased')->success();
 
-            return redirect($url);
+            return redirect('/');
         }
 
         $type = TicketType::where('id', $request->type)->first();

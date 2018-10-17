@@ -11,6 +11,8 @@ use App\Invoice;
 use App\EventAnswer;
 use App\Address;
 use GuzzleHttp\Client;
+use Mail;
+use App\TicketPurchase as vMail;
 
 class PaymentsController extends Controller
 {   
@@ -90,11 +92,11 @@ class PaymentsController extends Controller
             $ticket->save();
             $user = User::find($user);
 
-            $url = '/delivery/'.$invoice->id;
+            Mail::to($user->email)->send(new vMail($user, $ticket));
 
             flash('Ticket successfully purchased')->success();
 
-            return redirect($url);
+            return redirect('/');
         } else {
             $ticket = Ticket::find($id);
             $answers = EventAnswer::where('event_id', $ticket->event->id)->where('user_id', auth()->user()->id)->get();
