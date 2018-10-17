@@ -11,6 +11,7 @@ use App\TicketType;
 use App\EventAnswer;
 use App\Album;
 use App\Video;
+use App\IssueTicket;
 
 class Event extends Model
 {
@@ -57,5 +58,10 @@ class Event extends Model
     public function videos ()
     {
         return $this->hasMany('App\Video');
+    }
+
+    public function issues ()
+    {
+        return $this->hasMany('App\IssueTicket');
     }
 }

@@ -174,3 +174,11 @@ Route::get('/music/create', 'MusicController@create')->middleware('auth');
 Route::post('/music/create', 'MusicController@store')->middleware('auth');
 Route::get('/music', 'MusicController@index');
 Route::get('/music/delete/{id}', 'MusicController@delete')->middleware('auth');
+
+//Ticket Issue Routes
+Route::get('/issue/create', 'TicketIssueController@create')->middleware('auth');
+Route::post('/issue/create', 'TicketIssueController@store')->middleware('auth');
+Route::get('/issue/update/{id}', 'TicketIssueController@edit')->middleware('auth');
+Route::post('/issue/update/{id}', 'TicketIssueController@update')->middleware('auth');
+Route::get('/issue/delete/{id}', 'TicketIssueController@delete')->middleware('auth');
+Route::get('/issue/show/{id}', 'TicketIssueController@show');

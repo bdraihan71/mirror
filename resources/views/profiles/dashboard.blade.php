@@ -16,6 +16,7 @@
                             <strong><a class="nav-link text-white" href="/analytics/events">EVENTS ANALYTICS</a></strong>
                             <strong><a class="nav-link text-white" href="/profile/show-all">VIEW PROFILES</a></strong>
                             <strong><a class="nav-link text-white" href="/purchases">VIEW PURCHASES</a></strong>
+                            <strong><a class="nav-link text-white" href="/issue/create">ISSUE TICKETS</a></strong>
                         @endif
                       @else
                         <strong><a class="nav-link text-white" href="/cart/show-all">PRODUCT PURCHASES</a></strong>
