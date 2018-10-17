@@ -35,7 +35,7 @@
 
                             <br><br>
 
-                            <a href="/cancel/purchase/{{$id}}" class="btn btn-google w-100">Cancel</a>
+                            <a href="/cancel/purchase/{{$id}}" class="black-bg btn btn-reg w-100">Cancel</a>
                         </form>
                     </div>
                 </div>

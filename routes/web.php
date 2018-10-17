@@ -28,6 +28,7 @@ Route::get('/profile/delete/{id}', 'ProfilesController@del')->middleware('auth')
 Route::get('/profile/delete', 'ProfilesController@delete')->middleware('auth');
 Route::get('/profile/delete/confirm', 'ProfilesController@destroy')->middleware('auth');
 Route::get('/profile/show-all', 'ProfilesController@showAll')->middleware('auth');
+Route::get('/user/verify/{token}', 'ProfilesController@verify')->middleware('auth');
 
 //CMS Routes
 Route::get('/alter/index', 'CMSController@getIndex')->middleware('auth');
@@ -40,6 +41,8 @@ Route::post('/alter/footer', 'CMSController@setFooter')->middleware('auth');
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+Route::get('/resend', 'VerifyEmailController@resend');
+Route::post('/resend', 'VerifyEmailController@send');
 
 //Password Reset Routes
 Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
@@ -134,7 +137,7 @@ Route::get('/partner/delete/{id}', 'PartnersController@delete')->middleware('aut
 //Test Route
 Route::get('/page', function () {
     //dd(Milon\Barcode\Facades\DNS1DFacade::getBarcodeSVG("4445645656", "PHARMA2T"));
-    return Milon\Barcode\Facades\DNS1DFacade::getBarcodeSVG("10", "PHARMA");
+    return Milon\Barcode\Facades\DNS1DFacade::getBarcodeSVG("1234567890", "C128");
     return view('tickets/show');
 });
 
@@ -150,6 +153,7 @@ Route::get('/privacy-policy', function () {
 //Analytics Routes
 Route::get('/analytics/events', 'AnalyticsController@events')->middleware('auth');
 Route::get('/analytics/events/{id}', 'AnalyticsController@event')->middleware('auth');
+Route::get('/analytics/present/{id}', 'AnalyticsController@present')->middleware('auth');
 
 //Media Routes
 Route::get('/media', 'MediaController@index');

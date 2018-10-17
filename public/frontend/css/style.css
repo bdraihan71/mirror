@@ -1250,3 +1250,8 @@ input[type=number] {
       display: none;
     }
   }
+
+  /* background color of the people marked present */
+  .present {
+    background: #42B32F;
+  }

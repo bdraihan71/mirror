@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Event;
+use App\Ticket;
 
 class AnalyticsController extends Controller
 {
@@ -30,5 +31,27 @@ class AnalyticsController extends Controller
         $tickets = $event->tickets->where('user_id', '!=', null);
 
         return view('analytics/event')->with('event', $event)->with('tickets', $tickets);
+    }
+    
+    public function present (Request $request, $id)
+    {
+        if ($this->notAdmin()) {
+            flash('You are not authorized to access this view')->error();
+
+            return redirect('/');
+        }
+
+        $ticket = Ticket::where('id', $id)->first();
+        
+        if ($ticket->present == null || $ticket->present == 1) {
+            $ticket->present = 2;
+        } else {
+            $ticket->present = 1;
+        }
+
+        $ticket->save();
+        $url = '/analytics/events/'.$ticket->event->id;
+
+        return redirect($url);
     }
 }

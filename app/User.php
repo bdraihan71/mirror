@@ -11,6 +11,7 @@ use App\Ticket;
 use App\EventAnswer;
 use App\Purchase;
 use App\Invoice;
+use App\VerifyUser;
 
 class User extends Authenticatable
 {
@@ -67,5 +68,10 @@ class User extends Authenticatable
     public function carts ()
     {
         return $this->hasMany('App\Cart');
+    }
+
+    public function verifyUser ()
+    {
+        return $this->hasOne('App\VerifyUser');
     }
 }

@@ -30,6 +30,7 @@ class SocialAuthFacebookController extends Controller
             }
 
             $user->email = $account->email;
+            $user->verified = 1;
             $user->password = bcrypt($account->id);
             $user->save();
 

@@ -1,11 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Mail\VerifyMail as vMail;
+use Mail;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\User;
 use App\Profile;
 use Carbon\Carbon;
+use App\VerifyUser;
 use Auth;
 
 class ProfilesController extends Controller
@@ -62,9 +65,57 @@ class ProfilesController extends Controller
         $profile->fb_url = $request->fb_link;
         $profile->save();
 
+        $token = bcrypt(str_random(50));
+        
+        while (true) {
+            $verify = VerifyUser::where('token', $token)->first();
+
+            if ($verify == null) {
+                break;
+            } else {
+                $token = bcrypt(str_random(50));
+            }
+        }
+
+        $verifyUser = VerifyUser::create([
+            'user_id' => $user->id,
+            'token' => bcrypt(str_random(50)),
+        ]);
+
         Auth::login($user);
 
-        flash('Welcome to Ecube!')->success();
+        Mail::to($user->email)->send(new vMail($user));
+
+        auth()->logout();
+
+        flash('Please verify your email before you can login')->success();
+
+        return redirect('/');
+    }
+
+    public function verify (Request $request, $token)
+    {
+        $verifyUser = VerifyUser::where('token', $token)->first();
+        $status = null;
+
+        if (isset($verifyUser)) {
+            $user = $verifyUser->user;
+            
+            if (!$user->verified) {
+                $user->verified = 1;
+                $user->save();
+
+                $status = "Email verified";
+
+                Auth::login($user);
+            } else {
+                $status = "Your email has already been verified";
+            }
+        } else {
+            $status = "Sorry, your email could not be verified";
+        }
+
+        flash($status);
 
         return redirect('/');
     }
@@ -278,6 +329,7 @@ class ProfilesController extends Controller
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
         $user->role = $request->role;
+        $user->verified = 1;
         $user->save();
 
         $profile->user_id = $user->id;

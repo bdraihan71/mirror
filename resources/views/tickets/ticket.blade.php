@@ -80,7 +80,7 @@
 
             <div class="row pt-5">
                 <div class="col-md-12 ticket-text-line-height text-center">
-                    {!! Milon\Barcode\Facades\DNS1DFacade::getBarcodeSVG($ticket->invoice->barcode, "PHARMA") !!}
+                    {!! Milon\Barcode\Facades\DNS1DFacade::getBarcodeSVG($ticket->invoice->barcode, "C128") !!}
                 </div>
             </div>
             <div class="row pt-5">

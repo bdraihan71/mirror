@@ -35,6 +35,7 @@ class SocialAuthGoogleController extends Controller
             }
 
             $user->email = $googleUser->email;
+            $user->verified = 1;
             $user->google_id = $googleUser->id;
             $user->password = md5($googleUser->id);
             $user->save();
