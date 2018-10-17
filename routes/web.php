@@ -182,3 +182,7 @@ Route::get('/issue/update/{id}', 'TicketIssueController@edit')->middleware('auth
 Route::post('/issue/update/{id}', 'TicketIssueController@update')->middleware('auth');
 Route::get('/issue/delete/{id}', 'TicketIssueController@delete')->middleware('auth');
 Route::get('/issue/show/{id}', 'TicketIssueController@show');
+
+//Export Routes
+Route::get('/export/ticket', 'ExcelExportController@ticket')->middleware('auth');
+Route::post('/export/ticket', 'ExcelExportController@exportTicket')->middleware('auth');

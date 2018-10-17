@@ -17,6 +17,7 @@
                             <strong><a class="nav-link text-white" href="/profile/show-all">VIEW PROFILES</a></strong>
                             <strong><a class="nav-link text-white" href="/purchases">VIEW PURCHASES</a></strong>
                             <strong><a class="nav-link text-white" href="/issue/create">ISSUE TICKETS</a></strong>
+                            <strong><a class="nav-link text-white" href="/export/ticket">EXPORT TICKETS</a></strong>
                         @endif
                       @else
                         <strong><a class="nav-link text-white" href="/cart/show-all">PRODUCT PURCHASES</a></strong>
