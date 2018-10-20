@@ -84,7 +84,7 @@ class ProfilesController extends Controller
 
         Auth::login($user);
 
-        Mail::to($user->email)->send(new vMail($user, $ticket));
+        Mail::to($user->email)->send(new vMail());
 
         auth()->logout();
 
