@@ -24,7 +24,7 @@ class SocialAuthGoogleController extends Controller
 
         if($existUser != null) {
             if ($existUser->profile == null) {
-                return view ('profiles/social-register')->with('name', $account->name)->with('id', $existUser->id)->with('footer', $this->footer());
+                return view ('profiles/social-register')->with('name', $googleUser->name)->with('id', $existUser->id)->with('footer', $this->footer());
             }
 
             Auth::loginUsingId($existUser->id);
