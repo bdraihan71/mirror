@@ -186,3 +186,6 @@ Route::get('/issue/show/{id}', 'TicketIssueController@show');
 //Export Routes
 Route::get('/export/ticket', 'ExcelExportController@ticket')->middleware('auth');
 Route::post('/export/ticket', 'ExcelExportController@exportTicket')->middleware('auth');
+
+//ProfileInfoController Routes
+Route::post('/profile/info', 'ProfileInfoController@store');

@@ -36,6 +36,10 @@ class SocialAuthFacebookController extends Controller
 
             return view('profiles/social-register')->with('name', $account->name)->with('id', $user->id)->with('footer', $this->footer());
         } else {
+            if (count($user->profile) == 0) {
+                return view ('profiles/social-register')->with('name', $account->name)->with('id', $user->id)->with('footer', $this->footer());
+            }
+
             Auth::login($user);
         }
 

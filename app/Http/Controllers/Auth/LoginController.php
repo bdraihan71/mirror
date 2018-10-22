@@ -46,6 +46,11 @@ class LoginController extends Controller
             flash('You need to confirm your account. We have sent you an activation code, please check your email.');
             return back();
         }
+
+        if (count($user->profile) == 0) {
+            return view ('profiles/social-register')->with('id', $user->id)->with('footer', $this->footer());
+        }
+
         return redirect()->intended($this->redirectPath());
     }
 

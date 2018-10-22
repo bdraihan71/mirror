@@ -9,8 +9,34 @@
                     <div class=" black-bg card-body">
                         <form method="POST" action="/social-register">
                             @csrf
-                            <input type="hidden" name="name" value="{{$name}}">
                             <input type="hidden" name="id" value="{{$id}}">
+                            
+                            <div class="form-row text-white">
+                                <div class="form-group col-md-4">
+                                    <label>First Name *</label>
+                                </div>
+                                <div class="form-group col-md-8">
+                                    <input type="text" class="input-container black-bg form-control" name="f_name" placeholder="First Name" required autofocus>
+                                </div>
+                            </div>
+
+                            <div class="form-row text-white">
+                                <div class="form-group col-md-4">
+                                    <label>Middle Name *</label>
+                                </div>
+                                <div class="form-group col-md-8">
+                                    <input type="text" class="input-container black-bg form-control" name="m_name" placeholder="Middle Name" autofocus>
+                                </div>
+                            </div>
+
+                            <div class="form-row text-white">
+                                <div class="form-group col-md-4">
+                                    <label>Last Name *</label>
+                                </div>
+                                <div class="form-group col-md-8">
+                                    <input type="text" class="input-container black-bg form-control" name="l_name" placeholder="Last Name" required autofocus>
+                                </div>
+                            </div>
 
                             <div class="form-row text-white">
                                 <div class="form-group col-md-4">
