@@ -12,7 +12,7 @@
                 @csrf
                 <div class="form-group row">
                     <div class="col-md-3">
-                        <label for="event" class="form-label-control">Photograps for</label>
+                        <label for="event" class="form-label-control">Video for</label>
                     </div>
                     <div class="col-md-9">
                         <select name="event" class="form-control" required>
