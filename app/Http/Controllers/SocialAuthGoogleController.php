@@ -23,7 +23,7 @@ class SocialAuthGoogleController extends Controller
         $existUser = User::where('email',$googleUser->email)->first();
 
         if($existUser != null) {
-            if (count($existUser->profile) == 0) {
+            if ($existUser->profile == null) {
                 return view ('profiles/social-register')->with('name', $account->name)->with('id', $existUser->id)->with('footer', $this->footer());
             }
 
