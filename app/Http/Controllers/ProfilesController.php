@@ -79,7 +79,7 @@ class ProfilesController extends Controller
 
         $verifyUser = VerifyUser::create([
             'user_id' => $user->id,
-            'token' => bcrypt(str_random(50)),
+            'token' => $token,
         ]);
 
         Auth::login($user);

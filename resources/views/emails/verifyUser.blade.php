@@ -29,6 +29,6 @@
     <br>
     Your registered email address is {{$user->email}}, please click on the link below to verify this email:
     <br>
-    <a href="/user/verify/{{$user->token}}" class="btn btn-primary w-100">Verify Email</a>
+    <a href="{{ env('APP_URL') }}/user/verify/{{$user->verifyUser->token}}" class="btn btn-primary w-100">Verify Email</a>
 </body>
 </html>
