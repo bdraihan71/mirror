@@ -10,7 +10,7 @@ class ShopController extends Controller
 {
     public function index ()
     {
-        $products = Product::where('quantity', '>', 0)->paginate(12);
+        $products = Product::where('quantity', '>=', 0)->paginate(12);
 
         return view('shop/index')->with('products', $products)->with('footer', $this->footer());
     }

@@ -35,17 +35,25 @@
                         @endif
                     @endif
                 </div>
-                <div class="row">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-4">
-                        <input type="number" name="quantity" class="form-control" placeholder="Quantity" required>
+                @if ($product->quantity == 0)
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <h1>OUT OF STOCK</h1>
+                        </div>
                     </div>
-                    <div class="col-md-2"></div>
-                    <div class="col-md-4">
-                        <button class="btn btn-warning w-100" type="submit">Add To Cart</button>
+                @else
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-4">
+                            <input type="number" name="quantity" class="form-control" placeholder="Quantity" required>
+                        </div>
+                        <div class="col-md-2"></div>
+                        <div class="col-md-4">
+                            <button class="btn btn-warning w-100" type="submit">Add To Cart</button>
+                        </div>
+                        <div class="col-md-1"></div>
                     </div>
-                    <div class="col-md-1"></div>
-                </div>
+                @endif
                 <br><br>
             </form>
         </div>
