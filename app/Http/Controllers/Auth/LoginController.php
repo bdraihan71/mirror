@@ -47,7 +47,7 @@ class LoginController extends Controller
             return back();
         }
 
-        if (count($user->profile) == 0) {
+        if ($user->profile == null) {
             return view ('profiles/social-register')->with('id', $user->id)->with('footer', $this->footer());
         }
 
