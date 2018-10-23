@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Music;
+use \Exception;
 
 class MusicController extends Controller
 {
@@ -28,7 +29,16 @@ class MusicController extends Controller
 
         $music = new Music;
         $music->name = $request->name;
-        $music->url = $this->findSRC($request->music);
+
+        try {
+            $music->url = $this->findSRC($request->music);
+        }
+        catch (\Exception $e) {
+            flash('Please enter an embedded link')->error();
+
+            return redirect ('/music/create');
+        }
+
         $music->save();
 
         return redirect('/music');

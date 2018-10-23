@@ -164,7 +164,16 @@ class MediaController extends Controller
         $video = new Video;
         $video->event_id = $request->event;
         $video->featured = true;
-        $video->url = $this->findSRC($request->url);
+
+        try {
+            $video->url = $this->findSRC($request->url);
+        }
+        catch (\Exception $e) {
+            flash('Please enter an embedded link')->error();
+
+            return redirect ('/media/video/add');
+        }
+
         $video->timestamps = false;
         $video->save();
 
@@ -208,7 +217,16 @@ class MediaController extends Controller
             }
 
             if ($flag) {
-                $video->url = $this->findSRC($request->url[$counter]);
+
+                try {
+                    $video->url = $this->findSRC($request->url[$counter]);
+                }
+                catch (\Exception $e) {
+                    flash('Please enter an embedded link')->error();
+        
+                    return redirect ('/media/video/edit');
+                }
+
                 $video->timestamps = false;
                 $video->save();
             }
@@ -218,7 +236,16 @@ class MediaController extends Controller
 
         if ($request->new != null) {
             $video = new Video;
-            $video->url = $this->findSRC($request->new);
+
+            try {
+                $video->url = $this->findSRC($request->new);
+            }
+            catch (\Exception $e) {
+                flash('Please enter an embedded link')->error();
+    
+                return redirect ('/media/video/edit');
+            }
+
             $video->event_id = $request->id;
             $video->featured = false;
             $video->timestamps = false;
@@ -241,32 +268,5 @@ class MediaController extends Controller
         flash('Video successfully deleted');
 
         return redirect($url);
-    }
-
-    public function findSRC ($url)
-    {
-        $url = explode(' ', $url);
-        $i = 0;
-        $flag = true;
-
-        for ($i = 0; $i < sizeof($url); $i++) {
-            if (strpos($url[$i], 'src') !== false) {
-                break;
-                $flag = false;
-            }
-        }
-
-        if (!$flag) {
-            dd('This is not an embedded link');
-        }
-
-        $url = str_split($url[$i], 1);
-        $x = '';
-
-        for ($j = 5; $j < sizeof($url) - 1; $j++) {
-            $x = $x.$url[$j];
-        }
-
-        return $x;
     }
 }
