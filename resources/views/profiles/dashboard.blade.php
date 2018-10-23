@@ -11,6 +11,7 @@
                         <strong><a class="nav-link text-white" href="/partners">PARTNERS</a></strong>
                         <strong><a class="nav-link text-white" href="/media/photo/edit">EDIT EVENT ALBUMS</a></strong>
                         <strong><a class="nav-link text-white" href="/media/video/edit">EDIT EVENT VIDEOS</a></strong>
+                        <strong><a class="nav-link text-white" href="/event/feature">FEATURE EVENT</a></strong>
                         @if (auth()->user()->role == 'super-admin')
                             <strong><a class="nav-link text-white" href="/create/admin">CREATE ADMIN</a></strong>
                             <strong><a class="nav-link text-white" href="/analytics/events">EVENTS ANALYTICS</a></strong>

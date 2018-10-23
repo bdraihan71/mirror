@@ -84,6 +84,9 @@ Route::get('/events/{id}', 'EventsController@show');
 Route::get('/event/delete/{id}', 'EventsController@destroy')->middleware('auth');
 Route::get('/event/restore/{id}', 'EventsController@restore')->middleware('auth');
 
+Route::get('/event/feature', 'EventsController@feature')->middleware('auth');
+Route::post('/event/feature', 'EventsController@featured')->middleware('auth');
+
 //Ticket Routes
 Route::get('/ticket/type/{id}', 'TicketsController@typeSelect')->middleware('auth');
 Route::get('/ticket/types/{id}', 'TicketsController@show')->middleware('auth');

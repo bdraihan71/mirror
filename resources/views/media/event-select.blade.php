@@ -12,7 +12,7 @@
                             <label for="event">Please select the event</label>
                         </div>
                         <div class="col-md-9">
-                            <select name="event" class="form-control">
+                            <select name="event" class="form-control" required>
                                 <option value="">Please select an event to edit its album</option>
                                 <option value="0">None</option>
                                 @foreach($events as $event)

@@ -9,6 +9,7 @@ use App\AdditionalInformation;
 use App\Question;
 use App\Album;
 use App\Video;
+use App\WebContent;
 use Carbon\Carbon;
 
 class EventsController extends Controller
@@ -59,13 +60,14 @@ class EventsController extends Controller
     public function showAll ($range)
     {
         $now = new Carbon;
-        $e = Event::where('date_start', '>=', $now->copy()->format('Y-m-d'))->orderBy('date_start')->whereNull('deleted')->first();
-        $type = 'Upcoming';
+        $id = WebContent::find(19)->content;
+        $e = null;
 
-        if ($e == null) {
-            $e = Event::where('date_start', '<=', $now->copy()->format('Y-m-d'))->orderBy('date_start', 'desc')->
-            whereNull('deleted')->first();
+        if ($id != null) {
+            $e = Event::find($id);
         }
+
+        
 
         if (auth()->user() == null) {
             $events = Event::where('date_start', '>=', $now->copy()->format('Y-m-d'))->orderBy('date_start')->whereNull('deleted')->get();
@@ -389,5 +391,42 @@ class EventsController extends Controller
         flash('Event Successfully Restored')->success();
 
         return redirect($url);
+    }
+
+    public function feature ()
+    {
+        if ($this->notAdmin()) {
+            flash('You are not authorized to access this page.')->error();
+
+            return redirect('/events');
+        }
+
+        $events = Event::all();
+
+        return view('events.select-feature')->with('events', $events);
+    }
+
+    public function featured (Request $request)
+    {
+        if ($this->notAdmin()) {
+            flash('You are not authorized to access this page.')->error();
+
+            return redirect('/events');
+        }
+
+        $feature = WebContent::find(19);
+        
+        if ($feature != null) {
+            $feature->content = $request->id;
+        } else {
+            $feature = new WebContent;
+            $feature->content = $request->id;
+        }
+
+        $feature->save();
+
+        flash('Event Successfully Featured')->success();
+
+        return redirect('/events');
     }
 }
