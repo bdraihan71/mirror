@@ -4,26 +4,43 @@
     <br><br><br><br><br>
     <div class="container-fluid">
         <div class="row">
-            <h3>{{$event->name}}</h3>
+            <h3>{{$event == 0 ? "Eventless" : $event->name}}</h3>
         </div>
 
         <form action="/media/video/edit" method="POST" enctype="multipart/form-data">
-            <input type="hidden" name="id" value="{{$event->id}}">
+            <input type="hidden" name="id" value="{{$event == 0 ? $event : $event->id}}">
             @csrf
-            <div class="row">
-                @foreach ($event->videos as $video)
-                    <div class="col-md-4">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" width="560" height="315" src={!!$video->url!!} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            @if ($event == 0)
+                <div class="row">
+                    @foreach (App\Video::where('event_id', 0)->get() as $video)
+                        <div class="col-md-4">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" width="560" height="315" src={!!$video->url!!} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            </div>
+                            <br>
+                            <input type="text" name="url[]" value="{{$video->url}}" class="form-control">
+                            <br>
+                            <a href="/media/video/delete/{{$video->id}}" class="btn btn-warning w-100">Delete</a>
+                            <br><br><br>
                         </div>
-                        <br>
-                        <input type="text" name="url[]" value="{{$video->url}}" class="form-control">
-                        <br>
-                        <a href="/media/video/delete/{{$video->id}}" class="btn btn-warning w-100">Delete</a>
-                        <br><br><br>
-                    </div>
-                @endforeach
-            </div>
+                    @endforeach
+                </div>
+            @else
+                <div class="row">
+                    @foreach ($event->videos as $video)
+                        <div class="col-md-4">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" width="560" height="315" src={!!$video->url!!} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            </div>
+                            <br>
+                            <input type="text" name="url[]" value="{{$video->url}}" class="form-control">
+                            <br>
+                            <a href="/media/video/delete/{{$video->id}}" class="btn btn-warning w-100">Delete</a>
+                            <br><br><br>
+                        </div>
+                    @endforeach
+                </div>
+            @endif
 
             <h4 class="text-center">PLEASE PASTE THE YOUTUBE EMBED LINK</h4>
             <br>

@@ -14,6 +14,7 @@
                         <div class="col-md-9">
                             <select name="event" class="form-control">
                                 <option value="">Please select an event to edit its album</option>
+                                <option value="0">None</option>
                                 @foreach($events as $event)
                                     <option value="{{$event->id}}">{{$event->name}}</option>
                                 @endforeach

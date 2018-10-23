@@ -36,12 +36,6 @@ class MediaController extends Controller
             }
         }
 
-        if (sizeof($events) == 0) {
-            flash('Please create an event first')->error();
-
-            return redirect('/events/create');
-        }
-
         return view('media/photo-add')->with('events', $events);
     }
 
@@ -96,27 +90,52 @@ class MediaController extends Controller
         }
 
         $this->uploadImage($request->all);
-
-        $event = Event::find($request->id);
+        $url = '/media/photo/edit?event='.$request->id;
         $counter = 0;
 
-        foreach ($event->album as $album) {
-            $album->caption = $request->caption[$counter];
-            $album->save();
+        if ($request->id == 0) {
+            $albums = Album::where('event_id', 0)->get();
 
-            $counter++;
+            foreach ($albums as $album) {
+                $album->caption = $request->caption[$counter];
+                $album->save();
+    
+                $counter++;
+            }
+    
+            if ($request->hasfile('all')) {
+                $album = new Album;
+                $album->url = $this->uploadImage($request->all);
+                $album->event_id = 0;
+                $album->caption = $request->cap;
+    
+                $album->save();
+            }
+
+            flash('Updates successfully made')->success();
+
+            return redirect ($url."0");
+        } else {
+            $event = Event::find($request->id);
+
+            foreach ($event->album as $album) {
+                $album->caption = $request->caption[$counter];
+                $album->save();
+    
+                $counter++;
+            }
+    
+            if ($request->hasfile('all')) {
+                $album = new Album;
+                $album->url = $this->uploadImage($request->all);
+                $album->event_id = $request->id;
+                $album->caption = $request->cap;
+    
+                $album->save();
+            }
         }
 
-        if ($request->hasfile('all')) {
-            $album = new Album;
-            $album->url = $this->uploadImage($request->all);
-            $album->event_id = $request->id;
-            $album->caption = $request->cap;
-
-            $album->save();
-        }
-
-        $url = '/media/photo/edit?event='.$request->id;
+        
 
         flash('Updates successfully made')->success();
 
@@ -143,12 +162,6 @@ class MediaController extends Controller
         }
 
         $events = Event::orderBy('created_at', 'desc')->get();
-
-        if (count($events) == 0) {
-            flash('Please create an event first')->error();
-
-            return redirect('/events/create');
-        }
 
         return view('media/video-add')->with('events', $events);
     }
@@ -201,62 +214,125 @@ class MediaController extends Controller
             flash('You are not authorized to access this view')->error;
         }
 
-        $event = Event::find($request->id);
-        $counter = 0;
+        $rdurl;
 
-        foreach ($event->videos as $video) {
-            $url = explode(' ', $request->url[$counter]);
-            $i = 0;
-            $flag = false;
+        if ($request->id == 0) {
+            $rdurl = '/media/video/edit?event='.$request->id;
+        } else {
+            $rdurl = "/media/video/edit?event="."0";
+        }
 
-            for ($i = 0; $i < sizeof($url); $i++) {
-                if (strpos($url[$i], 'src') !== false) {
-                    break;
-                    $flag = true;
+        if ($request->id != 0) {
+            $event = Event::find($request->id);
+            $counter = 0;
+
+            foreach ($event->videos as $video) {
+                $url = explode(' ', $request->url[$counter]);
+                $i = 0;
+                $flag = false;
+
+                for ($i = 0; $i < sizeof($url); $i++) {
+                    if (strpos($url[$i], 'src') !== false) {
+                        break;
+                        $flag = true;
+                    }
                 }
+
+                if ($flag) {
+
+                    try {
+                        $video->url = $this->findSRC($request->url[$counter]);
+                    }
+                    catch (\Exception $e) {
+                        flash('Please enter an embedded link')->error();
+            
+                        return redirect ($rdurl);
+                    }
+
+                    $video->timestamps = false;
+                    $video->save();
+                }
+
+                $counter++;
             }
 
-            if ($flag) {
+            if ($request->new != null) {
+                $video = new Video;
 
                 try {
-                    $video->url = $this->findSRC($request->url[$counter]);
+                    $video->url = $this->findSRC($request->new);
                 }
                 catch (\Exception $e) {
                     flash('Please enter an embedded link')->error();
         
-                    return redirect ('/media/video/edit');
+                    return redirect ($rdurl);
                 }
 
+                $video->event_id = $request->id;
+                $video->featured = false;
                 $video->timestamps = false;
                 $video->save();
             }
+        } else {
+            $videos = Video::where('event_id', 0)->get();
+            $counter = 0;
+            
+            foreach ($videos as $video) {
+                $url = explode(' ', $request->url[$counter]);
+                $i = 0;
+                $flag = false;
 
-            $counter++;
-        }
+                for ($i = 0; $i < sizeof($url); $i++) {
+                    if (strpos($url[$i], 'src') !== false) {
+                        break;
+                        $flag = true;
+                    }
+                }
 
-        if ($request->new != null) {
-            $video = new Video;
+                if ($flag) {
 
-            try {
-                $video->url = $this->findSRC($request->new);
+                    try {
+                        $video->url = $this->findSRC($request->url[$counter]);
+                    }
+                    catch (\Exception $e) {
+                        flash('Please enter an embedded link')->error();
+            
+                        return redirect ($rdurl."0");
+                    }
+
+                    $video->timestamps = false;
+                    $video->save();
+                }
+
+                $counter++;
             }
-            catch (\Exception $e) {
-                flash('Please enter an embedded link')->error();
-    
-                return redirect ('/media/video/edit');
+
+            if ($request->new != null) {
+                $video = new Video;
+
+                try {
+                    $video->url = $this->findSRC($request->new);
+                }
+                catch (\Exception $e) {
+                    flash('Please enter an embedded link')->error();
+        
+                    return redirect ($rdurl."0");
+                }
+
+                $video->event_id = 0;
+                $video->featured = false;
+                $video->timestamps = false;
+                $video->save();
             }
-
-            $video->event_id = $request->id;
-            $video->featured = false;
-            $video->timestamps = false;
-            $video->save();
         }
-
-        $url = '/media/video/edit?event='.$request->id;
 
         flash('Updates successfully made')->success();
 
-        return redirect ($url);
+        if ($request->id == 0) {
+            return redirect ($rdurl."0");
+        } else {
+            return redirect ($rdurl);
+        }
     }
 
     public function deleteVideo (Request $request, $id)

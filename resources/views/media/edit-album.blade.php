@@ -4,23 +4,36 @@
     <br><br><br><br><br>
     <div class="container-fluid">
         <div class="row">
-            <h3>{{$event->name}}</h3>
+            <h3>{{$event == 0 ? "Eventless" : $event->name}}</h3>
         </div>
 
         <form action="/media/photo/edit" method="POST" enctype="multipart/form-data">
-            <input type="hidden" name="id" value="{{$event->id}}">
+            <input type="hidden" name="id" value="{{$event == 0 ? $event : $event->id}}">
             @csrf
             <div class="row">
-                @foreach ($event->album as $album)
-                    <div class="col-md-4">
-                        <img src="{{$album->url}}" class="img-fluid" alt="image">
-                        <br>
-                        <input type="text" class="form-control" name="caption[]" value="{{$album->caption}}" placeholder="Caption for image" id="">
-                        <br>
-                        <a href="/media/photo/delete/{{$album->id}}" class="btn btn-warning w-100">Delete</a>
-                        <br><br><br>
-                    </div>
-                @endforeach
+                @if ($event == 0)
+                    @foreach (App\Album::where('event_id', 0)->get() as $album)
+                        <div class="col-md-4">
+                            <img src="{{$album->url}}" class="img-fluid" alt="image">
+                            <br>
+                            <input type="text" class="form-control" name="caption[]" value="{{$album->caption}}" placeholder="Caption for image" id="">
+                            <br>
+                            <a href="/media/photo/delete/{{$album->id}}" class="btn btn-warning w-100">Delete</a>
+                            <br><br><br>
+                        </div>
+                    @endforeach
+                @else
+                    @foreach ($event->album as $album)
+                        <div class="col-md-4">
+                            <img src="{{$album->url}}" class="img-fluid" alt="image">
+                            <br>
+                            <input type="text" class="form-control" name="caption[]" value="{{$album->caption}}" placeholder="Caption for image" id="">
+                            <br>
+                            <a href="/media/photo/delete/{{$album->id}}" class="btn btn-warning w-100">Delete</a>
+                            <br><br><br>
+                        </div>
+                    @endforeach
+                @endif
             </div>
 
             <h4 class="text-center">ALL IMAGES HAVE TO BE OF 3:2 RATIO (376 x 195) AND OF MAX SIZE 2 MB</h4>
