@@ -28,7 +28,7 @@ Route::get('/profile/delete/{id}', 'ProfilesController@del')->middleware('auth')
 Route::get('/profile/delete', 'ProfilesController@delete')->middleware('auth');
 Route::get('/profile/delete/confirm', 'ProfilesController@destroy')->middleware('auth');
 Route::get('/profile/show-all', 'ProfilesController@showAll')->middleware('auth');
-Route::get('/user/verify/{token}', 'ProfilesController@verify')->middleware('auth');
+Route::get('/user/verify/{token}', 'ProfilesController@verify');
 
 //CMS Routes
 Route::get('/alter/index', 'CMSController@getIndex')->middleware('auth');
