@@ -60,7 +60,7 @@ class EventsController extends Controller
     public function showAll ($range)
     {
         $now = new Carbon;
-        $id = WebContent::find(19)->content;
+        $id = WebContent::find(19);
         $e = null;
 
         if ($id != null) {
