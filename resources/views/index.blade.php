@@ -120,77 +120,20 @@
     
     
     <div class="section">
-    
-        <div class="container-fluid what-we-do d-none d-md-block">
+        <div class="container-fluid what-we-do">
             <div class="row text-white">
-                <div class="col-md-1"></div>
-                <div class="col-md-10 wwd">
-                    <div class="row p-scroll-wwd">
-                        <div class="col-md-3"></div>
-                        <div class="col-md-3">
-                            <h5>{{$wwd[0]->content}}</h5>
-                            <div class="wwd-text">{!!$wwds[0]->content!!}</div>
-                        </div>
-                        <div class="col-md-3">
-                            <h5>{{$wwd[1]->content}}</h5>
-                            <div class="wwd-text">{!!$wwds[1]->content!!}</div>
-                        </div>
-                        <div class="col-md-3"></div>
-                        <div class="col-md-3"></div>
-                        <div class="col-md-3">
-                            <h5>{{$wwd[2]->content}}</h5>
-                            <div class="wwd-text">{!!$wwds[2]->content!!}</div>
-                        </div>
-                        <div class="col-md-3">
-                            <h5>{{$wwd[3]->content}}</h5>
-                            <div class="wwd-text">{!!$wwds[3]->content!!}</div>
-                        </div>
-                        <div class="col-md-3">
-                            <h5>{{$wwd[4]->content}}</h5>
-                            <div class="wwd-text">{!!$wwds[4]->content!!}</div>
-                        </div>
-                        <div class="col-md-3"></div>
+                <div class="col-md-3"></div>
+                <div class="col-md-8">
+                    <div class="owl-carousel wdwd-carousel">
+                        @foreach ($wwd as $header)
+                            <div>
+                                <h1 class="text-danger">{{$header->content}}</h1>
+                                <p>{!!$wwds[$loop->index]->content!!}</p>
+                            </div>
+                        @endforeach
                     </div>
+                    <div class="col-md-1"></div>
                 </div>
-                <div class="col-md-1"></div>
-            </div>
-        </div>
-        
-        
-        <div class="container-fluid what-we-do-xs d-block d-md-none">
-            <div class="row text-white">
-                <div class="col-md-1"></div>
-                <div class="col-md-10 wwd text-center">
-                    <div class="row p-scroll-wwd w-100">
-                        <br><br><br><br><br><br><br>
-                        <h5 class="wdwd-text-xs pt-0 pb-3">What Do We Do</h5>
-                        <div class="col-md-3"></div>
-                        <div class="col-md-3">
-                            <h4>{{$wwd[0]->content}}</h4>
-                            <div class="wwd-text">{!!$wwds[0]->content!!}</div>
-                        </div>
-                        <div class="col-md-3">
-                            <h4>{{$wwd[1]->content}}</h4>
-                            <div class="wwd-text">{!!$wwds[1]->content!!}</div>
-                        </div>
-                        <div class="col-md-3"></div>
-                        <div class="col-md-3"></div>
-                        <div class="col-md-3">
-                            <h4>{!!$wwd[2]->content!!}</h4>
-                            <div class="wwd-text">{!!$wwds[2]->content!!}</div>
-                        </div>
-                        <div class="col-md-3">
-                            <h4>{{$wwd[3]->content}}</h4>
-                            <div class="wwd-text">{!!$wwds[3]->content!!}</div>
-                        </div>
-                        <div class="col-md-3">
-                            <h4>{{$wwd[4]->content}}</h4>
-                            <div class="wwd-text">{!!$wwds[4]->content!!}</div>
-                        </div>
-                        <div class="col-md-3"></div>
-                    </div>
-                </div>
-                <div class="col-md-1"></div>
             </div>
         </div>
     </div>
@@ -365,5 +308,38 @@
 				}
 			});
 		});
-	</script>
+    </script>
+    
+    <script>
+        $(document).ready(function () {
+        
+            $('.wdwd-carousel').owlCarousel({
+                loop: true,
+                margin: 100,
+                responsiveClass: true,
+                autoplayTimeout: 2500,
+                center: true,
+    
+    
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: false,
+                        autoplay: true
+                    },
+                    600: {
+                        items: 2,
+                        nav: false,
+                        autoplay: true
+                    },
+                    1000: {
+                        items: 3,
+                        nav: false,
+                        autoplay: true
+                    }
+                }
+            });
+    
+        });
+    </script>
 @endsection
