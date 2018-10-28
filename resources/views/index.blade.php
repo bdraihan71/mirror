@@ -195,14 +195,14 @@
         </div>
     </div>
     
-    <div class="section white-bg" id="partners">
+    <div class="section" id="partners">
         <section class="partners py-1 text-center">
             <h1 class="text-danger">Partners</h1>
             <div class="container">
                 <div class="row">
                     <div class="owl-carousel partners-carousel">
                         @foreach($local_partners as $partner)
-                            <div class="card">
+                            <div class="">
                                 <img class="card-img-top" src="{{$partner->img}}" alt="Partner Logo">
                             </div>
                         @endforeach
@@ -226,7 +226,7 @@
                     @else
                         <div class="owl-carousel partners-carousel">
                             @foreach($int_partners as $partner)
-                                <div class="card">
+                                <div class="">
                                     <img class="card-img-top" src="{{$partner->img}}" alt="Partner Logo">
                                 </div>
                             @endforeach
