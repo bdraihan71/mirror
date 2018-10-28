@@ -64,7 +64,7 @@ class EventsController extends Controller
         $e = null;
 
         if ($id != null) {
-            $e = Event::find($id);
+            $e = Event::find($id->content);
         }
 
         
