@@ -65,21 +65,9 @@ class ProfilesController extends Controller
         $profile->fb_url = $request->fb_link;
         $profile->save();
 
-        $token = bcrypt(str_random(50));
-        
-        while (true) {
-            $verify = VerifyUser::where('token', $token)->first();
-
-            if ($verify == null) {
-                break;
-            } else {
-                $token = bcrypt(str_random(50));
-            }
-        }
-
         $verifyUser = VerifyUser::create([
             'user_id' => $user->id,
-            'token' => $token,
+            'token' => $user->id,
         ]);
 
         Auth::login($user);
