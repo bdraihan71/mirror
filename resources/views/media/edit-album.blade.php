@@ -4,14 +4,14 @@
     <br><br><br><br><br>
     <div class="container-fluid">
         <div class="row">
-            <h3>{{$event == 0 ? "Eventless" : $event->name}}</h3>
+            <h3>{{$event == null ? "Eventless" : $event->name}}</h3>
         </div>
 
         <form action="/media/photo/edit" method="POST" enctype="multipart/form-data">
-            <input type="hidden" name="id" value="{{$event == 0 ? $event : $event->id}}">
+            <input type="hidden" name="id" value="{{$event == null ? 0 : $event->id}}">
             @csrf
             <div class="row">
-                @if ($event == 0)
+                @if ($event == null)
                     @foreach (App\Album::where('event_id', 0)->get() as $album)
                         <div class="col-md-4">
                             <img src="{{$album->url}}" class="img-fluid" alt="image">

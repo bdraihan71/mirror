@@ -79,7 +79,13 @@ class MediaController extends Controller
         if ($request->event == null) {
             return view('media/event-select')->with('events', Event::all())->with('url', '/media/photo/edit');
         } else {
-            return view('media/edit-album')->with('event', Event::find($request->event));
+            $event = null;
+
+            if ($request->event != 0) {
+                $event = Event::find($request->event);
+            }
+
+            return view('media/edit-album')->with('event', $event);
         }
     }
 
@@ -204,7 +210,13 @@ class MediaController extends Controller
         if ($request->event == null) {
             return view('media/event-select')->with('events', Event::all())->with('url', '/media/video/edit');
         } else {
-            return view('media/edit-video')->with('event', Event::find($request->event));
+            $event = null;
+
+            if ($request->event != 0) {
+                $event = Event::find($request->event);
+            }
+
+            return view('media/edit-video')->with('event', $event);
         }
     }
 
