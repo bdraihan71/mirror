@@ -67,8 +67,6 @@ class EventsController extends Controller
             $e = Event::find($id->content);
         }
 
-        
-
         if (auth()->user() == null) {
             $events = Event::where('date_start', '>=', $now->copy()->format('Y-m-d'))->orderBy('date_start')->whereNull('deleted')->get();
 
@@ -422,6 +420,8 @@ class EventsController extends Controller
             $feature = new WebContent;
             $feature->content = $request->id;
         }
+
+        dd($request->id, $feature);
 
         $feature->save();
 
