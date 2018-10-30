@@ -414,15 +414,11 @@ class EventsController extends Controller
 
         $feature = WebContent::find(19);
         
-        if ($feature != null) {
-            $feature->content = $request->id;
-        } else {
+        if ($feature == null) {
             $feature = new WebContent;
-            $feature->content = $request->id;
         }
 
-        dd($request->id, $feature);
-
+        $feature->content = $request->event;
         $feature->save();
 
         flash('Event Successfully Featured')->success();
