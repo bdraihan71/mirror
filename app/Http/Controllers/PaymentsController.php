@@ -12,7 +12,7 @@ use App\EventAnswer;
 use App\Address;
 use GuzzleHttp\Client;
 use Mail;
-use App\TicketPurchase as vMail;
+use App\Mail\TicketPurchase as vMail;
 
 class PaymentsController extends Controller
 {   
