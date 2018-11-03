@@ -54,26 +54,17 @@
     </header>
 
     @if (count($album))
-        <style>
-            .c-hero-flex__item1 {
-                background: #222 url("<?php echo $album[0]; ?>") no-repeat center center;
-            }
-            .c-hero-flex__item2 {
-                background: #222 url("<?php echo $album[1]; ?>") no-repeat center center;
-            }
-            .c-hero-flex__item3 {
-                background: #222 url("<?php echo $album[2]; ?>") no-repeat center center;
-            }
-            .c-hero-flex__item4 {
-                background: #222 url("<?php echo $album[3]; ?>") no-repeat center center;
-            }
-            .c-hero-flex__item5 {
-                background: #222 url("<?php echo $album[4]; ?>") no-repeat center center;
-            }
-            .c-hero-flex__item6 {
-                background: #222 url("<?php echo $album[5]; ?>") no-repeat center center;
-            }
-        </style>
+        @for($i = 0; $i < count($album); $i++)
+            <style>
+                .c-hero-flex__item{{($i + 1)}} {
+                    background: #222 url("<?php echo $album[{{$i}}]; ?>") no-repeat center center;
+                }
+            </style>
+
+            @if($i == 5)
+                @break
+            @endif
+        @endfor
 
         <section id="gallery" class="gallery">
             <div class="container-fluid d-none d-sm-block">
