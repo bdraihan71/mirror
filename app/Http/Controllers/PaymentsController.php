@@ -98,9 +98,8 @@ class PaymentsController extends Controller
 
             return redirect('/');
         } else {
-            $ticket = Ticket::find($id);
-            dd($ticket->event);
-            $answers = EventAnswer::where('event_id', $ticket->event->id)->where('user_id', auth()->user()->id)->get();
+            $ticket = Ticket::where('ticket_type_id', $id)->where('user_id', $user)->first();
+            $answers = EventAnswer::where('event_id', $id)->where('user_id', auth()->user()->id)->get();
 
             foreach ($answers as $answer) {
                 $answer->delete();
