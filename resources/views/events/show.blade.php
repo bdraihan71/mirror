@@ -57,7 +57,7 @@
         @for($i = 0; $i < count($album); $i++)
             <style>
                 .c-hero-flex__item{{($i + 1)}} {
-                    background: #222 url("<?php echo $album[{{$i}}]; ?>") no-repeat center center;
+                    background: #222 url("<?php echo $album[$i]->url; ?>") no-repeat center center;
                 }
             </style>
 
