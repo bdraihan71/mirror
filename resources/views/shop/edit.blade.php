@@ -50,7 +50,7 @@
                             </div>
                             <div class="form-group col-md-10">
                                 <div>Please upload images with ratio of 3:2, e.g. 290 x 193 | max image size is 2 MB</div><br>
-                                <input type="file" class="form-control" name="img">
+                                <input type="file" class="form-control" name="img" accept="image/*">
                                 <img src="{{$product->img}}" class="img-fluid" alt="Product Image">
                             </div>
                         </div>

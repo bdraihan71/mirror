@@ -44,7 +44,7 @@
                     <label for="all" class="form-label-control">Add file</label>
                 </div>
                 <div class="col-md-10">
-                    <input type="file" class="form-control" name="all">
+                    <input type="file" class="form-control" name="all" accept="image/*">
                     <br>
                     <input type="text" class="form-control" name="cap" placeholder="Image caption">
                 </div>

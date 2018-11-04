@@ -40,7 +40,7 @@
                             </div>
                             <div class="form-group col-md-10">
                                 <div>Please upload image of 150 x 150 | max image size is 2 MB</div>
-                                <input type="file" class="form-control" name="url">
+                                <input type="file" class="form-control" name="url" accept="image/*">
                                 <img src="{{$partner->img}}" class="img-fluid" alt="Partner logo">
                             </div>
                         </div>
