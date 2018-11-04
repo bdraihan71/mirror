@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Event;
 use App\Ticket;
+use App\IssueTicket;
 
 class AnalyticsController extends Controller
 {
@@ -51,6 +52,23 @@ class AnalyticsController extends Controller
 
         $ticket->save();
         $url = '/analytics/events/'.$ticket->event->id;
+
+        return redirect($url);
+    }
+
+    public function issuePresent (Request $request, $id)
+    {
+        $issue = IssueTicket::find($id);
+
+        if ($issue->present) {
+            $issue->present = false;
+        } else {
+            $issue->present = true;
+        }
+
+        $issue->save();
+
+        $url = '/analytics/events/'.$issue->event->id;
 
         return redirect($url);
     }

@@ -8,6 +8,10 @@
     </div>
 
     <div class="row">
+        <h3 class="page-header">Purchased Tickets</h3>
+    </div>
+
+    <div class="row">
         <div class="col">
             Purchasee Information
         </div>
@@ -54,6 +58,31 @@
                     <a href="/analytics/present/{{$ticket->id}}" class="btn btn-danger">Absent</a>
                 @else
                     <a href="/analytics/present/{{$ticket->id}}" class="btn btn-primary">Present</a>
+                @endif
+            </div>
+        </div>
+    @endforeach
+
+    <div class="row">
+        <h3 class="page-header">Issued Tickets</h3>
+    </div>
+
+    @foreach($event->issues as $issue)
+        @if ($issue->present == true)
+            <div class="row bor-b present">
+        @else
+            <div class="row bor-b">
+        @endif
+            <div class="col">{{$issue->name}}</div>
+            <div class="col">{{$issue->email}}</div>
+            <div class="col">{{$issue->company}}</div>
+            <div class="col">{{$issue->designation}}</div>
+            <div class="col">{{$issue->phone}}</div>
+            <div class="col-1 text-center">
+                @if ($issue->present == true)
+                    <a href="/analytics/present/issue/{{$issue->id}}" class="btn btn-danger">Absent</a>
+                @else
+                    <a href="/analytics/present/issue/{{$issue->id}}" class="btn btn-primary">Present</a>
                 @endif
             </div>
         </div>
