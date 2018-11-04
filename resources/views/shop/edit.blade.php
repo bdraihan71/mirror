@@ -40,7 +40,7 @@
                                 <label>Description *</label>
                             </div>
                             <div class="form-group col-md-10">
-                                <input type="text" id="article-ckeditor" class="form-control contact-form" name="description" value="{!!$product->description!!}">
+                                <textarea name="description" id="article-ckeditor" class="form-control" cols="30" rows="10">{!!$product->description!!}</textarea>
                             </div>
                         </div>
                         
