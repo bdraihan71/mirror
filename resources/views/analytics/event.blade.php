@@ -63,8 +63,28 @@
         </div>
     @endforeach
 
+    <br><br>
+
     <div class="row">
         <h3 class="page-header">Issued Tickets</h3>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            Name
+        </div>
+        <div class="col">
+            Email
+        </div>
+        <div class="col">
+            Company
+        </div>
+        <div class="col">
+            Designation
+        </div>
+        <div class="col">
+            Phone
+        </div>
     </div>
 
     @foreach($event->issues as $issue)
