@@ -33,7 +33,7 @@
                     <p>{{$user->profile->f_name.' '.$user->profile->m_name.' '.$user->profile->l_name}}</p>
                     <p>{{$user->email}}</p>
                     <p>{{$user->profile->phone}}</p>
-                    <p>{{$purchasaddress}}</p>
+                    <p>{{$purchase->address}}</p>
                     <p>{{$purchase->division}}</p>
                     <p>Delivery Contact: {{$purchase->phone}}</p>
                     <p>Payment Method: {{$purchase->method}}</p>
