@@ -30,6 +30,6 @@ class ProductPurchase extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.product-purchase');
+        return $this->view('emails.product-purchase')->with('purchase', $this->purchase);
     }
 }

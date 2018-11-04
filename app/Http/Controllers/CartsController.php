@@ -8,7 +8,8 @@ use App\Product;
 use App\Purchase;
 use Carbon\Carbon;
 use GuzzleHttp\Client;
-use App\Mail\ProductPurchase as mail;
+use Mail;
+use App\Mail\ProductPurchase as vMail;
 
 class CartsController extends Controller
 {
@@ -123,7 +124,7 @@ class CartsController extends Controller
                 $product->save();
             }
 
-            Mail::to(auth()->user()->email)->send(new mail($purchase));
+            Mail::to(auth()->user()->email)->send(new vMail($purchase));
 
             flash('You have successfully bought the product(s)')->success();
 
@@ -200,7 +201,7 @@ class CartsController extends Controller
                 $product->save();
             }
 
-            Mail::to(auth()->user()->email)->send(new mail($purchase));
+            Mail::to(auth()->user()->email)->send(new vMail($purchase));
 
             return redirect('/home');
         } else {
