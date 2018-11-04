@@ -21,12 +21,21 @@
         <tbody>
             @foreach($tickets as $ticket)
                 <tr>
-                    <td>{{$ticket->user->profile->f_name.' '.$ticket->user->profile->m_name.' '.$ticket->user->profile->l_name}}</td>
-                    <td>{{$ticket->user->email}}</td>
-                    <td>{{$ticket->user->profile->phone}}</td>
-                    <td>{{$ticket->type->name}}</td>
-                    <td>{{$ticket->type->price}}</td>
-                    <td> </td>
+                    @if ($ticket->user == null)
+                        <td>Unpurchased</td>
+                        <td>Unpurchased</td>
+                        <td>Unpurchased</td>
+                        <td>{{$ticket->type->name}}</td>
+                        <td>{{$ticket->type->price}}</td>
+                        <td> </td>
+                    @else
+                        <td>{{$ticket->user->profile->f_name.' '.$ticket->user->profile->m_name.' '.$ticket->user->profile->l_name}}</td>
+                        <td>{{$ticket->user->email}}</td>
+                        <td>{{$ticket->user->profile->phone}}</td>
+                        <td>{{$ticket->type->name}}</td>
+                        <td>{{$ticket->type->price}}</td>
+                        <td> </td>
+                    @endif
                 </tr>
             @endforeach
         </tbody>
