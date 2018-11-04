@@ -151,7 +151,7 @@ class MediaController extends Controller
     public function deletePhoto (Request $request, $id)
     {
         $album = Album::find($id);
-        $url = '/media/photo/edit?event='.$album->event->id;
+        $url = '/media/photo/edit?event='.$album->event_id;
         $album->delete();
 
         flash('Photo successfully deleted');
@@ -350,7 +350,7 @@ class MediaController extends Controller
     public function deleteVideo (Request $request, $id)
     {
         $video = Video::find($id);
-        $url = '/media/video/edit?event='.$video->event->id;
+        $url = '/media/video/edit?event='.$video->event_id;
         $video->delete();
 
         flash('Video successfully deleted');
