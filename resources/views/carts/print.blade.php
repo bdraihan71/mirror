@@ -33,8 +33,10 @@
                     <p>{{$user->profile->f_name.' '.$user->profile->m_name.' '.$user->profile->l_name}}</p>
                     <p>{{$user->email}}</p>
                     <p>{{$user->profile->phone}}</p>
-                    <p>{{$user->profile->address}}</p>
-                    <p>{{$user->profile->division}}</p>
+                    <p>{{$purchasaddress}}</p>
+                    <p>{{$purchase->division}}</p>
+                    <p>Delivery Contact: {{$purchase->phone}}</p>
+                    <p>Payment Method: {{$purchase->method}}</p>
                 </div>
                 <div class="col-md-3 ticket-text-line-height">
                     <img class="img-fluid" src="/frontend/img/favicon.png">
