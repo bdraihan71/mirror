@@ -16,7 +16,7 @@
                                 <label>First Name *</label>
                             </div>
                             <div class="form-group col-md-8">
-                                <input type="firstname" maxlength="80" class="form-control contact-form input-container" name="f_name" placeholder="First Name" required>
+                                <input type="firstname" maxlength="80" class="form-control contact-form input-container" name="f_name" value="{{ old('f_name') }}" placeholder="First Name" required>
                             </div>
                         </div>
 
@@ -25,7 +25,7 @@
                                 <label>Middle Name</label>
                             </div>
                             <div class="form-group col-md-8">
-                                <input type="text" maxlength="80" class="form-control contact-form input-container" name="m_name" placeholder="Middle Name">
+                                <input type="text" maxlength="80" class="form-control contact-form input-container" name="m_name" value="{{ old('m_name') }}" placeholder="Middle Name">
                             </div>
                         </div>
 
@@ -34,7 +34,7 @@
                                 <label>Last Name *</label>
                             </div>
                             <div class="form-group col-md-8">
-                                <input type="lastname" maxlength="80" class="input-container form-control contact-form" name="l_name" placeholder="Last Name" required>
+                                <input type="lastname" maxlength="80" class="input-container form-control contact-form" name="l_name" value="{{ old('l_name') }}" placeholder="Last Name" required>
                             </div>
                         </div>
 
@@ -43,7 +43,7 @@
                                 <label>Date of Birth *</label>
                             </div>
                             <div class="form-group col-md-8">
-                                <input type="date" class="input-container form-control contact-form" name="dob" placeholder="Date of Birth" required>
+                                <input type="date" class="input-container form-control contact-form" name="dob" value="{{ old('dob') }}" placeholder="Date of Birth" required>
                             </div>
                         </div>
 
@@ -53,7 +53,11 @@
                             </div>
                             <div class="form-group col-md-8">
                                 <select name="gender" class="input-container form-control contact-form" required>
-                                    <option value="">Please select a gender</option>
+                                    @if (old('gender') != null)
+                                        <option value="{{old('gender')}}">{{ucfirst(old('gender'))}}</option>
+                                    @else
+                                        <option value="">Please select a gender</option>
+                                    @endif
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
                                     <option value="other">Other</option>
@@ -66,7 +70,7 @@
                                 <label>Email Address *</label>
                             </div>
                             <div class="form-group col-md-8">
-                                <input type="email" maxlength="250" class="form-control contact-form" name="email" placeholder="Email address" required>
+                                <input type="email" maxlength="250" class="form-control contact-form" name="email" value="{{ old('email') }}" placeholder="Email address" required>
                             </div>
                         </div>
 
@@ -98,7 +102,7 @@
                                 <label>Phone *</label>
                             </div>
                             <div class="form-group col-md-8">
-                                <input type="number" maxlength="14" class="form-control contact-form" name="phone" placeholder="+880**********" required>
+                                <input type="number" maxlength="14" class="form-control contact-form" name="phone" value="{{ old('phone') }}" placeholder="+880**********" required>
                             </div>
                         </div>
                         
@@ -107,7 +111,7 @@
                                 <label>FB link</label>
                             </div>
                             <div class="form-group col-md-8">
-                                <input type="text" class="form-control contact-form" name="fb_link" placeholder="">
+                                <input type="text" class="form-control contact-form" name="fb_link" value="{{ old('fb_link') }}" placeholder="">
                             </div>
                         </div>
                         

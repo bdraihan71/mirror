@@ -52,7 +52,9 @@ class ProfilesController extends Controller
         if ($request->password != $request->confirmed_password) {
             flash('The passwords do not match.')->error();
 
-            return redirect('/register')->with('request', $request);
+            $this->validate($request, [
+                'Passwords' => 'required',
+            ]);
         }
 
         $user->email = $request->email;
