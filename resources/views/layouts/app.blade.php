@@ -32,13 +32,13 @@
 
 <body class="black-bg">
     <div class="container-fluid">
-        @include('flash::message')
-        @include('layouts.messages')
 
         @if (Request::is('/'))
             @yield('content')
         @else
             @include('layouts.nav')
+            @include('flash::message')
+            @include('layouts.messages')
             @yield('content')
             @include('layouts.footer')
         @endif
