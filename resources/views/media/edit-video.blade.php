@@ -18,7 +18,7 @@
                                 <iframe class="embed-responsive-item" width="560" height="315" src={!!$video->url!!} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                             </div>
                             <br>
-                            <input type="text" name="url[]" value="{{$video->url}}" class="form-control">
+                            <input type="text" name="url[]" value="{{ old('url'.$loop->index) == null ? $video->url : old('url'.$loop->index) }}" class="form-control">
                             <br>
                             <a href="/media/video/delete/{{$video->id}}" class="btn btn-warning w-100">Delete</a>
                             <br><br><br>
@@ -33,7 +33,7 @@
                                 <iframe class="embed-responsive-item" width="560" height="315" src={!!$video->url!!} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                             </div>
                             <br>
-                            <input type="text" name="url[]" value="{{$video->url}}" class="form-control">
+                            <input type="text" name="url[]" value="{{ old('url'.$loop->index) == null ? $video->url : old('url'.$loop->index) }}" class="form-control">
                             <br>
                             <a href="/media/video/delete/{{$video->id}}" class="btn btn-warning w-100">Delete</a>
                             <br><br><br>

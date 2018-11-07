@@ -8,7 +8,7 @@
                 <div class="col-md-4"></div>
                 <div class="col-md-4">
                     <label for="email" class="form-label-control">Registered Email Address</label> <br>
-                    <input type="email" name="email" class="form-control">
+                    <input type="email" value="{{ old('email') }}" name="email" class="form-control">
                 </div>
                 <div class="col-md-4"></div>
 

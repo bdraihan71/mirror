@@ -57,7 +57,7 @@
                     <p class="text-white">{{$user->profile->phone}}</p>
                     <form action="/profile/phone" method="POST">
                         @csrf
-                        <input type="text" maxlength="14" name="phone" class="form-control" value="{{$user->profile->phone}}" required>
+                        <input type="text" maxlength="14" name="phone" class="form-control" value="{{ old('phone') == null ? $user->profile->phone : old('phone') }}" required>
                         <br>
                         <button type="submit" class="btn btn-outline-danger">Update</button>
                     </form>
@@ -70,7 +70,7 @@
                     <p class="text-white">{{$user->profile->fb_url}}</p>
                     <form action="/profile/facebook" method="POST">
                         @csrf
-                        <input type="text" name="fb_url" class="form-control" value="{{$user->profile->fb_url}}">
+                        <input type="text" name="fb_url" class="form-control" value="{{ old('fb_url') == null ? $user->profile->fb_url : old('fb_url') }}">
                         <br>
                         <button type="submit" class="btn btn-outline-danger">Update</button>
                     </form>

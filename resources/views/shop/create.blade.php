@@ -13,7 +13,7 @@
                                 <label class="">Name *</label>
                             </div>
                             <div class="form-group col-md-10">
-                                <input type="text" class="form-control contact-form input-container" name="name" placeholder="Name of the product" required>
+                                <input type="text" class="form-control contact-form input-container" name="name" value="{{ old('name') }}" placeholder="Name of the product" required>
                             </div>
                         </div>
 
@@ -22,7 +22,7 @@
                                 <label>Price in BDT *</label>
                             </div>
                             <div class="form-group col-md-10">
-                                <input type="number" class="input-container form-control contact-form" name="price" placeholder="Price of the product" required>
+                                <input type="number" class="input-container form-control contact-form" name="price" value="{{ old('price') }}" placeholder="Price of the product" required>
                             </div>
                         </div>
 
@@ -31,7 +31,7 @@
                                 <label>Quantity *</label>
                             </div>
                             <div class="form-group col-md-10">
-                                <input type="number" class="form-control contact-form" name="quantity" placeholder="Quantity of the product" required>
+                                <input type="number" class="form-control contact-form" name="quantity" value="{{ old('quantity') }}" placeholder="Quantity of the product" required>
                             </div>
                         </div>
 

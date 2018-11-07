@@ -32,6 +32,19 @@ class ProfilesController extends Controller
             return redirect('/login');
         }
 
+        $this->validate($request, [
+            'f_name' => 'required',
+            'm_name' => 'nullable',
+            'l_name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            'confirmed_password' => 'required',
+            'gender' => 'required|in:male,female,other',
+            'confirmed_password' => 'required',
+            'dob' => 'required',
+            'phone' => 'required|digits_between:11,14'
+        ]);
+
         $now = new Carbon;
         $dob = Carbon::parse($request->dob);
 

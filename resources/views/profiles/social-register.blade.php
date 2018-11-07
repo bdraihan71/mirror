@@ -17,7 +17,7 @@
                                     <label>Phone number</label>
                                 </div>
                                 <div class="form-group col-md-8">
-                                    <input type="number" class="input-container black-bg form-control" name="phone" placeholder="+880**********" required autofocus>
+                                    <input type="number" class="input-container black-bg form-control" name="phone" value="{{ old('phone') }}" placeholder="+880**********" required autofocus>
                                 </div>
                             </div>
 
@@ -26,7 +26,7 @@
                                     <label>Date of Birth *</label>
                                 </div>
                                 <div class="form-group col-md-8">
-                                    <input type="date" class="input-container form-control contact-form" name="dob" placeholder="Date of Birth" required>
+                                    <input type="date" class="input-container form-control contact-form" name="dob" value="{{ old('dob') }}" placeholder="Date of Birth" required>
                                 </div>
                             </div>
 

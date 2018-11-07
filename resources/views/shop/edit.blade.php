@@ -13,7 +13,7 @@
                                 <label class="">Name *</label>
                             </div>
                             <div class="form-group col-md-10">
-                                <input type="text" class="form-control contact-form input-container" name="name" placeholder="Name of the product" value="{{$product->name}}" required>
+                                <input type="text" class="form-control contact-form input-container" name="name" placeholder="Name of the product" value="{{ old('name') == null ? $product->name : old('name') }}" required>
                             </div>
                         </div>
 
@@ -22,7 +22,7 @@
                                 <label>Price in BDT *</label>
                             </div>
                             <div class="form-group col-md-10">
-                                <input type="number" class="input-container form-control contact-form" name="price" placeholder="Price of the product" value="{{$product->price}}" required>
+                                <input type="number" class="input-container form-control contact-form" name="price" placeholder="Price of the product" value="{{ old('price') == null ? $product->price : old('price') }}" required>
                             </div>
                         </div>
 
@@ -31,7 +31,7 @@
                                 <label>Quantity *</label>
                             </div>
                             <div class="form-group col-md-10">
-                                <input type="text" class="form-control contact-form" name="quantity" placeholder="Quantity of the product" value="{{$product->quantity}}" required>
+                                <input type="text" class="form-control contact-form" name="quantity" placeholder="Quantity of the product" value="{{ old('quantity') == null ? $product->quantity : old('quantity') }}" required>
                             </div>
                         </div>
 
@@ -40,7 +40,7 @@
                                 <label>Description *</label>
                             </div>
                             <div class="form-group col-md-10">
-                                <textarea name="description" id="article-ckeditor" class="form-control" cols="30" rows="10">{!!$product->description!!}</textarea>
+                                <textarea name="description" id="article-ckeditor" class="form-control" cols="30" rows="10">{!! old('description') == null ? $product->description : old('description') !!}</textarea>
                             </div>
                         </div>
                         

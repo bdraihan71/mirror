@@ -29,7 +29,7 @@
                                 <label>Issued To</label>
                             </div>
                             <div class="form-group col-md-8">
-                                <input type="text" class="form-control contact-form input-container" name="name" placeholder="Name of the person ticket is being issued to">
+                                <input type="text" class="form-control contact-form input-container" name="name" value="{{ old('name') }}" placeholder="Name of the person ticket is being issued to">
                             </div>
                         </div>
 
@@ -38,7 +38,7 @@
                                 <label>Email Address</label>
                             </div>
                             <div class="form-group col-md-8">
-                                <input type="email" class="form-control contact-form input-container" name="email" placeholder="Email address of the person">
+                                <input type="email" class="form-control contact-form input-container" name="email" value="{{ old('email') }}" placeholder="Email address of the person">
                             </div>
                         </div>
 
@@ -47,7 +47,7 @@
                                 <label>Phone</label>
                             </div>
                             <div class="form-group col-md-8">
-                                <input type="text" class="form-control contact-form input-container" name="phone" placeholder="Phone number of the person">
+                                <input type="text" class="form-control contact-form input-container" name="phone" value="{{ old('phone') }}" placeholder="Phone number of the person">
                             </div>
                         </div>
 
@@ -56,7 +56,7 @@
                                 <label>Company</label>
                             </div>
                             <div class="form-group col-md-8">
-                                <input type="text" class="form-control contact-form input-container" name="company" placeholder="Company of employment of the person">
+                                <input type="text" class="form-control contact-form input-container" name="company" value="{{ old('company') }}" placeholder="Company of employment of the person">
                             </div>
                         </div>
                         
@@ -65,7 +65,7 @@
                                 <label>Designation</label>
                             </div>
                             <div class="form-group col-md-8">
-                                <input type="text" class="form-control contact-form input-container" name="designation" placeholder="Designation of the person">
+                                <input type="text" class="form-control contact-form input-container" name="designation" value="{{ old('designation') }}" placeholder="Designation of the person">
                             </div>
                         </div>
 

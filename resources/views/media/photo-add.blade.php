@@ -32,7 +32,7 @@
                         <div class="col-md-9">
                             <input required type="file" class="form-control" name="url[]">
                             <br>
-                            <input type="text" name="caption[]" class="form-control" required placeholder="Please provide a caption for the photograph">
+                            <input type="text" name="caption[]" value="{{ old('caption.0') }}" class="form-control" required placeholder="Please provide a caption for the photograph">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -42,7 +42,7 @@
                         <div class="col-md-9">
                             <input required type="file" class="form-control" name="url[]">
                             <br>
-                            <input type="text" name="caption[]" class="form-control" required placeholder="Please provide a caption for the photograph">
+                            <input type="text" name="caption[]" value="{{ old('caption.1') }}" class="form-control" required placeholder="Please provide a caption for the photograph">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -52,7 +52,7 @@
                         <div class="col-md-9">
                             <input required type="file" class="form-control" name="url[]">
                             <br>
-                            <input type="text" name="caption[]" class="form-control" required placeholder="Please provide a caption for the photograph">
+                            <input type="text" name="caption[]" value="{{ old('caption.2') }}" class="form-control" required placeholder="Please provide a caption for the photograph">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -62,7 +62,7 @@
                         <div class="col-md-9">
                             <input required type="file" class="form-control" name="url[]">
                             <br>
-                            <input type="text" name="caption[]" class="form-control" required placeholder="Please provide a caption for the photograph">
+                            <input type="text" name="caption[]" value="{{ old('caption.3') }}" class="form-control" required placeholder="Please provide a caption for the photograph">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -72,7 +72,7 @@
                         <div class="col-md-9">
                             <input required type="file" class="form-control" name="url[]">
                             <br>
-                            <input type="text" name="caption[]" class="form-control" required placeholder="Please provide a caption for the photograph">
+                            <input type="text" name="caption[]" value="{{ old('caption.4') }}" class="form-control" required placeholder="Please provide a caption for the photograph">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -82,7 +82,7 @@
                         <div class="col-md-9">
                             <input required type="file" class="form-control" name="url[]">
                             <br>
-                            <input type="text" name="caption[]" class="form-control" required placeholder="Please provide a caption for the photograph">
+                            <input type="text" name="caption[]" value="{{ old('caption.5') }}" class="form-control" required placeholder="Please provide a caption for the photograph">
                         </div>
                     </div>
                     <button class="btn btn-danger w-100" type="submit">Submit</button>

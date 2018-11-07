@@ -43,7 +43,7 @@
         <div class="row">
             <div class="col-md-3  text-right  form-label-control">Ecube Tagline</div>
             <div class="col-md-7">
-                <input type="text" class="form-control" name="tagline" value="{{ $contents[3]->content }}" placeholder="Place the current value here">
+                <input type="text" class="form-control" name="tagline" value="{{ old('tagline') == null ? $contents[3]->content : old('tagline') }}" placeholder="Place the current value here">
             </div>
         </div>
 
@@ -53,7 +53,7 @@
             <div class="col-md-3  text-right  form-label-control">Ecube Description</div>
             <div class="col-md-7">
                 <div><i>Max 450 characters</i></div><br>
-                <textarea name="description" class="form-control" id="article-ckeditor" cols="30" rows="10">{{ $contents[4]->content }}</textarea>
+                <textarea name="description" class="form-control" id="article-ckeditor" cols="30" rows="10">{{ old('description') == null ? $contents[4]->content : old('description') }}</textarea>
             </div>
         </div>
         
@@ -62,7 +62,7 @@
         <div class="row">
             <div class="col-md-3  text-right  form-label-control">What we do Title 1</div>
             <div class="col-md-7">
-                <input type="text" class="form-control" name="wwd[]" value="{{ $contents[5]->content }}" placeholder="What we do title">
+                <input type="text" class="form-control" name="wwd[]" value="{{ old('wwd.0') == null ? $contents[5]->content : old('wwd.0') }}" placeholder="What we do title">
             </div>
         </div>
         
@@ -72,7 +72,7 @@
             <div class="col-md-3  text-right  form-label-control">What we do string 1</div>
             <div class="col-md-7">
                 <div><i>Max 90 characters</i></div><br>
-                <textarea name="wwds[]" id="editor1" class="form-control ckeditor" cols="30" rows="10">{{ $contents[10]->content }}</textarea>
+                <textarea name="wwds[]" id="editor1" class="form-control ckeditor" cols="30" rows="10">{{ old('wwds.0') == null ? $contents[10]->content : old('wwds.0') }}</textarea>
                 <script type="text/javascript">
                     CKEDITOR.replace( 'editor1' );
                     CKEDITOR.add            
@@ -85,7 +85,7 @@
         <div class="row">
             <div class="col-md-3  text-right  form-label-control">What we do Title 2</div>
             <div class="col-md-7">
-                <input type="text" class="form-control" name="wwd[]" value="{{ $contents[6]->content }}" placeholder="What we do title">
+                <input type="text" class="form-control" name="wwd[]" value="{{ old('wwd.1') == null ? $contents[6]->content : old('wwd.1') }}" placeholder="What we do title">
             </div>
         </div>
         
@@ -95,7 +95,7 @@
             <div class="col-md-3  text-right  form-label-control">What we do string 2</div>
             <div class="col-md-7">
                 <div><i>Max 90 characters</i></div><br>
-                <textarea name="wwds[]" id="editor2" class="form-control ckeditor" cols="30" rows="10">{{ $contents[11]->content }}</textarea>
+                <textarea name="wwds[]" id="editor2" class="form-control ckeditor" cols="30" rows="10">{{ old('wwds.1') == null ? $contents[1]->content : old('wwds.1') }}</textarea>
                 <script type="text/javascript">
                     CKEDITOR.replace( 'editor2' );
                     CKEDITOR.add            
@@ -108,7 +108,7 @@
         <div class="row">
             <div class="col-md-3  text-right  form-label-control">What we do Title 3</div>
             <div class="col-md-7">
-                <input type="text" name="wwd[]" class="form-control" value="{{ $contents[7]->content }}" placeholder="What we do title">
+                <input type="text" name="wwd[]" class="form-control" value="{{ old('wwd.2') == null ? $contents[7]->content : old('wwd.2') }}" placeholder="What we do title">
             </div>
         </div>
         
@@ -118,7 +118,7 @@
             <div class="col-md-3  text-right  form-label-control">What we do string 3</div>
             <div class="col-md-7">
                 <div><i>Max 90 characters</i></div><br>
-                <textarea name="wwds[]" id="editor3" class="form-control ckeditor" cols="30" rows="10">{{ $contents[12]->content }}</textarea>
+                <textarea name="wwds[]" id="editor3" class="form-control ckeditor" cols="30" rows="10">{{ old('wwds.2') == null ? $contents[12]->content : old('wwds.2') }}</textarea>
                 <script type="text/javascript">
                     CKEDITOR.replace( 'editor3' );
                     CKEDITOR.add            
@@ -131,7 +131,7 @@
         <div class="row">
             <div class="col-md-3  text-right  form-label-control">What we do Title 4</div>
             <div class="col-md-7">
-                <input type="text" class="form-control ckeditor" name="wwd[]" value="{{ $contents[8]->content }}" placeholder="What we do title">
+                <input type="text" class="form-control ckeditor" name="wwd[]" value="{{ old('wwd.3') == null ? $contents[8]->content : old('wwd.3') }}" placeholder="What we do title">
             </div>
         </div>
         
@@ -141,7 +141,7 @@
             <div class="col-md-3  text-right  form-label-control">What we do string 4</div>
             <div class="col-md-7">
                 <div><i>Max 90 characters</i></div><br>
-                <textarea name="wwds[]" id="editor4" class="form-control ckeditor" cols="30" rows="10">{{ $contents[13]->content }}</textarea>
+                <textarea name="wwds[]" id="editor4" class="form-control ckeditor" cols="30" rows="10">{{ old('wwds.3') == null ? $contents[13]->content : old('wwds.3') }}</textarea>
                 <script type="text/javascript">
                     CKEDITOR.replace( 'editor4' );
                     CKEDITOR.add            
@@ -154,7 +154,7 @@
         <div class="row">
             <div class="col-md-3  text-right  form-label-control">What we do Title 5</div>
             <div class="col-md-7">
-                <input type="text" class="form-control" name="wwd[]" value="{{ $contents[9]->content }}" placeholder="What we do title">
+                <input type="text" class="form-control" name="wwd[]" value="{{ old('wwd.4') == null ? $contents[9]->content : old('wwd.4') }}" placeholder="What we do title">
             </div>
         </div>
         
@@ -164,7 +164,7 @@
             <div class="col-md-3  text-right  form-label-control">What we do string 5</div>
             <div class="col-md-7">
                 <div><i>Max 90 characters</i></div><br>
-                <textarea name="wwds[]" id="editor5" class="form-control ckeditor" cols="30" rows="10">{{ $contents[14]->content }}</textarea>
+                <textarea name="wwds[]" id="editor5" class="form-control ckeditor" cols="30" rows="10">{{ old('wwds.4') == null ? $contents[14]->content : old('wwds.4') }}</textarea>
                 <script type="text/javascript">
                     CKEDITOR.replace( 'editor5' );
                     CKEDITOR.add            

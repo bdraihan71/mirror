@@ -16,7 +16,7 @@
                         <div class="col-md-4">
                             <img src="{{$album->url}}" class="img-fluid" alt="image">
                             <br>
-                            <input type="text" class="form-control" name="caption[]" value="{{$album->caption}}" placeholder="Caption for image" id="">
+                            <input type="text" class="form-control" name="caption[]" value="{{ old('caption'.$loop->index) == null ? $album->caption : old('caption'.$loop->index) }}" placeholder="Caption for image" id="">
                             <br>
                             <a href="/media/photo/delete/{{$album->id}}" class="btn btn-warning w-100">Delete</a>
                             <br><br><br>
@@ -27,7 +27,7 @@
                         <div class="col-md-4">
                             <img src="{{$album->url}}" class="img-fluid" alt="image">
                             <br>
-                            <input type="text" class="form-control" name="caption[]" value="{{$album->caption}}" placeholder="Caption for image" id="">
+                            <input type="text" class="form-control" name="caption[]" value="{{ old('caption'.$loop->index) == null ? $album->caption : old('caption'.$loop->index) }}" placeholder="Caption for image" id="">
                             <br>
                             <a href="/media/photo/delete/{{$album->id}}" class="btn btn-warning w-100">Delete</a>
                             <br><br><br>
@@ -46,7 +46,7 @@
                 <div class="col-md-10">
                     <input type="file" class="form-control" name="all" accept="image/*">
                     <br>
-                    <input type="text" class="form-control" name="cap" placeholder="Image caption">
+                    <input type="text" class="form-control" name="cap" value="{{ old('cap') }}" placeholder="Image caption">
                 </div>
             </div>
 

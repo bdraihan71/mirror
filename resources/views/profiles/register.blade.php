@@ -102,7 +102,7 @@
                                 <label>Phone *</label>
                             </div>
                             <div class="form-group col-md-8">
-                                <input type="number" maxlength="14" class="form-control contact-form" name="phone" value="{{ old('phone') }}" placeholder="+880**********" required>
+                                <input type="number" minlength="11" maxlength="14" class="form-control contact-form" name="phone" value="{{ old('phone') }}" placeholder="+880**********" required>
                             </div>
                         </div>
                         
