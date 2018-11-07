@@ -32,6 +32,7 @@ class TicketIssueController extends Controller
         $ticket->designation = $request->designation;
         $ticket->phone = $request->phone;
         $ticket->email = $request->email;
+        $ticket->present = false;
         $ticket->save();
 
         if ($request->email != null) {

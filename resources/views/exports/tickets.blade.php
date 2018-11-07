@@ -10,6 +10,11 @@
     <table>
         <thead>
             <tr>
+                <th>Purchased Tickets</th>
+            </tr>
+        </thead>
+        <thead>
+            <tr>
                 <th>User Name</th>
                 <th>User Email</th>
                 <th>User Phone</th>
@@ -29,6 +34,33 @@
                         <td>{{$ticket->type->price}}</td>
                         <td>{{$ticket->present != false ? "Present" : "Absent"}}</td>
                     @endif
+                </tr>
+            @endforeach
+        </tbody>
+        <thead>
+            <tr>
+                <th>Issued Tickets</th>
+            </tr>
+        </thead>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Designation</th>
+                <th>Company</th>
+                <th>Present</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($tickets[0]->event->issues as $ticket)
+                <tr>
+                    <td>{{$ticket->name}}</td>
+                    <td>{{$ticket->email}}</td>
+                    <td>{{$ticket->phone}}</td>
+                    <td>{{$ticket->designation}}</td>
+                    <td>{{$ticket->company}}</td>
+                    <td>{{$ticket->present != false ? "Present" : "Absent"}}</td>
                 </tr>
             @endforeach
         </tbody>
