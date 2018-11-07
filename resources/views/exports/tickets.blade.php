@@ -21,20 +21,13 @@
         <tbody>
             @foreach($tickets as $ticket)
                 <tr>
-                    @if ($ticket->user == null)
-                        <td>Unpurchased</td>
-                        <td>Unpurchased</td>
-                        <td>Unpurchased</td>
-                        <td>{{$ticket->type->name}}</td>
-                        <td>{{$ticket->type->price}}</td>
-                        <td> </td>
-                    @else
+                    @if ($ticket->user != null)
                         <td>{{$ticket->user->profile->f_name.' '.$ticket->user->profile->m_name.' '.$ticket->user->profile->l_name}}</td>
                         <td>{{$ticket->user->email}}</td>
                         <td>{{$ticket->user->profile->phone}}</td>
                         <td>{{$ticket->type->name}}</td>
                         <td>{{$ticket->type->price}}</td>
-                        <td> </td>
+                        <td>{{$ticket->present != false ? "Present" : "Absent"}}</td>
                     @endif
                 </tr>
             @endforeach
