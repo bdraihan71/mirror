@@ -18,7 +18,7 @@
                 <div class="col-md-8">
                     <div class="row">
                         <div class="col-md-3"><label for="street">Street Address</label></div>
-                        <div class="col-md-9"><input type="text" name="street" class="form-control" required></div>
+                        <div class="col-md-9"><input type="text" maxlength="300" name="street" class="form-control" required></div>
                     </div>
                     <br><br>
                     <div class="row">

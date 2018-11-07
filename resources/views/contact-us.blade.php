@@ -17,19 +17,19 @@
                         @if (auth()->user() == null)
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                <input type="text" name="name" class="form-control contact-form" id="inputName" placeholder="Name" required>
+                                <input type="text" maxlength="200" name="name" class="form-control contact-form" id="inputName" placeholder="Name" required>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <input type="email" name="email" class="form-control contact-form" id="inputEmail4" placeholder="Email" required>
+                                    <input type="email" maxlength="250" name="email" class="form-control contact-form" id="inputEmail4" placeholder="Email" required>
                                 </div>
                             </div>
                         @else
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                <input type="text" name="name" class="form-control contact-form" id="inputName" placeholder="Name" value="{{auth()->user()->profile->f_name.' '.auth()->user()->profile->m_name.' '.auth()->user()->profile->l_name}}" required>
+                                <input type="text" maxlength="200" name="name" class="form-control contact-form" id="inputName" placeholder="Name" value="{{auth()->user()->profile->f_name.' '.auth()->user()->profile->m_name.' '.auth()->user()->profile->l_name}}" required>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <input type="email" name="email" class="form-control contact-form" id="inputEmail4" placeholder="Email" value="{{auth()->user()->email}}" required>
+                                    <input type="email" maxlength="250" name="email" class="form-control contact-form" id="inputEmail4" placeholder="Email" value="{{auth()->user()->email}}" required>
                                 </div>
                             </div>
                         @endif

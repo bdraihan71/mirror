@@ -37,7 +37,7 @@
                     
                     <form action="/profile/name" method="POST">
                         @csrf
-                        <input type="text" name="name" class="form-control" value="{{$user->profile->f_name.' '.$user->profile->m_name.' '.$user->profile->l_name}}" required>
+                        <input type="text" maxlength="200" name="name" class="form-control" value="{{$user->profile->f_name.' '.$user->profile->m_name.' '.$user->profile->l_name}}" required>
                         <br>
                         <button type="submit" class="btn btn-outline-danger">Update</button>
                     </form>
@@ -57,7 +57,7 @@
                     <p class="text-white">{{$user->profile->phone}}</p>
                     <form action="/profile/phone" method="POST">
                         @csrf
-                        <input type="text" name="phone" class="form-control" value="{{$user->profile->phone}}" required>
+                        <input type="text" maxlength="14" name="phone" class="form-control" value="{{$user->profile->phone}}" required>
                         <br>
                         <button type="submit" class="btn btn-outline-danger">Update</button>
                     </form>

@@ -31,7 +31,7 @@
                                                                                 <label for="address">Street Address</label>
                                                                             </div>
                                                                             <div class="col-md-9">
-                                                                                <input type="text" class="form-control" name="address" required>
+                                                                                <input type="text" class="form-control" name="address" maxlength="300" required>
                                                                             </div>
                                                                         </div>
                                                                         <br>

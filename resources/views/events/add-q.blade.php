@@ -11,7 +11,7 @@
                     <label for="question" class="col-md-2 col-form-label text-md-right">Question</label>
 
                     <div class="col-md-8">
-                        <input type="text" class="form-control" name="question" value="{{ old('question') }}" placeholder="Question to be asked to the users" required autofocus>
+                        <input type="text" maxlength="1000" class="form-control" name="question" value="{{ old('question') }}" placeholder="Question to be asked to the users" required autofocus>
                     </div>
                 </div>
 

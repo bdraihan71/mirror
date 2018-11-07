@@ -49,6 +49,12 @@ class ProfilesController extends Controller
             $user->role = 'super-admin';
         }
 
+        if ($request->password != $request->confirmed_password) {
+            flash('The passwords do not match.')->error();
+
+            return redirect('/register')->with('request', $request);
+        }
+
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
         $user->save();
