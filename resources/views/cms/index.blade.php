@@ -95,7 +95,7 @@
             <div class="col-md-3  text-right  form-label-control">What we do string 2</div>
             <div class="col-md-7">
                 <div><i>Max 90 characters</i></div><br>
-                <textarea name="wwds[]" id="editor2" class="form-control ckeditor" cols="30" rows="10">{{ old('wwds.1') == null ? $contents[1]->content : old('wwds.1') }}</textarea>
+                <textarea name="wwds[]" id="editor2" class="form-control ckeditor" cols="30" rows="10">{{ old('wwds.1') == null ? $contents[11]->content : old('wwds.1') }}</textarea>
                 <script type="text/javascript">
                     CKEDITOR.replace( 'editor2' );
                     CKEDITOR.add            
