@@ -92,7 +92,7 @@ class ProfilesController extends Controller
 
         Auth::login($user);
 
-        Mail::to($user->email)->send(new vMail());
+        Mail::to($user->email)->send(new vMail($user));
 
         auth()->logout();
 
@@ -130,7 +130,7 @@ class ProfilesController extends Controller
                     $verifyUser->token = $token;
                     $verifyUser->save();
 
-                    Mail::to($user->email)->send(new vMail());
+                    Mail::to($user->email)->send(new vMail($user));
 
                     $status = "Sorry, your verify user token is no longer valid. A new email has been sent, please use that link";
                 } else {
