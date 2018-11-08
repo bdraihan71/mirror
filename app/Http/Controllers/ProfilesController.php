@@ -121,6 +121,8 @@ class ProfilesController extends Controller
         $verifyUser = VerifyUser::where('token', $token)->first();
         $status = null;
         $now = new Carbon;
+
+        dd($verifyUser);
         $validity = Carbon::parse($verifyUser->updated_at);
 
         if (isset($verifyUser)) {
