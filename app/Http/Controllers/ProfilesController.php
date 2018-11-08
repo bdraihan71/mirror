@@ -127,7 +127,7 @@ class ProfilesController extends Controller
             $user = $verifyUser->user;
             
             if (!$user->verified) {
-                if ($now->diffInHours($validity) > 4) {
+                if ($now->diffInHours($validity) > 1) {
                     $t = date('Ymd').time().$user->id;
                     $token = md5(uniqid($t, true));
 
