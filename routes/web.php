@@ -193,3 +193,6 @@ Route::post('/export/ticket', 'ExcelExportController@exportTicket')->middleware(
 
 //ProfileInfoController Routes
 Route::post('/profile/info', 'ProfileInfoController@store');
+
+//Admin Verify Routes
+Route::get('/verifyAdmins', 'VerifyAdminsController@verify');
