@@ -25,7 +25,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100" rel="stylesheet">
 </head>
 <body>
-    <h2>Welcome to Ecube Entertainment {{$user->profile->f_name.' '.$user->profile->l_name}}</h2>
+    <h2>Welcome to Ecube Entertainment</h2>
     <br>
     Your registered email address is {{$user->email}}, please click on the link below to verify this email:
     <br>
