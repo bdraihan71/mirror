@@ -71,9 +71,11 @@ class ProfilesController extends Controller
         $profile->fb_url = $request->fb_link;
         $profile->save();
 
+        $token = md5(uniqid($user->id, true));
+
         $verifyUser = VerifyUser::create([
             'user_id' => $user->id,
-            'token' => $user->id,
+            'token' => $token,
         ]);
 
         Auth::login($user);
