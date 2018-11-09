@@ -16,7 +16,7 @@
                                 <label>First Name *</label>
                             </div>
                             <div class="form-group col-md-8">
-                                <input type="firstname" class="form-control contact-form input-container" name="f_name" placeholder="First Name" required>
+                                <input type="firstname" maxlength="80" class="form-control contact-form input-container" name="f_name" placeholder="First Name" required>
                             </div>
                         </div>
 
@@ -25,7 +25,7 @@
                                 <label>Middle Name</label>
                             </div>
                             <div class="form-group col-md-8">
-                                <input type="text" class="form-control contact-form input-container" name="m_name" placeholder="Middle Name">
+                                <input type="text" maxlength="80" class="form-control contact-form input-container" name="m_name" placeholder="Middle Name">
                             </div>
                         </div>
 
@@ -34,7 +34,7 @@
                                 <label>Last Name *</label>
                             </div>
                             <div class="form-group col-md-8">
-                                <input type="lastname" class="input-container form-control contact-form" name="l_name" placeholder="Last Name" required>
+                                <input type="lastname" maxlength="80" class="input-container form-control contact-form" name="l_name" placeholder="Last Name" required>
                             </div>
                         </div>
 
@@ -66,7 +66,7 @@
                                 <label>Email Address *</label>
                             </div>
                             <div class="form-group col-md-8">
-                                <input type="email" class="form-control contact-form" name="email" placeholder="Email address" required>
+                                <input type="email" maxlength="250" class="form-control contact-form" name="email" placeholder="Email address" required>
                             </div>
                         </div>
 
@@ -89,7 +89,7 @@
                                 <label>Confirm Password *</label>
                             </div>
                             <div class="form-group col-md-8">
-                                <input id="password-confirm" type="password" class="form-control contact-form" id="company" placeholder="**********" required>
+                                <input id="password-confirm" type="password" name="confirmed_password" class="form-control contact-form" id="company" placeholder="**********" required>
                             </div>
                         </div>	
 
@@ -98,7 +98,7 @@
                                 <label>Phone *</label>
                             </div>
                             <div class="form-group col-md-8">
-                                <input type="number" class="form-control contact-form" name="phone" placeholder="+880**********" required>
+                                <input type="number" maxlength="14" class="form-control contact-form" name="phone" placeholder="+880**********" required>
                             </div>
                         </div>
                         

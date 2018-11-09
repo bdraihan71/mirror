@@ -10,6 +10,7 @@ use Carbon\Carbon;
 use GuzzleHttp\Client;
 use Mail;
 use App\Mail\ProductPurchase as vMail;
+use App\User;
 
 class CartsController extends Controller
 {
@@ -189,6 +190,7 @@ class CartsController extends Controller
 
     public function status (Request $request, $status, $id, $user)
     {
+        $purchase = Purchase::find($id);
         if ($status == 0 && $request->status == 'VALID') {
             $items = Cart::where('user_id', $user)->whereNull('purchase_id')->get();
 
@@ -201,13 +203,12 @@ class CartsController extends Controller
                 $product->save();
             }
 
-            Mail::to(auth()->user()->email)->send(new vMail($purchase));
+            
+            Mail::to(User::find($user)->email)->send(new vMail($purchase));
 
             return redirect('/home');
         } else {
-            $purchase = Purchase::find($id);
             $purchase->delete();
-
             flash('Something went wrong')->error();
 
             return redirect('/checkout');

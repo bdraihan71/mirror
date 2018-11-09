@@ -22,7 +22,7 @@
     
                                         <div class="row black-bg">
                                             <div class="col-md-12">
-                                                <input type="text" class="input-container black-bg form-control" name="answer[]" required autofocus>
+                                                <input type="text" class="input-container black-bg form-control" name="answer[]" required maxlength="1000" autofocus>
                                             </div>
                                         </div>
                                 </div>

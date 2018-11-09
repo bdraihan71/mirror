@@ -11,7 +11,7 @@
                     <label for="name" class="col-md-2 col-form-label text-md-right">Information Name</label>
 
                     <div class="col-md-8">
-                        <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Name of Information" required autofocus>
+                        <input type="text" maxlength="200" class="form-control" name="name" value="{{ old('name') }}" placeholder="Name of Information" required autofocus>
                     </div>
                 </div>
 
@@ -19,7 +19,7 @@
                     <label for="information" class="col-md-2 col-form-label text-md-right">Information</label>
 
                     <div class="col-md-8">
-                        <textarea id="article-ckeditor" name="information" cols="30" rows="12" class="form-control" required>{{ old('information') }}</textarea>
+                        <textarea id="article-ckeditor" maxlength="1000" name="information" cols="30" rows="12" class="form-control" required>{{ old('information') }}</textarea>
                     </div>
                 </div>
 
