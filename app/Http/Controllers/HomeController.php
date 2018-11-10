@@ -40,6 +40,7 @@ class HomeController extends Controller
             array_push($wwds, WebContent::where('id', $i)->first());
         }
 
+        flash("error");
         return view('index')->with('imgs', $imgs)->with('description', $description)->with('wwd', $wwd)->
         with('wwds', $wwds)->with('footer', $this->footer())->with('tagline', $tagline)->with('partners', $partners)->
         with('local_partners', $local_partners)->with('int_partners', $int_partners);
