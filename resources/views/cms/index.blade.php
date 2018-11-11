@@ -43,7 +43,7 @@
         <div class="row">
             <div class="col-md-3  text-right  form-label-control">Ecube Tagline</div>
             <div class="col-md-7">
-                <input type="text" class="form-control" name="tagline" value="{{ $contents[3]->content }}" placeholder="Place the current value here">
+                <input type="text" class="form-control" maxlength="300" name="tagline" value="{{ $contents[3]->content }}" placeholder="Place the current value here">
             </div>
         </div>
 
@@ -62,7 +62,7 @@
         <div class="row">
             <div class="col-md-3  text-right  form-label-control">What we do Title 1</div>
             <div class="col-md-7">
-                <input type="text" class="form-control" name="wwd[]" value="{{ $contents[5]->content }}" placeholder="What we do title">
+                <input type="text" class="form-control" name="wwd[]" maxlength="800" value="{{ $contents[5]->content }}" placeholder="What we do title">
             </div>
         </div>
         
@@ -85,7 +85,7 @@
         <div class="row">
             <div class="col-md-3  text-right  form-label-control">What we do Title 2</div>
             <div class="col-md-7">
-                <input type="text" class="form-control" name="wwd[]" value="{{ $contents[6]->content }}" placeholder="What we do title">
+                <input type="text" maxlength="800" class="form-control" name="wwd[]" value="{{ $contents[6]->content }}" placeholder="What we do title">
             </div>
         </div>
         
@@ -108,7 +108,7 @@
         <div class="row">
             <div class="col-md-3  text-right  form-label-control">What we do Title 3</div>
             <div class="col-md-7">
-                <input type="text" name="wwd[]" class="form-control" value="{{ $contents[7]->content }}" placeholder="What we do title">
+                <input type="text" maxlength="800" name="wwd[]" class="form-control" value="{{ $contents[7]->content }}" placeholder="What we do title">
             </div>
         </div>
         
@@ -131,7 +131,7 @@
         <div class="row">
             <div class="col-md-3  text-right  form-label-control">What we do Title 4</div>
             <div class="col-md-7">
-                <input type="text" class="form-control ckeditor" name="wwd[]" value="{{ $contents[8]->content }}" placeholder="What we do title">
+                <input type="text" maxlength="800" class="form-control ckeditor" name="wwd[]" value="{{ $contents[8]->content }}" placeholder="What we do title">
             </div>
         </div>
         
@@ -154,7 +154,7 @@
         <div class="row">
             <div class="col-md-3  text-right  form-label-control">What we do Title 5</div>
             <div class="col-md-7">
-                <input type="text" class="form-control" name="wwd[]" value="{{ $contents[9]->content }}" placeholder="What we do title">
+                <input type="text" maxlength="800" class="form-control" name="wwd[]" value="{{ $contents[9]->content }}" placeholder="What we do title">
             </div>
         </div>
         

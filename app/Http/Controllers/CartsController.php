@@ -16,6 +16,9 @@ class CartsController extends Controller
 {
     public function add (Request $request, $id)
     {
+        $this->validate($request, [
+            'quantity' => 'required|min:1',
+        ]);
         $product = Product::find($id);
 
         if ($product->quantity < $request->quantity) {

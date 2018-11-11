@@ -46,6 +46,9 @@ class AnswersController extends Controller
 
     public function store (Request $request, $id)
     {
+        $this->validate($request, [
+            'answer.*' => 'required',
+        ]);
         $answers = $request->answer;
         $qid = $request->qid;
 
