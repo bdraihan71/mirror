@@ -69,13 +69,14 @@ class EventsController extends Controller
 
         if (auth()->user() == null) {
             $events = Event::where('date_start', '>=', $now->copy()->format('Y-m-d'))->orderBy('date_start')->whereNull('deleted')->get();
-
             if ($range == 'all') {
                 $events = Event::whereNull('deleted')->get();
                 $type = 'All';
             } elseif ($range == 'past') {
                 $events = Event::where('date_start', '<', $now->copy()->format('Y-m-d'))->orderBy('date_start')->whereNull('deleted')->get();
                 $type = 'Past';
+            } else {
+                $type = 'Upcoming';
             }
         } elseif (!$this->notAdmin()) {
             $events = Event::where('date_start', '>=', $now->copy()->format('Y-m-d'))->orderBy('date_start')->get();
@@ -86,6 +87,8 @@ class EventsController extends Controller
             } elseif ($range == 'past') {
                 $events = Event::where('date_start', '<', $now->copy()->format('Y-m-d'))->orderBy('date_start')->get();
                 $type = 'Past';
+            } else {
+                $type = 'Upcoming';
             }
         } else {
             $events = Event::where('date_start', '>=', $now->copy()->format('Y-m-d'))->orderBy('date_start')->whereNull('deleted')->get();
@@ -96,6 +99,8 @@ class EventsController extends Controller
             } elseif ($range == 'past') {
                 $events = Event::where('date_start', '<', $now->copy()->format('Y-m-d'))->orderBy('date_start')->whereNull('deleted')->get();
                 $type = 'Past';
+            } else {
+                $type = 'Upcoming';
             }
         }
 
