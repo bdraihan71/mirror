@@ -127,13 +127,29 @@ class EventsController extends Controller
         }
 
         $this->validate($request, [
-            'description' => 'required',
+            'name' => 'required|max:100',
+            'tagline' => 'required|max:150',
+            'date_start' => 'required|date',
+            'date_end' => 'required|date',
+            'start' => 'required',
+            'end' => 'required',
+            'location' => 'required|max:80',
+            'location' => 'required|max:80',
+            'description' => 'required|max:500',
             'url_1' => 'image|required|max:1999|mimes:jpeg,png,jpg,gif,svg',
-            // 'url_2' => 'image|required|max:1999|mimes:jpeg,png,jpg,gif,svg',
             'url_3' => 'image|required|max:1999|mimes:jpeg,png,jpg,gif,svg',
             'url_4' => 'image|required|max:1999|mimes:jpeg,png,jpg,gif,svg',
             'url_5' => 'image|required|max:1999|mimes:jpeg,png,jpg,gif,svg'
         ]);
+
+        // $this->validate($request, [
+        //     'description' => 'required',
+        //     'url_1' => 'image|required|max:1999|mimes:jpeg,png,jpg,gif,svg',
+        //     // 'url_2' => 'image|required|max:1999|mimes:jpeg,png,jpg,gif,svg',
+        //     'url_3' => 'image|required|max:1999|mimes:jpeg,png,jpg,gif,svg',
+        //     'url_4' => 'image|required|max:1999|mimes:jpeg,png,jpg,gif,svg',
+        //     'url_5' => 'image|required|max:1999|mimes:jpeg,png,jpg,gif,svg'
+        // ]);
 
         $event = new Event;
         $event->name = $request->name;
@@ -248,7 +264,15 @@ class EventsController extends Controller
         }
 
         $this->validate($request, [
-            'description' => 'required',
+            'name' => 'required|max:100',
+            'tagline' => 'required|max:150',
+            'date_start' => 'required|date',
+            'date_end' => 'required|date',
+            'start' => 'required',
+            'end' => 'required',
+            'location' => 'required|max:80',
+            'location' => 'required|max:80',
+            'description' => 'required|max:500',
         ]);
 
         $event = Event::where('id', $id)->first();
