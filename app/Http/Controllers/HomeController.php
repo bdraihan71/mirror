@@ -66,7 +66,9 @@ class HomeController extends Controller
     public function contacted (Request $request)
     {
         $this->validate($request, [
-            'body' => 'required',
+            'body' => 'required|max:500',
+            'name' => 'required|max:200',
+            'email' => 'required|max:200',
         ]);
 
         $contact = new Contactee;
