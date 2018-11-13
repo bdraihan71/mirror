@@ -43,7 +43,11 @@
         <div class="row">
             <div class="col-md-3  text-right  form-label-control">Ecube Tagline</div>
             <div class="col-md-7">
-                <input type="text" class="form-control" name="tagline" value="{{ old('tagline') == null ? $contents[3]->content : old('tagline') }}" placeholder="Place the current value here">
+<<<<<<< HEAD
+                <input type="text" class="form-control" maxlength="300" name="tagline" value="{{ old('tagline') == null ? $contents[3]->content : old('tagline') }}" placeholder="Place the current value here">
+=======
+                <input type="text" class="form-control" maxlength="300" name="tagline" value="{{ $contents[3]->content }}" placeholder="Place the current value here">
+>>>>>>> v1.2.9
             </div>
         </div>
 
@@ -62,7 +66,11 @@
         <div class="row">
             <div class="col-md-3  text-right  form-label-control">What we do Title 1</div>
             <div class="col-md-7">
+<<<<<<< HEAD
                 <input type="text" class="form-control" name="wwd[]" value="{{ old('wwd.0') == null ? $contents[5]->content : old('wwd.0') }}" placeholder="What we do title">
+=======
+                <input type="text" class="form-control" name="wwd[]" maxlength="800" value="{{ $contents[5]->content }}" placeholder="What we do title">
+>>>>>>> v1.2.9
             </div>
         </div>
         
@@ -85,7 +93,11 @@
         <div class="row">
             <div class="col-md-3  text-right  form-label-control">What we do Title 2</div>
             <div class="col-md-7">
+<<<<<<< HEAD
                 <input type="text" class="form-control" name="wwd[]" value="{{ old('wwd.1') == null ? $contents[6]->content : old('wwd.1') }}" placeholder="What we do title">
+=======
+                <input type="text" maxlength="800" class="form-control" name="wwd[]" value="{{ $contents[6]->content }}" placeholder="What we do title">
+>>>>>>> v1.2.9
             </div>
         </div>
         
@@ -108,7 +120,11 @@
         <div class="row">
             <div class="col-md-3  text-right  form-label-control">What we do Title 3</div>
             <div class="col-md-7">
+<<<<<<< HEAD
                 <input type="text" name="wwd[]" class="form-control" value="{{ old('wwd.2') == null ? $contents[7]->content : old('wwd.2') }}" placeholder="What we do title">
+=======
+                <input type="text" maxlength="800" name="wwd[]" class="form-control" value="{{ $contents[7]->content }}" placeholder="What we do title">
+>>>>>>> v1.2.9
             </div>
         </div>
         
@@ -131,7 +147,11 @@
         <div class="row">
             <div class="col-md-3  text-right  form-label-control">What we do Title 4</div>
             <div class="col-md-7">
+<<<<<<< HEAD
                 <input type="text" class="form-control ckeditor" name="wwd[]" value="{{ old('wwd.3') == null ? $contents[8]->content : old('wwd.3') }}" placeholder="What we do title">
+=======
+                <input type="text" maxlength="800" class="form-control ckeditor" name="wwd[]" value="{{ $contents[8]->content }}" placeholder="What we do title">
+>>>>>>> v1.2.9
             </div>
         </div>
         
@@ -154,7 +174,11 @@
         <div class="row">
             <div class="col-md-3  text-right  form-label-control">What we do Title 5</div>
             <div class="col-md-7">
+<<<<<<< HEAD
                 <input type="text" class="form-control" name="wwd[]" value="{{ old('wwd.4') == null ? $contents[9]->content : old('wwd.4') }}" placeholder="What we do title">
+=======
+                <input type="text" maxlength="800" class="form-control" name="wwd[]" value="{{ $contents[9]->content }}" placeholder="What we do title">
+>>>>>>> v1.2.9
             </div>
         </div>
         
