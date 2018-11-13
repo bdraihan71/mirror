@@ -36,6 +36,10 @@ class CMSController extends Controller
             'wwds.3' => 'required|max:90',
             'wwds.4' => 'required|max:90',
             'wwds.5' => 'required|max:90',
+            'wwd.*' => 'required',
+            'url_1' => 'nullable|image',
+            'url_2' => 'nullable|image',
+            'url_3' => 'nullable|image',
         ]);
 
         if($request->hasFile('url_1')) {
