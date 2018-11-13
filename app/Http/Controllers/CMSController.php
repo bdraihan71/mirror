@@ -153,6 +153,15 @@ class CMSController extends Controller
             return redirect('/');
         }
 
+        $this->validate($request, [
+            'head_office' => 'required',
+            'contact' => 'required',
+            'email' => 'required',
+            'contact' => 'required',
+            'contact' => 'required',
+            'contact' => 'required',
+        ]);
+
         if ($request->head_office != null) {
             $content = WebContent::where('id', 16)->first();
 
