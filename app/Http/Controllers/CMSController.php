@@ -30,6 +30,14 @@ class CMSController extends Controller
             return redirect('/');
         }
 
+        $this->validate($request, [
+            'wwds.1' => 'required|max:90',
+            'wwds.2' => 'required|max:90',
+            'wwds.3' => 'required|max:90',
+            'wwds.4' => 'required|max:90',
+            'wwds.5' => 'required|max:90',
+        ]);
+
         if($request->hasFile('url_1')) {
             $content = WebContent::where('id', 1)->first();
 
