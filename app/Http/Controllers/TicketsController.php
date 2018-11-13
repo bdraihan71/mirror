@@ -26,6 +26,14 @@ class TicketsController extends Controller
 
         $event = Event::where('id', $id)->first();
 
+        if ($event->ticket_number == 0) {
+            $url = $url = '/events/'.$event->id;
+
+            flash('Event Created')->success();
+
+            return redirect($url);
+        }
+
         return view('tickets/type')->with('event', $event)->with('footer', $this->footer());
     }
 

@@ -32,6 +32,19 @@ class ProfilesController extends Controller
             return redirect('/login');
         }
 
+        $this->validate($request, [
+            'f_name' => 'required',
+            'm_name' => 'nullable',
+            'l_name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            'confirmed_password' => 'required',
+            'gender' => 'required|in:male,female,other',
+            'confirmed_password' => 'required',
+            'dob' => 'required',
+            'phone' => 'required|digits_between:11,14'
+        ]);
+
         $now = new Carbon;
         $dob = Carbon::parse($request->dob);
 
@@ -52,7 +65,9 @@ class ProfilesController extends Controller
         if ($request->password != $request->confirmed_password) {
             flash('The passwords do not match.')->error();
 
-            return redirect('/register')->with('request', $request);
+            $this->validate($request, [
+                'Passwords' => 'required',
+            ]);
         }
 
         $user->email = $request->email;
@@ -112,7 +127,7 @@ class ProfilesController extends Controller
             $user = $verifyUser->user;
             
             if (!$user->verified) {
-                if ($now->diffInHours($validity) > 4) {
+                if ($now->diffInHours($validity) > 1) {
                     $t = date('Ymd').time().$user->id;
                     $token = md5(uniqid($t, true));
 

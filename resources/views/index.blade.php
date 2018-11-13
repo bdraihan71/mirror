@@ -77,6 +77,8 @@
                   <div class="mouse"></div>
                 </a> --}}
             </div>
+            @include('flash::message')
+            @include('layouts.messages')
 
             <div class="title">
                 <h1>{{$tagline->content}}</h1>
@@ -162,7 +164,7 @@
                         @foreach ($int_partners as $partner)
                             <div class="col">
                                 <div class="text-center">
-                                    <img src="{{$partner->img}}" class="partner-logo" alt="Partner Logo">
+                                    <img src="{{$partner->img}}" class="partner-logo partner-img" alt="Partner Logo">
                                 </div>
                             </div>
                         @endforeach

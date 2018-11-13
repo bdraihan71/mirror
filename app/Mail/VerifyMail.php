@@ -10,7 +10,11 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 class VerifyMail extends Mailable
 {
     use Queueable, SerializesModels;
+<<<<<<< HEAD
     private $user;
+=======
+    private $user = null;
+>>>>>>> test
 
     /**
      * Create a new message instance.

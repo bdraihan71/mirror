@@ -158,7 +158,7 @@
                     <label for="name" class="col-md-2 col-form-label text-md-right">Name</label>
 
                     <div class="col-md-8">
-                        <input type="text" class="form-control" name="name" placeholder="Name of the event" value="{{$event->name}}" required autofocus>
+                        <input type="text" class="form-control" name="name" placeholder="Name of the event" value="{{ old('name') == null ? $event->name : old('name') }}" required autofocus>
                     </div>
                 </div>
 
@@ -166,7 +166,7 @@
                     <label for="tagline" class="col-md-2 col-form-label text-md-right" >Tagline</label>
 
                     <div class="col-md-8">
-                        <input type="text" class="form-control" name="tagline" value="{{$event->tagline}}" placeholder="Tagline of the event" required autofocus>
+                        <input type="text" class="form-control" name="tagline" value="{{ old('tagline') == null ? $event->tagline : old('tagline') }}" placeholder="Tagline of the event" required autofocus>
                     </div>
                 </div>
 
@@ -174,13 +174,13 @@
                     <label for="date_start" class="col-md-2 col-form-label text-md-right" >Starting Date</label>
 
                     <div class="col-md-3">
-                        <input type="date" class="form-control" name="date_start" value="{{$event->date_start}}" required autofocus>
+                        <input type="date" class="form-control" name="date_start" value="{{ old('date_start') == null ? $event->date_start : old('date_start') }}" required autofocus>
                     </div>
 
                     <label for="date_end" class="col-md-2 col-form-label text-md-right" >Ending Date</label>
 
                     <div class="col-md-3">
-                        <input type="date" class="form-control" name="date_end" value="{{$event->date_end}}" required autofocus>
+                        <input type="date" class="form-control" name="date_end" value="{{ old('date_end') == null ? $event->date_end : old('date_end') }}" required autofocus>
                     </div>
                 </div>
 
@@ -188,13 +188,13 @@
                     <label for="start" class="col-md-2 col-form-label text-md-right" >Starting Time</label>
 
                     <div class="col-md-3">
-                        <input type="time" class="form-control" name="start" value="{{$event->start}}" required autofocus>
+                        <input type="time" class="form-control" name="start" value="{{ old('start') == null ? $event->start : old('start') }}" required autofocus>
                     </div>
 
                     <label for="end" class="col-md-2 col-form-label text-md-right" >Ending Time</label>
 
                     <div class="col-md-3">
-                        <input type="time" class="form-control" name="end" value="{{$event->end}}" required autofocus>
+                        <input type="time" class="form-control" name="end" value="{{ old('end') == null ? $event->end : old('end') }}" required autofocus>
                     </div>
                 </div>
 
@@ -202,7 +202,7 @@
                     <label for="description" class="col-md-2 col-form-label text-md-right">Description</label>
 
                     <div class="col-md-8">
-                        <textarea id="desc" name="description" cols="30" rows="12" class="form-control ckeditor" required>{{$event->description}}</textarea>
+                        <textarea id="desc" name="description" cols="30" rows="12" class="form-control ckeditor" required>{{ old('description') == null ? $event->description : old('description') }}</textarea>
                         <script type="text/javascript">
                             CKEDITOR.replace( 'desc' );
                             CKEDITOR.add            
@@ -214,7 +214,7 @@
                     <label for="location" class="col-md-2 col-form-label text-md-right" >Location</label>
 
                     <div class="col-md-3">
-                        <input type="text" class="form-control" name="location" value="{{ $event->location }}" placeholder="Location of the event" required autofocus>
+                        <input type="text" class="form-control" name="location" value="{{ old('location') == null ? $event->location : old('location') }}" placeholder="Location of the event" required autofocus>
                     </div>
                 </div>
 
@@ -242,7 +242,7 @@
                             <label for="add_name[]" class="col-md-2 col-form-label text-md-right">Information Name {{$loop->iteration}}</label>
 
                             <div class="col-md-8">
-                                <input type="text" class="form-control" name="add_name[]" value="{{ $info->name}}" placeholder="Name of Information" required autofocus>
+                                <input type="text" class="form-control" name="add_name[]" value="{{ old('add_name'.$loop->index) == null ? $info->name : old('add_name'.$loop->index) }}" placeholder="Name of Information" required autofocus>
                             </div>
                         </div>
 

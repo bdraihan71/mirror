@@ -31,7 +31,7 @@
                                                                                 <label for="address">Street Address</label>
                                                                             </div>
                                                                             <div class="col-md-9">
-                                                                                <input type="text" class="form-control" name="address" maxlength="300" required>
+                                                                                <input type="text" class="form-control" name="address" maxlength="300" value="{{old('address')}}" required>
                                                                             </div>
                                                                         </div>
                                                                         <br>
@@ -59,7 +59,7 @@
                                                                                 <label for="phone">Contact Number</label>
                                                                             </div>
                                                                             <div class="col-md-9">
-                                                                                <input type="number" class="form-control" name="phone" required>
+                                                                                <input type="number" class="form-control" name="phone" value="{{old('phone')}}" required>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -68,12 +68,12 @@
                                                                 <div class="row">
                                                                     <div class="col-md-3">Payment Method</div>
                                                                     <div class="col-md-3">
-                                                                        <input type="radio" name="meth" id="cash" autocomplete="off" value="cash" checked>
+                                                                        <input type="radio" name="meth" id="cash" autocomplete="off" value="cash" {{old('meth') == null ? 'checked' : (old('meth') == "cash" ? 'checked' : "")}}>
                                                                         <label for="cash">Cash on delivery</label>
                                                                     </div>
                                                                     <div class="col-md-2"></div>
                                                                     <div class="col-md-3">
-                                                                        <input type="radio" name="meth" id="online" autocomplete="off" value="online">
+                                                                        <input type="radio" name="meth" id="online" autocomplete="off" value="online" {{(old('meth') == "cash" ? 'checked' : "")}}>
                                                                         <label for="online">Pay online</label>
                                                                     </div>
                                                                     <div class="col-md-1"></div>

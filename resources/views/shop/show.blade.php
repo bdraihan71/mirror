@@ -45,7 +45,7 @@
                     <div class="row">
                         <div class="col-md-1"></div>
                         <div class="col-md-4">
-                            <input type="number" name="quantity" class="form-control" placeholder="Quantity" required>
+                            <input type="number" name="quantity" value="{{ old('quantity') }}" class="form-control" placeholder="Quantity" required>
                         </div>
                         <div class="col-md-2"></div>
                         <div class="col-md-4">

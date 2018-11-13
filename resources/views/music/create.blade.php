@@ -17,7 +17,7 @@
                             <label for="name" class="form-label-control">Music Name</label>
                         </div>
                         <div class="col-md-9">
-                            <input type="text" name="name" class="form-control" required>
+                            <input type="text" name="name" value="{{ old('name') }}" class="form-control" required>
                         </div>
                     </div>
                     <br>

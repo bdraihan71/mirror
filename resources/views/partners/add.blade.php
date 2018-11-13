@@ -13,7 +13,7 @@
                                 <label class="">Name *</label>
                             </div>
                             <div class="form-group col-md-10">
-                                <input type="text" maxlength="200" class="form-control contact-form input-container" name="name" placeholder="Name of the partner" required>
+                                <input type="text" maxlength="200" class="form-control contact-form input-container" name="name" value="{{ old('name') }}" placeholder="Name of the partner" required>
                             </div>
                         </div>
 
@@ -23,7 +23,12 @@
                             </div>
                             <div class="form-group col-md-10">
                                 <select name="type" class="form-control" required>
-                                    <option value="">Please select a partner type</option>
+                                    @if (old('type') == null)
+                                        <option value="">Please select a partner type</option>
+                                    @else
+                                        <option value="{{ old('type') }}">{{ ucfirst(old('type')) }}</option>
+                                    @endif
+
                                     <option value="local">Local Partner</option>
                                     <option value="international">International Partner</option>
                                 </select>
