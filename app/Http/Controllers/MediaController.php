@@ -95,7 +95,6 @@ class MediaController extends Controller
             flash('You are not authorized to access this view')->error;
         }
 
-        $this->uploadImage($request->all);
         $url = '/media/photo/edit?event='.$request->id;
         $counter = 0;
 
