@@ -139,7 +139,8 @@ class EventsController extends Controller
             'url_1' => 'image|required|max:1999|mimes:jpeg,png,jpg,gif,svg',
             'url_3' => 'image|required|max:1999|mimes:jpeg,png,jpg,gif,svg',
             'url_4' => 'image|required|max:1999|mimes:jpeg,png,jpg,gif,svg',
-            'url_5' => 'image|required|max:1999|mimes:jpeg,png,jpg,gif,svg'
+            'url_5' => 'image|required|max:1999|mimes:jpeg,png,jpg,gif,svg',
+            'ticket_number' => 'required|integer|min:0',
         ]);
 
         // $this->validate($request, [
