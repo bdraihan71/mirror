@@ -16,7 +16,17 @@ class VerifyEmailController extends Controller
 
     public function send (Request $request)
     {
+        $this->validate($request, [
+            'email' => 'required|max:300'
+        ]);
+        
         $user = User::where('email', $request->email)->first();
+
+        if ($user == null) {
+            flash('You do not have an account, please register first.')->error();
+
+            return redirect('/register');
+        }
 
         if ($user->verified == 1) {
             flash('Your email is already verified, please login')->success();
