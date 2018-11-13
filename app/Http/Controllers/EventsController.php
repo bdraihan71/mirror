@@ -134,7 +134,6 @@ class EventsController extends Controller
             'start' => 'required',
             'end' => 'required',
             'location' => 'required|max:80',
-            'location' => 'required|max:80',
             'description' => 'required|max:500',
             'url_1' => 'image|required|max:1999|mimes:jpeg,png,jpg,gif,svg',
             'url_3' => 'image|required|max:1999|mimes:jpeg,png,jpg,gif,svg',
@@ -272,7 +271,6 @@ class EventsController extends Controller
             'start' => 'required',
             'end' => 'required',
             'location' => 'required|max:80',
-            'location' => 'required|max:80',
             'description' => 'required|max:500',
         ]);
 
@@ -320,6 +318,10 @@ class EventsController extends Controller
             
             return redirect('/');
         }
+
+        $this->validate($request, [
+            'add_name.*' => 'required|max:'
+        ]);
 
         $information = AdditionalInformation::where('event_id', $id)->get();
         $url = '/events/edit/'.$id.'#add';
