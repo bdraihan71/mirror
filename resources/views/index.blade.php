@@ -77,8 +77,6 @@
                   <div class="mouse"></div>
                 </a> --}}
             </div>
-            @include('flash::message')
-            @include('layouts.messages')
 
             <div class="title">
                 <h1>{{$tagline->content}}</h1>
