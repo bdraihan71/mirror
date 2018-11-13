@@ -31,6 +31,7 @@
 </head>
 
 <body class="black-bg">
+ 
     <div class="container-fluid">
         @include('flash::message')
         @include('layouts.messages')

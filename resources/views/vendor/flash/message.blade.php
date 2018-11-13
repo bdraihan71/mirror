@@ -6,8 +6,13 @@
             'body'       => $message['message']
         ])
     @else
+<<<<<<< HEAD
         <div class="alert
                     alert-{{ $message['level'] }} push-down
+=======
+        <div style="margin-top: 100px" class="alert
+                    alert-{{ $message['level'] }}
+>>>>>>> v1.2.2
                     {{ $message['important'] ? 'alert-important' : '' }}"
                     role="alert"
         >
