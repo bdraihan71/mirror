@@ -199,6 +199,10 @@ class EventsController extends Controller
             return redirect('/');
         }
 
+        $this->validate($request, [
+            'question' => 'required|max:200',
+        ]);
+
         $question = new Question;
         $question->question = $request->question;
         $question->event_id = $request->id;
