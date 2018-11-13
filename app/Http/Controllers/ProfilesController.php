@@ -71,14 +71,28 @@ class ProfilesController extends Controller
         $profile->fb_url = $request->fb_link;
         $profile->save();
 
+        $t = date('Ymd').time().$user->id;
+        $token = md5(uniqid($t, true));
+
+        while (true) {
+            $u = VerifyUser::where('token', $token)->first();
+
+            if ($u == null) {
+                break;
+            } else {
+                $t = date('Ymd').time().$user->id;
+                $token = md5(uniqid($t, true));
+            }
+        }
+
         $verifyUser = VerifyUser::create([
             'user_id' => $user->id,
-            'token' => $user->id,
+            'token' => $token,
         ]);
 
         Auth::login($user);
 
-        Mail::to($user->email)->send(new vMail());
+        Mail::to($user->email)->send(new vMail($user));
 
         auth()->logout();
 
@@ -91,17 +105,42 @@ class ProfilesController extends Controller
     {
         $verifyUser = VerifyUser::where('token', $token)->first();
         $status = null;
+        $now = new Carbon;
+        $validity = Carbon::parse($verifyUser->updated_at);
 
         if (isset($verifyUser)) {
             $user = $verifyUser->user;
             
             if (!$user->verified) {
-                $user->verified = 1;
-                $user->save();
+                if ($now->diffInHours($validity) > 4) {
+                    $t = date('Ymd').time().$user->id;
+                    $token = md5(uniqid($t, true));
 
-                $status = "Email verified";
+                    while (true) {
+                        $u = VerifyUser::where('token', $token)->first();
 
-                Auth::login($user);
+                        if ($u == null) {
+                            break;
+                        } else {
+                            $t = date('Ymd').time().$user->id;
+                            $token = md5(uniqid($t, true));
+                        }
+                    }
+
+                    $verifyUser->token = $token;
+                    $verifyUser->save();
+
+                    Mail::to($user->email)->send(new vMail($user));
+
+                    $status = "Sorry, your verify user token is no longer valid. A new email has been sent, please use that link";
+                } else {
+                    $user->verified = 1;
+                    $user->save();
+
+                    $status = "Email verified";
+
+                    Auth::login($user);
+                }
             } else {
                 $status = "Your email has already been verified";
             }
