@@ -25,15 +25,15 @@ class TicketIssueController extends Controller
     
     public function store (Request $request)
     {
-        $ticket = new IssueTicket;
-        $ticket->event_id = $request->event;
-        $ticket->name = $request->name;
-        $ticket->company = $request->company;
-        $ticket->designation = $request->designation;
-        $ticket->phone = $request->phone;
-        $ticket->email = $request->email;
-        $ticket->present = false;
-        $ticket->save();
+        $ticket = IssueTicket::create([
+            'event_id' => $request->event,
+            'name' => $request->name,
+            'company' => $request->company,
+            'designation' => $request->designation,
+            'phone' => $request->phone,
+            'email' => $request->email,
+            'present' => false,
+        ]);
 
         if ($request->email != null) {
             Mail::to($request->email)->send(new vMail($ticket));
