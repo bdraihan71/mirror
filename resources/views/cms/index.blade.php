@@ -72,7 +72,7 @@
             <div class="col-md-3  text-right  form-label-control">What we do string 1</div>
             <div class="col-md-7">
                 <div><i>Max 90 characters</i></div><br>
-                <textarea name="wwds[]" id="editor1" class="form-control ckeditor" cols="30" rows="10">{{ old('wwds.0') == null ? $contents[10]->content : old('wwds.0') }}</textarea>
+                <textarea name="wwds[]" maxlength="90" id="editor1" class="form-control ckeditor" cols="30" rows="10">{{ old('wwds.0') == null ? $contents[10]->content : old('wwds.0') }}</textarea>
                 <script type="text/javascript">
                     CKEDITOR.replace( 'editor1' );
                     CKEDITOR.add            
@@ -95,7 +95,7 @@
             <div class="col-md-3  text-right  form-label-control">What we do string 2</div>
             <div class="col-md-7">
                 <div><i>Max 90 characters</i></div><br>
-                <textarea name="wwds[]" id="editor2" class="form-control ckeditor" cols="30" rows="10">{{ old('wwds.1') == null ? $contents[11]->content : old('wwds.1') }}</textarea>
+                <textarea name="wwds[]" maxlength="90" id="editor2" class="form-control ckeditor" cols="30" rows="10">{{ old('wwds.1') == null ? $contents[11]->content : old('wwds.1') }}</textarea>
                 <script type="text/javascript">
                     CKEDITOR.replace( 'editor2' );
                     CKEDITOR.add            
@@ -118,7 +118,7 @@
             <div class="col-md-3  text-right  form-label-control">What we do string 3</div>
             <div class="col-md-7">
                 <div><i>Max 90 characters</i></div><br>
-                <textarea name="wwds[]" id="editor3" class="form-control ckeditor" cols="30" rows="10">{{ old('wwds.2') == null ? $contents[12]->content : old('wwds.2') }}</textarea>
+                <textarea name="wwds[]" maxlength="90" id="editor3" class="form-control ckeditor" cols="30" rows="10">{{ old('wwds.2') == null ? $contents[12]->content : old('wwds.2') }}</textarea>
                 <script type="text/javascript">
                     CKEDITOR.replace( 'editor3' );
                     CKEDITOR.add            
@@ -141,7 +141,7 @@
             <div class="col-md-3  text-right  form-label-control">What we do string 4</div>
             <div class="col-md-7">
                 <div><i>Max 90 characters</i></div><br>
-                <textarea name="wwds[]" id="editor4" class="form-control ckeditor" cols="30" rows="10">{{ old('wwds.3') == null ? $contents[13]->content : old('wwds.3') }}</textarea>
+                <textarea name="wwds[]" maxlength="90" id="editor4" class="form-control ckeditor" cols="30" rows="10">{{ old('wwds.3') == null ? $contents[13]->content : old('wwds.3') }}</textarea>
                 <script type="text/javascript">
                     CKEDITOR.replace( 'editor4' );
                     CKEDITOR.add            
@@ -164,7 +164,7 @@
             <div class="col-md-3  text-right  form-label-control">What we do string 5</div>
             <div class="col-md-7">
                 <div><i>Max 90 characters</i></div><br>
-                <textarea name="wwds[]" id="editor5" class="form-control ckeditor" cols="30" rows="10">{{ old('wwds.4') == null ? $contents[14]->content : old('wwds.4') }}</textarea>
+                <textarea name="wwds[]" maxlength="90" id="editor5" class="form-control ckeditor" cols="30" rows="10">{{ old('wwds.4') == null ? $contents[14]->content : old('wwds.4') }}</textarea>
                 <script type="text/javascript">
                     CKEDITOR.replace( 'editor5' );
                     CKEDITOR.add            
