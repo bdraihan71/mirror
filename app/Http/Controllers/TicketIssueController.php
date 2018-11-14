@@ -28,7 +28,7 @@ class TicketIssueController extends Controller
         if ($this->notAdmin()) {
             flash('You are not authorized to access this view')->error();
 
-            return redirect('/dashboard');
+            return redirect('/home');
         }
 
         $this->validate($request, [

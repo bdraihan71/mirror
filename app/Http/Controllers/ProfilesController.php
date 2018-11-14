@@ -225,6 +225,10 @@ class ProfilesController extends Controller
 
     public function name (Request $request)
     {
+        $this->validate($request, [
+            'name' => 'required',
+        ]);
+
         $profile = Profile::find(auth()->user()->id);
 
         $name = explode(' ', $request->name);
@@ -286,6 +290,10 @@ class ProfilesController extends Controller
 
     public function phone (Request $request)
     {
+        $this->validate($request, [
+            'phone' => 'required',
+        ]);
+
         $profile = auth()->user()->profile;
         $profile->phone = $request->phone;
         $profile->save();
@@ -295,6 +303,10 @@ class ProfilesController extends Controller
 
     public function facebook (Request $request)
     {
+        $this->validate($request, [
+            'fb_url' => 'required',
+        ]);
+        
         $profile = auth()->user()->profile;
         $profile->fb_url = $request->fb_url;
         $profile->save();
