@@ -170,6 +170,14 @@ class ProfilesController extends Controller
 
     public function social (Request $request)
     {
+        $this->validate($request, [
+            'id' => 'required',
+            'name' => 'required',
+            'phone' => 'required',
+            'dob' => 'required|date',
+            'gender' => 'required',
+        ]);
+
         $user = User::where('id', $request->id)->first();
         $profile = new Profile;
         $name = explode(' ', $request->name);
@@ -306,7 +314,7 @@ class ProfilesController extends Controller
         $this->validate($request, [
             'fb_url' => 'required',
         ]);
-        
+
         $profile = auth()->user()->profile;
         $profile->fb_url = $request->fb_url;
         $profile->save();

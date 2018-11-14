@@ -16,7 +16,7 @@ Route::get('/create/admin', 'ProfilesController@adminCreate')->middleware('auth'
 Route::post('/create/admin', 'ProfilesController@adminStore')->middleware('auth');
 Route::get('register', 'ProfilesController@register')->name('register');
 Route::post('register', 'ProfilesController@create');
-Route::post('social-register', 'ProfilesController@social');
+Route::post('/social-register', 'ProfilesController@social');
 Route::get('home', 'ProfilesController@dashboard')->middleware('auth');
 Route::post('/profile/name', 'ProfilesController@name')->middleware('auth');
 Route::post('/profile/email', 'ProfilesController@email')->middleware('auth');
