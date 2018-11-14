@@ -30,6 +30,10 @@ class ExcelExportController extends Controller
             return redirect('/home');
         }
 
+        $this->validate($request, [
+            'event' => 'requried',
+        ]);
+
         $event = Event::find($request->event);
 
         return (new TicketsExport($request->event))->download($event->name.'.xlsx');
