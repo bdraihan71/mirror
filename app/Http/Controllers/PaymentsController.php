@@ -120,6 +120,12 @@ class PaymentsController extends Controller
 
     public function store (Request $request)
     {
+        $this->validate($request, [
+            'id' => 'required',
+            'street' => 'required',
+            'division' => 'division',
+        ]);
+
         $address = new Address;
         $address->invoice_id = $request->id;
         $address->address = $request->street;
