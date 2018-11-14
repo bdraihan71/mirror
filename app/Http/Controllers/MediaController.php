@@ -92,7 +92,23 @@ class MediaController extends Controller
     public function updateAlbum (Request $request)
     {
         if ($this->notAdmin()) {
-            flash('You are not authorized to access this view')->error;
+            flash('You are not authorized to access this view')->error();
+
+            return redirect('/media');
+        }
+
+        $this->validate($request, [
+            'caption.*' => 'required|max:30',
+        ]);
+
+        if ($request->cap != null) {
+            $this->validate($request, [
+                'all' => 'required|image|max:1999',
+            ]);
+        } elseif ($request->hasfile('all')) {
+            $this->validate($request, [
+                'cap' => 'required|max:30',
+            ]);
         }
 
         $url = '/media/photo/edit?event='.$request->id;
