@@ -241,6 +241,10 @@ class MediaController extends Controller
             flash('You are not authorized to access this view')->error;
         }
 
+        $this->validate($request, [
+            'url.*' => 'required',
+        ]);
+
         $rdurl;
 
         if ($request->id == 0) {
