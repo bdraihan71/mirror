@@ -320,7 +320,8 @@ class EventsController extends Controller
         }
 
         $this->validate($request, [
-            'add_name.*' => 'required|max:'
+            'add_name.*' => 'required|max:150',
+            'add_information.*' => 'required|max:500'
         ]);
 
         $information = AdditionalInformation::where('event_id', $id)->get();
