@@ -454,6 +454,10 @@ class EventsController extends Controller
             return redirect('/events');
         }
 
+        $this->validate($request, [
+            'event' => 'required|integer',
+        ]);
+
         $feature = WebContent::find(19);
         
         if ($feature == null) {
