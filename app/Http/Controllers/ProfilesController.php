@@ -363,6 +363,15 @@ class ProfilesController extends Controller
             return redirect('/');
         }
 
+        $this->validate($request, [
+            'f_name' => 'required|max:80',
+            'm_name' => 'nullable|max:80',
+            'l_name' => 'required|max:80',
+            'email' => 'required|email',
+            'password' => 'required|confirmed',
+            'phone' => 'required'
+        ]);
+
         $user = User::where('email', $request->email)->first();
 
         if ($user != null) {

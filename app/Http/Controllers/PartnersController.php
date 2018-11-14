@@ -23,7 +23,7 @@ class PartnersController extends Controller
         $this->validate($request, [
             'url' => 'image|required|max:1999|mimes:jpeg,png,jpg,gif,svg',
             'type' => 'required',
-            'name' => 'required|max:40'
+            'name' => 'required|max:80'
         ]);
 
         if ($this->notAdmin()) {
@@ -70,7 +70,7 @@ class PartnersController extends Controller
         $this->validate($request, [
             'url' => 'image|required|max:1999|mimes:jpeg,png,jpg,gif,svg',
             'type' => 'required',
-            'name' => 'required|max:40'
+            'name' => 'required|max:80'
         ]);
 
         $partner = Partner::find($id);
