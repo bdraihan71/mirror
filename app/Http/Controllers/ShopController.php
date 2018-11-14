@@ -66,7 +66,11 @@ class ShopController extends Controller
     public function update (Request $request, $id)
     {
         $this->validate($request, [
+            'name' => 'required|max:50',
+            'price' => 'required|integer',
+            'quantity' => 'required|integer',
             'description' => 'required',
+            'img' => 'image|nullable|max:1999|mimes:jpeg,png,jpg,gif,svg'
         ]);
 
         $product = Product::where('id', $id)->first();
