@@ -36,6 +36,9 @@ class ShopController extends Controller
     public function store (Request $request)
     {
         $this->validate($request, [
+            'name' => 'required|max:50',
+            'price' => 'required|integer',
+            'quantity' => 'required|integer',
             'description' => 'required',
             'img' => 'image|required|max:1999|mimes:jpeg,png,jpg,gif,svg'
         ]);
