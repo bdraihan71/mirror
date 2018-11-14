@@ -201,6 +201,11 @@ class MediaController extends Controller
             return redirect('/media');
         }
 
+        $this->validate($request, [
+            'event' => 'required',
+            'url' => 'required',
+        ]);
+
         $video = new Video;
         $video->event_id = $request->event;
         $video->featured = true;
