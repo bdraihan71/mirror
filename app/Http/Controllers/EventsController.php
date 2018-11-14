@@ -359,6 +359,10 @@ class EventsController extends Controller
             return redirect('/');
         }
 
+        $this->validate($request, [
+            'question.*' => 'required|max:150',
+        ]);
+
         $questions = Question::where('event_id', $id)->get();
         $url = '/events/edit/'.$id.'#q';
 
