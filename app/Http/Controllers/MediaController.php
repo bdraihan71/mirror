@@ -47,6 +47,12 @@ class MediaController extends Controller
             return redirect('/media');
         }
 
+        $this->validate($request, [
+            'event' => 'required',
+            'url.*' => 'required|image|max:1999',
+            'caption.*' => 'required|max:30',
+        ]);
+
         $counter = 0;
 
         foreach ($request->url as $url) {
