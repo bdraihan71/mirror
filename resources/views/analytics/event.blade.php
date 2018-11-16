@@ -4,7 +4,7 @@
 <br><br><br><br><br>
 <div class="container-fluid">
     <div class="row">
-        <h3 class="page-header">{{$event->name}}</h3>
+        <h3 class="page-title"><a href="/analytics/events"><i class="fas fa-arrow-alt-circle-left"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{$event->name}} ANALYTICS</h3>
     </div>
 
     <div class="row">

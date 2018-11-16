@@ -4,7 +4,7 @@
     <br><br><br><br><br>
     <div class="container-fluid">
         <div class="row">
-            <h3 class="page-title">All Purchases</h3>
+            <h3 class="page-title"><a href="/home/#top"><i class="fas fa-arrow-alt-circle-left"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All Purchases</h3>
         </div>
 
         <div class="row border-bottom">

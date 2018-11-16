@@ -4,6 +4,10 @@
 <br><br><br><br><br>
     <div class="card black-bg">
         <div class="card-body black-bg">
+            <div class="row">
+                <h3 class="page-title"><a href="/home/#top"><i class="fas fa-arrow-alt-circle-left"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CREATE EVENT</h3>
+            </div>
+            <br>
             <form action="/events/create" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group row">

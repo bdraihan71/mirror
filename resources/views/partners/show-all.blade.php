@@ -3,6 +3,7 @@
 @section('content')
     <br><br><br><br><br>
     <div class="container-fluid">
+        <h3 class="page-title"><a href="/home/#top"><i class="fas fa-arrow-alt-circle-left"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ALL PARTNERS</h3>
         <h2 class="page-title text-center">Local Partners</h2>
         <br><br>
         <div class="row">
