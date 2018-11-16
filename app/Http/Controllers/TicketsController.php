@@ -43,6 +43,12 @@ class TicketsController extends Controller
             flash('You are not authorized to access this')->error();
             return redirect('/');
         }
+
+        $this->validate($request, [
+            'type.*' => 'required|max:30',
+            'number.*' => 'required',
+            'price.*' => 'required'
+        ]);
         
         $types = $request->type;
         $numbers = $request->number;
