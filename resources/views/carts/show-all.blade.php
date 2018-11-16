@@ -6,7 +6,7 @@
     <div class="section black-bg">
         <div class="container-fluid">
             <div class="row">
-                <h3 class="page-title">PRODUCT PURCHASES</h3>
+                <h3 class="page-title"><a href="/home/#top"><i class="fas fa-arrow-alt-circle-left"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRODUCT PURCHASES</h3>
             </div>
             <br><br>
             @if (count($purchases) == 0)

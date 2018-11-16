@@ -6,7 +6,7 @@
     <div class="section black-bg">
         <div class="container-fluid">
             <div class="row">
-                <h3 class="page-title">EVENT TICKETS</h3>
+                <h3 class="page-title"><a href="/home/#top"><i class="fas fa-arrow-alt-circle-left"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EVENT TICKETS</h3>
             </div>
             <br><br>
             @if (count($tickets) == 0)
