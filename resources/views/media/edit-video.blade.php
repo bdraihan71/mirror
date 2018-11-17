@@ -3,6 +3,7 @@
 @section('content')
     <br><br><br><br><br>
     <div class="container-fluid">
+        <h3 class="page-title"><a href="/home/#top"><i class="fas fa-arrow-alt-circle-left"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ALBUM</h3>
         <div class="row">
             <h3>{{$event == null ? "Eventless" : $event->name}}</h3>
         </div>
