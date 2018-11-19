@@ -72,4 +72,42 @@ class AnalyticsController extends Controller
 
         return redirect($url);
     }
+
+    public function barcodePresent (Request $request)
+    {
+        $barcode = explode(' ', $request->barcode);
+        $type = $barcode[0];
+        $event = $barcode[1];
+        $number = $barcode[2];
+        $ticket = null;
+        $message = "New present marked";
+
+        if ($type == 1) {
+            $ticket = Ticket::find($number);
+
+            if ($ticket->present == null || $ticket->present == 1) {
+                $ticket->present = 2;
+            } else {
+                $ticket->present = 1;
+                $message = "Present unmarked";
+            }
+        } else {
+            $ticket = IssueTicket::find($number);
+
+            if ($ticket->present) {
+                $ticket->present = false;
+                $message = "Present unmarked";
+            } else {
+                $ticket->present = true;
+            }
+        }
+
+        $ticket->save();
+
+        $url = '/analytics/events/'.$event;
+
+        flash($message);
+
+        return redirect($url);
+    }
 }

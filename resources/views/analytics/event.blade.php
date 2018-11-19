@@ -7,6 +7,23 @@
         <h3 class="page-title"><a href="/analytics/events"><i class="fas fa-arrow-alt-circle-left"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{$event->name}} ANALYTICS</h3>
     </div>
 
+    <form action="/present/barcode" method="POST" id="barcode">
+        @csrf
+        <div class="row">
+            <div class="col-md-12">
+                <input type="text" autofocus="autofocus" name="barcode" class="form-control" onchange="myFunction(this.value)">
+            </div>
+        </div>
+    </form>
+
+    <script>
+        function myFunction(val) {
+            document.forms["barcode"].submit();
+        }
+    </script>
+
+    <br>
+
     <div class="row">
         <h3 class="page-header">Purchased Tickets</h3>
     </div>
