@@ -41,6 +41,8 @@ class AnswersController extends Controller
 
         $questions = Question::where('event_id', $id)->get();
 
+        flash('Please answer the following questions');
+
         return view('answers/answer')->with('questions', $questions)->with('id', $id)->with('footer', $this->footer());
     }
 

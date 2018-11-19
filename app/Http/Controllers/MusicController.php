@@ -46,6 +46,8 @@ class MusicController extends Controller
 
         $music->save();
 
+        flash('Music successfully added')->success();
+
         return redirect('/music');
     }
 

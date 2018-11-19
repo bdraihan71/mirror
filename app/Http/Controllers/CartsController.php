@@ -65,6 +65,8 @@ class CartsController extends Controller
         $cart = Cart::find($id);
         $cart->delete();
 
+        flash('Item removed from cart');
+
         return redirect('/cart');
     }
 
@@ -209,10 +211,14 @@ class CartsController extends Controller
             
             Mail::to(User::find($user)->email)->send(new vMail($purchase));
 
+            flash('Congratulations! Your order has been placed!')->success();
+
             return redirect('/home');
         } else {
             $purchase->delete();
-            flash('Something went wrong')->error();
+            // flash('Something went wrong, we could not place your order')->error();
+
+            flash('Something went wrong, we could not place your order')->error();
 
             return redirect('/checkout');
         }

@@ -18,6 +18,8 @@ class CMSController extends Controller
         $contents = array(WebContent::find(1), WebContent::find(2), WebContent::find(3), WebContent::find(4), WebContent::find(5),
         WebContent::find(6), WebContent::find(7), WebContent::find(8), WebContent::find(9), WebContent::find(10), WebContent::find(11),
         WebContent::find(12), WebContent::find(13), WebContent::find(14), WebContent::find(15));
+
+        flash('Welcome to landing page content management system');
         
         return view('cms/index')->with('contents', $contents);
     }
@@ -133,6 +135,8 @@ class CMSController extends Controller
             $cCounter++;
         }
 
+        flash('Your changes have successfully made')->success();
+
         return redirect('/');
     }
 
@@ -145,6 +149,8 @@ class CMSController extends Controller
         }
 
         $contents = array(WebContent::find(16), WebContent::find(17), WebContent::find(18));
+
+        flash('Welcome to the footer content management system');
 
         return view('cms/footer')->with('contents', $contents);
     }
@@ -198,6 +204,8 @@ class CMSController extends Controller
             $content->content = $request->email;
             $content->save();
         }
+
+        flash('The changes has been successfully made')->success();
 
         return redirect('/');
     }

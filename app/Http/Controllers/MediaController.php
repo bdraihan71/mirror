@@ -109,7 +109,7 @@ class MediaController extends Controller
 
         if ($request->cap != null) {
             $this->validate($request, [
-                'all' => 'required|image|max:1999',
+                'all' => 'required|image|max:2048',
             ]);
         } elseif ($request->hasfile('all')) {
             $this->validate($request, [
@@ -223,6 +223,8 @@ class MediaController extends Controller
         $video->save();
 
         $url = '/media/video/edit?='.$request->event;
+
+        flash('Video successfully added')->success();
 
         return redirect($url);
     }

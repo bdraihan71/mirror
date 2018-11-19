@@ -115,6 +115,8 @@ class EventsController extends Controller
             return redirect('/');
         }
 
+        flash('Welcome to events creater');
+
         return view('events/create')->with('footer', $this->footer());
     }
 
@@ -168,6 +170,8 @@ class EventsController extends Controller
 
         $event->ticket_number = $request->ticket_number;
         $event->save();
+
+        flash('Your event has been successfully created')->success();
         
         return view('events/add-info')->with('id', $event->id)->with('information', array())->with('footer', $this->footer());
     }
@@ -193,6 +197,8 @@ class EventsController extends Controller
 
         $information = AdditionalInformation::where('event_id', $request->id)->get();
 
+        flash('Additional Infromation successfully stored')->success();
+
         return view('events/add-info')->with('id', $request->id)->with('information', $information)->with('footer', $this->footer());
     }
 
@@ -203,6 +209,8 @@ class EventsController extends Controller
 
             return redirect('/');
         }
+
+        flash('Please add questions for the event ticket buyers');
 
         return view('events/add-q')->with('id', $id)->with('questions', array())->with('footer', $this->footer());
     }
@@ -225,6 +233,8 @@ class EventsController extends Controller
         $question->save();
 
         $questions = Question::where('event_id', $request->id)->get();
+
+        flash('Question successfully added')->success();
 
         return view('events/add-q')->with('id', $request->id)->with('questions', $questions)->with('footer', $this->footer());
     }
@@ -308,6 +318,8 @@ class EventsController extends Controller
 
         $url = '/events/edit/'.$event->id;
 
+        flash('Event successfully edited')->success();
+
         return redirect($url);
     }
 
@@ -348,6 +360,8 @@ class EventsController extends Controller
             $info->save();
         }
 
+        flash('Event additional information successfully edited')->success();
+
         return redirect($url);
     }
 
@@ -378,6 +392,8 @@ class EventsController extends Controller
             $question->save();
         }
 
+        flash('Event questions successfully edited')->success();
+
         return redirect($url);
     }
 
@@ -393,6 +409,8 @@ class EventsController extends Controller
         $url = '/events/edit/'.$info->event_id.'#add';
         $info->delete();
 
+        flash('Event additional information successfully deleted');
+
         return redirect($url);
     }
 
@@ -407,6 +425,8 @@ class EventsController extends Controller
         $question = Question::where('id', $id)->first();
         $url = '/events/edit/'.$question->event_id.'#q';
         $question->delete();
+
+        flash('Event question successfully deleted');
 
         return redirect($url);
     }
