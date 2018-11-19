@@ -49,7 +49,7 @@ class MediaController extends Controller
 
         $this->validate($request, [
             'event' => 'required',
-            'url.*' => 'required|image|max:1999',
+            'url.*' => 'required|image|max:2048',
             'caption.*' => 'required|max:30',
         ]);
 
