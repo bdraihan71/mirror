@@ -33,9 +33,9 @@ class ProfilesController extends Controller
         }
 
         $this->validate($request, [
-            'f_name' => 'required',
-            'm_name' => 'nullable',
-            'l_name' => 'required',
+            'f_name' => 'required|max:80',
+            'm_name' => 'nullable|max:80',
+            'l_name' => 'required|max:80',
             'email' => 'required',
             'password' => 'required',
             'confirmed_password' => 'required',
