@@ -49,7 +49,7 @@ class MediaController extends Controller
 
         $this->validate($request, [
             'event' => 'required',
-            'url.*' => 'required|image|max:2048',
+            'url.*' => 'required|image|max:2500',
             'caption.*' => 'required|max:30',
         ]);
 
@@ -109,7 +109,7 @@ class MediaController extends Controller
 
         if ($request->cap != null) {
             $this->validate($request, [
-                'all' => 'required|image|max:2048',
+                'all' => 'required|image|max:2500',
             ]);
         } elseif ($request->hasfile('all')) {
             $this->validate($request, [

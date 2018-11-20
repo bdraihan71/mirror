@@ -21,7 +21,7 @@ class PartnersController extends Controller
     public function store (Request $request)
     {
         $this->validate($request, [
-            'url' => 'image|required|max:2048|mimes:jpeg,png,jpg,gif,svg',
+            'url' => 'image|required|max:2500|mimes:jpeg,png,jpg,gif,svg',
             'type' => 'required',
             'name' => 'required|max:80'
         ]);
@@ -68,7 +68,7 @@ class PartnersController extends Controller
         }
 
         $this->validate($request, [
-            'url' => 'image|required|max:2048|mimes:jpeg,png,jpg,gif,svg',
+            'url' => 'image|required|max:2500|mimes:jpeg,png,jpg,gif,svg',
             'type' => 'required',
             'name' => 'required|max:80'
         ]);

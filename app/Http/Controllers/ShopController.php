@@ -40,7 +40,7 @@ class ShopController extends Controller
             'price' => 'required|integer',
             'quantity' => 'required|integer',
             'description' => 'required',
-            'img' => 'image|required|max:2048|mimes:jpeg,png,jpg,gif,svg'
+            'img' => 'image|required|max:2500|mimes:jpeg,png,jpg,gif,svg'
         ]);
 
         $product = new Product;
@@ -70,7 +70,7 @@ class ShopController extends Controller
             'price' => 'required|integer',
             'quantity' => 'required|integer',
             'description' => 'required',
-            'img' => 'image|nullable|max:2048|mimes:jpeg,png,jpg,gif,svg'
+            'img' => 'image|nullable|max:2500|mimes:jpeg,png,jpg,gif,svg'
         ]);
 
         $product = Product::where('id', $id)->first();

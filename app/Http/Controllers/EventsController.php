@@ -137,20 +137,20 @@ class EventsController extends Controller
             'end' => 'required',
             'location' => 'required|max:80',
             'description' => 'required|max:500',
-            'url_1' => 'image|required|max:2048|mimes:jpeg,png,jpg,gif,svg',
-            'url_3' => 'image|required|max:2048|mimes:jpeg,png,jpg,gif,svg',
-            'url_4' => 'image|required|max:2048|mimes:jpeg,png,jpg,gif,svg',
-            'url_5' => 'image|required|max:2048|mimes:jpeg,png,jpg,gif,svg',
+            'url_1' => 'image|required|max:2500|mimes:jpeg,png,jpg,gif,svg',
+            'url_3' => 'image|required|max:2500|mimes:jpeg,png,jpg,gif,svg',
+            'url_4' => 'image|required|max:2500|mimes:jpeg,png,jpg,gif,svg',
+            'url_5' => 'image|required|max:2500|mimes:jpeg,png,jpg,gif,svg',
             'ticket_number' => 'required|integer|min:0',
         ]);
 
         // $this->validate($request, [
         //     'description' => 'required',
-        //     'url_1' => 'image|required|max:2048|mimes:jpeg,png,jpg,gif,svg',
-        //     // 'url_2' => 'image|required|max:2048|mimes:jpeg,png,jpg,gif,svg',
-        //     'url_3' => 'image|required|max:2048|mimes:jpeg,png,jpg,gif,svg',
-        //     'url_4' => 'image|required|max:2048|mimes:jpeg,png,jpg,gif,svg',
-        //     'url_5' => 'image|required|max:2048|mimes:jpeg,png,jpg,gif,svg'
+        //     'url_1' => 'image|required|max:2500|mimes:jpeg,png,jpg,gif,svg',
+        //     // 'url_2' => 'image|required|max:2500|mimes:jpeg,png,jpg,gif,svg',
+        //     'url_3' => 'image|required|max:2500|mimes:jpeg,png,jpg,gif,svg',
+        //     'url_4' => 'image|required|max:2500|mimes:jpeg,png,jpg,gif,svg',
+        //     'url_5' => 'image|required|max:2500|mimes:jpeg,png,jpg,gif,svg'
         // ]);
 
         $event = new Event;

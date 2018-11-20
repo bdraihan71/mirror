@@ -34,7 +34,7 @@
  
     <div class="container-fluid">
         @include('flash::message')
-        {{-- @include('layouts.messages') --}}
+        @include('layouts.messages')
         @if (Request::is('/'))
             @yield('content')
         @else
