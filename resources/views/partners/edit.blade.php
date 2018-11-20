@@ -13,7 +13,7 @@
                                 <label class="">Name *</label>
                             </div>
                             <div class="form-group col-md-10">
-                                <input type="text" class="form-control contact-form input-container" name="name" value="{{ old('name') == null ? $partner->name : old('name) }}" placeholder="Name of the partner" value="{{$partner->name}}" required>
+                                <input type="text" class="form-control contact-form input-container" name="name" value="{{ old('name') == null ? $partner->name : old('name') }}" placeholder="Name of the partner" value="{{$partner->name}}" required>
                             </div>
                         </div>
 
