@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Event;
 use App\Ticket;
 use App\IssueTicket;
+use Exception;
 
 class AnalyticsController extends Controller
 {
@@ -75,36 +76,64 @@ class AnalyticsController extends Controller
 
     public function barcodePresent (Request $request)
     {
-        $barcode = explode(' ', $request->barcode);
-        $type = $barcode[0];
-        $event = $barcode[1];
-        $number = $barcode[2];
+        $barcode = null;
+        $type = null;
+        $url = '/analytics/events/'.$request->event;
+        $number = null;
         $ticket = null;
+
+        try {
+            $barcode = explode(' ', $request->barcode);
+            $type = $barcode[0];
+            $event = $barcode[1];
+            $number = $barcode[2];
+        } catch (Exception $e) {
+            flash('The entered infomation is invalid')->error();
+
+            return redirect($url);
+        }
+        
         $message = "New present marked";
 
         if ($type == 1) {
             $ticket = Ticket::find($number);
 
-            if ($ticket->present == null || $ticket->present == 1) {
-                $ticket->present = 2;
-            } else {
-                $ticket->present = 1;
-                $message = "Present unmarked";
+            if ($ticket->user_id == null) {
+                flash('The entered infomation is invalid')->error();
+
+                return redirect($url);
+            }
+
+            try {
+                if ($ticket->present == null || $ticket->present == 1) {
+                    $ticket->present = 2;
+                } else {
+                    $ticket->present = 1;
+                    $message = "Present unmarked";
+                }
+            } catch (Exception $e) {
+                flash('The entered infomation is invalid')->error();
+
+                return redirect($url);
             }
         } else {
             $ticket = IssueTicket::find($number);
 
-            if ($ticket->present) {
-                $ticket->present = false;
-                $message = "Present unmarked";
-            } else {
-                $ticket->present = true;
+            try {
+                if ($ticket->present) {
+                    $ticket->present = false;
+                    $message = "Present unmarked";
+                } else {
+                    $ticket->present = true;
+                }
+            } catch (Exception $e) {
+                flash('The entered infomation is invalid')->error();
+
+                return redirect($url);
             }
         }
 
         $ticket->save();
-
-        $url = '/analytics/events/'.$event;
 
         flash($message);
 
