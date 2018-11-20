@@ -68,7 +68,7 @@ class PartnersController extends Controller
         }
 
         $this->validate($request, [
-            'url' => 'image|required|max:3000|mimes:jpeg,png,jpg,gif,svg',
+            'url' => 'image|nullable|max:3000|mimes:jpeg,png,jpg,gif,svg',
             'type' => 'required',
             'name' => 'required|max:80'
         ]);
