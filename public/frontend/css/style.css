@@ -1207,8 +1207,8 @@ input[type=number] {
 }
 
 .partner-logo {
-  max-height: 130px;
-  /* width: 150px; */
+  height: 100%;
+  width: 100%;
 }
 
 @media (min-width : 0px) and (max-width : 853px) and (orientation : landscape) {
