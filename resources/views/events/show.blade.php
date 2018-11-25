@@ -70,7 +70,18 @@
             <div class="container-fluid d-none d-sm-block">
                 <div class="row text-center">
                     <div class="col-md-12 center-gallery">
-                        <h1 class="center__text glitch is-glitching" data-text="GALLERY">GALLERY</h1>
+                        <h1 class="center__text {{ App\WebContent::find(20) == null || App\WebContent::find(20)->content == '0' ? 'glitch is-glitching' : ''}}" data-text="GALLERY">GALLERY</h1>
+                        @if (auth()->user() != null)
+                            @if (App\Http\Controllers\Controller::notAdmin() == false)
+                                <a href="/remove/effect/gallery/{{$event->id}}" class="btn btn-danger h-25">
+                                    @if (App\WebContent::find(20) == null || App\WebContent::find(20)->content == '0')
+                                        Remove Glitch
+                                    @else
+                                        Put Glitch
+                                    @endif
+                                </a>    
+                            @endif
+                        @endif
                     </div>
                 </div>
                 <div class="row">
