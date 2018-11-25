@@ -197,3 +197,6 @@ Route::post('/profile/info', 'ProfileInfoController@store');
 
 //Admin Verify Routes
 Route::get('/verifyAdmins', 'VerifyAdminsController@verify');
+
+//Effects Routes
+Route::get('/remove/effect/gallery/{id}', 'EffectsController@galleryGlitch')->middleware('auth');
