@@ -60,10 +60,6 @@
                     background: #222 url("<?php echo $album[$i]->url; ?>") no-repeat center center;
                 }
             </style>
-
-            @if($i == 5)
-                @break
-            @endif
         @endfor
 
         <section id="gallery" class="gallery">
@@ -84,30 +80,21 @@
                         @endif
                     </div>
                 </div>
+
                 <div class="row">
                     <section class="c-hero-flex">
-                        <a class="c-hero-flex__item c-hero-flex__item1" target="_blank" href="/">
-                            
-                        </a>
-                        <a class="c-hero-flex__item c-hero-flex__item2" target="_blank" href="/">
-                            
-                        </a>
-                        <a class="c-hero-flex__item c-hero-flex__item3" target="_blank" href="/">
+                        @foreach ($album as $photo)
+                            @if ($loop->index != 0 && $loop->index % 3 == 0)
+                                    </section>
+                                </div>
+                                <div class="row">
+                                    <section class="c-hero-flex">
+                            @endif
 
-                        </a>
-                    </section>
-                </div>
-                <div class="row">
-                    <section class="c-hero-flex">
-                        <a class="c-hero-flex__item c-hero-flex__item4" target="_blank" href="/">
-
-                        </a>
-                        <a class="c-hero-flex__item c-hero-flex__item5" target="_blank" href="/">
-
-                        </a>
-                        <a class="c-hero-flex__item c-hero-flex__item6" target="_blank" href="/">
-
-                        </a>
+                            <a class="c-hero-flex__item c-hero-flex__item{{$loop->iteration}}" target="_blank" href="/">
+                                
+                            </a>
+                        @endforeach
                     </section>
                 </div>
             </div>
