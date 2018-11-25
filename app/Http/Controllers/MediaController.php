@@ -27,16 +27,18 @@ class MediaController extends Controller
             return redirect('/media');
         }
 
-        $es = Event::orderBy('created_at', 'desc')->get();
-        $events = array();
+        return redirect('/media/photo/edit');
 
-        foreach ($es as $e) {
-            if (count($e->album) == 0) {
-                array_push($events, $e);
-            }
-        }
+        // $es = Event::orderBy('created_at', 'desc')->get();
+        // $events = array();
 
-        return view('media/photo-add')->with('events', $events);
+        // foreach ($es as $e) {
+        //     if (count($e->album) == 0) {
+        //         array_push($events, $e);
+        //     }
+        // }
+
+        // return view('media/photo-add')->with('events', $events);
     }
 
     public function storePhoto (Request $request)
