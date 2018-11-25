@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\WebContent;
 use App\Contactee;
 use App\Partner;
+use App\Mail\ContactUs as vMail;
+use Mail;
 
 class HomeController extends Controller
 {
@@ -80,6 +82,8 @@ class HomeController extends Controller
         $contact->email = $request->email;
         $contact->body = $request->body;
         $contact->save();
+
+        Mail::to(env('MAIL_COPY_TO'))->send(new vMail($contact));
 
         flash('Message successfully delivered')->success();
         return redirect('/');
