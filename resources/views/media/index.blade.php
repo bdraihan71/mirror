@@ -12,7 +12,7 @@
     <div class="row pt-3">
         @foreach ($albums as $album)
             <div class="col-md-2">
-                <img class="media-img" src="{{$album->url}}" alt="Card image cap">
+                <img class="media-img" src="{{$album->url}}" alt="{{$album->caption}}" id="{{'myImg'.$album->id}}" onclick="modalImage({{$album->id}})">
                 <p class="media-text">{{$album->caption}}</p>
             </div>
         @endforeach
@@ -63,4 +63,6 @@
     @endif
 </div>
 </section>
+
+@include('templates.modal')
 @endsection

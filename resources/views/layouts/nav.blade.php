@@ -1,6 +1,6 @@
 <div class="section">
     <header id="home">
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="nav">
             <div class="container">
                 <a class="navbar-brand" href="/"><img class="logo" src="/frontend/img/logo.svg" alt="Logo"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
