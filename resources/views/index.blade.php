@@ -146,7 +146,7 @@
                     <div class="owl-carousel partners-carousel">
                         @foreach($local_partners as $partner)
                             <div class="">
-                                <img class="card-img-top" src="{{$partner->img}}" alt="Partner Logo">
+                                <img class="card-img-top partner-logo" src="{{$partner->img}}" alt="Partner Logo">
                             </div>
                         @endforeach
                     </div>
