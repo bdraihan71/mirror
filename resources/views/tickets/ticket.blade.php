@@ -56,8 +56,8 @@
             </div>
             <br><br><br><br>
             <div class="row pt-5">
-                <div class="col-md-12 ticket-text-line-height">
-                    <table class="table">
+                <div class="col-md-12">
+                    <table class="table" id="invoice-table">
                         <thead>
                             <tr>
                             <th scope="col">Description</th>
