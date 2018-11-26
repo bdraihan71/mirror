@@ -32,12 +32,10 @@ class CMSController extends Controller
             return redirect('/');
         }
 
+
+
         $this->validate($request, [
-            'wwds.1' => 'required|max:90',
-            'wwds.2' => 'required|max:90',
-            'wwds.3' => 'required|max:90',
-            'wwds.4' => 'required|max:90',
-            'wwds.5' => 'required|max:90',
+            'wwds.*' => 'required|max:90',
             'wwd.*' => 'required',
             'url_1' => 'nullable|image',
             'url_2' => 'nullable|image',
