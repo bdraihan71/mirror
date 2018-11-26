@@ -68,36 +68,48 @@ class EventsController extends Controller
         }
 
         if (auth()->user() == null) {
-            $events = Event::where('date_start', '>=', $now->copy()->format('Y-m-d'))->whereNull('deleted')->orderBy('date_start', 'desc')->get();
+            $events = Event::where('date_start', '>=', $now->copy()->format('Y-m-d'))->whereNull('deleted')->sortBy(function ($item){
+                return Carbon::parse($item->date_start);
+            })->get();
             if ($range == 'all') {
                 $events = Event::whereNull('deleted')->get();
                 $type = 'All';
             } elseif ($range == 'past') {
-                $events = Event::where('date_start', '<', $now->copy()->format('Y-m-d'))->whereNull('deleted')->orderBy('date_start', 'desc')->get();
+                $events = Event::where('date_start', '<', $now->copy()->format('Y-m-d'))->whereNull('deleted')->sortBy(function ($item){
+                    return Carbon::parse($item->date_start);
+                })->get();
                 $type = 'Past';
             } else {
                 $type = 'Upcoming';
             }
         } elseif (!$this->notAdmin()) {
-            $events = Event::where('date_start', '>=', $now->copy()->format('Y-m-d'))->orderBy('date_start', 'desc')->get();
+            $events = Event::where('date_start', '>=', $now->copy()->format('Y-m-d'))->sortBy(function ($item){
+                return Carbon::parse($item->date_start);
+            })->get();
 
             if ($range == 'all') {
                 $events = Event::all();
                 $type = 'All';
             } elseif ($range == 'past') {
-                $events = Event::where('date_start', '<', $now->copy()->format('Y-m-d'))->orderBy('date_start', 'desc')->get();
+                $events = Event::where('date_start', '<', $now->copy()->format('Y-m-d'))->sortBy(function ($item){
+                    return Carbon::parse($item->date_start);
+                })->get();
                 $type = 'Past';
             } else {
                 $type = 'Upcoming';
             }
         } else {
-            $events = Event::where('date_start', '>=', $now->copy()->format('Y-m-d'))->whereNull('deleted')->orderBy('date_start', 'desc')->get();
+            $events = Event::where('date_start', '>=', $now->copy()->format('Y-m-d'))->whereNull('deleted')->sortBy(function ($item){
+                return Carbon::parse($item->date_start);
+            })->get();
 
             if ($range == 'all') {
                 $events = Event::whereNull('deleted')->get();
                 $type = 'All';
             } elseif ($range == 'past') {
-                $events = Event::where('date_start', '<', $now->copy()->format('Y-m-d'))->whereNull('deleted')->orderBy('date_start', 'desc')->get();
+                $events = Event::where('date_start', '<', $now->copy()->format('Y-m-d'))->whereNull('deleted')->sortBy(function ($item){
+                    return Carbon::parse($item->date_start);
+                })->get();
                 $type = 'Past';
             } else {
                 $type = 'Upcoming';
