@@ -35,7 +35,7 @@ class CMSController extends Controller
 
 
         $this->validate($request, [
-            'wwds.*' => 'required|max:90',
+            // 'wwds.*' => 'required|max:100',
             'wwd.*' => 'required',
             'url_1' => 'nullable|image',
             'url_2' => 'nullable|image',
