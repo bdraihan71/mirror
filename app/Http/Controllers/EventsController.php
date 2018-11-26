@@ -72,7 +72,7 @@ class EventsController extends Controller
                 return Carbon::parse($item->date_start);
             });
             if ($range == 'all') {
-                $events = Event::whereNull('deleted')->get();
+                $events = Event::whereNull('deleted')->orderBy('date_start', 'desc')->get();
                 $type = 'All';
             } elseif ($range == 'past') {
                 $events = Event::where('date_start', '<', $now->copy()->format('Y-m-d'))->whereNull('deleted')->get()->sortByDesc(function ($item){
@@ -88,7 +88,7 @@ class EventsController extends Controller
             });
 
             if ($range == 'all') {
-                $events = Event::all();
+                $events = Event::orderBy('date_start', 'desc')->get();
                 $type = 'All';
             } elseif ($range == 'past') {
                 $events = Event::where('date_start', '<', $now->copy()->format('Y-m-d'))->get()->sortByDesc(function ($item){
@@ -104,7 +104,7 @@ class EventsController extends Controller
             });
 
             if ($range == 'all') {
-                $events = Event::whereNull('deleted')->get();
+                $events = Event::whereNull('deleted')->orderBy('date_start', 'desc')->get();
                 $type = 'All';
             } elseif ($range == 'past') {
                 $events = Event::where('date_start', '<', $now->copy()->format('Y-m-d'))->whereNull('deleted')->get()->sortByDesc(function ($item){
