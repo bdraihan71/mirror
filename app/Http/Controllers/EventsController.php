@@ -70,14 +70,14 @@ class EventsController extends Controller
         if (auth()->user() == null) {
             $events = Event::where('date_start', '>=', $now->copy()->format('Y-m-d'))->whereNull('deleted')->get()->sortBy(function ($item){
                 return Carbon::parse($item->date_start);
-            });
+            }, 'desc');
             if ($range == 'all') {
                 $events = Event::whereNull('deleted')->get();
                 $type = 'All';
             } elseif ($range == 'past') {
                 $events = Event::where('date_start', '<', $now->copy()->format('Y-m-d'))->whereNull('deleted')->get()->sortBy(function ($item){
                     return Carbon::parse($item->date_start);
-                })->get();
+                }, 'desc');
                 $type = 'Past';
             } else {
                 $type = 'Upcoming';
@@ -85,7 +85,7 @@ class EventsController extends Controller
         } elseif (!$this->notAdmin()) {
             $events = Event::where('date_start', '>=', $now->copy()->format('Y-m-d'))->get()->sortBy(function ($item){
                 return Carbon::parse($item->date_start);
-            })->get();
+            }, 'desc');
 
             if ($range == 'all') {
                 $events = Event::all();
@@ -93,7 +93,7 @@ class EventsController extends Controller
             } elseif ($range == 'past') {
                 $events = Event::where('date_start', '<', $now->copy()->format('Y-m-d'))->get()->sortBy(function ($item){
                     return Carbon::parse($item->date_start);
-                })->get();
+                }, 'desc');
                 $type = 'Past';
             } else {
                 $type = 'Upcoming';
@@ -101,7 +101,7 @@ class EventsController extends Controller
         } else {
             $events = Event::where('date_start', '>=', $now->copy()->format('Y-m-d'))->whereNull('deleted')->get()->sortBy(function ($item){
                 return Carbon::parse($item->date_start);
-            })->get();
+            }, 'desc');
 
             if ($range == 'all') {
                 $events = Event::whereNull('deleted')->get();
@@ -109,7 +109,7 @@ class EventsController extends Controller
             } elseif ($range == 'past') {
                 $events = Event::where('date_start', '<', $now->copy()->format('Y-m-d'))->whereNull('deleted')->get()->sortBy(function ($item){
                     return Carbon::parse($item->date_start);
-                })->get();
+                }, 'desc');
                 $type = 'Past';
             } else {
                 $type = 'Upcoming';
