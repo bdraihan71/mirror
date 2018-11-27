@@ -91,7 +91,8 @@
                                     <section class="c-hero-flex">
                             @endif
 
-                            <a class="c-hero-flex__item c-hero-flex__item{{$loop->iteration}}" target="_blank" href="/">
+                            <img src="{{$photo->url}}" id="myImg{{$photo->id}}" alt="{{$photo->caption}}" style="display: none">
+                            <a class="c-hero-flex__item c-hero-flex__item{{$loop->iteration}}" onclick="modalImage({{$photo->id}})" href="#">
                                 
                             </a>
                         @endforeach
@@ -180,4 +181,5 @@
             @endif
         </div>
     </section>
+    @include('templates.modal')
 @endsection
