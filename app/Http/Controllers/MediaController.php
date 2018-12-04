@@ -112,6 +112,7 @@ class MediaController extends Controller
 
         $this->validate($request, [
             'caption.*' => 'required|max:30',
+            'name' => 'required|max:30'
         ]);
 
         if ($request->cap != null) {
@@ -147,6 +148,7 @@ class MediaController extends Controller
             }
 
             $photoAlbum = PhotoAlbum::find(0);
+            $photoAlbum->name = $request->name;
             $photoAlbum->featured_id = $request->feature_id;
             $photoAlbum->save();
 
@@ -174,6 +176,7 @@ class MediaController extends Controller
 
             $photoAlbum = PhotoAlbum::find($request->id);
             $photoAlbum->featured_id = $request->feature_id;
+            $photoAlbum->name = $request->name;
             $photoAlbum->save();
         }
 
