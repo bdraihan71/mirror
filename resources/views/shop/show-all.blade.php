@@ -10,7 +10,7 @@
         <div class="row border-bottom">
             <div class="col-md-2">User Name</div>
             <div class="col-md-1">Purchase method</div>
-            <div class="col-md-2">Purchase Date</div>
+            <div class="col-md-2">Purchase Date and Time</div>
             <div class="col-md-2">Product Name</div>
             <div class="col-md-1">Product Price</div>
             <div class="col-md-1">Product Quantity</div>
@@ -21,7 +21,7 @@
             <div class="row border-top">
                 <div class="col-md-2">{{$purchase->user->profile->f_name.' '.$purchase->user->profile->m_name.' '.$purchase->user->profile->l_name}}</div>
                 <div class="col-md-1">{{$purchase->method}}</div>
-                <div class="col-md-2">{{date("M d, Y", strtotime($purchase->created_at))}}</div>
+                <div class="col-md-2">{{date("M d, Y", strtotime($purchase->created_at)).' at '.date("H:i", strtotime($purchase->created_at))}}</div>
                 <div class="col-md-2"></div>
                 <div class="col-md-1"></div>
                 <div class="col-md-1"></div>

@@ -9,12 +9,7 @@
                     <div class="col-lg-10 offset-md-1">
                         <h2 class="text-white text-center">Review Your Purchase &amp; Complete Checkout</h2>
                         <hr>
-                        <a href="/shop" class="btn btn-info w-100">Continue Shopping</a>
-                        <hr>
-                        @if (count($items) != 0)
-                            <a href="/checkout" class="btn btn-danger w-100">Proceed to Checkout</a>
-                            <hr>
-                        @endif
+                        
                         <div class="shopping_cart">
                             <form class="" role="form" action="" method="post" id="payment-form">
                                 <div class="panel-group" id="accordion">
@@ -64,6 +59,14 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <a href="/shop" class="btn btn-info w-100">Continue Shopping</a>
+                                        @if (count($items) != 0)
+                                            <hr>
+                                            <a href="/checkout" class="btn btn-danger w-100">Proceed to Checkout</a>
+                                            <br>
+                                        @else
+                                            <br>
+                                        @endif
                                     </div>
                                 </div>
                             </form>
