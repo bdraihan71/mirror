@@ -17,4 +17,9 @@ class PhotoAlbum extends Model
     {
         return $this->belongsTo('App\Event');
     }
+
+    public function featured ()
+    {
+        return $this->belongsTo('App\Album', 'featured_id');
+    }
 }

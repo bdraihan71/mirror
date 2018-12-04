@@ -88,7 +88,9 @@ class MediaController extends Controller
         }
 
         if ($request->album == null) {
-            return view('media/event-select')->with('events', PhotoAlbum::all())->with('url', '/media/photo/edit');
+            return redirect('/album/create');
+
+            // return view('media/event-select')->with('events', PhotoAlbum::all())->with('url', '/media/photo/edit');
         } else {
             $album = null;
 
@@ -114,7 +116,7 @@ class MediaController extends Controller
 
         if ($request->cap != null) {
             $this->validate($request, [
-                'all' => 'required|image|max:3000',
+                'all' => 'required|image|max:30000',
             ]);
         } elseif ($request->hasfile('all')) {
             $this->validate($request, [
@@ -144,6 +146,10 @@ class MediaController extends Controller
                 $album->save();
             }
 
+            $photoAlbum = PhotoAlbum::find(0);
+            $photoAlbum->featured_id = $request->feature_id;
+            $photoAlbum->save();
+
             flash('Updates successfully made')->success();
 
             return redirect ($url."0");
@@ -165,6 +171,10 @@ class MediaController extends Controller
     
                 $album->save();
             }
+
+            $photoAlbum = PhotoAlbum::find($request->id);
+            $photoAlbum->featured_id = $request->feature_id;
+            $photoAlbum->save();
         }
 
         

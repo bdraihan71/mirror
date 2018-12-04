@@ -8,31 +8,29 @@
             <h3 class="page-title">{{$event == null ? "Eventless" : $event->name}}</h3>
         </div>
 
+        <script>
+            var featured = '{{ 'img'.$event->featured_id }}';
+
+            function changeStatus (id) {
+                document.getElementById(featured).classList.remove('btn-danger');
+                document.getElementById(featured).classList.add('btn-success');
+                document.getElementById(id).classList.remove('btn-success');
+                document.getElementById(id).classList.add('btn-danger');
+                featured = id;
+            }
+        </script>
+
         <form action="/media/photo/edit" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="id" value="{{$event == null ? 0 : $event->id}}">
             @csrf
             <div class="row">
                 @if ($event == null)
                     @foreach (App\Album::where('event_id', 0)->get() as $album)
-                        <div class="col-md-4">
-                            <img src="{{$album->url}}" class="img-fluid" alt="image">
-                            <br>
-                            <input type="text" class="form-control" name="caption[]" maxlength="30" value="{{ old('caption'.$loop->index) == null ? $album->caption : old('caption'.$loop->index) }}" placeholder="Caption for image" id="">
-                            <br>
-                            <a href="/media/photo/delete/{{$album->id}}" class="btn btn-warning w-100">Delete</a>
-                            <br><br><br>
-                        </div>
+                        @include('templates.album-photo')
                     @endforeach
                 @else
                     @foreach ($event->photos as $album)
-                        <div class="col-md-4">
-                            <img src="{{$album->url}}" class="img-fluid" alt="image">
-                            <br>
-                            <input type="text" class="form-control" name="caption[]" value="{{ old('caption'.$loop->index) == null ? $album->caption : old('caption'.$loop->index) }}" placeholder="Caption for image" id="">
-                            <br>
-                            <a href="/media/photo/delete/{{$album->id}}" class="btn btn-warning w-100">Delete</a>
-                            <br><br><br>
-                        </div>
+                        @include('templates.album-photo')
                     @endforeach
                 @endif
             </div>

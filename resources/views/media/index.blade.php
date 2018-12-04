@@ -5,7 +5,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
-            <h1 class="text-center media-text pb-5">PHOTOS</h1>
+            <h1 class="text-center media-text pb-5">ALBUMS</h1>
         </div>
     </div>
 

@@ -85,4 +85,11 @@ class AlbumController extends Controller
 
         return redirect($url);
     }
+
+    public function show (Request $request, $id)
+    {
+        $album = PhotoAlbum::find($id);
+
+        return view('media.show-album')->with('album', $album);
+    }
 }

@@ -11,4 +11,9 @@ class Album extends Model
     {
         return $this->belongsTo('App\PhotoAlbum', 'event_id');
     }
+
+    public function featured ()
+    {
+        return $this->hasOne('App\PhotoAlbum', 'featured_id');
+    }
 }
