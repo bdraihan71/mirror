@@ -116,7 +116,7 @@ class MediaController extends Controller
 
         if ($request->cap != null) {
             $this->validate($request, [
-                'all' => 'required|image|max:30000',
+                'all' => 'required|image|max:3000',
             ]);
         } elseif ($request->hasfile('all')) {
             $this->validate($request, [
