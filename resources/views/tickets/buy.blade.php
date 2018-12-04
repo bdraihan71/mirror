@@ -20,7 +20,7 @@
                                             @if ($type->price == 0)
                                                 <option value="{{$type->id}}">Complimentary</option>
                                             @else
-                                                <option value="{{$type->id}}">{{$type->name.' - '.$type->price.' BDT '}}</option>
+                                                <option value="{{$type->id}}">{{ $type->name.' - '.App\Http\Controllers\Controller::formatMoney($type->price) }} BDT</option>
                                             @endif
                                         @endforeach
                                     </select>

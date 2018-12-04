@@ -15,7 +15,7 @@
                         <div class="col-md-4">
                             <a href="/shop/{{$product->id}}"><img class="shop-img" src="{{$product->img}}" alt="Card image cap"></a>
                             <h5>{{$product->name}}</h5>
-                            <p>{{$product->price}} BDT</p>
+                            <p>{{ App\Http\Controllers\Controller::formatMoney($product->price) }} BDT</p>
                         </div>
                     @endif
 

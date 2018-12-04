@@ -37,13 +37,13 @@
                                                                         {{$item->product->name}}
                                                                     </td>
                                                                     <td class="text-center">
-                                                                        {{$item->product->price}}
+                                                                        {{ App\Http\Controllers\Controller::formatMoney($item->product->price) }}
                                                                     </td class="text-center">
                                                                     <td class="text-center">
                                                                         {{$item->quantity}}
                                                                     </td>
                                                                     <td class="text-center"> 
-                                                                        <b>{{$item->product->price * $item->quantity}}</b>
+                                                                        <b>{{ App\Http\Controllers\Controller::formatMoney($item->product->price * $item->quantity) }}</b>
                                                                     </td>
                                                                     <td><a href="/cart/remove/{{$item->id}}" class="btn btn-warning"><i class="fas fa-times"></i></a></td>
                                                                 </tr>
@@ -53,7 +53,7 @@
                                                     <div class="col-lg-12">
                                                         <div>
                                                             <h3>Order Total</h3>
-                                                            <h3><span class="text-success">BDT {{$total}}</span></h3>
+                                                            <h3><span class="text-success">BDT {{ App\Http\Controllers\Controller::formatMoney($total) }}</span></h3>
                                                         </div>
                                                     </div>
                                                 </div>

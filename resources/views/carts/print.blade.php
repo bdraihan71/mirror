@@ -71,9 +71,9 @@
                             @foreach ($purchase->carts as $item)
                                 <tr>
                                     <th scope="row">{{$item->product->name}}</th>
-                                    <td>BDT {{number_format((float)$item->product->price, 2, '.', '')}}</td>
+                                    <td>BDT {{ App\Http\Controllers\Controller::formatMoney($item->product->price) }}</td>
                                     <td>{{$item->quantity}}</td>
-                                    <td>BDT {{number_format((float)($item->product->price * $item->quantity), 2, '.', '')}}</td>
+                                    <td>BDT {{ App\Http\Controllers\Controller::formatMoney($item->product->price * $item->quantity) }}</td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -85,10 +85,10 @@
                     
                 </div>
                 <div class="col-md-6 ticket-text-line-height">
-                    <p>Subtotal <span class="float-right">BDT {{number_format((float)$total, 2, '.', '')}}</span></p>
-                    <p>Shipping <span class="float-right">BDT {{number_format((float)$shipping[0], 2, '.', '')}}</span></p>
+                    <p>Subtotal <span class="float-right">BDT {{ App\Http\Controllers\Controller::formatMoney($total) }}</span></p>
+                    <p>Shipping <span class="float-right">BDT {{ App\Http\Controllers\Controller::formatMoney($shipping[0]) }}</span></p>
                     <hr>
-                    <p>Total <span class="float-right text-danger">BDT {{number_format((float)($shipping[0] + $total), 2, '.', '')}}</span></p>
+                    <p>Total <span class="float-right text-danger">BDT {{ App\Http\Controllers\Controller::formatMoney($shipping[0] + $total) }}</span></p>
                 </div>
             </div>
             <p class="text-danger">Items will be shipped within {{$shipping[1]}} days.</p>

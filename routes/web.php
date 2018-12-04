@@ -145,7 +145,7 @@ Route::get('/page', function () {
 });
 
 Route::get('/test', function() {
-    return 'Nothing being tested';
+    return App\Http\Controllers\Controller::formatMoney(10000000000000000);
 });
 
 //Privacy Policy Route

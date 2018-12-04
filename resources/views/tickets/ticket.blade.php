@@ -49,7 +49,7 @@
                     @if ($ticket->type->price == 0)
                     <h1>COMPLIMENTARY TICKET</h1>
                     @else
-                        <h1>BDT {{number_format((float)$ticket->type->price, 2, '.', '')}}</h1>
+                        <h1>BDT {{ App\Http\Controllers\Controller::formatMoney($ticket->type->price) }}</h1>
                         <p>Thank you for your purchase</p>
                     @endif
                 </div>
@@ -69,9 +69,9 @@
                         <tbody>
                             <tr>
                             <th scope="row">{{$ticket->event->name}}</th>
-                            <td>BDT {{number_format((float)$ticket->type->price, 2, '.', '')}}</td>
+                            <td>BDT {{ App\Http\Controllers\Controller::formatMoney($ticket->type->price) }}</td>
                             <td>1</td>
-                            <td>BDT {{number_format((float)$ticket->type->price, 2, '.', '')}}</td>
+                            <td>BDT {{ App\Http\Controllers\Controller::formatMoney($ticket->type->price) }}</td>
                             </tr>
                         </tbody>
                     </table><hr>
