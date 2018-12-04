@@ -57,16 +57,17 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <hr>
+                                                <a href="/shop" class="btn btn-info w-100">Continue Shopping</a>
+                                                @if (count($items) != 0)
+                                                    <hr>
+                                                    <a href="/checkout" class="btn btn-danger w-100">Proceed to Checkout</a>
+                                                    <br>
+                                                @else
+                                                    <br>
+                                                @endif
                                             </div>
                                         </div>
-                                        <a href="/shop" class="btn btn-info w-100">Continue Shopping</a>
-                                        @if (count($items) != 0)
-                                            <hr>
-                                            <a href="/checkout" class="btn btn-danger w-100">Proceed to Checkout</a>
-                                            <br>
-                                        @else
-                                            <br>
-                                        @endif
                                     </div>
                                 </div>
                             </form>

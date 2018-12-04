@@ -8,9 +8,6 @@
                     <div id="mainContentWrapper">
                         <div class="col-lg-10 offset-md-1">
                             <h2 class="text-white text-center">Review Your Purchase &amp; Complete Checkout</h2>
-                            <hr>
-                            <a href="/shop" class="btn btn-info w-100">Continue Shopping</a>
-                            <hr>
                             <div class="shopping_cart">
                                 <form class="" role="form" action="" method="post" id="payment-form">
                                     <div class="panel-group" id="accordion">
@@ -78,6 +75,8 @@
                                                                     </div>
                                                                     <div class="col-md-1"></div>
                                                                 </div>
+                                                                <hr>
+                                                                <a href="/shop" class="btn btn-info w-100">Continue Shopping</a>
                                                                 <hr>
                                                                 <button type="submit" class="btn btn-primary w-100">Continue Checkout</button>
                                                             </form>

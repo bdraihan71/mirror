@@ -1426,3 +1426,33 @@ input[type=number] {
   width: 100%;
   transition: all 0.5s;
 }
+
+.chip img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.stylish-input-group .input-group-addon {
+  background: white !important;
+}
+
+.stylish-input-group .form-control {
+  border-right: 0;
+  box-shadow: 0 0 0;
+  border-color: #ccc;
+}
+
+.stylish-input-group button {
+  border: 0;
+  background: transparent;
+}
+
+.product-img {
+  width: 100%;
+  box-shadow: 5px 5px 30px #1a1a1a;
+}
+
+.black-font {
+  color: gray;
+}

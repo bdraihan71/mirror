@@ -145,7 +145,7 @@ Route::get('/page', function () {
 });
 
 Route::get('/test', function() {
-    return App\Http\Controllers\Controller::formatMoney(10000000000000000);
+    return view('product-issues.admin-index');
 });
 
 //Privacy Policy Route

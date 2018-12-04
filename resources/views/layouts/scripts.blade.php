@@ -16,6 +16,21 @@
 </script>
 
 <script>
+    $(".filter").change(function () {
+        var filterValue = $(this).val();
+        var row = $('.filter-row');
+
+        row.hide()
+        row.each(function (i, el) {
+            if ($(el).attr('data-type') == filterValue) {
+                $(el).show();
+            }
+        })
+
+    });
+</script>
+
+<script>
 $('.navbar-toggler-icon').on('click', function () {
     if ($('.menu').is(":visible")) {
         $('.menu').hide();
