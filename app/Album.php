@@ -3,12 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Event;
+use App\PhotoAlbum;
 
 class Album extends Model
 {
-    public function event ()
+    public function album ()
     {
-        return $this->belongsTo('App\Event');
+        return $this->belongsTo('App\PhotoAlbum', 'event_id');
     }
 }

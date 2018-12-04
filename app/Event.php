@@ -9,7 +9,7 @@ use App\Question;
 use App\Ticket;
 use App\TicketType;
 use App\EventAnswer;
-use App\Album;
+use App\PhotoAlbum;
 use App\Video;
 use App\IssueTicket;
 
@@ -52,7 +52,7 @@ class Event extends Model
 
     public function album ()
     {
-        return $this->hasMany('App\Album');
+        return $this->hasOne('App\PhotoAlbum');
     }
 
     public function videos ()

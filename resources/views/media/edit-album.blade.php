@@ -24,7 +24,7 @@
                         </div>
                     @endforeach
                 @else
-                    @foreach ($event->album as $album)
+                    @foreach ($event->photos as $album)
                         <div class="col-md-4">
                             <img src="{{$album->url}}" class="img-fluid" alt="image">
                             <br>

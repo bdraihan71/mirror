@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Event;
 use App\Album;
+use App\PhotoAlbum;
 use App\Video;
 use Carbon\Carbon;
 
@@ -13,8 +14,8 @@ class MediaController extends Controller
     public function index ()
     {
         $now = new Carbon;
-        $albums = Album::paginate(24);
-        $videos = Video::paginate(9);
+        $albums = PhotoAlbum::orderBy('created_at', 'desc')->paginate(24);
+        $videos = Video::orderBy('created_at', 'desc')->paginate(9);
 
         return view('media/index')->with('albums', $albums)->with('videos', $videos);
     }
@@ -81,19 +82,21 @@ class MediaController extends Controller
     public function editAlbum (Request $request)
     {
         if ($this->notAdmin()) {
-            flash('You are not authorized to access this view')->error;
+            flash('You are not authorized to access this view')->error();
+
+            return redirect('/media');
         }
 
-        if ($request->event == null) {
-            return view('media/event-select')->with('events', Event::all())->with('url', '/media/photo/edit');
+        if ($request->album == null) {
+            return view('media/event-select')->with('events', PhotoAlbum::all())->with('url', '/media/photo/edit');
         } else {
-            $event = null;
+            $album = null;
 
-            if ($request->event != 0) {
-                $event = Event::find($request->event);
+            if ($request->album != 0) {
+                $album = PhotoAlbum::find($request->album);
             }
 
-            return view('media/edit-album')->with('event', $event);
+            return view('media/edit-album')->with('event', $album);
         }
     }
 
@@ -147,7 +150,7 @@ class MediaController extends Controller
         } else {
             $event = Event::find($request->id);
 
-            foreach ($event->album as $album) {
+            foreach ($event->album->photos as $album) {
                 $album->caption = $request->caption[$counter];
                 $album->save();
     

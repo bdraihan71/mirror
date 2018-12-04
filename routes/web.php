@@ -145,7 +145,7 @@ Route::get('/page', function () {
 });
 
 Route::get('/test', function() {
-    dd('here');
+    return view('media.create-album');
 });
 
 //Privacy Policy Route
@@ -200,3 +200,9 @@ Route::get('/verifyAdmins', 'VerifyAdminsController@verify');
 
 //Effects Routes
 Route::get('/remove/effect/gallery/{id}', 'EffectsController@galleryGlitch')->middleware('auth');
+
+//Album Routes
+Route::get('/albums/auto/create', 'AlbumController@createAlbums')->middleware('auth');
+Route::get('/album/create', 'AlbumController@create')->middleware('auth');
+Route::post('/album/create', 'AlbumController@store')->middleware('auth');
+Route::get('/album/show/{id}', 'AlbumController@show');

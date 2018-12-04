@@ -12,8 +12,8 @@
     <div class="row pt-3">
         @foreach ($albums as $album)
             <div class="col-md-2">
-                <img class="media-img" src="{{$album->url}}" alt="{{$album->caption}}" id="{{'myImg'.$album->id}}" onclick="modalImage({{$album->id}})">
-                <p class="media-text">{{$album->caption}}</p>
+                <a href="/album/show/{{$album->id}}"><img class="media-img" src="{{$album->photos[0]->url}}" alt="{{$album->photos[0]->caption}}" id="{{'myImg'.$album->photos[0]->id}}" onclick="modalImage({{$album->photos[0]->id}})"></a>
+                <p class="media-text">{{$album->name}}</p>
             </div>
         @endforeach
     </div>
@@ -23,7 +23,7 @@
         @if (!App\Http\Controllers\Controller::notAdmin())
             <div class="row">
                 <div class="col-md-12">
-                    <a href="/media/photo/add" class="btn btn-warning w-100">Add Photos</a>
+                    <a href="/album/create" class="btn btn-warning w-100">Add Photos</a>
                 </div>
             </div>
             <br>
