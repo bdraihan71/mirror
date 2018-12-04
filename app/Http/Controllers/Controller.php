@@ -8,6 +8,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\WebContent;
 use App\Purchase;
+use App\Cart;
 
 class Controller extends BaseController
 {
@@ -77,5 +78,12 @@ class Controller extends BaseController
         $path = $request->storeAs('/uploads', $fileNameToStore);
 
         return '/storage/uploads/'.$fileNameToStore;
+    }
+
+    public static function cartItems ()
+    {
+        $items = Cart::whereNull('purchase_id')->where('user_id', auth()->user()->id)->get();
+
+        return count($items);
     }
 }

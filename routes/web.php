@@ -145,7 +145,7 @@ Route::get('/page', function () {
 });
 
 Route::get('/test', function() {
-    return view('media.create-album');
+    return view('media.show-album');
 });
 
 //Privacy Policy Route

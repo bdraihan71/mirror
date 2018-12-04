@@ -1,5 +1,5 @@
 <div class="section">
-    <header id="home">
+    {{-- <header id="home">
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="nav">
             <div class="container">
                 <a class="navbar-brand" href="/"><img class="logo" src="/frontend/img/logo.svg" alt="Logo"></a>
@@ -24,8 +24,47 @@
                         <a class="nav-item nav-link mt-1" href="/media">MEDIA</a>
                         <a class="nav-item nav-link mt-1" href="/music">MUSIC</a>
                         <a class="nav-item nav-link mt-1" href="/contact-us/#top">CONTACT US</a>
-                        @if (auth()->user() != null && App\Http\Controllers\Controller::notAdmin())
+                        @if (auth()->user() != null)
                             <a class="nav-item nav-link" href="/cart"><i class="fas fa-cart-plus fa-2x"></i></a>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header> --}}
+    <header id="home">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark header" id="nav">
+            <div class="container">
+                <a class="navbar-brand" href="/"><img class="logo" src="/frontend/img/logo.svg" alt="Logo"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <div class="navbar-nav font-weight-bold nav-back">
+                        <a class="nav-item nav-link my-3" href="/#top">HOME</a>
+                        <a class="nav-item nav-link my-3" href="/#page2">ABOUT US</a>
+                        <a class="nav-item nav-link my-3" href="/#page4">PARTNERS</a>
+                        <a class="nav-item nav-link my-3" href="/events/all/#top">EVENTS</a>
+                        <a class="nav-item nav-link my-3" href="/shop/#top">SHOP</a>
+                        @if(auth()->user() != null)
+                            <a class="nav-item nav-link my-3" href="/logout">LOGOUT</a>
+                            <a class="nav-item nav-link my-3" href="/home/#top">DASHBOARD</a>
+                        @else
+                            <a class="nav-item nav-link my-3" href="/register/#top">REGISTER</a>
+                            <a class="nav-item nav-link my-3" href="/login/#top">LOGIN</a>
+                        @endif
+                        <a class="nav-item nav-link my-3" href="/media">MEDIA</a>
+                        <a class="nav-item nav-link my-3" href="/music">MUSIC</a>
+                        <a class="nav-item nav-link my-3" href="/contact-us/#top">CONTACT US</a>
+                        @if (auth()->user() != null)
+                            <a class="nav-item nav-link text-dark" href="/cart">
+                                <span class="fa-stack">
+                                    <i class="fas fa-cart-plus fa-2x cart-margin-left"></i>
+                                    @if (App\Http\Controllers\Controller::cartItems() != 0)
+                                        <span class="badge-cart">{{App\Http\Controllers\Controller::cartItems()}}</span>
+                                    @endif
+                                </span>
+                            </a>
                         @endif
                     </div>
                 </div>

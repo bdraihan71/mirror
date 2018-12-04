@@ -1338,3 +1338,91 @@ input[type=number] {
       width: 100%;
   }
 }
+
+
+/* Album CSS */
+.album-background {
+  background-image: url(../img/wdwd1.png);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.overlay-album {
+  color: #fff;
+  position: absolute;
+  z-index: 2;
+  top: 40%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+@media only screen and (max-width:500px) {
+  .overlay-album {
+    color: #fff;
+    position: absolute;
+    z-index: 2;
+    top: 25%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.album-padding-top {
+  padding-top: 15%;
+}
+
+@media only screen and (max-width:500px) {
+  .album-text-size {
+    font-size: 0.8em;
+  }
+}
+
+.album-pics {
+  background-color: #141414;
+}
+
+.zoom {
+  transition: transform .2s;
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+/* Cart icon's badge */
+.badge-cart {
+  position: relative;
+  margin-left: 130%;
+  bottom: 200%;
+  background-color: #D93730;
+  font-size: 0.8em;
+  padding: 3px;
+  border-radius: 25%;
+}
+
+.badge-cart:hover {
+  background-color: white;
+}
+
+@media only screen and (min-width:992px) {
+  .cart-margin-left {
+    background-color: white;
+    padding: 15px;
+    border-radius: 50px;
+  }
+}
+
+.header-alt {
+  height: 120px;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 200;
+  width: 100%;
+  transition: all 0.5s;
+}
