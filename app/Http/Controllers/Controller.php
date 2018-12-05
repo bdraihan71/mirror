@@ -115,4 +115,18 @@ class Controller extends BaseController
 
         return $strMoney;
     }
+
+    public static function nameConcatenator ($user)
+    {
+        $user = $user->profile;
+        $name = null;
+
+        if ($user->m_name == null) {
+            $name = $user->f_name.' '.$user->l_name;
+        } else {
+            $name = $user->f_name.' '.$user->m_name.' '.$user->l_name;
+        }
+
+        return $name;
+    }
 }

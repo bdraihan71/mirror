@@ -108,8 +108,8 @@ class ShopController extends Controller
             return redirect('/home');
         }
 
-        $purchases = Purchase::orderBy('created_at', 'desc')->paginate(20);
+        $purchases = Purchase::orderBy('created_at', 'desc')->paginate(5);
 
-        return view('shop/show-all')->with('purchases', $purchases);
+        return view('product-issues.admin-index')->with('purchases', $purchases);
     }
 }

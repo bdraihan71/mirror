@@ -1456,3 +1456,7 @@ input[type=number] {
 .black-font {
   color: gray;
 }
+
+.hidden {
+  display: none;
+}

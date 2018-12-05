@@ -145,7 +145,8 @@ Route::get('/page', function () {
 });
 
 Route::get('/test', function() {
-    return view('product-issues.admin-index');
+    $purchases = App\Purchase::orderBy('created_at', 'desc')->paginate(1);
+    return view('product-issues.user-index')->with('purchases', $purchases);
 });
 
 //Privacy Policy Route
@@ -206,3 +207,8 @@ Route::get('/albums/auto/create', 'AlbumController@createAlbums')->middleware('a
 Route::get('/album/create', 'AlbumController@create')->middleware('auth');
 Route::post('/album/create', 'AlbumController@store')->middleware('auth');
 Route::get('/album/show/{id}', 'AlbumController@show');
+
+//Product status update
+Route::post('/update-status', 'ProductStatusController@updateStatus')->middleware('auth');
+Route::post('/respond', 'ProductStatusController@respond')->middleware('auth');
+Route::post('/issue', 'ProductStatusController@issue')->middleware('auth');

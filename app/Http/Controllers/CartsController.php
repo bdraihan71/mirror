@@ -226,9 +226,9 @@ class CartsController extends Controller
 
     public function invoice ()
     {
-        $purchases = Purchase::where('user_id', auth()->user()->id)->orderBy('created_at', 'desc')->get();
+        $purchases = Purchase::where('user_id', auth()->user()->id)->orderBy('created_at', 'desc')->paginate(5);
 
-        return view('carts/show-all')->with('purchases', $purchases);
+        return view('product-issues.user-index')->with('purchases', $purchases);
     }
 
     public function print (Request $request, $id)
