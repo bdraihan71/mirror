@@ -158,6 +158,8 @@ class MediaController extends Controller
         } else {
             $event = Event::find($request->id);
 
+            dd($event);
+
             foreach ($event->album->photos as $album) {
                 $album->caption = $request->caption[$counter];
                 $album->save();
