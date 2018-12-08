@@ -145,8 +145,7 @@ Route::get('/page', function () {
 });
 
 Route::get('/test', function() {
-    $purchases = App\Purchase::orderBy('created_at', 'desc')->paginate(1);
-    return view('product-issues.user-index')->with('purchases', $purchases);
+    return view('transfer-status.transfer-success')->with('purchases', $purchases);
 });
 
 //Privacy Policy Route
