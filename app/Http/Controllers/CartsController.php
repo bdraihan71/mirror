@@ -211,16 +211,11 @@ class CartsController extends Controller
             
             Mail::to(User::find($user)->email)->send(new vMail($purchase));
 
-            flash('Congratulations! Your order has been placed!')->success();
-
-            return redirect('/home');
+            return view('transfer-status.transfer-success');
         } else {
             $purchase->delete();
-            // flash('Something went wrong, we could not place your order')->error();
 
-            flash('Something went wrong, we could not place your order')->error();
-
-            return redirect('/checkout');
+            return view('transfer-status.transfer-failure');
         }
     }
 

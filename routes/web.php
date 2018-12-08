@@ -145,7 +145,7 @@ Route::get('/page', function () {
 });
 
 Route::get('/test', function() {
-    return view('transfer-status.transfer-success')->with('purchases', $purchases);
+    return view('transfer-status.transfer-failure');
 });
 
 //Privacy Policy Route

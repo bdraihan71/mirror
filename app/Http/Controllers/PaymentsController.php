@@ -97,9 +97,7 @@ class PaymentsController extends Controller
 
             Mail::to($user->email)->send(new vMail($user, $ticket));
 
-            flash('Ticket successfully purchased')->success();
-
-            return redirect('/');
+            return view('transfer-status.transfer-success');
         } else {
             $ticket = Ticket::where('ticket_type_id', $id)->where('user_id', $user)->first();
             $answers = EventAnswer::where('event_id', $id)->where('user_id', $user)->get();
@@ -112,7 +110,7 @@ class PaymentsController extends Controller
 
             flash('Something went wrong')->error();
 
-            return redirect($url);
+            return view('transfer-status.transfer-failure');
         }
     }
 

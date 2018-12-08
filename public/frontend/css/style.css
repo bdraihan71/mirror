@@ -1460,3 +1460,18 @@ input[type=number] {
 .hidden {
   display: none;
 }
+
+/* Product purchase confirm and fail CSS */
+@media only screen and (max-width:700px) {
+  .product-purchase-confirm {
+    background-color: black;
+    padding-top: 105px;
+  }
+}
+
+@media only screen and (max-width:700px) {
+  .product-purchase-fail {
+    background-color: black;
+    padding-top: 105px;
+  }
+}
