@@ -156,11 +156,11 @@ class MediaController extends Controller
 
             return redirect ($url."0");
         } else {
-            $event = Event::find($request->id);
+            $albums = PhotoAlbum::find($request->id);
 
             // dd($event, $id);
 
-            foreach ($event->album->photos as $album) {
+            foreach ($albums->photos as $album) {
                 $album->caption = $request->caption[$counter];
                 $album->save();
     
