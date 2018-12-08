@@ -71,7 +71,13 @@ class AlbumController extends Controller
 
             $album = new PhotoAlbum;
             $album->name = $request->name;
-            $album->event_id = $request->event;
+
+            if ($request->event != null) {
+                $album->event_id = $request->event;
+            } else {
+                $album->event_id = 0;
+            }
+
             $album->save();
         } else {
             $this->validate($request, [
