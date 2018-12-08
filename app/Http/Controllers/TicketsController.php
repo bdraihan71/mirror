@@ -147,7 +147,7 @@ class TicketsController extends Controller
             $ticket->invoice_id = $invoice->id;
             $ticket->save();
 
-            Mail::to(auth()->user()->email)->send(new vMail(auth()->user(), $ticket));
+            Mail::to(auth()->user()->email)->queue(new vMail(auth()->user(), $ticket));
 
             flash('Ticket successfully purchased')->success();
 

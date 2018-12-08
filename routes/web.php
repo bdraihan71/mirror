@@ -144,9 +144,7 @@ Route::get('/page', function () {
     return view('tickets/show');
 });
 
-Route::get('/test', function() {
-    return view('transfer-status.transfer-failure');
-});
+Route::get('/test', 'CartsController@queueTest');
 
 //Privacy Policy Route
 Route::get('/privacy-policy', function () {

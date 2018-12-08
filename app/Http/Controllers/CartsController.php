@@ -130,7 +130,7 @@ class CartsController extends Controller
                 $product->save();
             }
 
-            Mail::to(auth()->user()->email)->send(new vMail($purchase));
+            Mail::to(auth()->user()->email)->queue(new vMail($purchase));
 
             flash('You have successfully bought the product(s)')->success();
 
@@ -209,7 +209,7 @@ class CartsController extends Controller
             }
 
             
-            Mail::to(User::find($user)->email)->send(new vMail($purchase));
+            Mail::to(User::find($user)->email)->queue(new vMail($purchase));
 
             return view('transfer-status.transfer-success');
         } else {

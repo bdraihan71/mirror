@@ -33,7 +33,7 @@ class VerifyEmailController extends Controller
 
             return redirect('/login');
         } else {
-            Mail::to($user->email)->send(new vMail($user));
+            Mail::to($user->email)->queue(new vMail($user));
 
             flash('Verification email has been resent, please verify your email now.')->success();
 

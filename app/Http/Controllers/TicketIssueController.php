@@ -52,7 +52,7 @@ class TicketIssueController extends Controller
         ]);
 
         if ($request->email != null) {
-            Mail::to($request->email)->send(new vMail($ticket));
+            Mail::to($request->email)->queue(new vMail($ticket));
         }
 
         flash('Ticket Successfully Issued')->success();
