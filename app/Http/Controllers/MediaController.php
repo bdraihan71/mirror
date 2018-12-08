@@ -125,7 +125,7 @@ class MediaController extends Controller
             ]);
         }
 
-        $url = '/media/photo/edit?event='.$request->id;
+        $url = '/media/photo/edit?album='.$request->id;
         $counter = 0;
 
         if ($request->id == 0) {
