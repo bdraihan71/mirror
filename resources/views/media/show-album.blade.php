@@ -2,11 +2,19 @@
 
 @section('content')
     @if ($album->featured == null)
-        <style>
-            .album-background {
-                background-image: url({{ $album->photos[0]->url }});
-            }
-        </style>
+        @if (count($album->photos) == 0)
+            <style>
+                .album-background {
+                    background-image: url({{ '/frontend/img/carousel1.jpeg' }});
+                }
+            </style>
+        @else
+            <style>
+                .album-background {
+                    background-image: url({{ $album->photos[0]->url }});
+                }
+            </style>
+        @endif
     @else
         <style>
             .album-background {
