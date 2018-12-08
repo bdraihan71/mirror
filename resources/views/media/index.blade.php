@@ -11,10 +11,12 @@
 
     <div class="row pt-3">
         @foreach ($albums as $album)
-            <div class="col-md-2">
-                <a href="/album/show/{{$album->id}}"><img class="media-img" src="{{$album->photos[0]->url}}" alt="{{$album->photos[0]->caption}}" id="{{'myImg'.$album->photos[0]->id}}" onclick="modalImage({{$album->photos[0]->id}})"></a>
-                <p class="media-text">{{$album->name}}</p>
-            </div>
+            @if (count($album->photos) != 0)
+                <div class="col-md-2">
+                    <a href="/album/show/{{$album->id}}"><img class="media-img" src="{{$album->photos[0]->url}}" alt="{{$album->photos[0]->caption}}" id="{{'myImg'.$album->photos[0]->id}}" onclick="modalImage({{$album->photos[0]->id}})"></a>
+                    <p class="media-text">{{$album->name}}</p>
+                </div>
+            @endif
         @endforeach
     </div>
 
