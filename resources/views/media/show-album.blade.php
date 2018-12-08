@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @if ($album->featured->url != null)
+    @if ($album->featured == null)
         <style>
             .album-background {
                 background-image: url({{ $album->photos[0]->url }});
