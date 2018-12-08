@@ -34,7 +34,11 @@
  
     <div class="container-fluid">
         @include('flash::message')
-        @include('layouts.messages')
+        
+        @if (Request::segment(1) != 'api')
+            @include('layouts.messages')
+        @endif
+
         @if (Request::is('/'))
             @yield('content')
         @else
