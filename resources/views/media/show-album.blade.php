@@ -1,11 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-    <style>
-        .album-background {
-            background-image: url({{ $album->featured->url }});
-        }
-    </style>
+    @if ($album->featured->url != null)
+        <style>
+            .album-background {
+                background-image: url({{ $album->photos[0]->url }});
+            }
+        </style>
+    @else
+        <style>
+            .album-background {
+                background-image: url({{ $album->featured->url }});
+            }
+        </style>
+    @endif
     <div class="album-background">
         <div class="overlay-album" id="album-bkg">
             <h1 class="font-weight-bold text-left ml-5">Evening with DIPLO Live in Dhaka</h1>
