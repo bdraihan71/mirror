@@ -5,20 +5,20 @@
         @if (count($album->photos) == 0)
             <style>
                 .album-background {
-                    background-image: url({{ '/frontend/img/carousel1.jpeg' }});
+                    background-image: linear-gradient(0deg,rgb(255, 0, 0, 0.5),rgb(255, 0, 0, 0.5)),url({{ '/frontend/img/carousel1.jpeg' }});
                 }
             </style>
         @else
             <style>
                 .album-background {
-                    background-image: url({{ $album->photos[0]->url }});
+                    background-image: linear-gradient(0deg,rgb(255, 0, 0, 0.5),rgb(255, 0, 0, 0.5)),url({{ $album->photos[0]->url }});
                 }
             </style>
         @endif
     @else
         <style>
             .album-background {
-                background-image: url({{ $album->featured->url }});
+                background-image: linear-gradient(0deg,rgb(255, 0, 0, 0.5),rgb(255, 0, 0, 0.5)),url({{ $album->featured->url }});
             }
         </style>
     @endif
@@ -37,11 +37,13 @@
             <div class="row">
     
                 @foreach ($album->photos as $photo)
-                    <div class="col-md-3 my-3">
-                        <div class="card rounded border-0 zoom">
-                            <img class="card-img-top rounded" src="{{ $photo->url }}" id="{{ 'myImg'.$photo->id }}" onclick="modalImage({{ $photo->id }})" alt="{{ $photo->caption }}">
+                    @if ($album->featured_id != $photo->id)
+                        <div class="col-md-3 my-3">
+                            <div class="card rounded border-0 zoom">
+                                <img class="card-img-top rounded" src="{{ $photo->url }}" id="{{ 'myImg'.$photo->id }}" onclick="modalImage({{ $photo->id }})" alt="{{ $photo->caption }}">
+                            </div>
                         </div>
-                    </div>
+                    @endif
                 @endforeach
     
             </div>
