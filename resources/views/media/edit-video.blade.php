@@ -21,7 +21,7 @@
                             <br>
                             <input type="text" name="url[]" value="{{ old('url'.$loop->index) == null ? $video->url : old('url'.$loop->index) }}" class="form-control">
                             <br>
-                            <a href="/media/video/delete/{{$video->id}}" class="btn btn-warning w-100">Delete</a>
+                            <a href="/media/video/delete/{{$video->id}}" class="btn black-button w-100">Delete</a>
                             <br><br><br>
                         </div>
                     @endforeach
@@ -36,7 +36,7 @@
                             <br>
                             <input type="text" name="url[]" value="{{ old('url'.$loop->index) == null ? $video->url : old('url'.$loop->index) }}" class="form-control">
                             <br>
-                            <a href="/media/video/delete/{{$video->id}}" class="btn btn-warning w-100">Delete</a>
+                            <a href="/media/video/delete/{{$video->id}}" class="btn black-button w-100">Delete</a>
                             <br><br><br>
                         </div>
                     @endforeach

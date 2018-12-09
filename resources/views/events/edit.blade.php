@@ -10,7 +10,7 @@
                 @if ($event->deleted)
                     <a href="/event/restore/{{$event->id}}" class="btn btn-success w-100">Restore Event</a>
                 @else
-                    <a href="/event/delete/{{$event->id}}" class="btn btn-warning w-100">Delete Event</a>
+                    <a href="/event/delete/{{$event->id}}" class="btn black-button w-100">Delete Event</a>
                 @endif
             </div>
         </div>
@@ -250,7 +250,7 @@
                             <div class="col-md-2 text-right">
                                 <label for="add_information[]" class="col-form-label text-md-right">New Information</label>
                                 <br><br>
-                                <a class="btn btn-warning" href="/delete/add-info/{{$info->id}}">Delete</a>
+                                <a class="btn black-button" href="/delete/add-info/{{$info->id}}">Delete</a>
                             </div>
 
                             <div class="col-md-8">
@@ -338,7 +338,7 @@
                         <div class="col-md-2 text-right">
                             <label for="question[]" class="col-form-label text-md-right">Question {{$loop->iteration}}</label>
                             <br><br>
-                            <a class="btn btn-warning" href="/delete/question/{{$question->id}}">Delete</a>
+                            <a class="btn black-button" href="/delete/question/{{$question->id}}">Delete</a>
                         </div>
 
                         <div class="col-md-8">

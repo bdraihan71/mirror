@@ -196,7 +196,7 @@
 																	</div>
 																	<div class="col-md-2">
 																		@if ($issue->responded_at == null)
-																			<button class="btn btn-warning w-100" onclick="submitResponse('{{ $issue->id }}')">Respond</button>
+																			<button class="btn black-button w-100" onclick="submitResponse('{{ $issue->id }}')">Respond</button>
 																		@else
 																			{{ Carbon\Carbon::parse($issue->responded_at)->format('H:i').' on '.Carbon\Carbon::parse($issue->responded_at)->format('d M Y') }}
 																		@endif

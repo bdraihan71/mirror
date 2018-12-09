@@ -23,7 +23,7 @@
 
                     @if (auth()->user() != null)
                         @if (!App\Http\Controllers\Controller::notAdmin())
-                            <a href="/music/delete/{{$music->id}}" class="btn btn-warning w-100">Delete</a>
+                            <a href="/music/delete/{{$music->id}}" class="btn black-button w-100">Delete</a>
                         @endif
                     @endif
                 </div>

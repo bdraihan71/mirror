@@ -28,7 +28,7 @@
                             <div class="col-md-4">
                                 <a href="/shop/edit/{{$product->id}}" class="btn btn-primary w-100">Edit</a>
                                 <br><br>
-                                <a href="/shop/delete/{{$product->id}}" class="btn btn-warning w-100">Delete</a>
+                                <a href="/shop/delete/{{$product->id}}" class="btn black-button w-100">Delete</a>
                                 <br><br>
                             </div>
                             <div class="col-md-4"></div>
@@ -49,7 +49,7 @@
                         </div>
                         <div class="col-md-2"></div>
                         <div class="col-md-4">
-                            <button class="btn btn-warning w-100" type="submit">Add To Cart</button>
+                            <button class="btn black-button w-100" type="submit">Add To Cart</button>
                         </div>
                         <div class="col-md-1"></div>
                     </div>

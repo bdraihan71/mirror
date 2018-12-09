@@ -15,7 +15,7 @@
                     <div class="row">
                         <div class="col-md-8"></div>
                         <div class="col-md-2"><a href="/profile/delete/confirm" class="btn btn-danger">Yes</a></div>
-                        <div class="col-md-2"><a href="home" class="btn btn-warning">Cancel</a></div>
+                        <div class="col-md-2"><a href="home" class="btn black-button">Cancel</a></div>
                     </div>
                 </div>
             </div>

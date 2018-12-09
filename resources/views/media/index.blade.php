@@ -25,7 +25,7 @@
         @if (!App\Http\Controllers\Controller::notAdmin())
             <div class="row">
                 <div class="col-md-12">
-                    <a href="/album/create" class="btn btn-warning w-100">Add Photos</a>
+                    <a href="/album/create" class="btn black-button w-100">Add Photos</a>
                 </div>
             </div>
             <br>
@@ -57,7 +57,7 @@
         @if (!App\Http\Controllers\Controller::notAdmin())
             <div class="row">
                 <div class="col-md-12">
-                    <a href="/media/video/add" class="btn btn-warning w-100">Add Videos</a>
+                    <a href="/media/video/add" class="btn black-button w-100">Add Videos</a>
                 </div>
             </div>
             <br>

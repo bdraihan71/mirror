@@ -11,7 +11,7 @@
         </label>
     </div>
     <div class="form-group">
-        <a href="/media/photo/delete/{{$album->id}}" class="btn btn-warning w-100">Delete</a>
+        <a href="/media/photo/delete/{{$album->id}}" class="btn black-button w-100">Delete</a>
     </div>
     <br>
 </div>

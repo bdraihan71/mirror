@@ -38,7 +38,7 @@
                 <div class="col">{{$user->profile->phone}}</div>
                 <div class="col">{{$user->profile->fb_url}}</div>
                 @if (!$flow)
-                    <a href="/profile/delete/{{$user->id}}" class="btn btn-warning w-100">Delete</a>
+                    <a href="/profile/delete/{{$user->id}}" class="btn black-button w-100">Delete</a>
                 @endif
             </div>
             <hr>

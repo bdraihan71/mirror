@@ -45,7 +45,7 @@
                                                                     <td class="text-center"> 
                                                                         <b>{{ App\Http\Controllers\Controller::formatMoney($item->product->price * $item->quantity) }}</b>
                                                                     </td>
-                                                                    <td><a href="/cart/remove/{{$item->id}}" class="btn btn-warning"><i class="fas fa-times"></i></a></td>
+                                                                    <td><a href="/cart/remove/{{$item->id}}" class="btn black-button"><i class="fas fa-times"></i></a></td>
                                                                 </tr>
                                                             @endforeach
                                                         </table>

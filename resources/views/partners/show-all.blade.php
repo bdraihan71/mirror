@@ -20,7 +20,7 @@
                                 <br><br>
                                 <a href="/partner/edit/{{$partner->id}}" class="btn btn-danger w-100">Edit</a>
                                 <br><br>
-                                <a href="/partner/delete/{{$partner->id}}" class="btn btn-warning w-100">Delete</a>
+                                <a href="/partner/delete/{{$partner->id}}" class="btn black-button w-100">Delete</a>
                             @endif
                         @endif
                         <br><br><br>
@@ -51,7 +51,7 @@
                                 <br><br>
                                 <a href="/partner/edit/{{$partner->id}}" class="btn btn-danger w-100">Edit</a>
                                 <br><br>
-                                <a href="/partner/delete/{{$partner->id}}" class="btn btn-warning w-100">Delete</a>
+                                <a href="/partner/delete/{{$partner->id}}" class="btn black-button w-100">Delete</a>
                             @endif
                         @endif
                         <br><br><br>
