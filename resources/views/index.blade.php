@@ -7,7 +7,11 @@
         <!-- Header -->
         <header id="home">
             <nav class="navbar fixed-top navbar-expand-lg navbar-dark header" id="nav">
-                <a href="/alter/index" class="btn btn-primary">Edit</a>
+                @if (auth()->user() != null)
+                    @if (auth()->user()->role == 'super-admin' || auth()->user()->role == 'admin')
+                        <a href="/alter/index" class="btn btn-primary">Edit</a>
+                    @endif
+                @endif
                 <div class="container">
                     <a class="navbar-brand" href="/"><img class="logo" src="/frontend/img/logo.svg" alt="Logo"></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
