@@ -1508,3 +1508,20 @@ input[type=number] {
   background-color: #222222;
 
 }
+
+.edit {
+	padding-top: 7px;	
+	padding-right: 7px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	display: none;
+}
+
+.image-block:hover .edit {
+	display: block;
+}
+
+.edit a {
+  color: white;
+}
