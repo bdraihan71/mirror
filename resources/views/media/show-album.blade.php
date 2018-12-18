@@ -27,8 +27,8 @@
             <h1 class="font-weight-bold text-left ml-5">{{ $album->name }}</h1>
             <p class="text-left ml-5 mt-3">{{ count($album->photos).' PHOTOS' }}</p>
     
-            <p class="text-left ml-5 album-padding-top album-text-size">Release Date<span class="float-right mr-5">{{ $album->event_id != null ? 'Location' : '' }}</span></p>
-            <h4 class="text-left ml-5 album-text-size font-weight-bold">{{ Carbon\Carbon::parse($album->created_at)->format('d M Y') }}<span class="float-right mr-5">{{ $album->event_id != null ? $album->event->location : '' }}</span></h4>
+            <p class="text-left ml-5 album-padding-top album-text-size">{{ $album->event_id != null ? 'Location' : '' }}</p>
+            <h4 class="text-left ml-5 album-text-size font-weight-bold">{{ $album->event_id != null ? $album->event->location : '' }}</h4>
         </div>
     </div>
 
