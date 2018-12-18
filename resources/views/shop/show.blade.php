@@ -6,7 +6,7 @@
         <div class="container text-white text-center">
             <div class="row">
                 <div class="col-md-6">
-                    <img class="responsive" height="500" width="500" src="{{$product->img}}" alt="Product Image">
+                    <img class="img-fluid" height="500" width="500" src="{{$product->img}}" alt="Product Image">
                 </div>
                 <div class="col-md-6">
                     <h1>{{$product->name}}</h1>

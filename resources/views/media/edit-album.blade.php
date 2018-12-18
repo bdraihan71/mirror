@@ -49,7 +49,7 @@
                 </div>
             </div>
 
-            <button class="btn btn-danger w-100" type="submit">Submit</button>
+            <button class="btn btn-danger w-100" type="submit">Save Changes</button>
         </form>
     </div>
 @endsection

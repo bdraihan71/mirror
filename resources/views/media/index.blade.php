@@ -13,7 +13,7 @@
         @foreach ($albums as $album)
             @if (count($album->photos) != 0)
                 <div class="col-md-2 image-block">
-                    <a href="/album/show/{{$album->id}}"><img class="media-img" src="{{$album->photos[0]->url}}" alt="{{$album->photos[0]->caption}}" id="{{'myImg'.$album->photos[0]->id}}" onclick="modalImage({{$album->photos[0]->id}})"></a>
+                    <a href="/album/show/{{$album->id}}"><img class="media-img" src="{{$album->featured->url}}" alt="{{$album->featured->caption}}" id="{{'myImg'.$album->featured->id}}" onclick="modalImage({{$album->photos[0]->id}})"></a>
                     <p class="media-text">{{$album->name}}</p>
                     @if (auth()->user() != null)
                         @if (auth()->user()->role == 'admin' || auth()->user()->role == 'super-admin')
