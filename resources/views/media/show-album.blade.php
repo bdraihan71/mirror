@@ -24,7 +24,7 @@
     @endif
     <div class="album-background">
         <div class="overlay-album" id="album-bkg">
-            <h1 class="font-weight-bold text-left ml-5">Evening with DIPLO Live in Dhaka</h1>
+            <h1 class="font-weight-bold text-left ml-5">{{ $album->name }}</h1>
             <p class="text-left ml-5 mt-3">{{ count($album->photos).' PHOTOS' }}</p>
     
             <p class="text-left ml-5 album-padding-top album-text-size">Release Date<span class="float-right mr-5">{{ $album->event_id != null ? 'Location' : '' }}</span></p>
