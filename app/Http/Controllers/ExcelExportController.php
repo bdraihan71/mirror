@@ -31,7 +31,7 @@ class ExcelExportController extends Controller
         }
 
         $this->validate($request, [
-            'event' => 'requried',
+            'event' => 'required',
         ]);
 
         $event = Event::find($request->event);
