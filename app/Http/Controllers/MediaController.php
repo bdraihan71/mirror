@@ -192,7 +192,12 @@ class MediaController extends Controller
     public function deletePhoto (Request $request, $id)
     {
         $album = Album::find($id);
-        $url = '/media/photo/edit?event='.$album->event_id;
+        $url = '/media/photo/edit?album='.$album->event_id;
+
+        if ($album->event_id == 0) {
+            $url = '/media/photo/edit?album=0';
+        }
+
         $album->delete();
 
         flash('Photo successfully deleted');
