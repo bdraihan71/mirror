@@ -24,7 +24,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($tickets as $ticket)
+            @foreach($event->tickets as $ticket)
                 <tr>
                     @if ($ticket->user != null)
                         <td>{{$ticket->user->profile->f_name.' '.$ticket->user->profile->m_name.' '.$ticket->user->profile->l_name}}</td>
@@ -53,7 +53,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($tickets[0]->event->issues as $ticket)
+            @foreach($event->issues as $ticket)
                 <tr>
                     <td>{{$ticket->name}}</td>
                     <td>{{$ticket->email}}</td>

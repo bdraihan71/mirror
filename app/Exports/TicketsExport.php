@@ -4,7 +4,7 @@ namespace App\Exports;
 
 use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Concerns\FromView;
-use App\Ticket;
+use App\Event;
 use Maatwebsite\Excel\Concerns\Exportable;
 
 class TicketsExport implements FromView
@@ -20,7 +20,7 @@ class TicketsExport implements FromView
     public function view(): View
     {
         return view('exports.tickets', [
-            'tickets' => Ticket::where('event_id', $this->query)->get()
+            'event' => Event::find($query)
         ]);
     }
 }

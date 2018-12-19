@@ -36,6 +36,16 @@ class ExcelExportController extends Controller
 
         $event = Event::find($request->event);
 
+        if ($event == null) {
+            flash('No such event found')->error();
+
+            return back();
+        } elseif (count($event->tickets) == 0 && count($event->issues) == 0) {
+            flash('This event has no tickets or issued tickets')->error();
+
+            return back();
+        }
+
         return (new TicketsExport($request->event))->download($event->name.'.xlsx');
     }
 }
