@@ -1525,3 +1525,7 @@ input[type=number] {
 .edit a {
   color: white;
 }
+
+html {
+  overflow: -moz-scrollbars-none;
+}
