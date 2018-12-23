@@ -486,6 +486,7 @@ header .download .btn-light:hover {
   text-align: justify;
   overflow: scroll;
   overflow: -moz-scrollbars-none;
+  overflow: -moz-scrollbars-none !important;
 }
 
 @media screen and (max-width: 1920px) and (min-width: 1100px) {
@@ -498,6 +499,7 @@ header .download .btn-light:hover {
     text-align: justify;
     overflow: scroll;
     overflow: -moz-scrollbars-none;
+    overflow: -moz-scrollbars-none !important;
   }
 
   .p-scroll::-webkit-scrollbar {
@@ -1527,5 +1529,5 @@ input[type=number] {
 }
 
 html {
-  overflow: -moz-scrollbars-none;
+  overflow: -moz-scrollbars-none !important;
 }
