@@ -1531,3 +1531,7 @@ input[type=number] {
 html {
   overflow: -moz-scrollbars-none !important;
 }
+
+.p-scroll p {
+  overflow: -moz-scrollbars-none !important;
+}
