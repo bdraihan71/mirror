@@ -20,7 +20,8 @@
     <!-- Favicon -->
     <link rel="icon" href="/frontend/img/favicon.png">
     <!-- Custom styles -->
-    <link href="/frontend/css/style.css" rel="stylesheet">
+    <link href="/frontend/css/moz-bar.min.css" rel="stylesheet">
+    <link href="/frontend/css/style.min.css" rel="stylesheet">
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100" rel="stylesheet">
 
