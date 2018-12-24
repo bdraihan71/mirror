@@ -7,6 +7,9 @@
     <meta name="description" content="Events. Entertainment. Experience.">
     <meta name="author" content="Techynaf">
     <title>Ecube Entertainment</title>
+    <!-- Custom styles -->
+    <link href="/frontend/css/moz-bar.min.css" rel="stylesheet">
+    <link href="/frontend/css/style.min.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <link href="/frontend/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -19,9 +22,6 @@
     <link href="/frontend/vendor/fullpage/fullpage.min.css" rel="stylesheet">
     <!-- Favicon -->
     <link rel="icon" href="/frontend/img/favicon.png">
-    <!-- Custom styles -->
-    <link href="/frontend/css/moz-bar.min.css" rel="stylesheet">
-    <link href="/frontend/css/style.min.css" rel="stylesheet">
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100" rel="stylesheet">
 
