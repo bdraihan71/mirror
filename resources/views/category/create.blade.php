@@ -8,7 +8,7 @@
             <div class="row pt-3">
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
-                    <form method="POST" action="/productions" enctype="multipart/form-data">
+                    <form method="POST" action="/categories" enctype="multipart/form-data">
                         @csrf
                         <div class="form-row text-white">
                             <div class="form-group col-md-4">

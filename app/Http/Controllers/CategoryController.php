@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Categories;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -34,7 +35,14 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $category = new Categories();
+        $category->name = $request->name;
+        $category->type = $request->type;
+        $category->image = $this->uploadImage($request->image);
+        $category->call_to_action = $request->call_to_action;
+        $category->save();
+        flash('New category add successfully!')->success();
+        return redirect('/categories/create');
     }
 
     /**
