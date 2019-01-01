@@ -47,7 +47,7 @@
                                 <label> Call To Action *</label>
                             </div>
                             <div class="form-group col-md-8">
-                                <input type="firstname" maxlength="80" class="form-control contact-form input-container" name="call_to_action" value="{{ old('f_name') }}" placeholder="Production Name" required>
+                                <input type="firstname" maxlength="80" class="form-control contact-form input-container" name="call_to_action" value="{{ old('f_name') }}" placeholder="Call To Action" required>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-danger register-btn">Add</button>
