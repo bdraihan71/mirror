@@ -90,7 +90,25 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if ($this->notAdmin()) {
+            flash('You are not authorized to access this')->error();
+
+            return redirect('/');
+        }
+        $category = Categories::where('id', $id)->first();
+        if ($request->hasFile('image')) {
+            $category->image = $this->uploadImage($request->image);
+        }
+        $category->name = $request->name;
+        $category->type = $request->type;
+        $category->call_to_action = $request->call_to_action;
+        $category->save();
+
+
+        flash('Category successfully edited')->success();
+
+        return redirect('/categories');
+
     }
 
     /**
