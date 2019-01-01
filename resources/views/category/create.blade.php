@@ -27,7 +27,7 @@
                                 <select class="form-control" id="exampleFormControlSelect1" name="type">
                                     <option selected>Select Your Category </option>
                                     <option value="Production">Production</option>
-                                    <option value="service">service</option>
+                                    <option value="service">Service</option>
                                 </select>
                             </div>
                         </div>
@@ -36,9 +36,8 @@
                             <div class="form-group col-md-4">
                                 <label>Image *</label>
                             </div>
-                            <div class="form-group col-md-8" >
-                                <input type="file" class="custom-file-input" name="image">
-                                <label class="custom-file-label btn " >Choose file</label>
+                            <div class="col-md-8">
+                                <input required type="file" class="form-control" name="image">
                             </div>
                         </div>
 
