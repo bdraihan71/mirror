@@ -91,8 +91,7 @@ class EventsController extends Controller
                 $type = 'Upcoming';
             }
         } else {
-            $events = Event::where('date_start', '>=', $now->copy()->format('Y-m-d'))->whereNull('deleted')->get()->orderBy('date_start', 'desc')->get();
-
+            $events = Event::where('date_start', '>=', $now->copy()->format('Y-m-d'))->whereNull('deleted')->orderBy('date_start', 'desc')->get();
             if ($range == 'all') {
                 $events = Event::whereNull('deleted')->orderBy('date_start', 'desc')->get();
                 $type = 'All';
