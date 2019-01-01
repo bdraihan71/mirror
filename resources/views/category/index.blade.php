@@ -30,7 +30,12 @@
                                 <td>{{$category->call_to_action}}</td>
                                 <td>
                                     <a href="{{route('categories.edit',$category->id)}}"><button type="button" class="btn btn-primary">Edit</button></a>
-                                    <a href = 'delete/{{ $category->id }}'><button type="button" class="btn btn-danger">Delete</button></a>
+                                    {{--<a href = 'delete/{{ $category->id }}'><button type="button" class="btn btn-danger">Delete</button></a>--}}
+                                    <form  action="{{route('categories.destroy',$category->id)}}" method="POST" style="display: inline" >
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-danger">Delete</button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

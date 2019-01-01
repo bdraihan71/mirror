@@ -119,6 +119,15 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if ($this->notAdmin()) {
+            flash('You are not authorized to access this')->error();
+
+            return redirect('/');
+        }
+        $category = Categories::find($id);
+        $category->delete();
+        flash('Category successfully Delete')->success();
+
+        return redirect('/categories');
     }
 }
