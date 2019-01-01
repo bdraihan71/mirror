@@ -53,53 +53,55 @@
         </div>
     </header>
 
-    @if (count($event->album->photos) > 0)
-        @foreach($event->album->photos as $photo)
-            <style>
-                .c-hero-flex__item{{$loop->index}} {
-                    background: #222 url("<?php echo $photo->url; ?>") no-repeat center center;
-                }
-            </style>
-        @endforeach
+    @if ($event->album != null)
+        @if (count($event->album->photos) > 0)
+            @foreach($event->album->photos as $photo)
+                <style>
+                    .c-hero-flex__item{{$loop->index}} {
+                        background: #222 url("<?php echo $photo->url; ?>") no-repeat center center;
+                    }
+                </style>
+            @endforeach
 
-        <section id="gallery" class="gallery">
-            <div class="container-fluid d-none d-sm-block">
-                <div class="row text-center">
-                    <div class="col-md-12 center-gallery">
-                        <h1 class="center__text {{ App\WebContent::find(20) == null || App\WebContent::find(20)->content == '0' ? 'glitch is-glitching' : ''}}" data-text="GALLERY">GALLERY</h1>
-                        @if (auth()->user() != null)
-                            @if (App\Http\Controllers\Controller::notAdmin() == false)
-                                <a href="/remove/effect/gallery/{{$event->id}}" class="btn btn-danger h-25">
-                                    @if (App\WebContent::find(20) == null || App\WebContent::find(20)->content == '0')
-                                        Remove Glitch
-                                    @else
-                                        Put Glitch
-                                    @endif
-                                </a>    
+            <section id="gallery" class="gallery">
+                <div class="container-fluid d-none d-sm-block">
+                    <div class="row text-center">
+                        <div class="col-md-12 center-gallery">
+                            <h1 class="center__text {{ App\WebContent::find(20) == null || App\WebContent::find(20)->content == '0' ? 'glitch is-glitching' : ''}}" data-text="GALLERY">GALLERY</h1>
+                            @if (auth()->user() != null)
+                                @if (App\Http\Controllers\Controller::notAdmin() == false)
+                                    <a href="/remove/effect/gallery/{{$event->id}}" class="btn btn-danger h-25">
+                                        @if (App\WebContent::find(20) == null || App\WebContent::find(20)->content == '0')
+                                            Remove Glitch
+                                        @else
+                                            Put Glitch
+                                        @endif
+                                    </a>    
+                                @endif
                             @endif
-                        @endif
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <section class="c-hero-flex">
+                            @foreach ($event->album->photos as $photo)
+                                @if ($loop->index != 0 && $loop->index % 3 == 0)
+                                        </section>
+                                    </div>
+                                    <div class="row">
+                                        <section class="c-hero-flex">
+                                @endif
+
+                                <img src="{{$photo->url}}" id="myImg{{$photo->id}}" alt="{{$photo->caption}}" style="display: none">
+                                <a class="c-hero-flex__item c-hero-flex__item{{$loop->index}}" onclick="modalImage({{$photo->id}})" href="#">
+                                    
+                                </a>
+                            @endforeach
+                        </section>
                     </div>
                 </div>
-
-                <div class="row">
-                    <section class="c-hero-flex">
-                        @foreach ($event->album->photos as $photo)
-                            @if ($loop->index != 0 && $loop->index % 3 == 0)
-                                    </section>
-                                </div>
-                                <div class="row">
-                                    <section class="c-hero-flex">
-                            @endif
-
-                            <img src="{{$photo->url}}" id="myImg{{$photo->id}}" alt="{{$photo->caption}}" style="display: none">
-                            <a class="c-hero-flex__item c-hero-flex__item{{$loop->index}}" onclick="modalImage({{$photo->id}})" href="#">
-                                
-                            </a>
-                        @endforeach
-                    </section>
-                </div>
-            </div>
-        </section>
+            </section>
+        @endif
     @endif
 
     <section id="schedule" class="schedule text-center text-white py-5">
