@@ -129,4 +129,18 @@ class Controller extends BaseController
 
         return $name;
     }
+
+    public function updateImage ($request, $previous)
+    {
+        dd(exec('cd ../storage/app/public/ && pwd'));
+        $file_path = $path.str_replace("storage/","",$previous->url);
+        unlink($file_path);
+        $filenameWithExt = $request->getClientOriginalName();
+        $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);            
+        $extension = $request->getClientOriginalExtension();
+        $fileNameToStore = $filename.'_'.time().'.'.$extension;                       
+        $path = $request->storeAs('/uploads', $fileNameToStore);
+
+        return '/storage/uploads/'.$fileNameToStore;
+    }
 }
