@@ -211,5 +211,7 @@ Route::post('/respond', 'ProductStatusController@respond')->middleware('auth');
 Route::post('/issue', 'ProductStatusController@issue')->middleware('auth');
 
 //Production section
-//Route::post('/categories/{id}', 'CategoryController@update')->middleware('auth');
 Route::resource('/categories', 'CategoryController')->middleware('auth');
+
+//service section
+Route::resource('/subcategories', 'SubCategoryController')->middleware('auth');
