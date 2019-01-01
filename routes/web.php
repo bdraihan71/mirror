@@ -144,7 +144,10 @@ Route::get('/page', function () {
     return view('tickets/show');
 });
 
-Route::get('/test', 'CartsController@queueTest');
+Route::get('/test/{id}', function (Request $request, $id) {
+    $event = Event::find($id);
+    dd($event, $event->album);
+});
 
 //Privacy Policy Route
 Route::get('/privacy-policy', function () {

@@ -53,14 +53,14 @@
         </div>
     </header>
 
-    @if (count($album))
-        @for($i = 0; $i < count($album); $i++)
+    @if (count($event->album->photos) > 0)
+        @foreach($event->album->photos as $photo)
             <style>
-                .c-hero-flex__item{{($i + 1)}} {
-                    background: #222 url("<?php echo $album[$i]->url; ?>") no-repeat center center;
+                .c-hero-flex__item{{$loop->index}} {
+                    background: #222 url("<?php echo $photo->url; ?>") no-repeat center center;
                 }
             </style>
-        @endfor
+        @endforeach
 
         <section id="gallery" class="gallery">
             <div class="container-fluid d-none d-sm-block">
@@ -83,7 +83,7 @@
 
                 <div class="row">
                     <section class="c-hero-flex">
-                        @foreach ($album as $photo)
+                        @foreach ($event->album->photos as $photo)
                             @if ($loop->index != 0 && $loop->index % 3 == 0)
                                     </section>
                                 </div>
