@@ -8,6 +8,10 @@
             <div class="row pt-3">
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
+                    <a href='/home' class="btn btn-primary">Dashboard</a>
+                    <a href='/categories/create' class="btn btn-info">Create</a>
+                    <br>
+                    <br>
                     <table class="table table-striped bg-light text-dark">
                         <thead class="thead-dark">
                         <tr>

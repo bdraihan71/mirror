@@ -8,6 +8,10 @@
             <div class="row pt-3">
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
+                    <a href='/home' class="btn btn-primary">Dashboard</a>
+                    <a href='/categories' class="btn btn-info">Category</a>
+                    <br>
+                    <br>
                     <form method="POST" action="/categories" enctype="multipart/form-data">
                         @csrf
                         <div class="form-row text-white">
@@ -15,7 +19,7 @@
                                 <label> Name *</label>
                             </div>
                             <div class="form-group col-md-8">
-                                <input type="text" maxlength="80" class="form-control contact-form input-container" name="name" value="{{ old('f_name') }}" placeholder="Production Name" required>
+                                <input type="text" maxlength="80" class="form-control contact-form input-container" name="name" placeholder="Production Name" required>
                             </div>
                         </div>
 
@@ -24,10 +28,10 @@
                                 <label> Type *</label>
                             </div>
                             <div class="form-group col-md-8">
-                                <select class="form-control" id="exampleFormControlSelect1" name="type">
+                                <select class="form-control" id="exampleFormControlSelect1" name="type" required>
                                     <option selected>Select Your Category </option>
                                     <option value="Production">Production</option>
-                                    <option value="service">Service</option>
+                                    <option value="Service">Service</option>
                                 </select>
                             </div>
                         </div>
@@ -37,7 +41,7 @@
                                 <label>Image *</label>
                             </div>
                             <div class="col-md-8">
-                                <input required type="file" class="form-control" name="image">
+                                <input required type="file" class="form-control" name="image" required>
                             </div>
                         </div>
 
@@ -46,7 +50,7 @@
                                 <label> Call To Action *</label>
                             </div>
                             <div class="form-group col-md-8">
-                                <input type="text" maxlength="80" class="form-control contact-form input-container" name="call_to_action" value="{{ old('f_name') }}" placeholder="Call To Action" required>
+                                <input type="text" maxlength="80" class="form-control contact-form input-container" name="call_to_action"  placeholder="Call To Action" required>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-danger register-btn">Add</button>
