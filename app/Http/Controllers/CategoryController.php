@@ -14,6 +14,12 @@ class CategoryController extends Controller
      */
     public function index()
     {
+        if ($this->notAdmin()) {
+            flash('You are not authorized to access this')->error();
+
+            return redirect('/');
+        }
+
         $categories = Categories::latest()->paginate(7);
         return view('category.index' , compact('categories'));
     }
@@ -36,6 +42,12 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+        if ($this->notAdmin()) {
+            flash('You are not authorized to access this')->error();
+
+            return redirect('/');
+        }
+        
         $category = new Categories();
         $category->name = $request->name;
         $category->type = $request->type;
