@@ -42,7 +42,6 @@ class SubCategoryController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'category_name' => 'required|max:30',
             'title' => 'required|max:30',
         ]);
 
@@ -53,7 +52,7 @@ class SubCategoryController extends Controller
         }
 
         $subcategory = new SubCategory();
-        $subcategory->category_name = $request->category_name;
+        $subcategory->categories_id = $request->categories_id;
         $subcategory->data = $request->data;
         $subcategory->title = $request->title;
         $subcategory->save();

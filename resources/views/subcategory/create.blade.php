@@ -20,10 +20,10 @@
                                 <label> Category Name *</label>
                             </div>
                             <div class="form-group col-md-8">
-                                <select class="form-control" id="exampleFormControlSelect1" name="category_name" required>
+                                <select class="form-control" id="exampleFormControlSelect1" name="categories_id" required>
                                     <option >Select Your Category </option>
                                     @foreach($categories as $category)
-                                    <option value={{$category->name}}>{{$category->name}}</option>
+                                    <option value={{$category->id}}>{{$category->name}}</option>
                                         @endforeach
                                 </select>
                             </div>
