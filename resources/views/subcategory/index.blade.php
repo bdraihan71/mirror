@@ -30,11 +30,11 @@
                                 <td>
                                     <a href="{{route('subcategories.edit',$subcategory->id)}}"><button type="button" class="btn btn-primary">Edit</button></a>
                                     {{--<a href = 'delete/{{ $category->id }}'><button type="button" class="btn btn-danger">Delete</button></a>--}}
-                                    {{--<form  action="{{route('subategories.destroy',$subcategory->id)}}" method="POST" style="display: inline" >--}}
-                                        {{--@csrf--}}
-                                        {{--@method('DELETE')--}}
-                                        {{--<button class="btn btn-danger">Delete</button>--}}
-                                    {{--</form>--}}
+                                    <form  action="{{route('subcategories.destroy',$subcategory->id)}}" method="POST" style="display: inline" >
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-danger">Delete</button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

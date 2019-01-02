@@ -86,7 +86,14 @@ class SubCategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        if ($this->notAdmin()) {
+            flash('You are not authorized to access this')->error();
+
+            return redirect('/');
+        }
+        $subcategory = SubCategory::find($id);
+        $categories = Categories::all();
+        return view('subcategory/edit', compact('subcategory', 'categories'));
     }
 
     /**
@@ -98,7 +105,24 @@ class SubCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required|max:30',
+        ]);
+        if ($this->notAdmin()) {
+            flash('You are not authorized to access this')->error();
+
+            return redirect('/');
+        }
+        $subcategory = SubCategory::where('id', $id)->first();
+        $subcategory->categories_id = $request->categories_id;
+        $subcategory->data = $request->data;
+        $subcategory->title = $request->title;
+        $subcategory->save();
+
+
+        flash('Category successfully edited')->success();
+
+        return redirect('/subcategories');
     }
 
     /**
@@ -109,6 +133,15 @@ class SubCategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if ($this->notAdmin()) {
+            flash('You are not authorized to access this')->error();
+
+            return redirect('/');
+        }
+        $subcategory = SubCategory::find($id);
+        $subcategory->delete();
+        flash('SubCategory successfully Delete')->success();
+
+        return redirect('/subcategories');
     }
 }

@@ -9,7 +9,7 @@
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
                     <a href='/home' class="btn btn-primary">Dashboard</a>
-                    <a href='/subcategories' class="btn btn-info">Category</a>
+                    <a href='/subcategories' class="btn btn-info">SubCategory</a>
                     <br>
                     <br>
                     <form method="POST" action="/subcategories" enctype="multipart/form-data">
