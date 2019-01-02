@@ -215,3 +215,7 @@ Route::resource('/categories', 'CategoryController')->middleware('auth');
 
 //service section
 Route::resource('/subcategories', 'SubCategoryController')->middleware('auth');
+
+// Production and service view
+
+Route::get('/production', 'CategoryController@production');

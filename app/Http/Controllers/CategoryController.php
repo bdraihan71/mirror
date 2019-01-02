@@ -159,4 +159,9 @@ class CategoryController extends Controller
 
         return redirect('/categories');
     }
+
+    public function production()
+    {
+        return view('category.production' );
+    }
 }
