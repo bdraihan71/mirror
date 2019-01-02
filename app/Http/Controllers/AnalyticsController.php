@@ -87,7 +87,7 @@ class AnalyticsController extends Controller
             $type = $barcode[0];
             $event = $barcode[1];
             $number = $barcode[2];
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             flash('The entered infomation is invalid')->error();
 
             return redirect($url);
@@ -111,7 +111,7 @@ class AnalyticsController extends Controller
                     $ticket->present = 1;
                     $message = "Present unmarked";
                 }
-            } catch (Exception $e) {
+            } catch (\Exception $e) {
                 flash('The entered infomation is invalid')->error();
 
                 return redirect($url);
@@ -126,7 +126,7 @@ class AnalyticsController extends Controller
                 } else {
                     $ticket->present = true;
                 }
-            } catch (Exception $e) {
+            } catch (\Exception $e) {
                 flash('The entered infomation is invalid')->error();
 
                 return redirect($url);

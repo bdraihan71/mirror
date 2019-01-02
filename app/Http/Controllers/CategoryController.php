@@ -119,7 +119,7 @@ class CategoryController extends Controller
         }
         $category = Categories::where('id', $id)->first();
         if ($request->hasFile('image')) {
-            $category->image = $this->uploadImage($request->image);
+            $category->image = $this->updateImage($request->image, $category->image);
         }
         $category->name = $request->name;
         $category->type = $request->type;

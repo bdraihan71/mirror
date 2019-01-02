@@ -33,7 +33,7 @@
 
 <body class="black-bg">
  
-    <div class="container-fluid">
+    <div class="container-fluid p-0">
         @include('flash::message')
         
         @if (Request::segment(1) != 'api')

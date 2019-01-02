@@ -286,23 +286,23 @@ class EventsController extends Controller
         $event = Event::where('id', $id)->first();
 
         if ($request->hasFile('url_1')) {
-            $event->img_1 = $this->uploadImage($request->url_1);
+            $event->img_1 = $this->updateImage($request->url_1, $event->img_1);
         }
 
         if ($request->hasFile('url_2')) {
-            $event->img_2 = $this->uploadImage($request->url_2);
+            $event->img_2 = $this->updateImage($request->url_2, $event->img_2);
         }
 
         if ($request->hasFile('url_3')) {
-            $event->img_3 = $this->uploadImage($request->url_3);
+            $event->img_3 = $this->updateImage($request->url_3, $event->img_3);
         }
 
         if ($request->hasFile('url_4')) {
-            $event->img_4 = $this->uploadImage($request->url_4);
+            $event->img_4 = $this->updateImage($request->url_4, $event->img_4);
         }
 
         if ($request->hasFile('url_5')) {
-            $event->img_5 = $this->uploadImage($request->url_5);
+            $event->img_5 = $this->updateImage($request->url_5, $event->img_5);
         }
 
         $event->name = $request->name;

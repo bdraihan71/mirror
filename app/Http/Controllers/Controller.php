@@ -132,9 +132,15 @@ class Controller extends BaseController
 
     public function updateImage ($request, $previous)
     {
-        dd(exec('cd ../storage/app/public/ && pwd'));
-        $file_path = $path.str_replace("storage/","",$previous->url);
-        unlink($file_path);
+        $path = exec('cd ../storage/app/public/ && pwd');
+        $file_path = $path.str_replace("storage/","",$previous);
+        
+        try {
+            unlink($file_path);
+        } catch (\Exception $e) {
+            // do nothing
+        }
+
         $filenameWithExt = $request->getClientOriginalName();
         $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);            
         $extension = $request->getClientOriginalExtension();

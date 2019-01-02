@@ -49,7 +49,7 @@ class CMSController extends Controller
                 $content = new WebContent;
             }
 
-            $content->content = $this->uploadImage($request->url_1);
+            $content->content = $this->updateImage($request->url_1, $content->content);
             $content->save();
         }
 
@@ -60,7 +60,7 @@ class CMSController extends Controller
                 $content = new WebContent;
             }
 
-            $content->content = $this->uploadImage($request->url_2);
+            $content->content = $this->updateImage($request->url_2, $content->content);
             $content->save();
         }
 
@@ -71,7 +71,7 @@ class CMSController extends Controller
                 $content = new WebContent;
             }
 
-            $content->content = $this->uploadImage($request->url_3);
+            $content->content = $this->updateImage($request->url_3, $content->content);
             $content->save();
         }
 

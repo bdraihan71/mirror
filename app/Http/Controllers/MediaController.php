@@ -140,7 +140,7 @@ class MediaController extends Controller
     
             if ($request->hasfile('all')) {
                 $album = new Album;
-                $album->url = $this->uploadImage($request->all);
+                $album->url = $this->updateImage($request->all, $album->url);
                 $album->event_id = 0;
                 $album->caption = $request->cap;
     
@@ -169,7 +169,7 @@ class MediaController extends Controller
     
             if ($request->hasfile('all')) {
                 $album = new Album;
-                $album->url = $this->uploadImage($request->all);
+                $album->url = $this->updateImage($request->all, $album->url);
                 $album->event_id = $request->id;
                 $album->caption = $request->cap;
     

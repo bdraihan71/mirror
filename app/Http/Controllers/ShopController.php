@@ -80,7 +80,7 @@ class ShopController extends Controller
         $product->description = $request->description;
 
         if ($request->hasFile('img')) {
-            $product->img = $this->uploadImage($request->img);
+            $product->img = $this->updateImage($request->img, $product->img);
         }
 
         $product->save();

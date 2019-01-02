@@ -24,6 +24,7 @@
                         @if ($loop->index != 0 && $loop->index % 3 == 0)
                             </div>
                             <div class="row text-white">
+                                <div class="col"></div>
                         @endif
                         <div class="col-md-3 ">
                             <div class="card border-0 rounded-0 my-3 laser-card ">

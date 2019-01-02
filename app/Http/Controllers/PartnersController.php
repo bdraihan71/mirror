@@ -79,7 +79,7 @@ class PartnersController extends Controller
         $partner->type = $request->type;
         
         if ($request->hasFile('url')) {
-            $partner->img = $this->uploadImage($request->url);
+            $partner->img = $this->updateImage($request->url, $partner->img);
         }
 
         $partner->save();
