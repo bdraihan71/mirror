@@ -15,7 +15,14 @@ class SubCategoryController extends Controller
      */
     public function index()
     {
-        //
+        if ($this->notAdmin()) {
+            flash('You are not authorized to access this')->error();
+
+            return redirect('/');
+        }
+
+        $subcategories = SubCategory::paginate(7);
+        return view('subcategory.index' , compact('subcategories'));
     }
 
     /**

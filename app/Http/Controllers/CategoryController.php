@@ -147,6 +147,13 @@ class CategoryController extends Controller
             return redirect('/');
         }
         $category = Categories::find($id);
+
+        $subcats = $category->subCategories;
+
+        foreach ($subcats as $subcat){
+            $subcat->delete();
+        }
+
         $category->delete();
         flash('Category successfully Delete')->success();
 
