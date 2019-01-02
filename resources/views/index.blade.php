@@ -33,6 +33,8 @@
                             @endif
                             <a class="nav-item nav-link my-3" href="/media">MEDIA</a>
                             <a class="nav-item nav-link my-3" href="/music">MUSIC</a>
+                            <a class="nav-item nav-link my-3" href="/service">Service</a>
+                            <a class="nav-item nav-link my-3" href="/productions">Productions</a>
                             <a class="nav-item nav-link my-3" href="/contact-us/#top">CONTACT US</a>
                             @if (auth()->user() != null)
                                 <a class="nav-item nav-link text-dark" href="/cart">

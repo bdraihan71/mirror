@@ -19,7 +19,7 @@
                                 <label> Name *</label>
                             </div>
                             <div class="form-group col-md-8">
-                                <input type="text" maxlength="80" class="form-control contact-form input-container" name="name" placeholder="Production Name" required>
+                                <input type="text" maxlength="80" class="form-control contact-form input-container" name="name" placeholder="Category Name" required>
                             </div>
                         </div>
 

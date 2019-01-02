@@ -3,21 +3,22 @@
 @section('content')
     @foreach($categories as $category)
         @if ($loop->index == 0)
-            <section id="laser" class="laser text-center">
+            <section id="logistics" class="logistics text-center">
+                <h1 class="display-4 py-5 text-white">LOGISTICS</h1>
                 <div class="cover-text-overlay">
                     <img class="w-100" src="{{$category->image}}" />
-                    <div class="centered text-white display-3 font-weight-bold">{{$category->name}}</div>
+                    <div class="centered text-white display-4">{{$category->name}}</div>
                 </div>
             </section>
         @else
             <div class="cover-text-overlay">
                 <img class="w-100" src="{{$category->image}}" />
-                <div class="centered text-white display-3 font-weight-bold">{{$category->name}}</div>
+                <div class="centered text-white display-4">{{$category->name}}</div>
             </div>
-        @endif
+         @endif
 
         <section id="text-card" class="text-card text-center">
-            <div class="container-fluid ">
+            <div class="container">
                 <div class="row text-white">
                     <div class="col"></div>
                     @foreach ($category->subCategories as $subcat)
@@ -25,21 +26,22 @@
                             </div>
                             <div class="row text-white">
                         @endif
-                        <div class="col-md-3 ">
-                            <div class="card border-0 rounded-0 my-3 laser-card ">
-                                <div class="py-5"><h3 class="py-5">{{$subcat->title}}</h3></div>
+                        <div class="col-md-4">
+                            <div class="card border-0 bg-dark my-3 logistics-card">
+                                <div class="py-5"><h3>{{$subcat->title}}</h3></div>
                                 <a
-                                    href="#"
-                                    class="btn btn-danger w-100 py-3 mb-5 rounded-0">
-                                    {{$category->call_to_action}}
-                                </a>
+                                        href="single-event.html"
+                                        class="btn btn-danger w-100 py-3 logistics-btn">
+                                    {{$category->call_to_action}}</a>
                             </div>
                         </div>
-                        <div class="col"></div>
-                        @endforeach
+                                <div class="col"></div>
+                                @endforeach
+
                     </div>
                 </div>
             </div>
         </section>
-    @endforeach
+    @endforeach;
+
 @endsection
