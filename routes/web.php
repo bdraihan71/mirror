@@ -144,9 +144,8 @@ Route::get('/page', function () {
     return view('tickets/show');
 });
 
-Route::get('/test/{id}', function (Request $request, $id) {
-    $event = Event::find($id);
-    dd($event, $event->album);
+Route::get('/test', function () {
+    return view('test');
 });
 
 //Privacy Policy Route
