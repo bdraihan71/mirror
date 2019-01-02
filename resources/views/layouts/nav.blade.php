@@ -39,10 +39,10 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                <div class="collapse navbar-collapse justify-content-end font-sm" id="navbarNavAltMarkup">
                     <div class="navbar-nav font-weight-bold nav-back">
                         <a class="nav-item nav-link my-3" href="/#top">HOME</a>
-                        <a class="nav-item nav-link my-3" href="/#page2">ABOUT US</a>
+                        <a class="nav-item nav-link my-3" href="/#page2">ABOUT</a>
                         <a class="nav-item nav-link my-3" href="/#page4">PARTNERS</a>
                         <a class="nav-item nav-link my-3" href="/events/all/#top">EVENTS</a>
                         <a class="nav-item nav-link my-3" href="/shop/#top">SHOP</a>
@@ -55,9 +55,9 @@
                         @endif
                         <a class="nav-item nav-link my-3" href="/media">MEDIA</a>
                         <a class="nav-item nav-link my-3" href="/music">MUSIC</a>
-                        <a class="nav-item nav-link my-3" href="/service">Service</a>
-                        <a class="nav-item nav-link my-3" href="/productions">Productions</a>
-                        <a class="nav-item nav-link my-3" href="/contact-us/#top">CONTACT US</a>
+                        <a class="nav-item nav-link my-3" href="/service">SERVICES</a>
+                        <a class="nav-item nav-link my-3" href="/production">PRODUCTIONS</a>
+                        <a class="nav-item nav-link my-3" href="/contact-us/#top">CONTACT</a>
                         @if (auth()->user() != null)
                             <a class="nav-item nav-link text-dark" href="/cart">
                                 <span class="fa-stack">
