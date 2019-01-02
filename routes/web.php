@@ -211,3 +211,13 @@ Route::get('/album/show/{id}', 'AlbumController@show');
 Route::post('/update-status', 'ProductStatusController@updateStatus')->middleware('auth');
 Route::post('/respond', 'ProductStatusController@respond')->middleware('auth');
 Route::post('/issue', 'ProductStatusController@issue')->middleware('auth');
+
+//Production section
+Route::resource('/categories', 'CategoryController')->middleware('auth');
+
+//service section
+Route::resource('/subcategories', 'SubCategoryController')->middleware('auth');
+
+// Production and service view
+
+Route::get('/production', 'CategoryController@production');
