@@ -21,7 +21,7 @@
                             </div>
                             <div class="form-group col-md-8">
                                 <select class="form-control" id="exampleFormControlSelect1" name="categories_id" required>
-                                    <option >Select Your Category </option>
+                                    <option value="">Select Your Category </option>
                                     @foreach($categories as $category)
                                     <option value={{$category->id}}>{{$category->name}}</option>
                                         @endforeach

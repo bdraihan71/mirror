@@ -50,6 +50,7 @@ class SubCategoryController extends Controller
     {
         $this->validate($request, [
             'title' => 'required|max:30',
+            'categories_id' =>'required',
         ]);
 
         if ($this->notAdmin()) {
@@ -107,6 +108,7 @@ class SubCategoryController extends Controller
     {
         $this->validate($request, [
             'title' => 'required|max:30',
+            'categories_id' =>'required',
         ]);
         if ($this->notAdmin()) {
             flash('You are not authorized to access this')->error();
