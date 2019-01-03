@@ -12,9 +12,17 @@
                         <a href="/alter/index" class="btn btn-primary">Edit</a>
                     @endif
                 @endif
+                {{-- <script>
+                    let elShown = false;
+
+                    function showMenu (id) {
+                        console.log('here');
+                        document.getElementById(id).style.display = 'none';
+                    }
+                </script> --}}
                 <div class="container">
                     <a class="navbar-brand" href="/"><img class="logo" src="/frontend/img/logo.svg" alt="Logo"></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <button onclick="showMenu('navbarNavAltMarkup')" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse justify-content-end font-sm" id="navbarNavAltMarkup">

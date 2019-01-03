@@ -32,7 +32,24 @@
 </head>
 
 <body class="black-bg">
- 
+        <script>
+            let elShown = true;
+
+            function showMenu (id) {
+                console.log(elShown);
+
+                if (elShown) {
+                    document.getElementById(id).style.display = 'block';
+                } else {
+                    document.getElementById(id).style.display = 'none';
+                }
+
+                elShown = !elShown;
+
+                console.log(elShown, document.getElementById(id).style.height);
+            }
+        </script>
+
     <div class="container-fluid p-0">
         @include('flash::message')
         
