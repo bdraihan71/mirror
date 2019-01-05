@@ -29,7 +29,7 @@
                                 <td>{{$subcategory->category->name}}</td>
                                 <td>
                                     <a href="{{route('subcategories.edit',$subcategory->id)}}"><button type="button" class="btn btn-primary">Edit</button></a>
-                                    <form  action="{{route('subcategories.destroy',$subcategory->id)}}" method="POST"  >
+                                    <form  action="{{route('subcategories.destroy',$subcategory->id)}}" method="POST" style="display: inline" >
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-danger">Delete</button>
