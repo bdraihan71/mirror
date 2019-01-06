@@ -94,7 +94,6 @@ class PaymentsController extends Controller
 
             $invoice->barcode = '1 '.$id.' '.$ticket->id;
             $invoice->save();
-
             Mail::to($user->email)->queue(new vMail($user, $ticket));
 
             return view('transfer-status.transfer-success');

@@ -222,3 +222,6 @@ Route::resource('/subcategories', 'SubCategoryController')->middleware('auth');
 
 Route::get('/production', 'CategoryController@production');
 Route::get('/service', 'CategoryController@service');
+
+//service request mail
+Route::post('/requestservice', 'CategoryController@requestservice');

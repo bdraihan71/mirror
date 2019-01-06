@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\SubCategory;
+use App\User;
 use App\Categories;
 use Illuminate\Http\Request;
+use Mail;
+use App\Mail\RequestService as rsMail;
 
 class CategoryController extends Controller
 {
@@ -171,5 +175,12 @@ class CategoryController extends Controller
     {
         $categories = Categories::where('type', 'Service')->get();
         return view('category.service', compact('categories') );
+    }
+
+    public function requestservice($user)
+    {
+        $subcategory = SubCategory::all();
+        $user = User::find($user);
+        Mail::to(env("MAIL_USERNAME"))->queue(new rsMail($user, $subcategory));
     }
 }

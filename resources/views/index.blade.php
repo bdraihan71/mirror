@@ -119,9 +119,9 @@
 					<div id="div1" style="display: none">
                         <img class="parallax-img img-sm" src="/frontend/img/parallax6.png">
                         <h1 class="footer-header parallax-text">Ecube Entertainment</h1>
-                        <div id="parent">
-                            <div class="p-scroll" id="child">{!!$description->content!!}</div>
-                        </div>
+
+                            <div class="p-scroll">{!!$description->content!!}</div>
+
                     </div>	
 				</header>
 	

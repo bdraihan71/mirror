@@ -276,7 +276,7 @@ header .download .btn-light:hover {
   height: 45px;
   border: 2px solid #fff;
   position: absolute;
-  bottom: 30px;
+  bottom: 50px;
   left: 50%;
   margin-left: -12.5px;
   border-radius: 12px;
@@ -480,24 +480,27 @@ header .download .btn-light:hover {
 /* Redesign of index about us -- start */
 
 .p-scroll {
-  height: 300px;
+  height: 200px;
   font-size: 14px;
   font-weight: 400;
   text-align: justify;
-  overflow: scroll;
-  overflow: -moz-scrollbars-none;
+  overflow-y: auto;
+  overflow-x: hidden;
   overflow: -moz-scrollbars-none !important;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.0) rgba(0, 0, 0, 0.0);
 }
 
 @media screen and (max-width: 1920px) and (min-width: 1100px) {
   .p-scroll {
-    height: 300px;
+    height: 200px;
     padding-left: 150px;
     padding-right: 150px;
     font-size: 14px;
     font-weight: 400;
     text-align: justify;
-    overflow: scroll;
+    overflow-y: auto;
+    overflow-x: hidden;
     overflow: -moz-scrollbars-none;
     overflow: -moz-scrollbars-none !important;
   }
@@ -507,9 +510,6 @@ header .download .btn-light:hover {
   }
 }
 
-.p-scroll::-webkit-scrollbar {
-  display: none;
-}
 
 /* Redesign of index about us -- end */
 
@@ -1149,28 +1149,6 @@ input[type=number] {
   background: grey;
 }
 
-.p-scroll {
-  height: 200px;
-  overflow: scroll;
-  overflow: -moz-scrollbars-none;
-}
-
-.p-scroll::-webkit-scrollbar {
-  display: none;
-}
-
-@media only screen and (max-width:500px) {
-  .p-scroll {
-    height: 150px;
-    overflow: scroll;
-    overflow: -moz-scrollbars-none;
-  }
-
-  .p-scroll::-webkit-scrollbar {
-    display: none;
-  }
-}
-
 @media only screen and (max-width:500px) {
   .p-scroll-wwd {
     height: 350px;
@@ -1207,7 +1185,7 @@ input[type=number] {
 }
 
 .navbar-collapse.collapse.show {
-  max-height: 280px;
+  max-height: 86.5vh;
   overflow-y: auto;
 }
 
