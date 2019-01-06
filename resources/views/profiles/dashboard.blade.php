@@ -12,8 +12,8 @@
                         <strong><a class="nav-link text-white" href="/album/create">EDIT EVENT ALBUMS</a></strong>
                         <strong><a class="nav-link text-white" href="/media/video/edit">EDIT EVENT VIDEOS</a></strong>
                         <strong><a class="nav-link text-white" href="/event/feature">FEATURE EVENT</a></strong>
-                        <strong><a class="nav-link text-white" href="/categories">CATEGORY FIELDS</a></strong>
-                        <strong><a class="nav-link text-white" href="/subcategories">CATEGORY ITEMS</a></strong>
+                        <strong><a class="nav-link text-white" href="/categories">CATEGORY</a></strong>
+                        <strong><a class="nav-link text-white" href="/subcategories">SUBCATEGORIES</a></strong>
                         @if (auth()->user()->role == 'super-admin')
                             <strong><a class="nav-link text-white" href="/create/admin">CREATE ADMIN</a></strong>
                             <strong><a class="nav-link text-white" href="/analytics/events">EVENTS ANALYTICS</a></strong>
