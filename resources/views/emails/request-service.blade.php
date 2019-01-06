@@ -10,11 +10,9 @@
 <body>
 <div class="container-fluid">
     <div class="row">
-        {{$user->name}} Request to Book  : <br>
-        {{$subcategory->title}}  <br>
-        {{$subcategory->category->name}}  <br>
+        {{$user->profile->f_name}} {{$user->profile->m_name == null ? $user->profile->l_name : $user->profile->m_name.' '.$user->profile->l_name}} requested to book: <br>
+        {{$subcategory->title}}, {{$subcategory->category->name}}<br>
         Contact: {{$user->email}}, {{$user->profile->phone}}
-
     </div>
 </div>
 </body>

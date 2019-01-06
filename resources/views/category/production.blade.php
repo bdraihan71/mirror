@@ -30,7 +30,7 @@
                             <div class="card border-0 rounded-0 my-3 laser-card ">
                                 <div class="py-5"><h3 class="py-5">{{$subcat->title}}</h3></div>
                                 <a
-                                    href="#"
+                                    href="/requestservice/{{$subcat->id}}"
                                     class="btn btn-danger w-100 py-3 mb-5 rounded-0">
                                     {{$category->call_to_action}}
                                 </a>

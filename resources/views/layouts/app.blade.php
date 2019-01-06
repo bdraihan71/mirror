@@ -9,7 +9,7 @@
     <title>Ecube Entertainment</title>
     <!-- Custom styles -->
     <link href="/frontend/css/moz-bar.min.css" rel="stylesheet">
-    <link href="/frontend/css/style.min.css" rel="stylesheet">
+    <link href="/frontend/css/style.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <link href="/frontend/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->

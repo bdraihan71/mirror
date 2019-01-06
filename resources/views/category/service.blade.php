@@ -31,7 +31,7 @@
                                 <div class="card border-0 bg-dark my-3 logistics-card">
                                     <div class="py-5"><h3>{{$subcat->title}}</h3></div>
                                     <a
-                                            href="single-event.html"
+                                            href="/requestservice/{{$subcat->id}}"
                                             class="btn btn-danger w-100 py-3 logistics-btn">
                                         {{$category->call_to_action}}</a>
                                 </div>

@@ -177,10 +177,12 @@ class CategoryController extends Controller
         return view('category.service', compact('categories') );
     }
 
-    public function requestservice($user)
+    public function requestservice(Request $request, $id)
     {
-        $subcategory = SubCategory::all();
-        $user = User::find($user);
-        Mail::to(env("MAIL_USERNAME"))->queue(new rsMail($user, $subcategory));
+        $subcategory = SubCategory::find($id);
+        Mail::to(env("MAIL_USERNAME"))->queue(new rsMail(auth()->user(), $subcategory));
+
+        flash('An email has been sent to the admin regaring your request.')->success();
+        return back();
     }
 }

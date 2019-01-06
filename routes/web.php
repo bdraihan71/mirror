@@ -224,4 +224,4 @@ Route::get('/production', 'CategoryController@production');
 Route::get('/service', 'CategoryController@service');
 
 //service request mail
-Route::post('/requestservice', 'CategoryController@requestservice');
+Route::get('/requestservice/{id}', 'CategoryController@requestservice')->middleware('auth');
