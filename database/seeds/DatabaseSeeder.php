@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             ProductsTableSeeder::class,
             PartnersTableSeeder::class,
             CategoriesTableSeeder::class,
+            Sub_categoriesTableSeeder::class,
         ]);
     }
 }
