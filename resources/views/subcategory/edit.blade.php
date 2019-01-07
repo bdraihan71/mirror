@@ -31,21 +31,21 @@
                             </div>
                         </div>
 
-                        <div class="form-row text-white">
+                        {{-- <div class="form-row text-white">
                             <div class="form-group col-md-4">
                                 <label> Data *</label>
                             </div>
                             <div class="form-group col-md-8">
                                 <input type="text" maxlength="80" class="form-control contact-form input-container" value={{$subcategory->data}} name="data" placeholder="Data Name" >
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="form-row text-white">
                             <div class="form-group col-md-4">
                                 <label> Title *</label>
                             </div>
                             <div class="form-group col-md-8">
-                                <input type="text" maxlength="80" class="form-control contact-form input-container" value={{$subcategory->title}} name="title" placeholder=" Title" required>
+                                <input type="text" maxlength="80" class="form-control contact-form input-container" value="{{$subcategory->title}}" name="title" placeholder=" Title" required>
                             </div>
                         </div>
 
