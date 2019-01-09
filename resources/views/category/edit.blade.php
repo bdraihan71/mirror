@@ -59,7 +59,7 @@
                                 
                             </div>
                             <div class="col-md-8">
-                                <p>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB</p>
+                                <p>Please upload images with ratio of 3:2, e.g. 1193 x 403 | max image size is 2 MB</p>
                             </div>
                         </div>
 
