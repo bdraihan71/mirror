@@ -47,6 +47,15 @@
 
                         <div class="form-row text-white">
                             <div class="form-group col-md-4">
+                                
+                            </div>
+                            <div class="col-md-8">
+                                <p>Please upload images with ratio of 3:2, e.g. 1920 x 1280 | max image size is 2 MB</p>
+                            </div>
+                        </div>
+
+                        <div class="form-row text-white">
+                            <div class="form-group col-md-4">
                                 <label> Call To Action *</label>
                             </div>
                             <div class="form-group col-md-8">
