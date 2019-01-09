@@ -59,7 +59,7 @@
                                 <label> Call To Action *</label>
                             </div>
                             <div class="form-group col-md-8">
-                                <input type="text" maxlength="80" class="form-control contact-form input-container" name="call_to_action"  placeholder="Call To Action" required>
+                                <input type="text" maxlength="80" class="form-control contact-form input-container" name="call_to_action"  placeholder="Call To Action" value="BOOK NOW" required>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-danger register-btn">Add</button>
