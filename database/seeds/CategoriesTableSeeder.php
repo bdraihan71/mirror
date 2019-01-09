@@ -33,7 +33,7 @@ class CategoriesTableSeeder extends Seeder
         ]);
 
         DB::table('categories')->insert([
-            'name' => 'DJ Player',
+            'name' => 'Backline',
             'type' => 'Service',
             'image' => '/frontend/img/cover.jpg',
             'call_to_action' => 'BOOK NOW',

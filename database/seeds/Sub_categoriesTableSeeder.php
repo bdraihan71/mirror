@@ -93,7 +93,7 @@ class Sub_categoriesTableSeeder extends Seeder
 
         DB::table('sub_categories')->insert([
             'categories_id' => 5,
-            'title' => 'Senheiser G4 EW 100 835S Handheld  ',
+            'title' => 'Sennheiser G4 EW 100 835S Handheld  ',
         ]);
 
         DB::table('sub_categories')->insert([
@@ -113,7 +113,7 @@ class Sub_categoriesTableSeeder extends Seeder
 
         DB::table('sub_categories')->insert([
             'categories_id' => 6,
-            'title' => 'Laser Logo Adertising Serices ',
+            'title' => 'Laser Logo Advertising Services ',
         ]);
 
         DB::table('sub_categories')->insert([
@@ -153,7 +153,7 @@ class Sub_categoriesTableSeeder extends Seeder
 
         DB::table('sub_categories')->insert([
             'categories_id' => 8,
-            'title' => '3D Pre Visulization ',
+            'title' => '3D Pre Visualization',
         ]);
 
         DB::table('sub_categories')->insert([
@@ -228,7 +228,7 @@ class Sub_categoriesTableSeeder extends Seeder
 
         DB::table('sub_categories')->insert([
             'categories_id' => 12,
-            'title' => 'Full Systems from Boardroom to Satdium size ',
+            'title' => 'Full systems from Boardroom to Stadium size ',
         ]);
 
         DB::table('sub_categories')->insert([

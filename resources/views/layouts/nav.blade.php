@@ -56,7 +56,7 @@
                         <a class="nav-item nav-link my-3" href="/media">MEDIA</a>
                         <a class="nav-item nav-link my-3" href="/music">MUSIC</a>
                         <a class="nav-item nav-link my-3" href="/service">SERVICES</a>
-                        <a class="nav-item nav-link my-3" href="/production">PRODUCTIONS</a>
+                        <a class="nav-item nav-link my-3" href="/production">PRODUCTION</a>
                         <a class="nav-item nav-link my-3" href="/contact-us/#top">CONTACT</a>
                         @if (auth()->user() != null)
                             <a class="nav-item nav-link text-dark" href="/cart">
