@@ -29,14 +29,14 @@
                             </div>
                         </div>
 
-                        <div class="form-row text-white">
+                        {{-- <div class="form-row text-white">
                             <div class="form-group col-md-4">
                                 <label> Data *</label>
                             </div>
                             <div class="form-group col-md-8">
                                 <input type="text" maxlength="80" class="form-control contact-form input-container" name="data" placeholder="Data Name" >
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="form-row text-white">
                             <div class="form-group col-md-4">
