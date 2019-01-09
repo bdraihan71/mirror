@@ -33,11 +33,9 @@
                                 @if ($category->type == 'Production' )
                                     <option value="Production">Production</option>
                                     <option value="Service">Service</option>
-                                    <option >Select Your Category </option>
                                 @elseif ($category->type == 'Service')
                                     <option value="Service">Service</option>
                                     <option value="Production">Production</option>
-                                    <option >Select Your Category </option>
                                  @else
                                     <option >Select Your Category </option>
                                     <option value="Production">Production</option>
