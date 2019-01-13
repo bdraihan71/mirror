@@ -167,11 +167,6 @@
                                 <img class="card-img-top partner-logo" src="{{$partner->img}}" alt="Partner Logo">
                             </div>
                         @endforeach
-                        @foreach($local_partners as $partner)
-                            <div class="">
-                                <img class="card-img-top partner-logo" src="{{$partner->img}}" alt="Partner Logo">
-                            </div>
-                        @endforeach
                     </div>
                 </div>
             </div>
