@@ -200,6 +200,7 @@ Route::get('/verifyAdmins', 'VerifyAdminsController@verify');
 
 //Effects Routes
 Route::get('/remove/effect/gallery/{id}', 'EffectsController@galleryGlitch')->middleware('auth');
+Route::get('/remove/effect/international', 'EffectsController@internationalPartners')->middleware('auth');
 
 //Album Routes
 Route::get('/albums/auto/create', 'AlbumController@createAlbums')->middleware('auth');

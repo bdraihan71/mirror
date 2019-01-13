@@ -48,4 +48,50 @@ class EffectsController extends Controller
 
         return redirect($url);
     }
+
+    public function internationalPartners (Request $request)
+    {
+        $partner = WebContent::find(21);
+        $message = "International Partners Removed";
+
+        if ($partner == null) {
+            $content1 = WebContent::find(20);
+
+            if ($content1 == null) {
+                $content2 = WebContent::find(20);
+
+                if ($content2 == null) {
+                    $content2 = new WebContent;
+                    $content2->content = 0;
+                    $content2->save();
+                }
+
+                $content1 = new WebContent;
+                $content1->content = 0;
+                $content1->save();
+            }
+
+            $partner = new WebContent;
+            $partner->content = 1;
+            $partner->save();
+
+            flash($message)->success();
+
+            return back();
+        }
+
+        if ($partner->content == 1) {
+            $partner->content = 0;
+            $partner->save();
+            
+            $message = "International Partners Shown";
+        } else {
+            $partner->content = 1;
+            $partner->save();
+        }
+
+        flash($message)->success();
+
+        return back();
+    }
 }

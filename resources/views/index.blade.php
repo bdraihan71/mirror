@@ -167,40 +167,65 @@
                                 <img class="card-img-top partner-logo" src="{{$partner->img}}" alt="Partner Logo">
                             </div>
                         @endforeach
+                        @foreach($local_partners as $partner)
+                            <div class="">
+                                <img class="card-img-top partner-logo" src="{{$partner->img}}" alt="Partner Logo">
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="partners py-5 text-center">
-            <h1 class="text-danger">International Partners</h1>
-            <div class="container">
-                <div class="row">
-                    @if (count($int_partners) < 6)
-                        @foreach ($int_partners as $partner)
-                            <div class="col">
-                                <div class="text-center">
-                                    <img src="{{$partner->img}}" class="partner-logo partner-img" alt="Partner Logo">
-                                </div>
-                            </div>
-                        @endforeach
-                    @else
-                        <div class="owl-carousel partners-carousel">
-                            @foreach($int_partners as $partner)
-                                <div class="">
-                                    <img class="card-img-top" src="{{$partner->img}}" alt="Partner Logo">
+        @if (auth()->user() != null)
+            @if (auth()->user()->role == 'admin' || auth()->user()->role == 'super-admin')
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <a href="/remove/effect/international" class="btn btn-warning w-100 mt-5 text-center">
+                                @if (App\WebContent::find(21) == null)
+                                    Remove International Partners
+                                @else
+                                    @if (App\WebContent::find(21)->content == '0')
+                                        Remove International Partners
+                                    @else
+                                        Show International Partners
+                                    @endif
+                                @endif
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            @endif
+        @endif
+        
+        @if (App\WebContent::find(21) == null || App\WebContent::find(21)->content == 0)
+            <section class="partners py-5 text-center">
+                <h1 class="text-danger">International Partners</h1>
+                <div class="container">
+                    <div class="row">
+                        @if (count($int_partners) < 6)
+                            @foreach ($int_partners as $partner)
+                                <div class="col">
+                                    <div class="text-center">
+                                        <img src="{{$partner->img}}" class="partner-logo partner-img" alt="Partner Logo">
+                                    </div>
                                 </div>
                             @endforeach
-                        </div>
-                    @endif
+                        @else
+                            <div class="owl-carousel partners-carousel">
+                                @foreach($int_partners as $partner)
+                                    <div class="">
+                                        <img class="card-img-top" src="{{$partner->img}}" alt="Partner Logo">
+                                    </div>
+                                @endforeach
+                            </div>
+                        @endif
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        @endif
     </div>
-    
-    
-    
-    
     
     <div class="section">
     
