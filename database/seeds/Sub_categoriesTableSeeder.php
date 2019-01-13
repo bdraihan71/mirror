@@ -11,6 +11,7 @@ class Sub_categoriesTableSeeder extends Seeder
      */
     public function run()
     {
+        // Logistics Laser
         DB::table('sub_categories')->insert([
             'categories_id' => 1,
             'title' => 'KVANT ClubMax 6000',
@@ -26,6 +27,7 @@ class Sub_categoriesTableSeeder extends Seeder
             'title' => 'Pangolin Beyond Laser Control Software',
         ]);
 
+        // Logistics Lighting
         DB::table('sub_categories')->insert([
             'categories_id' => 2,
             'title' => 'Ma Lighting Control System ',
@@ -36,6 +38,7 @@ class Sub_categoriesTableSeeder extends Seeder
             'title' => 'Grandma2 ',
         ]);
 
+        // Logistics Video
         DB::table('sub_categories')->insert([
             'categories_id' => 3,
             'title' => 'Media Server : Resolume Arena 6 ',
@@ -46,6 +49,7 @@ class Sub_categoriesTableSeeder extends Seeder
             'title' => 'Datapath X4 ',
         ]);
 
+        // Logistics DJ Player
         DB::table('sub_categories')->insert([
             'categories_id' => 4,
             'title' => 'CDJ2000 Nexus 2 ',
@@ -56,6 +60,7 @@ class Sub_categoriesTableSeeder extends Seeder
             'title' => 'DJM900 Nexus 2 ',
         ]);
 
+        // Logistics Sound
         DB::table('sub_categories')->insert([
             'categories_id' => 5,
             'title' => 'Bose F1 Model 812 Flexible Array loudspeaker ',
@@ -106,6 +111,7 @@ class Sub_categoriesTableSeeder extends Seeder
             'title' => 'Shure Beta 58A Wired Handheld ',
         ]);
 
+        // Services Laser
         DB::table('sub_categories')->insert([
             'categories_id' => 6,
             'title' => 'Custom Laser light shows ',
@@ -126,6 +132,7 @@ class Sub_categoriesTableSeeder extends Seeder
             'title' => 'Laser Mapping Services ',
         ]);
 
+        // Services Video
         DB::table('sub_categories')->insert([
             'categories_id' => 7,
             'title' => 'Video Mapping Services ',
@@ -146,6 +153,7 @@ class Sub_categoriesTableSeeder extends Seeder
             'title' => 'Sound Reactivity & Interactive/Reactive Services ',
         ]);
 
+        // Services Lighting
         DB::table('sub_categories')->insert([
             'categories_id' => 8,
             'title' => 'Lighting Design ',
@@ -161,6 +169,7 @@ class Sub_categoriesTableSeeder extends Seeder
             'title' => 'Console programming ',
         ]);
 
+        // Services Live VJ
         DB::table('sub_categories')->insert([
             'categories_id' => 9,
             'title' => 'Real time Video Mixing ',
@@ -191,6 +200,7 @@ class Sub_categoriesTableSeeder extends Seeder
             'title' => 'Visual Design ',
         ]);
 
+        // Services Immersive Audio Visual Experience
         DB::table('sub_categories')->insert([
             'categories_id' => 10,
             'title' => 'We can combine multiple services we provide to showcase a full sensory audio visual experience ',
@@ -206,6 +216,7 @@ class Sub_categoriesTableSeeder extends Seeder
             'title' => 'Product Launching ',
         ]);
 
+        // Services Timecoded shows
         DB::table('sub_categories')->insert([
             'categories_id' => 11,
             'title' => 'Timecoded Laser Show ',
@@ -221,6 +232,7 @@ class Sub_categoriesTableSeeder extends Seeder
             'title' => 'Timecoded Video/Visual Show ',
         ]);
 
+        // Services Audio
         DB::table('sub_categories')->insert([
             'categories_id' => 12,
             'title' => 'Custom Sound Design ',
@@ -235,7 +247,5 @@ class Sub_categoriesTableSeeder extends Seeder
             'categories_id' => 12,
             'title' => 'Sync with Midi, DMX, Serato, Ableton Link',
         ]);
-
-
     }
 }

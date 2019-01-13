@@ -29,9 +29,9 @@
                             </div>
                             <div class="form-group col-md-8">
                                 <select class="form-control" id="exampleFormControlSelect1" name="type" required>
-                                    <option selected>Select Your Category </option>
-                                    <option value="Production">Production</option>
-                                    <option value="Service">Service</option>
+                                    <option value="">Select Your Category </option>
+                                    <option value="logistics">Logistics</option>
+                                    <option value="services">Services</option>
                                 </select>
                             </div>
                         </div>

@@ -30,16 +30,16 @@
                             </div>
                             <div class="form-group col-md-8">
                                 <select class="form-control" id="exampleFormControlSelect1" name="type">
-                                @if ($category->type == 'Production' )
-                                    <option value="Production">Production</option>
-                                    <option value="Service">Service</option>
-                                @elseif ($category->type == 'Service')
-                                    <option value="Service">Service</option>
-                                    <option value="Production">Production</option>
+                                @if ($category->type == 'logistics' )
+                                    <option value="logistics">Logistics</option>
+                                    <option value="services">Services</option>
+                                @elseif ($category->type == 'services')
+                                    <option value="services">Services</option>
+                                    <option value="logistics">Logistics</option>
                                  @else
-                                    <option >Select Your Category </option>
-                                    <option value="Production">Production</option>
-                                    <option value="Service">Service</option>
+                                    <option value="">Select Your Category </option>
+                                    <option value="logistics">Logistics</option>
+                                    <option value="services">Services</option>
                                 @endif
                                 </select>
                             </div>

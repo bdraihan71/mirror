@@ -164,16 +164,16 @@ class CategoryController extends Controller
         return redirect('/categories');
     }
 
-    public function production()
+    public function services ()
     {
-        $categories = Categories::where('type', 'Service')->get();
+        $categories = Categories::where('type', 'services')->get();
 
         return view('category.production', compact('categories') );
     }
 
-    public function service()
+    public function logistics ()
     {
-        $categories = Categories::where('type', 'Production')->get();
+        $categories = Categories::where('type', 'logistics')->get();
         return view('category.service', compact('categories') );
     }
 

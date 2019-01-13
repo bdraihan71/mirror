@@ -11,89 +11,90 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
+        // Logistics
         DB::table('categories')->insert([
             'name' => 'Laser',
-            'type' => 'Service',
+            'type' => 'logistics',
             'image' => '/frontend/img/cover.jpg',
             'call_to_action' => 'BOOK NOW',
         ]);
 
         DB::table('categories')->insert([
             'name' => 'Lighting',
-            'type' => 'Service',
+            'type' => 'logistics',
             'image' => '/frontend/img/cover.jpg',
             'call_to_action' => 'BOOK NOW',
         ]);
 
         DB::table('categories')->insert([
             'name' => 'Video',
-            'type' => 'Service',
+            'type' => 'logistics',
             'image' => '/frontend/img/cover.jpg',
             'call_to_action' => 'BOOK NOW',
         ]);
 
         DB::table('categories')->insert([
-            'name' => 'Backline',
-            'type' => 'Service',
+            'name' => 'DJ Player',
+            'type' => 'logistics',
             'image' => '/frontend/img/cover.jpg',
             'call_to_action' => 'BOOK NOW',
         ]);
 
         DB::table('categories')->insert([
             'name' => 'Sound',
-            'type' => 'Service',
+            'type' => 'logistics',
             'image' => '/frontend/img/cover.jpg',
             'call_to_action' => 'BOOK NOW',
         ]);
 
+        // Services
         DB::table('categories')->insert([
             'name' => 'Laser',
-            'type' => 'Production',
+            'type' => 'services',
             'image' => '/frontend/img/cover.jpg',
             'call_to_action' => 'BOOK NOW',
         ]);
-
+        
         DB::table('categories')->insert([
             'name' => 'Video',
-            'type' => 'Production',
+            'type' => 'services',
             'image' => '/frontend/img/cover.jpg',
             'call_to_action' => 'BOOK NOW',
         ]);
 
         DB::table('categories')->insert([
             'name' => 'Lighting',
-            'type' => 'Production',
+            'type' => 'services',
             'image' => '/frontend/img/cover.jpg',
             'call_to_action' => 'BOOK NOW',
         ]);
 
         DB::table('categories')->insert([
-            'name' => 'Live VJ ',
-            'type' => 'Production',
+            'name' => 'Live VJ',
+            'type' => 'services',
             'image' => '/frontend/img/cover.jpg',
             'call_to_action' => 'BOOK NOW',
         ]);
 
         DB::table('categories')->insert([
             'name' => 'Immersive Audio Visual Experience',
-            'type' => 'Production',
+            'type' => 'services',
             'image' => '/frontend/img/cover.jpg',
             'call_to_action' => 'BOOK NOW',
         ]);
 
         DB::table('categories')->insert([
             'name' => 'Timecoded shows',
-            'type' => 'Production',
+            'type' => 'services',
             'image' => '/frontend/img/cover.jpg',
             'call_to_action' => 'BOOK NOW',
         ]);
 
         DB::table('categories')->insert([
             'name' => 'Audio',
-            'type' => 'Production',
+            'type' => 'services',
             'image' => '/frontend/img/cover.jpg',
             'call_to_action' => 'BOOK NOW',
         ]);
-
     }
 }

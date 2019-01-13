@@ -41,8 +41,8 @@
                             @endif
                             <a class="nav-item nav-link my-3" href="/media">MEDIA</a>
                             <a class="nav-item nav-link my-3" href="/music">MUSIC</a>
-                            <a class="nav-item nav-link my-3" href="/service">SERVICES</a>
-                            <a class="nav-item nav-link my-3" href="/production">PRODUCTIONS</a>
+                            <a class="nav-item nav-link my-3" href="/logistics">LOGISTICS</a>
+                            <a class="nav-item nav-link my-3" href="/services">SERVICES</a>
                             <a class="nav-item nav-link my-3" href="/contact-us/#top">CONTACT</a>
                             @if (auth()->user() != null)
                                 <a class="nav-item nav-link text-dark" href="/cart">
