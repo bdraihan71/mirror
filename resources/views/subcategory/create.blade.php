@@ -23,7 +23,7 @@
                                 <select class="form-control" id="exampleFormControlSelect1" name="categories_id" required>
                                     <option value="">Select Your Category </option>
                                     @foreach($categories as $category)
-                                    <option value={{$category->id}}>{{$category->name}}</option>
+                                    <option value="{{$category->id}}">{{$category->name}} - {{ucfirst($category->type)}}</option>
                                         @endforeach
                                 </select>
                             </div>
@@ -44,6 +44,11 @@
                             </div>
                             <div class="form-group col-md-8">
                                 <input type="text" maxlength="80" class="form-control contact-form input-container" name="title" placeholder=" Title" required>
+                            </div>
+                        </div>
+                        <div class="form-row text-white">
+                            <div class="form-group col-md-12 hint text-right">
+                                Max character limit: 191 characters for title
                             </div>
                         </div>
 
