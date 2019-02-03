@@ -49,7 +49,7 @@ class SubCategoryController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required|max:30',
+            'title' => 'required',
             'categories_id' =>'required',
         ]);
 
@@ -107,7 +107,7 @@ class SubCategoryController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'title' => 'required|max:30',
+            'title' => 'required',
             'categories_id' =>'required',
         ]);
         if ($this->notAdmin()) {

@@ -52,7 +52,7 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|max:30',
+            'name' => 'required|max:150',
             'type' => 'required',
             'image' => 'required|max:3000|image',
             'call_to_action' => 'required|max:30',
@@ -111,7 +111,7 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => 'required|max:30',
+            'name' => 'required|max:150',
             'type' => 'required',
             'image' => 'max:3000|image',
             'call_to_action' => 'required|max:30',

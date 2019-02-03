@@ -20,7 +20,7 @@ class TicketsExport implements FromView
     public function view(): View
     {
         return view('exports.tickets', [
-            'event' => Event::find($query)
+            'event' => Event::find($this->query)
         ]);
     }
 }
