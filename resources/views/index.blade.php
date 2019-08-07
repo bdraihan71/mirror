@@ -94,7 +94,7 @@
     
     <div class="section" id="partners">
         <section class="partners py-1 text-center">
-            <h1 class="contact-us-text">Partners</h1>
+            <h1 class="contact-us-text mt-5 mb-4">Partners</h1>
             <div class="container">
                 <div class="row">
                     <div class="owl-carousel partners-carousel">
@@ -132,17 +132,19 @@
         
         @if (App\WebContent::find(21) == null || App\WebContent::find(21)->content == 0)
             <section class="partners py-5 text-center">
-                <h1 class="contact-us-text">International Partners</h1>
+                <h1 class="contact-us-text mb-4">International Partners</h1>
                 <div class="container">
-                    <div class="row">
+                    <div class="row text-center">
                         @if (count($int_partners) < 6)
+                        <div class="col-4"></div>
                             @foreach ($int_partners as $partner)
-                                <div class="col">
+                                <div class="col-2">
                                     <div class="text-center">
                                         <img src="{{$partner->img}}" class="partner-logo partner-img" alt="Partner Logo">
                                     </div>
                                 </div>
                             @endforeach
+                        <div class="col-4"></div>
                         @else
                             <div class="owl-carousel partners-carousel">
                                 @foreach($int_partners as $partner)
