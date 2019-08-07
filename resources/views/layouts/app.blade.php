@@ -21,7 +21,7 @@
     <!-- Fullpage CSS -->
     <link href="/frontend/vendor/fullpage/fullpage.min.css" rel="stylesheet">
     <!-- Favicon -->
-    <link rel="icon" href="/frontend/img/favicon.ico">
+    <link rel="icon" href="/frontend/img/favicon.png">
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100" rel="stylesheet">
 
