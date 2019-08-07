@@ -17,6 +17,7 @@ class CreatePhotoAlbumsTable extends Migration
             $table->increments('id');
             $table->integer('event_id')->default(null);
             $table->string('name');
+            $table->integer('featured_id')->nullable();
             $table->timestamps();
         });
     }

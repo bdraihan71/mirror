@@ -30,6 +30,7 @@ class CreateEventsTable extends Migration
             $table->integer('ticket_number');
             $table->text('description');
             $table->boolean('deleted')->nullable();
+            $table->boolean('featured')->default(false);
             $table->timestamps();
         });
     }

@@ -21,6 +21,7 @@ class CreateIssueTicketsTable extends Migration
             $table->string('company')->nullable();
             $table->string('designation')->nullable();
             $table->string('phone')->nullable();
+            $table->boolean('present')->default(false);
             $table->timestamps();
         });
     }
