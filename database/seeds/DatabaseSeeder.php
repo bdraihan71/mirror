@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             PartnersTableSeeder::class,
             CategoriesTableSeeder::class,
             Sub_categoriesTableSeeder::class,
+            ClientsTableSeeder::class,
         ]);
     }
 }

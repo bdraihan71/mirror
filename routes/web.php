@@ -226,3 +226,14 @@ Route::get('/logistics', 'CategoryController@logistics');
 
 //service request mail
 Route::get('/requestservice/{id}', 'CategoryController@requestservice')->middleware('auth');
+
+//Clients Routes
+Route::get('/clients/create', 'ClientsController@create')->middleware('auth');
+Route::post('/clients/create', 'ClientsController@store')->middleware('auth');
+Route::get('/clients/edit/{id}', 'ClientsController@edit')->middleware('auth');
+Route::post('/clients/edit/{id}', 'ClientsController@update')->middleware('auth');
+Route::get('/clients', 'ClientsController@showAll');
+Route::get('/clients/delete/{id}', 'ClientsController@delete')->middleware('auth');
+
+//Team
+Route::get('/team', 'TeamController@index');

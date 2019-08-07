@@ -10,6 +10,7 @@
                 <a class="nav-item nav-link my-3" href="/#page2">ABOUT</a>
                 <a class="nav-item nav-link my-3" href="/#page3">WHAT WE DO</a>
                 <a class="nav-item nav-link my-3" href="/#page4">PARTNERS</a>
+                <a class="nav-item nav-link my-3" href="/#page5">REVIEWS</a>
                 <!-- <a class="nav-item nav-link my-3" href="/events/all/#top">EVENTS</a> -->
                 <!-- <a class="nav-item nav-link my-3" href="/shop/#top">SHOP</a>
                 @if(auth()->user() != null)
@@ -23,6 +24,7 @@
                 <a class="nav-item nav-link my-3" href="/music">MUSIC</a>
                 <a class="nav-item nav-link my-3" href="/logistics">LOGISTICS</a>
                 <a class="nav-item nav-link my-3" href="/services">SERVICES</a> -->
+                <a class="nav-item nav-link my-3" href="/team">TEAM</a>
                 <a class="nav-item nav-link my-3" href="/contact-us/#top">CONTACT</a>
                 <!-- @if (auth()->user() != null)
                     <a class="nav-item nav-link text-dark" href="/cart">

@@ -8,7 +8,7 @@ use App\Contactee;
 use App\Partner;
 use App\Mail\ContactUs as vMail;
 use Mail;
-
+use App\Client;
 class HomeController extends Controller
 {
     /**
@@ -24,6 +24,11 @@ class HomeController extends Controller
         $partners = Partner::all();
         $local_partners = Partner::where('type', 'local')->get();
         $int_partners = Partner::where('type', 'international')->get();
+
+        $clients = Client::all();
+        $local_clients = Client::where('type', 'local')->get();
+        $int_clients = Client::where('type', 'international')->get();
+
 
         for (; $i <= 3; $i++) {
             array_push($imgs, WebContent::where('id', $i)->first());
@@ -44,7 +49,9 @@ class HomeController extends Controller
 
         return view('index')->with('imgs', $imgs)->with('description', $description)->with('wwd', $wwd)->
         with('wwds', $wwds)->with('footer', $this->footer())->with('tagline', $tagline)->with('partners', $partners)->
-        with('local_partners', $local_partners)->with('int_partners', $int_partners);
+        with('local_partners', $local_partners)->with('int_partners', $int_partners)->with('clients', $clients)->
+        with('local_clients', $local_clients)->with('int_clients', $int_clients);
+;
     }
 
     public function contactUs ()
