@@ -36,7 +36,7 @@
                         <div class="form-group">
                             <textarea class="form-control contact-form" name="body" id="exampleFormControlTextarea1" rows="3" placeholder="Message" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-danger contact-btn">Send</button>
+                        <button type="submit" class="btn btn-primary contact-btn">Send</button>
                     </form>
                 </div>
                 <div class="col-md-1"></div>
