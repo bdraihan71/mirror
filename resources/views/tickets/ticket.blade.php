@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="Events. Entertainment. Experience.">
 	<meta name="author" content="Techynaf">
-	<title>Ecube Entertainment</title>
+	<title>Techynaf</title>
 	<!-- Bootstrap core CSS -->
 	<link href="/frontend/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<!-- Font Awesome -->
@@ -19,7 +19,7 @@
 	<!-- Fullpage CSS -->
 	<link href="/frontend/vendor/fullpage/fullpage.min.css" rel="stylesheet">
 	<!-- Favicon -->
-	<link rel="icon" href="/frontend/img/favicon.png">
+	<link rel="icon" href="/frontend/img/favicon.ico">
 	<!-- Custom styles -->
 	<link href="/frontend/css/style.css" rel="stylesheet">
 </head>

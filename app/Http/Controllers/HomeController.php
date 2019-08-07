@@ -29,16 +29,16 @@ class HomeController extends Controller
             array_push($imgs, WebContent::where('id', $i)->first());
         }
 
-        $description = WebContent::where('id', 5)->first();
-        $tagline = WebContent::where('id', 4)->first();
+        $description = WebContent::where('id', 7)->first();
+        $tagline = WebContent::where('id', 6)->first();
         $wwd = array();
         $wwds = array();
 
-        for ($i = 6; $i <= 10; $i++) {
+        for ($i = 8; $i <= 10; $i++) {
             array_push($wwd, WebContent::where('id', $i)->first());
         }
 
-        for ($i = 11; $i <= 15; $i++) {
+        for ($i = 11; $i <= 13; $i++) {
             array_push($wwds, WebContent::where('id', $i)->first());
         }
 
@@ -49,7 +49,7 @@ class HomeController extends Controller
 
     public function contactUs ()
     {
-        $contact = array(WebContent::where('id', 16)->first(), WebContent::where('id', 17)->first(), WebContent::where('id', 18)->first());
+        $contact = array(WebContent::where('id', 14)->first(), WebContent::where('id', 15)->first(), WebContent::where('id', 16)->first());
 
         if (auth()->user() == null) {
             flash('Leave us a message!')->success();

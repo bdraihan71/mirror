@@ -29,6 +29,6 @@ class CreateAdditionalInformationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('additional_information');
+        Schema::dropIfExists('additional_informations');
     }
 }

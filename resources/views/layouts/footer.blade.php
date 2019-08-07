@@ -1,26 +1,31 @@
 <?php $footer = App\Http\Controllers\Controller::footer()?>
 
-<section id="footer" class="footer text-white text-center black-bg">
-    <div class="container black-bg">
+<section id="footer" class="footer text-center white-bg">
+    <div class="container white-bg">
         <div class="row footer-padding-top">
             <div class="col-md-3">
             <br>
-                <img class="logo" src="/frontend/img/logo.svg" alt="Logo">
+                <img class="logo" width="150px" src="/frontend/img/techynaf-logo.png" alt="Logo">
             </div>
             <div class="col-md-3">
                 <h4 class="footer-header font-weight-bold">Head Office</h4><br>
-                {!!$footer[0]->content!!}
+                <div class="white-bg">
+                    {!!$footer[0]->content!!}
+                </div>
             </div>
             <div class="col-md-3">
                 <h4 class="footer-header font-weight-bold">Contact Us</h4><br>
-                {!!$footer[1]->content!!}
-                {!!$footer[2]->content!!}
+                <div class="white-bg">
+                    {!!$footer[1]->content!!}
+                    {!!$footer[2]->content!!}
+                </div>
+                
             </div>
             <div class="col-md-3">
                 <h4 class="footer-header font-weight-bold">Stay Connected</h4><br>
                 <a class="sc-links" target="_blank" href="{{ config('social.FACEBOOK_LINK') }}"><i class="fab fa-facebook-square fa-2x facebook"></i></a>&ensp;
-                <a class="sc-links" target="_blank" href="{{ config('social.YOUTUBE_LINK') }}"><i class="fab fa-youtube fa-2x youtube"></i></a>&ensp;
-                <a class="sc-links" target="_blank" href="{{ config('social.INSTAGRAM_LINK') }}"><i class="fab fa-instagram fa-2x instagram"></i></a>&ensp;
+                        <a class="sc-links" target="_blank" href="{{ config('social.TWITTER_LINK') }}"><i class="fab fa-twitter fa-2x twitter"></i></a>&ensp;
+                        <a class="sc-links" target="_blank" href="{{ config('social.LINKEDIN_LINK') }}"><i class="fab fa-linkedin fa-2x linkedin"></i></a>&ensp;
             </div>
         </div>
         <div class="row">

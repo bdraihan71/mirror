@@ -13,76 +13,68 @@ class WebContentTableSeeder extends Seeder
     public function run()
     {
         DB::table('web_contents')->insert([
-            'content' => '/frontend/img/carousel1.jpeg',
+            'content' => '/frontend/img/carousel1.jpg',
         ]);
 
         DB::table('web_contents')->insert([
-            'content' => '/frontend/img/carousel2.jpeg',
+            'content' => '/frontend/img/carousel2.jpg',
         ]);
 
         DB::table('web_contents')->insert([
-            'content' => '/frontend/img/carousel3.jpeg',
+            'content' => '/frontend/img/carousel3.jpg',
         ]);
 
         DB::table('web_contents')->insert([
-            'content' => 'EVENTS. ENTERTAINMENT. EXPERIENCE.',
+            'content' => '/frontend/img/carousel4.jpg',
         ]);
 
         DB::table('web_contents')->insert([
-            'content' => '<p>Lorem ipsum elit. Odit, voluptas, optio, libero, quam fugit vero voluptates dolores atque praesentium! Dolorum, nulla, placeat commodi deserunt amet corrupti dignissimos vel similique laudantium debitis ab at quas alias sunt harum minima nobis est deleniti aperiam earum?<div class="d-none d-sm-block"> Distinctio, vel, odio, repudiandae excepturi nostrum numquam voluptatem consequatur
-            <br><br>quasi quibusdam et porro assumenda nesciunt ipsam facere mollitia quam esse beatae optio dolorem fugiat culpa? Itaque, nam, error, officia ab dolor nulla voluptatum veniam omnis suscipit aut exercitationem natus tenetur pariatur. Earum, magni, aliquam autem natus fugiat odio error laudantium nam temporibus placeat! Omnis.</div></p>',
+            'content' => '/frontend/img/carousel5.jpg',
         ]);
 
         DB::table('web_contents')->insert([
-            'content' => 'EVENTS',
+            'content' => 'Secured, Reliable and Customer Centric',
         ]);
 
         DB::table('web_contents')->insert([
-            'content' => 'DESIGN & PRODUCTION',
+            'content' => 'Techynaf is focused on building customer centric digital products. We spend most of our time talking to the actual users, figuring out the problems and trying different solutions and improving our products iteratively. ',
         ]);
 
         DB::table('web_contents')->insert([
-            'content' => 'INTERNATIONAL ARTISTS',
+            'content' => 'Services',
         ]);
 
         DB::table('web_contents')->insert([
-            'content' => 'PR & DATABASE',
+            'content' => 'Industries',
         ]);
 
         DB::table('web_contents')->insert([
-            'content' => 'BRAND BUILDING',
+            'content' => 'Products',
         ]);
 
         DB::table('web_contents')->insert([
-            'content' => 'Lorem ipsum dolor sit amet. Facilis, ullam velit quod delectus beatae quia nam culpa? quod delectus beatae quia nam culpa?',
+            'content' => 'Web Application Development <br> UI/UX Design <br> Mobile App Development <br> Domain & Hosting <br> Prototype <br> Testing <br> Content Development <br> Multimedia Content Digital Marketing',
         ]);
 
         DB::table('web_contents')->insert([
-            'content' => 'Lorem ipsum dolor sit amet. Facilis, ullam velit quod delectus beatae quia nam culpa? quod delectus beatae quia nam culpa?',
+            'content' => 'RMG <br> E Commerce <br> Non-Profits <br> Education <br> Startups <br> Restaurants & Cafes <br> Software Companies <br> Service Platforms',
         ]);
 
         DB::table('web_contents')->insert([
-            'content' => 'Lorem ipsum dolor sit amet. Facilis, ullam velit quod delectus beatae quia nam culpa? quod delectus beatae quia nam culpa?',
+            'content' => 'Scheduling System <br> Money Requisition System <br> Application Processing System <br> Content Management System',
+        ]);
+        
+
+        DB::table('web_contents')->insert([
+            'content' => 'House 140, Road 10, South Bishil, Dhaka-1216, Bangladesh',
         ]);
 
         DB::table('web_contents')->insert([
-            'content' => 'Lorem ipsum dolor sit amet. Facilis, ullam velit quod delectus beatae quia nam culpa? quod delectus beatae quia nam culpa?',
+            'content' => '<p>Call Us : 8801772628218 <br>8801674983245</p>',
         ]);
 
         DB::table('web_contents')->insert([
-            'content' => 'Lorem ipsum dolor sit amet. Facilis, ullam velit quod delectus beatae quia nam culpa? quod delectus beatae quia nam culpa?',
-        ]);
-
-        DB::table('web_contents')->insert([
-            'content' => 'Banani, Dhaka, Bangladesh',
-        ]);
-
-        DB::table('web_contents')->insert([
-            'content' => '<p>Call Us : 017*******, <br>019********</p>',
-        ]);
-
-        DB::table('web_contents')->insert([
-            'content' => '<p>Email: ecube@gmail.com</p>',
+            'content' => '<p>Email: support@techynaf.com</p>',
         ]);
     }
 }

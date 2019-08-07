@@ -38,9 +38,6 @@
                 <a href="#about" class="mouse-hover">
                     <div class="mouse"></div>
                 </a>
-                {{-- <a href="#feature" class="mouse-hover">
-                  <div class="mouse"></div>
-                </a> --}}
             </div>
 
             <div class="title">
@@ -66,25 +63,15 @@
 
 				<header id="header">
 					<div id="div1" style="display: none">
-                        <img class="parallax-img img-sm" src="/frontend/img/parallax6.png">
-                        <h1 class="footer-header parallax-text">Ecube Entertainment</h1>
-
-                            <div class="p-scroll">{!!$description->content!!}</div>
-
+                        <img class="parallax-img img-sm" src="/frontend/img/techynaf-logo.png">
+                        <h1 class="footer-header parallax-text">Techynaf</h1>
+                            <div class="p-scroll black-text">{!!$description->content!!}</div>
                     </div>	
 				</header>
-	
 			</div>
-		
-		
 		</div>
-    
-    
-    
-    
-    
-    
-    
+
+       
     
     <div class="section">
         <div class="container-fluid what-we-do">
@@ -94,7 +81,7 @@
                     <div class="owl-carousel wdwd-carousel">
                         @foreach ($wwd as $header)
                             <div>
-                                <h1 class="text-danger">{{$header->content}}</h1>
+                                <h1 class="contact-us-text">{{$header->content}}</h1>
                                 <p>{!!$wwds[$loop->index]->content!!}</p>
                             </div>
                         @endforeach
@@ -107,7 +94,7 @@
     
     <div class="section" id="partners">
         <section class="partners py-1 text-center">
-            <h1 class="text-danger">Partners</h1>
+            <h1 class="contact-us-text">Partners</h1>
             <div class="container">
                 <div class="row">
                     <div class="owl-carousel partners-carousel">
@@ -145,7 +132,7 @@
         
         @if (App\WebContent::find(21) == null || App\WebContent::find(21)->content == 0)
             <section class="partners py-5 text-center">
-                <h1 class="text-danger">International Partners</h1>
+                <h1 class="contact-us-text">International Partners</h1>
                 <div class="container">
                     <div class="row">
                         @if (count($int_partners) < 6)
@@ -172,28 +159,32 @@
     </div>
     
     <div class="section">
-    
-        <section id="footer" class="footer text-white text-center">
+    <hr class='new1'>
+        <section id="footer" class="footer text-center">
             <div class="container">
                 <div class="row footer-padding-top">
                     <div class="col-md-3">
                     <br>
-                        <img class="logo" src="/frontend/img/logo.svg" alt="Logo">
+                        <img class="logo" src="/frontend/img/techynaf-logo.png" alt="Logo" width="200px">
                     </div>
                     <div class="col-md-3">
                         <h4 class="footer-header font-weight-bold">Head Office</h4><br>
-                        {!!$footer[0]->content!!}
+                        <div class="white-bg">
+                            {!!$footer[0]->content!!}
+                        </div>
                     </div>
                     <div class="col-md-3">
                         <h4 class="footer-header font-weight-bold">Contact Us</h4><br>
-                        {!!$footer[1]->content!!}
-                        {!!$footer[2]->content!!}	
+                        <div class="white-bg">
+                            {!!$footer[1]->content!!}
+                            {!!$footer[2]->content!!}
+                        </div>
                     </div>
                     <div class="col-md-3">
                         <h4 class="footer-header font-weight-bold">Stay Connected</h4><br>
                         <a class="sc-links" target="_blank" href="{{ config('social.FACEBOOK_LINK') }}"><i class="fab fa-facebook-square fa-2x facebook"></i></a>&ensp;
-                        <a class="sc-links" target="_blank" href="{{ config('social.YOUTUBE_LINK') }}"><i class="fab fa-youtube fa-2x youtube"></i></a>&ensp;
-                        <a class="sc-links" target="_blank" href="{{ config('social.INSTAGRAM_LINK') }}"><i class="fab fa-instagram fa-2x instagram"></i></a>&ensp;
+                        <a class="sc-links" target="_blank" href="{{ config('social.TWITTER_LINK') }}"><i class="fab fa-twitter fa-2x twitter"></i></a>&ensp;
+                        <a class="sc-links" target="_blank" href="{{ config('social.LINKEDIN_LINK') }}"><i class="fab fa-linkedin fa-2x linkedin"></i></a>&ensp;
                     </div>
                 </div>
                 <div class="row">

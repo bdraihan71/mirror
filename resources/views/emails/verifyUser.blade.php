@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Ecube Entertainment || Email Verification</title>
+    <title>Techynaf || Email Verification</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,14 +18,14 @@
     <!-- Fullpage CSS -->
     <link href="/frontend/vendor/fullpage/fullpage.min.css" rel="stylesheet">
     <!-- Favicon -->
-    <link rel="icon" href="/frontend/img/favicon.png">
+    <link rel="icon" href="/frontend/img/favicon.ico">
     <!-- Custom styles -->
     <link href="/frontend/css/style.css" rel="stylesheet">
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100" rel="stylesheet">
 </head>
 <body>
-    <h2>Welcome to Ecube Entertainment</h2>
+    <h2>Welcome to Techynaf</h2>
     <br>
     Your registered email address is {{$user->email}}, please click on the link below to verify this email:
     <br>

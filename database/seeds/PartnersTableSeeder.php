@@ -13,75 +13,82 @@ class PartnersTableSeeder extends Seeder
     public function run()
     {
         DB::table('partners')->insert([
-            'name' => 'Le Name',
+            'name' => 'Amtranet Group',
             'type' => 'local',
-            'img' => '/frontend/img/carousel1.jpeg',
+            'img' => '/frontend/img/amtranet-logo.png',
         ]);
 
         DB::table('partners')->insert([
-            'name' => 'Le Name',
+            'name' => 'North End Coffee Roasters',
             'type' => 'local',
-            'img' => '/frontend/img/carousel2.jpeg',
+            'img' => '/frontend/img/north-end-logo.jpeg',
         ]);
 
         DB::table('partners')->insert([
-            'name' => 'Le Name',
+            'name' => 'Misfit Technologies',
             'type' => 'local',
-            'img' => '/frontend/img/carousel3.jpeg',
+            'img' => '/frontend/img/misfit-logo.png',
         ]);
 
         DB::table('partners')->insert([
-            'name' => 'Le Name',
+            'name' => 'iEARN-BD',
             'type' => 'local',
-            'img' => '/frontend/img/carousel1.jpeg',
+            'img' => '/frontend/img/iearnbd-logo.png',
         ]);
 
         DB::table('partners')->insert([
-            'name' => 'Le Name',
+            'name' => 'Pechas Game Studios',
             'type' => 'local',
-            'img' => '/frontend/img/carousel2.jpeg',
+            'img' => '/frontend/img/pgs-logo.jpg',
         ]);
 
         DB::table('partners')->insert([
-            'name' => 'Le Name',
+            'name' => 'ELC',
             'type' => 'local',
-            'img' => '/frontend/img/carousel3.jpeg',
+            'img' => '/frontend/img/elc-logo.jpeg',
         ]);
 
         DB::table('partners')->insert([
-            'name' => 'Le Name',
-            'type' => 'international',
-            'img' => '/frontend/img/carousel1.jpeg',
+            'name' => 'PPMC',
+            'type' => 'local',
+            'img' => '/frontend/img/ppmc-logo.png',
         ]);
 
         DB::table('partners')->insert([
-            'name' => 'Le Name',
-            'type' => 'international',
-            'img' => '/frontend/img/carousel2.jpeg',
+            'name' => 'Hive',
+            'type' => 'local',
+            'img' => '/frontend/img/hive-logo.png',
         ]);
 
         DB::table('partners')->insert([
-            'name' => 'Le Name',
-            'type' => 'international',
-            'img' => '/frontend/img/carousel3.jpeg',
+            'name' => 'DaamKoto',
+            'type' => 'local',
+            'img' => '/frontend/img/daamkoto-logo.png',
         ]);
 
         DB::table('partners')->insert([
-            'name' => 'Le Name',
-            'type' => 'international',
-            'img' => '/frontend/img/carousel1.jpeg',
+            'name' => 'Nieoo',
+            'type' => 'local',
+            'img' => '/frontend/img/nieoo-logo.png',
         ]);
 
         DB::table('partners')->insert([
-            'name' => 'Le Name',
+            'name' => 'Dhaka South City Corportation',
+            'type' => 'local',
+            'img' => '/frontend/img/dscc-logo.jpg',
+        ]);
+        
+
+        DB::table('partners')->insert([
+            'name' => 'US Department of State',
             'type' => 'international',
-            'img' => '/frontend/img/carousel2.jpeg',
+            'img' => '/frontend/img/usds-logo.png',
         ]);
 
         DB::table('partners')->insert([
-            'name' => 'Le Name',
+            'name' => 'Youth Exchange & Study Program',
             'type' => 'international',
-            'img' => '/frontend/img/carousel3.jpeg',
+            'img' => '/frontend/img/yes-logo.png',
         ]);
     }
 }
