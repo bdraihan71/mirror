@@ -161,20 +161,21 @@
     </div>
     
      <!-- Client Logos Section -->
-     <div class="section">
+     <div class="section review-sec">
      <section id="client-logos" class="wow faedIn my-5">
         <div class="container">
-            <h1 class="text-dark contact-us-text text-center">Reviews</h1>
-            <div class="owl-carousel testimonial-carousel text-dark">
+            <h1 class="text-center">Reviews</h1>
+            <div class="owl-carousel testimonial-carousel text-dark text-center">
                 @foreach($clients as $client)
                 <div class="item">
-                    <div class="testimonial text-center">
+                    <div class="testimonial">
                         <div class="Container">
                             <div class="row my-4">
                                 <div class="col-md-5"></div>
                                 <div class="col-md-2">
                                     <img src="{{ $client->img }}" class="client-img" alt="Client-Img">
                                 </div>
+                                <div class="col-md-5"></div>
                             </div>
                         </div>
                         

@@ -1586,12 +1586,16 @@ hr.new1 {
   color: black;
 }
 
-#client-logos{
-  padding-top: 10%;
-  padding-bottom: 10%;
+.team{
+  margin-top: 10%;
+}
+
+.review-sec{
+  height: 100vh;
   background-color:rgb(208, 234, 235);
 }
 
-.team{
-  margin-top: 10%;
+.client-img{
+  height: 100%;
+  width: 100% !important;
 }
