@@ -75,7 +75,7 @@ class PartnersTableSeeder extends Seeder
         DB::table('partners')->insert([
             'name' => 'Dhaka South City Corportation',
             'type' => 'local',
-            'img' => '/frontend/img/dscc-logo.jpg',
+            'img' => '/frontend/img/dscc-logo.png',
         ]);
         
 
