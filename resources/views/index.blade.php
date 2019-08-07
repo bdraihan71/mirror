@@ -159,6 +159,7 @@
     </div>
     
      <!-- Client Logos Section -->
+     <div class="section">
      <section id="client-logos" class="wow faedIn my-5">
         <div class="container">
             <h1 class="text-dark contact-us-text text-center">Reviews</h1>
@@ -194,6 +195,7 @@
                 <div class="col-md-5"></div>
             </div>
     </section>
+</div>
     <!-- End Client Logos Section -->
 
 
