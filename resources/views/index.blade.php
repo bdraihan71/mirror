@@ -13,7 +13,7 @@
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 </ol>
-                <div class="carousel-inner">
+                <div class="carousel-inner back-shadow">
                     @foreach($imgs as $img)
                         @if($loop->iteration == 1)
                             <div class="carousel-item item active">
