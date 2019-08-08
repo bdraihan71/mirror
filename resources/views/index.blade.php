@@ -213,13 +213,13 @@
                 </div>
                 <div class="col-md-3">
                     <h4 class="footer-header font-weight-bold">Head Office</h4><br>
-                    <div class="white-bg">
+                    <div class="black-bg">
                         {!!$footer[0]->content!!}
                     </div>
                 </div>
                 <div class="col-md-3">
                     <h4 class="footer-header font-weight-bold">Contact Us</h4><br>
-                    <div class="white-bg">
+                    <div class="black-bg">
                         {!!$footer[1]->content!!}
                         {!!$footer[2]->content!!}
                     </div>
