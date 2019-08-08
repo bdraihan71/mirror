@@ -136,15 +136,15 @@
                 <div class="container">
                     <div class="row text-center">
                         @if (count($int_partners) < 6)
-                        <div class="col-4"></div>
+                        <div class="col-md-4"></div>
                             @foreach ($int_partners as $partner)
-                                <div class="col-2">
+                                <div class="col-md-2">
                                     <div class="text-center">
                                         <img src="{{$partner->img}}" class="partner-logo partner-img" alt="Partner Logo">
                                     </div>
                                 </div>
                             @endforeach
-                        <div class="col-4"></div>
+                        <div class="col-md-4"></div>
                         @else
                             <div class="owl-carousel partners-carousel">
                                 @foreach($int_partners as $partner)
