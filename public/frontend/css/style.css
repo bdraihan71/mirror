@@ -594,7 +594,7 @@ header .download .btn-light:hover {
 
 @media only screen and (max-width:500px) {
   .footer {
-    background-color: black;
+    background-color: white;
     height: 100vh;
   }
 }
@@ -978,7 +978,7 @@ header .download .btn-light:hover {
   }
 
   .contact-us {
-    background-color: #000000;
+    background-color: rgb(208, 234, 235);
     text-align: center;
   }
 }
