@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Events. Entertainment. Experience.">
+    <meta name="description" content="Secured, Reliable & Customer Centric">
     <meta name="author" content="Techynaf">
     <title>Techynaf</title>
     <!-- Custom styles -->

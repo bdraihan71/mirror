@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<section id="team" class="team-sec">
 <div class="container">
 
     <div class="heading">
@@ -64,4 +65,5 @@
   
     </div>
   </div>
+</section>
 @endsection

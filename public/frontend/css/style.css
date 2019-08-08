@@ -1603,7 +1603,7 @@ hr.new1 {
 /* Team CSS */
 .heading{
   text-align: center;
-  margin-top: 140px;
+  padding-top: 140px;
   margin-bottom: 30px;
 }
 
@@ -1714,4 +1714,9 @@ hr.new1 {
 .back-shadow{
   opacity: 0.9;
   filter: alpha(opacity=90);
+}
+
+.team-sec{
+  min-height: 100vh;
+  background-color:rgb(208, 234, 235);
 }
