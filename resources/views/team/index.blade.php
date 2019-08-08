@@ -20,13 +20,13 @@
             <div class="overlay">
               <div class="team-details text-center">
                 <p>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                    Tasnim spends most of her time talking to clients, understanding problems and planning solutions. She also tests every features developed by Techynaf team to ensure reliability.
                 </p>
                 <div class="socials mt-20">
-                  <a href="#"><i class="fab fa-facebook"></i></a>
+                  <!-- <a href="#"><i class="fab fa-facebook"></i></a>
                   <a href="#"><i class="fab fa-twitter"></i></a>
-                  <a href="#"><i class="fab fa-google-plus"></i></a>
-                  <a href="#"><i class="fa fa-envelope"></i></a>
+                  <a href="#"><i class="fab fa-google-plus"></i></a> -->
+                  <a href="mailto:tasnim@techynaf.com"><i class="fa fa-envelope"></i></a>
                 </div>
               </div>
             </div>
@@ -44,13 +44,13 @@
             <div class="overlay">
               <div class="team-details text-center">
                 <p>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                    Prince spends his time in driving the tech team. He ensures that the team produces clean code on a regular basis and all the applications and data are secured.
                 </p>
                 <div class="socials mt-20">
-                  <a href="#"><i class="fab fa-facebook"></i></a>
+                  <!-- <a href="#"><i class="fab fa-facebook"></i></a>
                   <a href="#"><i class="fab fa-twitter"></i></a>
-                  <a href="#"><i class="fab fa-google-plus"></i></a>
-                  <a href="#"><i class="fa fa-envelope"></i></a>
+                  <a href="#"><i class="fab fa-google-plus"></i></a> -->
+                  <a href="mailto:prince@techynaf.com"><i class="fa fa-envelope"></i></a>
                 </div>
               </div>
             </div>
