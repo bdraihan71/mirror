@@ -7,6 +7,7 @@
         <div class="collapse navbar-collapse justify-content-end font-sm" id="navbarNavAltMarkup">
             <div class="navbar-nav font-weight-bold nav-back">
                 <a class="nav-item nav-link my-3" href="/#top">HOME</a>
+                <a class="nav-item nav-link my-3" href="/software-products">SOFTWARE SHOWCASE</a>
                 <a class="nav-item nav-link my-3" href="/#page2">ABOUT</a>
                 <a class="nav-item nav-link my-3" href="/#page3">WHAT WE DO</a>
                 <a class="nav-item nav-link my-3" href="/#page4">PARTNERS</a>

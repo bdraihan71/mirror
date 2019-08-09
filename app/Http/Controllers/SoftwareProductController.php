@@ -9,6 +9,6 @@ class SoftwareProductController extends Controller
 {
     public function index(){
         $softwareProducts = SoftwareProduct::all();
-        return $softwareProducts;
+        return view('software-products.index', compact('softwareProducts'));
     }
 }

@@ -16,6 +16,7 @@ class CreateSoftwareProductsTable extends Migration
         Schema::create('software_products', function (Blueprint $table) {
             $table->increments('id');
             $table->text('name');
+            $table->text('brief_description');
             $table->timestamps();
         });
     }

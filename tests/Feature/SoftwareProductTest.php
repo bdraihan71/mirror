@@ -6,9 +6,8 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class ProductTest extends TestCase
+class SoftwareProductTest extends TestCase
 {
-    
     /**
      * A basic test example.
      *
@@ -20,7 +19,7 @@ class ProductTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function testDisplayAllProduct()
+    public function testDisplayAllSoftwareProduct()
     {
         $software_products = factory(\App\SoftwareProduct::class, 3)->make();
         
@@ -34,12 +33,15 @@ class ProductTest extends TestCase
     public function testSavedSoftwareProductsShowsInSoftwareProductPage()
     {
         $softwareProductName = 'Connect';
+        $briefDescription = 'Highly customizable platform to collect information from public.';
+
         $softwareProduct = factory(\App\SoftwareProduct::class)->create([
-            'name' => $softwareProductName
+            'name' => $softwareProductName,
+            'brief_description' => $briefDescription
         ]);
 
         $response = $this->get('/software-products');
         $response->assertSeeText($softwareProductName);
+        $response->assertSeeText($briefDescription);
     }
-
 }
