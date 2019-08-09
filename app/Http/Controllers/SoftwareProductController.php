@@ -8,7 +8,6 @@ use App\SoftwareProduct;
 class SoftwareProductController extends Controller
 {
     public function index(){
-        $softwareProducts = SoftwareProduct::all();
-        return view('software-products.index', compact('softwareProducts'));
+        return view('software-products.index');
     }
 }
