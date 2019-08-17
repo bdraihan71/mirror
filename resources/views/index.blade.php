@@ -94,7 +94,7 @@
     
     <div class="section" id="partners">
         <section class="partners py-1 text-center">
-            <h1 class="contact-us-text mt-5 mb-4">Partners</h1>
+            <h1 class="contact-us-text mt-5 mb-4">Clients</h1>
             <div class="container">
                 <div class="row">
                     <div class="owl-carousel partners-carousel">
@@ -365,7 +365,7 @@
                 loop: true,
                 margin: 100,
                 responsiveClass: true,
-                autoplayTimeout: 2500,
+                autoplayTimeout: 8000,
                 center: true,
     
     

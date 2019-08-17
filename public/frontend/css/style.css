@@ -25,7 +25,7 @@
   left: 5%;
   z-index: 99;
   width: 90%;
-  background: transparent;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .nav-item {
@@ -107,6 +107,8 @@
 header .navbar {
   padding: 20px 0;
   transition: all .3s;
+
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 header .download,
@@ -1782,4 +1784,9 @@ section.pricing {
   .pricing .card:hover .btn {
     opacity: 1;
   }
+}
+
+.download-button{
+  color: white;
+  background-color: #007bff;
 }
