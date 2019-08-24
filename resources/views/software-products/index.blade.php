@@ -5,21 +5,21 @@
 <div class="container">
 
     <div class="heading">
-        <h2>Software Products</h2>
+        <h1 class="display-4 mt-3">Software Products</h1>
     </div>
   
-    <h1>Connect</h1>
-      <p>Connect is a highly customizable, reliable and secured information collection platform. Any office can collect information digitally using connect.</p>
-      <p>You can use instance of connect for a program by creating an application form and opening it for applicants to submit their applications.</p>
+    <h2>Connect</h2>
+      <p class="lead">Connect is a highly customizable, reliable and secured information collection platform. Any office can collect information digitally using connect.
+      You can use instance of connect for a program by creating an application form and opening it for applicants to submit their applications.</p>
       
     <div class="row">
       <div class="col-md-6">
-      <div class="embed-responsive embed-responsive-16by9">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/mAVS0lr_Yso" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/mAVS0lr_Yso" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
       </div>
 
-      <div class="col-md-6">
+      <div class="col-md-6 my-4 my-md-0">
         <section class="pricing py-5">
           <div class="container">
             <div class="row">
@@ -55,9 +55,17 @@
     </div>
   
 
-    <a class="btn btn-lg download-button text-center" target="_blank" href="/frontend/pdf/Connect_Product_Doc.pdf">View Product Details</a>
-    <img src="/frontend/img/2.png">
-    <img src="/frontend/img/1.png">
+    <a class="btn btn-lg download-button text-center my-3" target="_blank" href="/frontend/pdf/Connect_Product_Doc.pdf">View Product Details</a>
+
+
+    <div class="row">
+        <div class="col-md-12">
+          <img class="img-fluid d-none d-sm-block" src="/frontend/img/2.png">
+          <img class="img-fluid d-none d-sm-block" src="/frontend/img/1.png">
+          <img class="img-fluid w-100 d-block d-sm-none" src="/frontend/img/3.jpg">
+        </div>
+    </div>
+    
     {{-- <div class="row">
       <div class="col-md-6">
       <h1>Application Tracking System (ATS)</h1>
