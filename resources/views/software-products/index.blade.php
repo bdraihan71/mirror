@@ -62,7 +62,7 @@
         <div class="col-md-12">
           <img class="img-fluid d-none d-sm-block" src="/frontend/img/2.png">
           <img class="img-fluid d-none d-sm-block" src="/frontend/img/1.png">
-          <img class="img-fluid w-100 d-block d-sm-none" src="/frontend/img/3.jpg">
+          <img class="img-fluid w-100 d-block d-sm-none" src="/frontend/img/mobile.jpg">
         </div>
     </div>
     
