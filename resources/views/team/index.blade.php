@@ -16,7 +16,7 @@
       <div class="col-md-4 col-sm-6 team-wrap">
         <div class="team-member text-center">
           <div class="team-img">
-            <img src="/frontend/img/tasnim.png" alt="">
+            <img src="/frontend/img/tasnim-2.jpg" alt="">
             <div class="overlay">
               <div class="team-details text-center">
                 <p>
