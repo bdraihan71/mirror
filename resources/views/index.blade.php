@@ -75,7 +75,7 @@
     
     <div class="section">
         <div class="container-fluid what-we-do">
-            <div class="row text-white">
+            <div class="row text-white wwd-margin">
                 <div class="col-md-3"></div>
                 <div class="col-md-8">
                     <div class="owl-carousel wdwd-carousel">
@@ -86,8 +86,8 @@
                             </div>
                         @endforeach
                     </div>
-                    <div class="col-md-1"></div>
                 </div>
+                <div class="col-md-1"></div>
             </div>
         </div>
     </div>
@@ -100,7 +100,7 @@
                     <div class="owl-carousel partners-carousel">
                         @foreach($local_partners as $partner)
                             <div class="">
-                                <img class="card-img-top partner-logo" src="{{$partner->img}}" alt="Partner Logo">
+                                <img class="card-img-top partner-logo mx-auto" src="{{$partner->img}}" alt="Partner Logo">
                             </div>
                         @endforeach
                     </div>

@@ -523,7 +523,7 @@ header .download .btn-light:hover {
 
 /* What we do */
 .what-we-do {
-  background: url(../img/wdwd2.jpg);
+  background: url(../img/wwd.jpg);
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -543,6 +543,10 @@ header .download .btn-light:hover {
 
 .wwd {
   padding-top: 10%;
+}
+
+.wwd-margin{
+  margin-top: 100px;
 }
 
 @media screen and (max-width: 1920px) and (min-width: 1400px) {
