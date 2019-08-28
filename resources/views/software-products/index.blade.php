@@ -55,7 +55,7 @@
     </div>
   
 
-    <a class="btn btn-lg download-button text-center my-3" target="_blank" href="/frontend/pdf/Connect_Product_Doc.pdf">View Product Details</a>
+    <a class="btn btn-lg btn-primary download-button text-center my-3" target="_blank" href="/frontend/pdf/Connect_Product_Doc.pdf">View Product Details</a>
 
 
     <div class="row">
