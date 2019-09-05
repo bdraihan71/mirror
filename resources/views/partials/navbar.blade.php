@@ -1,4 +1,7 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark header" id="nav">
+    @auth
+        <a href="/alter/index" class="btn btn-primary">Edit</a>
+        @endauth
     <div class="container">
         <a class="navbar-brand" href="/"><img class="logo" src="/frontend/img/techynaf-logo.png" alt="Logo" width="126px"></a>
         <button onclick="showMenu('navbarNavAltMarkup')" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
