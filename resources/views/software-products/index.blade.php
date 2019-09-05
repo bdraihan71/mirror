@@ -19,8 +19,14 @@
 
     <div class="tab-content" id="pills-tabContent">
       <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-  
-    <h2>Connect</h2>
+          <div class="row">
+            <div class="col-md-9 my-auto">
+                <h2>Connect (Application Collection Software)</h2>
+            </div>
+            <div class="col-md-3 text-md-right">
+                <a class="btn btn-lg btn-primary text-center my-3" target="_blank" href="/frontend/pdf/Connect_Product_Doc.pdf">View Product Details</a>
+            </div>
+          </div>
       <p class="lead text-justify">Connect is a highly customizable, reliable and secured information collection platform. Any office can collect information digitally using connect.
       You can use instance of connect for a program by creating an application form and opening it for applicants to submit their applications.</p>
       
@@ -65,12 +71,9 @@
         </section>
       </div>
     </div>
-  
-
-    <a class="btn btn-lg btn-primary text-center my-3" target="_blank" href="/frontend/pdf/Connect_Product_Doc.pdf">View Product Details</a>
 
 
-    <div class="row">
+    <div class="row mt-3">
         <div class="col-md-12">
           <img class="img-fluid d-none d-sm-block w-100" src="/frontend/img/connect-1.png">
           <img class="img-fluid d-none d-sm-block w-100" src="/frontend/img/connect-2.png">
@@ -262,7 +265,14 @@
     </div> --}}
       </div>
       <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-        <h2>ATS (Application Tracking Software)</h2>
+        <div class="row">
+          <div class="col-md-9 my-auto">
+            <h2>ATS (Application Tracking Software)</h2>
+          </div>
+          <div class="col-md-3 text-right">
+            <a class="btn btn-lg btn-primary text-center my-3" target="_blank" href="/frontend/pdf/ATS-Product-Documentation.pdf">View Product Details</a>
+          </div>
+        </div>
         <p class="lead text-justify">Application Tracking Software is a highly customizable, reliable and secured
         information tracking platform. Any office can track information digitally using ATS.
         You can use instance of ATS for a program by storing the data and tracking any or
@@ -271,7 +281,7 @@
     <div class="row">
       <div class="col-md-6 align-self-center">
         <div class="text-center">
-          <p class="text-monospace my-auto align-middle">Product video will be available upon request.</p>
+          <p class="text-monospace my-auto align-middle font-weight-bold">** Product video will be available upon request.</p>
         </div>
       </div>
 
@@ -309,12 +319,9 @@
         </section>
       </div>
     </div>
-  
-
-    <a class="btn btn-lg btn-primary text-center my-3" target="_blank" href="/frontend/pdf/ATS-Product-Documentation.pdf">View Product Details</a>
 
 
-    <div class="row">
+    <div class="row mt-3">
         <div class="col-md-12">
           <img class="img-fluid d-none d-sm-block w-100" src="/frontend/img/ats-2.png">
           <img class="img-fluid d-none d-sm-block w-100" src="/frontend/img/ats-1.png">
