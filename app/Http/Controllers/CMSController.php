@@ -146,7 +146,7 @@ class CMSController extends Controller
             return redirect('/');
         }
 
-        $contents = array(WebContent::find(16), WebContent::find(17), WebContent::find(18));
+        $contents = array(WebContent::find(14), WebContent::find(15), WebContent::find(16));
 
         flash('Welcome to the footer content management system');
 
@@ -171,7 +171,7 @@ class CMSController extends Controller
         ]);
 
         if ($request->head_office != null) {
-            $content = WebContent::where('id', 16)->first();
+            $content = WebContent::where('id', 14)->first();
 
             if ($content == null) {
                 $content = new WebContent;
@@ -182,7 +182,7 @@ class CMSController extends Controller
         }
 
         if ($request->contact != null) {
-            $content = WebContent::where('id', 17)->first();
+            $content = WebContent::where('id', 15)->first();
 
             if ($content == null) {
                 $content = new WebContent;
@@ -193,7 +193,7 @@ class CMSController extends Controller
         }
 
         if ($request->email != null) {
-            $content = WebContent::where('id', 18)->first();
+            $content = WebContent::where('id', 16)->first();
 
             if ($content == null) {
                 $content = new WebContent;
