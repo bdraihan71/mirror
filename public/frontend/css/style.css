@@ -108,7 +108,7 @@ header .navbar {
   padding: 20px 0;
   transition: all .3s;
 
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(140, 140, 140, 0.5);
 }
 
 header .download,
@@ -1788,9 +1788,4 @@ section.pricing {
   .pricing .card:hover .btn {
     opacity: 1;
   }
-}
-
-.download-button{
-  color: white;
-  background-color: #007bff;
 }

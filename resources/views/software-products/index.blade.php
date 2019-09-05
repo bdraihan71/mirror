@@ -21,7 +21,7 @@
       <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
   
     <h2>Connect</h2>
-      <p class="lead">Connect is a highly customizable, reliable and secured information collection platform. Any office can collect information digitally using connect.
+      <p class="lead text-justify">Connect is a highly customizable, reliable and secured information collection platform. Any office can collect information digitally using connect.
       You can use instance of connect for a program by creating an application form and opening it for applicants to submit their applications.</p>
       
     <div class="row">
@@ -67,14 +67,14 @@
     </div>
   
 
-    <a class="btn btn-lg btn-primary download-button text-center my-3" target="_blank" href="/frontend/pdf/Connect_Product_Doc.pdf">View Product Details</a>
+    <a class="btn btn-lg btn-primary text-center my-3" target="_blank" href="/frontend/pdf/Connect_Product_Doc.pdf">View Product Details</a>
 
 
     <div class="row">
         <div class="col-md-12">
-          <img class="img-fluid d-none d-sm-block" src="/frontend/img/2.png">
-          <img class="img-fluid d-none d-sm-block" src="/frontend/img/1.png">
-          <img class="img-fluid w-100 d-block d-sm-none" src="/frontend/img/mobile.jpg">
+          <img class="img-fluid d-none d-sm-block w-100" src="/frontend/img/connect-1.png">
+          <img class="img-fluid d-none d-sm-block w-100" src="/frontend/img/connect-2.png">
+          <img class="img-fluid w-100 d-block d-sm-none w-100" src="/frontend/img/connect-mobile.jpg">
         </div>
     </div>
     
@@ -261,7 +261,67 @@
       </div>
     </div> --}}
       </div>
-      <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...<div>
+      <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+        <h2>ATS (Application Tracking Software)</h2>
+        <p class="lead text-justify">Application Tracking Software is a highly customizable, reliable and secured
+        information tracking platform. Any office can track information digitally using ATS.
+        You can use instance of ATS for a program by storing the data and tracking any or
+        all the information and different analytics.</p>
+      
+    <div class="row">
+      <div class="col-md-6 align-self-center">
+        <div class="text-center">
+          <p class="text-monospace my-auto align-middle">Product video will be available upon request.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 my-4 my-md-0">
+        <section class="pricing py-5">
+          <div class="container">
+            <div class="row">
+              <!-- Free Tier -->
+              <div class="col-lg-6">
+                <div class="card mb-5 mb-lg-0">
+                  <div class="card-body">
+                    <h5 class="card-title text-muted text-uppercase text-center">Solo</h5>
+                    <h6 class="card-price text-center">$350<span class="period">/month</span></h6>
+                    <hr>
+                    <ul class="fa-ul">
+                      <li><span class="fa-li"><i class="fas fa-check"></i></span>Single User</li>
+                  </div>
+                </div>
+              </div>
+              <!-- Plus Tier -->
+              <div class="col-lg-6">
+                <div class="card mb-5 mb-lg-0">
+                  <div class="card-body">
+                    <h5 class="card-title text-muted text-uppercase text-center">Team</h5>
+                    <h6 class="card-price text-center">$500<span class="period">/month</span></h6>
+                    <hr>
+                    <ul class="fa-ul">
+                      <li><span class="fa-li"><i class="fas fa-check"></i></span><strong>Unlimited Users</strong></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  
+
+    <a class="btn btn-lg btn-primary text-center my-3" target="_blank" href="/frontend/pdf/ATS-Product-Documentation.pdf">View Product Details</a>
+
+
+    <div class="row">
+        <div class="col-md-12">
+          <img class="img-fluid d-none d-sm-block w-100" src="/frontend/img/ats-2.png">
+          <img class="img-fluid d-none d-sm-block w-100" src="/frontend/img/ats-1.png">
+          <img class="img-fluid w-100 d-block d-sm-none w-100" src="/frontend/img/ats-mobile.jpg">
+        </div>
+    </div>
+      </div>
     </div>
   </div>
 </section>
