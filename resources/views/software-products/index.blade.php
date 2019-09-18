@@ -49,7 +49,7 @@
                     <h6 class="card-price text-center">$150<span class="period">/month</span></h6>
                     <hr>
                     <ul class="fa-ul">
-                      <li><span class="fa-li"><i class="fas fa-check"></i></span>Single User</li>
+                      <li><span class="fa-li"><i class="fas fa-check"></i></span><strong>Single User</strong></li>
                   </div>
                 </div>
               </div>
@@ -297,7 +297,7 @@
                     <h6 class="card-price text-center">$350<span class="period">/month</span></h6>
                     <hr>
                     <ul class="fa-ul">
-                      <li><span class="fa-li"><i class="fas fa-check"></i></span>Single User</li>
+                      <li><span class="fa-li"><i class="fas fa-check"></i></span><strong>Single User</strong></li>
                   </div>
                 </div>
               </div>
