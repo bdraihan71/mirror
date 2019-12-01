@@ -15,6 +15,9 @@
       <li class="nav-item">
         <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">ATS</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-exhibit-tab" data-toggle="pill" href="#pills-exhibit" role="tab" aria-controls="pills-exhibit" aria-selected="false">Exhibit</a>
+      </li>
     </ul>
 
     <div class="tab-content" id="pills-tabContent">
@@ -329,6 +332,74 @@
         </div>
     </div>
       </div>
+
+
+
+      <div class="tab-pane fade" id="pills-exhibit" role="tabpanel" aria-labelledby="pills-exhibit-tab">
+        <div class="row">
+          <div class="col-md-9 my-auto">
+            <h2>Exhibit (Individual Portfolio)</h2>
+          </div>
+          <div class="col-md-3 text-right">
+            <a class="btn btn-lg btn-primary text-center my-3" target="_blank" href="/frontend/img/exhibit-3.jpg">View Product Details</a>
+          </div>
+        </div>
+        <p class="lead text-justify">Exhibit is a highly customizable, reliable and secured Personal information Showcasing a.k.a individual portfolio . Any one can showcase their projects, experiences, education, contact information. You don’t have to rely on other social media platforms with your data. Create your own.</p>
+      
+    <div class="row">
+      <div class="col-md-6 align-self-center">
+        <div class="text-center">
+          <p class="text-monospace my-auto align-middle font-weight-bold">** Product video will be available upon request.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 my-4 my-md-0">
+        <section class="pricing py-5">
+          <div class="container">
+            <div class="row">
+              <!-- Free Tier -->
+              <div class="col-lg-6">
+                <div class="card mb-5 mb-lg-0">
+                  <div class="card-body">
+                    <h5 class="card-title text-muted text-uppercase text-center">Solo</h5>
+                    <h6 class="card-price text-center">$30<span class="period">/month</span></h6>
+                    <hr>
+                    <ul class="fa-ul">
+                      <li><span class="fa-li"><i class="fas fa-check"></i></span><strong>Single User</strong></li>
+                  </div>
+                </div>
+              </div>
+              <!-- Plus Tier -->
+              <div class="col-lg-6">
+                <div class="card mb-5 mb-lg-0">
+                  <div class="card-body">
+                    <h5 class="card-title text-muted text-uppercase text-center">Team</h5>
+                    <h6 class="card-price text-center">$150<span class="period">/month</span></h6>
+                    <hr>
+                    <ul class="fa-ul">
+                      <li><span class="fa-li"><i class="fas fa-check"></i></span><strong>Unlimited Users</strong></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+
+    <div class="row mt-3">
+        <div class="col-md-12">
+          <img class="img-fluid d-none d-sm-block w-100" src="/frontend/img/exhibit-3.jpg">
+          <img class="img-fluid w-100 d-block d-sm-none w-100" src="/frontend/img/exhibit-mobile.jpg">
+        </div>
+    </div>
+      </div>
+
+
+
+
     </div>
   </div>
 </section>
