@@ -1,6 +1,6 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark header" id="nav">
     <div class="container">
-        <a class="navbar-brand" href="/"><img class="logo" src="/frontend/img/techynaf-logo.png" alt="Logo" width="126px"></a>
+        <a id="techynaf-logo" class="navbar-brand button animated lightSpeedIn" href="/"><img class="logo" src="/frontend/img/techynaf-logo.png" alt="Logo" width="126px"></a>
         <button onclick="showMenu('navbarNavAltMarkup')" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -40,3 +40,19 @@
         </div>
     </div>
 </nav>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script>
+
+$('#techynaf-logo').hover(
+       function(){ 
+           $(this).addClass('hinge')
+            setTimeout(function() {
+                $('#techynaf-logo').removeClass("hinge");
+            }, 2000);
+        }
+       
+       
+       
+
+)
+</script>
