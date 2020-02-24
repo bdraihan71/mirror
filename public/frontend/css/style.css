@@ -25,7 +25,7 @@
   left: 5%;
   z-index: 99;
   width: 90%;
-  background: transparent;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .nav-item {
@@ -107,6 +107,8 @@
 header .navbar {
   padding: 20px 0;
   transition: all .3s;
+
+  background-color: rgba(140, 140, 140, 0.5);
 }
 
 header .download,
@@ -521,7 +523,7 @@ header .download .btn-light:hover {
 
 /* What we do */
 .what-we-do {
-  background: url(../img/wdwd2.jpg);
+  background: url(../img/wwd.jpg);
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -541,6 +543,10 @@ header .download .btn-light:hover {
 
 .wwd {
   padding-top: 10%;
+}
+
+.wwd-margin{
+  margin-top: 100px;
 }
 
 @media screen and (max-width: 1920px) and (min-width: 1400px) {
@@ -1719,4 +1725,67 @@ hr.new1 {
 .team-sec{
   min-height: 100vh;
   background-color:rgb(208, 234, 235);
+}
+
+section.pricing {
+  background: #007bff;
+  background: linear-gradient(to right, #0062E6, #33AEFF);
+}
+
+.pricing .card {
+  border: none;
+  border-radius: 1rem;
+  transition: all 0.2s;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.pricing hr {
+  margin: 1.5rem 0;
+}
+
+.pricing .card-title {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+}
+
+.pricing .card-price {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.pricing .card-price .period {
+  font-size: 0.8rem;
+}
+
+.pricing ul li {
+  margin-bottom: 1rem;
+}
+
+.pricing .text-muted {
+  opacity: 0.7;
+}
+
+.pricing .btn {
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  opacity: 0.7;
+  transition: all 0.2s;
+}
+
+/* Hover Effects on Card */
+
+@media (min-width: 992px) {
+  .pricing .card:hover {
+    margin-top: -.25rem;
+    margin-bottom: .25rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
+  }
+  .pricing .card:hover .btn {
+    opacity: 1;
+  }
 }

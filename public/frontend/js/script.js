@@ -154,3 +154,9 @@ $(function() {
 		$('nav').toggleClass('scrolled', $(this).scrollTop() > 50);
 	});
 });
+
+
+$('#myTab a').on('click', function (e) {
+	e.preventDefault()
+	$(this).tab('show')
+  });

@@ -37,7 +37,7 @@
 
         <hr><hr>
 
-        <h2 class="page-title text-center text-dark">International Partners</h2>
+        <h2 class="page-title text-center text-dark">International Clients</h2>
         <br><br>
         <div class="row">
             @if (count($int_clients) > 0)

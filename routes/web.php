@@ -237,3 +237,6 @@ Route::get('/clients/delete/{id}', 'ClientsController@delete')->middleware('auth
 
 //Team
 Route::get('/team', 'TeamController@index');
+
+//Product
+Route::get('/software-products', 'SoftwareProductController@index');

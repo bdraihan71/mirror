@@ -75,7 +75,7 @@
     
     <div class="section">
         <div class="container-fluid what-we-do">
-            <div class="row text-white">
+            <div class="row text-white wwd-margin">
                 <div class="col-md-3"></div>
                 <div class="col-md-8">
                     <div class="owl-carousel wdwd-carousel">
@@ -86,21 +86,21 @@
                             </div>
                         @endforeach
                     </div>
-                    <div class="col-md-1"></div>
                 </div>
+                <div class="col-md-1"></div>
             </div>
         </div>
     </div>
     
     <div class="section" id="partners">
         <section class="partners py-1 text-center">
-            <h1 class="contact-us-text mt-5 mb-4">Partners</h1>
+            <h1 class="contact-us-text mt-5 mb-4">Clients</h1>
             <div class="container">
                 <div class="row">
                     <div class="owl-carousel partners-carousel">
                         @foreach($local_partners as $partner)
                             <div class="">
-                                <img class="card-img-top partner-logo" src="{{$partner->img}}" alt="Partner Logo">
+                                <img class="card-img-top partner-logo mx-auto" src="{{$partner->img}}" alt="Partner Logo">
                             </div>
                         @endforeach
                     </div>
@@ -365,7 +365,7 @@
                 loop: true,
                 margin: 100,
                 responsiveClass: true,
-                autoplayTimeout: 2500,
+                autoplayTimeout: 8000,
                 center: true,
     
     
